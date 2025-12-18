@@ -59,12 +59,12 @@ export default function Footer() {
                 <img
                   src="https://api.builder.io/api/v1/image/assets/TEMP/53464a68dade6f8a9a2888ca2325aca87ab049c8?width=191"
                   alt="Digiwave Logo"
-                  className="w-24 h-14 object-contain"
+                  className="w-20 h-12 object-contain"
                 />
                 <img
                   src="https://api.builder.io/api/v1/image/assets/TEMP/c4036386951a1d6ca44a4c518adf6a756d6a4c54?width=437"
                   alt="Digiwave Technologies"
-                  className="w-56 h-12 object-contain hidden sm:block"
+                  className="w-48 h-10 object-contain hidden sm:block"
                 />
               </div>
               <p className="text-stone-950 text-base font-normal font-['Inter'] leading-6 max-w-[320px]">
