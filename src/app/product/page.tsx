@@ -7,15 +7,6 @@ import TechBadge from "@/components/TechBadge";
 import Contact from "@/components/Contact";
 import Newsletter from "@/components/Newsletter";
 
-const FEATURES = [
-  "Custom Web Application Development",
-  "Responsive & Mobile-Friendly Design",
-  "Secure Backend & API Development",
-  "Third-Party Integrations",
-  "Scalable Architecture",
-  "Performance Optimization"
-];
-
 const TECHNOLOGIES = [
   { name: "PHP", color: "#8F9ED1" },
   { name: "JavaScript", color: "#FFC107" },
@@ -31,52 +22,12 @@ const TECHNOLOGIES = [
   { name: "Laravel", color: "#FF2D20" }
 ];
 
-const PROCESS_STEPS = [
-  {
-    number: "1",
-    title: "Requirement Analysis",
-    description: "We begin by deeply understanding your business objectives, target audience, and technical requirements. This phase helps us align the solution with your long-term vision and avoid costly rework later."
-  },
-  {
-    number: "2",
-    title: "UI/UX Design",
-    description: "Our design team focuses on creating intuitive, visually engaging, and user-centered interfaces. Every screen is crafted to ensure ease of use and seamless navigation."
-  },
-  {
-    number: "3",
-    title: "Building Scalable & Secure Solutions",
-    description: "Using modern frameworks and clean coding practices, we transform designs into functional, high-performance applications."
-  },
-  {
-    number: "4",
-    title: "Testing & Quality Assurance",
-    description: "We rigorously test the application to identify bugs, improve performance, and ensure a seamless user experience across devices."
-  },
-  {
-    number: "5",
-    title: "Launching with Confidence",
-    description: "Once the application passes all quality checks, we ensure a smooth and secure deployment with minimal downtime."
-  },
-  {
-    number: "6",
-    title: "Continuous Improvement & Growth",
-    description: "Our relationship doesn't end at launch. We provide ongoing support to keep your product secure, updated, and competitive."
-  }
-];
-
 const CLIENT_LOGOS = [
   "https://api.builder.io/api/v1/image/assets/TEMP/ad33659c33381eac40061641b81f19d65a13ad9f?width=426",
   "https://api.builder.io/api/v1/image/assets/TEMP/8f1f434e05f9848e760116cfec522940267931df?width=404",
   "https://api.builder.io/api/v1/image/assets/TEMP/cd75b54496eaad840fb0738209a24be55029eddd?width=426",
   "https://api.builder.io/api/v1/image/assets/TEMP/751de64d246aef9c464eb2d8a33a78f1540d0772?width=430",
   "https://api.builder.io/api/v1/image/assets/TEMP/25805b85ee9b7ab1a9bb9121e0ef8891b372b99b?width=422"
-];
-
-const CONTACT_STEPS = [
-  "Share your requirements",
-  "Discuss them with our experts",
-  "Get a free quote",
-  "Start the project"
 ];
 
 export default function ProductPage() {
