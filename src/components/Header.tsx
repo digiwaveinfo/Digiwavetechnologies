@@ -1,7 +1,14 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { ChevronDown, Menu } from "lucide-react";
 
 export default function Header() {
+  const pathname = usePathname();
+
+  const isActive = (path: string) => pathname === path;
+
   return (
     <header className="w-full bg-white shadow-[0px_4px_4px_0px_rgba(181,181,181,0.25)] sticky top-0 z-50 flex flex-col">
       {/* Top Bar - Social Icons */}
@@ -66,26 +73,26 @@ export default function Header() {
 
         {/* Desktop Menu */}
         <div className="hidden lg:flex items-center gap-2.5">
-          <Link href="/" className="px-5 py-2.5 bg-[#00BFD2]/10 rounded-[90px] flex justify-center items-center gap-2.5">
-            <span className="text-[#00BFD2] text-lg font-medium font-['Inter'] leading-7">Home</span>
+          <Link href="/" className={`px-5 py-2.5 rounded-[90px] flex justify-center items-center gap-2.5 transition-colors ${isActive('/') ? 'bg-[#00BFD2]/10' : 'hover:bg-gray-50 rounded-full'}`}>
+            <span className={`text-lg font-medium font-['Inter'] leading-7 ${isActive('/') ? 'text-[#00BFD2]' : 'text-stone-950'}`}>Home</span>
           </Link>
-          <Link href="/about" className="px-5 py-2.5 flex justify-center items-center gap-2.5 hover:bg-gray-50 rounded-full transition-colors">
-            <span className="text-stone-950 text-lg font-medium font-['Inter'] leading-7">About Us</span>
+          <Link href="/about" className={`px-5 py-2.5 rounded-[90px] flex justify-center items-center gap-2.5 transition-colors ${isActive('/about') ? 'bg-[#00BFD2]/10' : 'hover:bg-gray-50 rounded-full'}`}>
+            <span className={`text-lg font-medium font-['Inter'] leading-7 ${isActive('/about') ? 'text-[#00BFD2]' : 'text-stone-950'}`}>About Us</span>
           </Link>
           <div className="flex items-center gap-2.5 cursor-pointer px-5 py-2.5 hover:bg-gray-50 rounded-full transition-colors group relative">
             <span className="text-stone-950 text-lg font-medium font-['Inter'] leading-7">Services</span>
             <div className="mb-1">
               <svg width="13" height="14" viewBox="0 0 13 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M5.49609 9.37891C5.67839 9.54297 5.88802 9.625 6.125 9.625C6.36198 9.625 6.57161 9.54297 6.75391 9.37891L11.1289 5.00391C11.293 4.82161 11.375 4.61198 11.375 4.375C11.375 4.13802 11.293 3.92839 11.1289 3.74609C10.9466 3.58203 10.737 3.5 10.5 3.5C10.263 3.5 10.0534 3.58203 9.87109 3.74609L6.125 7.51953L2.37891 3.74609C2.19661 3.58203 1.98698 3.5 1.75 3.5C1.51302 3.5 1.30339 3.58203 1.12109 3.74609C0.957031 3.92839 0.875 4.13802 0.875 4.375C0.875 4.61198 0.957031 4.82161 1.12109 5.00391L5.49609 9.37891Z" fill="#0F0F10" />
+                <path d="M5.49609 9.37891C5.67839 9.54297 5.88802 9.625 6.125 9.625C6.36198 9.625C6.57161 9.54297 6.75391 9.37891L11.1289 5.00391C11.293 4.82161 11.375 4.61198 11.375 4.375C11.375 4.13802 11.293 3.92839 11.1289 3.74609C10.9466 3.58203 10.737 3.5 10.5 3.5C10.263 3.5 10.0534 3.58203 9.87109 3.74609L6.125 7.51953L2.37891 3.74609C2.19661 3.58203 1.98698 3.5 1.75 3.5C1.51302 3.5 1.30339 3.58203 1.12109 3.74609C0.957031 3.92839 0.875 4.13802 0.875 4.375C0.875 4.61198 0.957031 4.82161 1.12109 5.00391L5.49609 9.37891Z" fill="#0F0F10" />
               </svg>
             </div>
             {/* Dropdown can be implemented here */}
           </div>
-          <Link href="/product" className="px-5 py-2.5 flex justify-center items-center gap-2.5 hover:bg-gray-50 rounded-full transition-colors">
-            <span className="text-stone-950 text-lg font-medium font-['Inter'] leading-7">Product</span>
+          <Link href="/product" className={`px-5 py-2.5 rounded-[90px] flex justify-center items-center gap-2.5 transition-colors ${isActive('/product') ? 'bg-[#00BFD2]/10' : 'hover:bg-gray-50 rounded-full'}`}>
+            <span className={`text-lg font-medium font-['Inter'] leading-7 ${isActive('/product') ? 'text-[#00BFD2]' : 'text-stone-950'}`}>Product</span>
           </Link>
-          <Link href="/portfolio" className="px-5 py-2.5 flex justify-center items-center gap-2.5 hover:bg-gray-50 rounded-full transition-colors">
-            <span className="text-stone-950 text-lg font-medium font-['Inter'] leading-7">Portfolio</span>
+          <Link href="/portfolio" className={`px-5 py-2.5 rounded-[90px] flex justify-center items-center gap-2.5 transition-colors ${isActive('/portfolio') ? 'bg-[#00BFD2]/10' : 'hover:bg-gray-50 rounded-full'}`}>
+            <span className={`text-lg font-medium font-['Inter'] leading-7 ${isActive('/portfolio') ? 'text-[#00BFD2]' : 'text-stone-950'}`}>Portfolio</span>
           </Link>
         </div>
 
