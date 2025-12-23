@@ -1,7 +1,5 @@
-"use client";
-
 import Header from "@/components/Header";
-import Hero from "@/components/Hero";
+import HomeHero from "@/components/HomeHero";
 import Services from "@/components/Services";
 import About from "@/components/About";
 import Portfolio from "@/components/Portfolio";
@@ -16,7 +14,7 @@ export default function Home() {
     <div className="min-h-screen bg-white">
       <Header />
       <main>
-        <Hero />
+        <HomeHero />
         <Services />
         <About />
         <Portfolio />
