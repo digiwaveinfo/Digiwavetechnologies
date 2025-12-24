@@ -39,12 +39,12 @@ export default function Values() {
   ];
 
   return (
-    <section className="py-16 px-4 sm:px-6 lg:px-8 2xl:px-12 bg-white">
-      <div className="flex flex-wrap lg:flex-nowrap items-stretch gap-6 lg:gap-11 max-w-[1800px] mx-auto">
+    <section className="py-12 lg:py-16 px-4 sm:px-6 lg:px-8 2xl:px-12 bg-white">
+      <div className="flex flex-col lg:flex-row lg:flex-nowrap items-stretch gap-12 lg:gap-11 max-w-[1800px] mx-auto">
         {values.map((value, index) => (
           <div
             key={index}
-            className="flex-1 bg-white rounded-2xl shadow-[0_4px_4px_rgba(0,0,0,0.25)] p-4 hover:shadow-xl transition-shadow min-h-[280px] flex flex-col"
+            className="flex-1 bg-white rounded-2xl shadow-[0_4px_4px_rgba(0,0,0,0.25)] p-4 hover:shadow-xl transition-shadow lg:min-h-[280px] flex flex-col"
           >
             <div className="flex flex-col gap-5 h-full">
               <div className="w-[66px] h-[66px] flex items-center justify-center flex-shrink-0">

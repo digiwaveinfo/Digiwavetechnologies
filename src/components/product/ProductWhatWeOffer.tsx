@@ -11,9 +11,9 @@ export default function ProductWhatWeOffer() {
             className="w-full h-full object-cover"
           />
         </div>
-        <div className="w-full lg:w-1/2 flex flex-col gap-7">
-          <div className="w-full lg:w-[533px] flex flex-col gap-2.5">
-            <div className="flex flex-col gap-3.5">
+        <div className="w-full lg:w-1/2 flex flex-col gap-7 items-center lg:items-start">
+          <div className="w-full lg:w-[533px] flex flex-col gap-2.5 text-center lg:text-left">
+            <div className="flex flex-col gap-3.5 items-center lg:items-start">
               <div className="text-[#00BFD2] text-xl font-medium font-['Inter']">
                 About service
               </div>
@@ -21,10 +21,10 @@ export default function ProductWhatWeOffer() {
                 What We Offer
               </div>
             </div>
-            <div className="text-stone-950 text-base font-normal font-['Inter'] leading-6 mb-4">
+            <div className="text-stone-950 text-base font-normal font-['Inter'] leading-6 mb-4 text-center lg:text-left">
               Our web application development service focuses on building robust, responsive, and scalable applications using modern frameworks and industry best practices. Whether you need a SaaS platform, enterprise system, or custom business tool, we deliver solutions that grow with your business.
             </div>
-            <div className="text-stone-950 text-base font-normal font-['Inter'] leading-6">
+            <div className="text-stone-950 text-base font-normal font-['Inter'] leading-6 text-center lg:text-left">
               Our web application development service focuses on building robust, responsive, and scalable applications using modern frameworks and industry best practices. Whether you need a SaaS platform, enterprise system, or custom business tool, we deliver solutions that grow with your business.
             </div>
           </div>

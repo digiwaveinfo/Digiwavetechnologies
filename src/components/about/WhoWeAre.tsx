@@ -41,12 +41,12 @@ export default function WhoWeAre() {
 
                 {/* Text Section */}
                 <div className="flex flex-col lg:flex-row justify-center items-center gap-10 lg:gap-2.5 w-full mt-10 lg:mt-0">
-                    <div className="w-full lg:w-[501px] flex flex-col justify-start items-start gap-3.5">
-                        <div className="self-stretch text-sky-950 text-4xl font-bold font-['Inter'] leading-[60px]">
+                    <div className="w-full lg:w-[501px] flex flex-col justify-start items-center lg:items-start gap-3.5">
+                        <div className="self-stretch text-sky-950 text-4xl font-bold font-['Inter'] leading-[60px] text-center lg:text-left">
                             Who We Are
                         </div>
                     </div>
-                    <div className="flex-1 text-stone-950 text-base font-normal font-['Inter'] leading-6 text-justify lg:text-left">
+                    <div className="flex-1 text-stone-950 text-base font-normal font-['Inter'] leading-6 text-center lg:text-left">
                         Lorem ipsum dolor sit amet consectetur. Nullam sit aliquet facilisis in mauris. Viverra at commodo sed nec feugiat adipiscing. Risus pharetra amet velit urna amet etiam fermentum proin sed. In elementum orci tristique mauris massa in suspendisse vulputate ultricies.Lorem ipsum dolor sit amet consectetur. Nullam sit aliquet facilisis in mauris. Viverra at commodo sed nec feugiat adipiscing. Risus pharetra amet velit urna amet etiam fermentum proin sed. In elementum orci tristique mauri
                     </div>
                 </div>

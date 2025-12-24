@@ -27,20 +27,21 @@ export default function Industries() {
   ];
 
   return (
-    <section className="relative bg-brand-dark-blue py-20 shadow-[0_4px_23px_rgba(0,0,0,0.16)] overflow-hidden">
-      <div className="max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-8 2xl:px-12 flex flex-col lg:flex-row items-start gap-10 lg:gap-16">
-        <div className="flex-[0_0_551px]">
+    <section className="relative bg-brand-dark-blue py-12 lg:py-20 shadow-[0_4px_23px_rgba(0,0,0,0.16)] overflow-hidden">
+      <div className="max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-8 2xl:px-12 flex flex-col lg:flex-row items-center lg:items-start gap-8 lg:gap-16">
+        <div className="w-full lg:flex-[0_0_551px] text-center lg:text-left">
           <h3 className="text-brand-cyan font-poppins font-medium text-xl mb-4">Services</h3>
-          <h2 className="text-brand-white font-poppins font-bold text-[40px] leading-tight">
+          <h2 className="text-brand-white font-poppins font-bold text-3xl lg:text-[40px] leading-tight">
             Solving IT challenges in every industry, every day.
           </h2>
         </div>
-        <div className="flex gap-7 flex-1">
-          <div className="flex flex-col gap-6 flex-1">
+        {/* Stacked on mobile, 2 columns on desktop */}
+        <div className="flex flex-col gap-3 lg:flex-row lg:gap-7 w-full lg:flex-1">
+          <div className="flex flex-col gap-3 lg:gap-6 lg:flex-1">
             {industries.slice(0, 3).map((industry, index) => (
               <div
                 key={index}
-                className="bg-white rounded-2xl shadow-[0_4px_4px_rgba(0,0,0,0.25)] p-3.5 flex items-center gap-5 hover:shadow-lg transition-shadow"
+                className="bg-white rounded-2xl shadow-[0_4px_4px_rgba(0,0,0,0.25)] p-3.5 flex items-center gap-4 hover:shadow-lg transition-shadow"
               >
                 <div className="w-[38px] h-[38px] bg-[rgba(0,191,210,0.09)] rounded flex items-center justify-center flex-shrink-0">
                   <img
@@ -49,17 +50,17 @@ export default function Industries() {
                     className="w-6 h-6"
                   />
                 </div>
-                <span className="text-black font-inter font-medium text-base whitespace-nowrap">
+                <span className="text-black font-inter font-medium text-base">
                   {industry.name}
                 </span>
               </div>
             ))}
           </div>
-          <div className="flex flex-col gap-6 flex-1">
+          <div className="flex flex-col gap-3 lg:gap-6 lg:flex-1">
             {industries.slice(3).map((industry, index) => (
               <div
                 key={index}
-                className="bg-white rounded-2xl shadow-[0_4px_4px_rgba(0,0,0,0.25)] p-3.5 flex items-center gap-5 hover:shadow-lg transition-shadow"
+                className="bg-white rounded-2xl shadow-[0_4px_4px_rgba(0,0,0,0.25)] p-3.5 flex items-center gap-4 hover:shadow-lg transition-shadow"
               >
                 <div className="w-[38px] h-[38px] bg-[rgba(0,191,210,0.09)] rounded flex items-center justify-center flex-shrink-0">
                   <img
@@ -68,7 +69,7 @@ export default function Industries() {
                     className="w-6 h-6"
                   />
                 </div>
-                <span className="text-black font-inter font-medium text-base whitespace-nowrap">
+                <span className="text-black font-inter font-medium text-base">
                   {industry.name}
                 </span>
               </div>
