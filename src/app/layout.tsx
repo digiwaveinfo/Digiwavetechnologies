@@ -8,8 +8,11 @@ const poppins = Poppins({ subsets: ["latin"], weight: ["400", "500", "700", "800
 const rubik = Rubik({ subsets: ["latin"], weight: ["400"], variable: "--font-rubik" });
 
 export const metadata: Metadata = {
-  title: "Quantum Verse",
-  description: "Digiwave Quantum Verse",
+  title: "Digiwave Technologies",
+  description: "Transforming Ideas into Scalable Digital Solutions",
+  icons: {
+    icon: "/Logo.svg",
+  },
 };
 
 export default function RootLayout({
