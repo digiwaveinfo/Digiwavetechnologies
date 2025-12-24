@@ -25,7 +25,7 @@ export default function Contact() {
 
   return (
     <section className="w-full py-12 md:py-16 bg-neutral-100 overflow-hidden">
-      <div className="container mx-auto px-6 lg:px-20 max-w-[1440px]">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 2xl:px-12 max-w-[1800px]">
         <div className="flex flex-col lg:flex-row justify-start items-stretch gap-7">
           {/* Left Card - Info */}
           <div className="w-full lg:w-96 p-6 md:p-8 bg-white rounded-[10px] shadow-[0px_4px_23px_0px_rgba(174,191,210,0.30)] flex flex-col">
@@ -154,7 +154,7 @@ export default function Contact() {
                 </svg>
               </div>
 
-              <div className="flex justify-end">
+              <div className="flex justify-center md:justify-end">
                 <button
                   type="submit"
                   className="px-6 py-4 bg-[#00BFD2] rounded-full inline-flex items-center gap-2.5 hover:opacity-90 transition-opacity cursor-pointer"

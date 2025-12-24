@@ -7,7 +7,7 @@ export default function WhoWeAre() {
             {/* White Background starting mid-way */}
             <div className="absolute top-[150px] lg:top-[100px] left-0 w-full h-[calc(100%-150px)] lg:h-[calc(100%-100px)] bg-white -z-10" />
 
-            <div className="container mx-auto px-6 lg:px-20">
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8 2xl:px-12 max-w-[1800px]">
                 {/* Images Row - Negative margin to overlap Hero */}
                 <div className="flex flex-col lg:flex-row gap-6 mb-16 -mt-[150px] lg:-mt-[180px]">
                     {/* Large Image */}

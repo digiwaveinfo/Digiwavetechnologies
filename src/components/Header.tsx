@@ -2,17 +2,27 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ChevronDown, Menu } from "lucide-react";
+import { Menu, X } from "lucide-react";
+import { useState } from "react";
 
 export default function Header() {
   const pathname = usePathname();
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const isActive = (path: string) => pathname === path;
+
+  const navLinks = [
+    { href: "/", label: "Home" },
+    { href: "/about", label: "About Us" },
+    { href: "/services", label: "Services" },
+    { href: "/product", label: "Product" },
+    { href: "/portfolio", label: "Portfolio" },
+  ];
 
   return (
     <header className="w-full bg-white shadow-[0px_4px_4px_0px_rgba(181,181,181,0.25)] sticky top-0 z-50 flex flex-col">
       {/* Top Bar - Social Icons */}
-      <div className="w-full bg-[#00BFD2] h-9 flex items-center justify-end px-6 lg:px-20">
+      <div className="w-full bg-[#00BFD2] h-9 flex items-center justify-end px-4 sm:px-6 lg:px-8 2xl:px-12">
         <div className="flex justify-start items-center gap-3">
           {/* Facebook */}
           <a href="#" className="relative w-6 h-6 hover:opacity-80 transition-opacity">
@@ -52,7 +62,7 @@ export default function Header() {
       </div>
 
       {/* Main Navigation */}
-      <div className="w-full h-20 flex items-center justify-between px-6 lg:px-20">
+      <div className="w-full h-20 flex items-center justify-between px-4 sm:px-6 lg:px-8 2xl:px-12">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-3.5">
           <img
@@ -69,21 +79,17 @@ export default function Header() {
 
         {/* Desktop Menu */}
         <div className="hidden lg:flex items-center gap-2.5">
-          <Link href="/" className={`px-5 py-2.5 rounded-[90px] flex justify-center items-center gap-2.5 transition-colors ${isActive('/') ? 'bg-[#00BFD2]/10' : 'hover:bg-gray-50 rounded-full'}`}>
-            <span className={`text-lg font-medium font-['Inter'] leading-7 ${isActive('/') ? 'text-[#00BFD2]' : 'text-stone-950'}`}>Home</span>
-          </Link>
-          <Link href="/about" className={`px-5 py-2.5 rounded-[90px] flex justify-center items-center gap-2.5 transition-colors ${isActive('/about') ? 'bg-[#00BFD2]/10' : 'hover:bg-gray-50 rounded-full'}`}>
-            <span className={`text-lg font-medium font-['Inter'] leading-7 ${isActive('/about') ? 'text-[#00BFD2]' : 'text-stone-950'}`}>About Us</span>
-          </Link>
-          <Link href="/services" className={`px-5 py-2.5 rounded-[90px] flex justify-center items-center gap-2.5 transition-colors ${isActive('/services') ? 'bg-[#00BFD2]/10' : 'hover:bg-gray-50 rounded-full'}`}>
-            <span className={`text-lg font-medium font-['Inter'] leading-7 ${isActive('/services') ? 'text-[#00BFD2]' : 'text-stone-950'}`}>Services</span>
-          </Link>
-          <Link href="/product" className={`px-5 py-2.5 rounded-[90px] flex justify-center items-center gap-2.5 transition-colors ${isActive('/product') ? 'bg-[#00BFD2]/10' : 'hover:bg-gray-50 rounded-full'}`}>
-            <span className={`text-lg font-medium font-['Inter'] leading-7 ${isActive('/product') ? 'text-[#00BFD2]' : 'text-stone-950'}`}>Product</span>
-          </Link>
-          <Link href="/portfolio" className={`px-5 py-2.5 rounded-[90px] flex justify-center items-center gap-2.5 transition-colors ${isActive('/portfolio') ? 'bg-[#00BFD2]/10' : 'hover:bg-gray-50 rounded-full'}`}>
-            <span className={`text-lg font-medium font-['Inter'] leading-7 ${isActive('/portfolio') ? 'text-[#00BFD2]' : 'text-stone-950'}`}>Portfolio</span>
-          </Link>
+          {navLinks.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className={`px-5 py-2.5 rounded-[90px] flex justify-center items-center gap-2.5 transition-colors ${isActive(link.href) ? 'bg-[#00BFD2]/10' : 'hover:bg-gray-50 rounded-full'}`}
+            >
+              <span className={`text-lg font-medium font-['Inter'] leading-7 ${isActive(link.href) ? 'text-[#00BFD2]' : 'text-stone-950'}`}>
+                {link.label}
+              </span>
+            </Link>
+          ))}
         </div>
 
         {/* Contact Us Button */}
@@ -97,10 +103,46 @@ export default function Header() {
         </div>
 
         {/* Mobile Menu Button */}
-        <button className="lg:hidden p-2 text-gray-600">
-          <Menu className="w-8 h-8" />
+        <button
+          className="lg:hidden p-2 text-gray-600"
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          aria-label="Toggle mobile menu"
+        >
+          {isMobileMenuOpen ? (
+            <X className="w-8 h-8" />
+          ) : (
+            <Menu className="w-8 h-8" />
+          )}
         </button>
       </div>
+
+      {/* Mobile Menu */}
+      {isMobileMenuOpen && (
+        <div className="lg:hidden bg-white border-t border-gray-100 shadow-lg">
+          <nav className="flex flex-col py-4 px-4 sm:px-6">
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                onClick={() => setIsMobileMenuOpen(false)}
+                className={`py-3 px-4 rounded-lg text-lg font-medium font-['Inter'] transition-colors ${isActive(link.href)
+                  ? 'bg-[#00BFD2]/10 text-[#00BFD2]'
+                  : 'text-stone-950 hover:bg-gray-50'
+                  }`}
+              >
+                {link.label}
+              </Link>
+            ))}
+            <Link
+              href="/contact"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="mt-4 py-3 px-4 bg-[#00BFD2] rounded-full text-center text-white text-sm font-bold font-['Inter'] uppercase tracking-wide hover:opacity-90 transition-opacity"
+            >
+              Contact Us
+            </Link>
+          </nav>
+        </div>
+      )}
     </header>
   );
 }

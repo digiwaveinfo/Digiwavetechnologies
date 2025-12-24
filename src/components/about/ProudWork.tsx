@@ -28,7 +28,7 @@ export default function ProudWork() {
                 </div>
             </div>
 
-            <div className="container mx-auto px-6 lg:px-20 relative z-10 flex flex-col items-center">
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8 2xl:px-12 relative z-10 flex flex-col items-center max-w-[1800px]">
                 {/* Header */}
                 <div className="text-center mb-16">
                     <h3 className="text-cyan-500 text-xl font-medium font-['Inter'] mb-2">

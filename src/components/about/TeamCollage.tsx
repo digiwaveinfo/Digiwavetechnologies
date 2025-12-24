@@ -69,7 +69,7 @@ export default function TeamCollage() {
 
 
             {/* Mobile/Tablet Fallback Layout */}
-            <div className="lg:hidden w-full px-4 flex flex-col gap-4">
+            <div className="lg:hidden w-full px-4 sm:px-6 flex flex-col gap-4">
                 {/* Row 1 */}
                 <div className="flex gap-4 h-64">
                     <div className="relative w-1/2 h-full rounded-xl overflow-hidden">

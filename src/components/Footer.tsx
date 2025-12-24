@@ -14,10 +14,10 @@ export default function Footer() {
           backgroundPosition: "center",
         }}
       >
-        <div className="container mx-auto px-6 lg:px-20 max-w-[1440px]">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 2xl:px-12 max-w-[1800px]">
           <div className="flex flex-col lg:flex-row justify-between items-center gap-8">
             {/* Title */}
-            <div className="flex flex-col gap-5 max-w-[536px]">
+            <div className="flex flex-col gap-5 max-w-[536px] text-center lg:text-left">
               <div className="text-[#00BFD2] text-base font-bold font-['Inter'] uppercase tracking-wide">
                 Stay Connected with Us
               </div>
@@ -27,7 +27,7 @@ export default function Footer() {
             </div>
 
             {/* Subscribe Form */}
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
               <input
                 type="email"
                 placeholder="Email address"
@@ -48,11 +48,12 @@ export default function Footer() {
           backgroundImage: "url('/Footer-bottom.png')",
           backgroundSize: "cover",
           backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
           backgroundColor: "#fff",
         }}
       >
-        <div className="container mx-auto px-6 lg:px-20 max-w-[1440px]">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 2xl:px-12 max-w-[1800px] relative z-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8 px-2 sm:px-0">
             {/* Company Info */}
             <div className="flex flex-col gap-7">
               <div className="flex items-center gap-3.5">
@@ -161,8 +162,8 @@ export default function Footer() {
       </div>
 
       {/* Copyright Bar */}
-      <div className="w-full py-6 bg-[#00114C]">
-        <div className="container mx-auto px-6 lg:px-20 max-w-[1440px] text-center">
+      <div className="w-full py-6 bg-[#000B2E]">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 2xl:px-12 max-w-[1800px] text-center">
           <p className="text-white text-sm font-semibold font-['Inter']">
             Copyright © 2025 Digiwave technology
           </p>

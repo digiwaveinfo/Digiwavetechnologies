@@ -60,7 +60,7 @@ export default function Services() {
         </svg>
       </div>
 
-      <div className="container mx-auto px-6 lg:px-20 flex flex-col items-center">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 2xl:px-12 flex flex-col items-center max-w-[1800px]">
         {/* Section Header */}
         <div className="w-full flex flex-col items-center gap-4 mb-12">
           <div className="text-center text-[#00BFD2] text-xl font-medium font-['Poppins']">

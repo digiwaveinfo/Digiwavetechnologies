@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function About() {
   return (
     <section className="w-full bg-neutral-100 overflow-hidden py-16 lg:py-0">
-      <div className="container mx-auto px-6 lg:px-20 relative">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 2xl:px-12 relative max-w-[1800px]">
         <div className="flex flex-col lg:flex-row items-center lg:items-start lg:h-[705px]">
 
           {/* Images Section */}
@@ -27,10 +27,10 @@ export default function About() {
           </div>
 
           {/* Content Section */}
-          <div className="w-full lg:w-[542px] lg:mt-[138px] flex flex-col justify-start items-start gap-7 z-20">
+          <div className="w-full lg:w-[542px] lg:mt-[138px] flex flex-col justify-start items-center lg:items-start gap-7 z-20">
 
-            <div className="w-full flex flex-col justify-start items-start gap-2.5">
-              <div className="self-stretch flex flex-col justify-start items-start gap-3.5">
+            <div className="w-full flex flex-col justify-start items-center lg:items-start gap-2.5">
+              <div className="self-stretch flex flex-col justify-start items-center lg:items-start gap-3.5">
                 <div className="text-[#00BFD2] text-xl font-medium font-['Inter']">
                   About Us
                 </div>
@@ -38,7 +38,7 @@ export default function About() {
                   Who We Are
                 </div>
               </div>
-              <div className="text-[#0c0c0c] text-base font-normal font-['Inter'] leading-6 mt-2">
+              <div className="text-[#0c0c0c] text-base font-normal font-['Inter'] leading-6 mt-2 text-center lg:text-left">
                 Digiwave Technologies is a forward-thinking IT solutions company
                 focused on building scalable, secure, and future-ready digital
                 products.
@@ -50,7 +50,7 @@ export default function About() {
               </div>
             </div>
 
-            <div className="w-full flex flex-col sm:flex-row justify-start items-start sm:items-center gap-8 lg:gap-16">
+            <div className="w-full flex flex-col sm:flex-row justify-center lg:justify-start items-center lg:items-start sm:items-center gap-8 lg:gap-16">
               {/* Feature 01 */}
               <div className="flex justify-start items-center gap-3">
                 <div className="relative w-[41px] h-[37px]">
@@ -94,7 +94,7 @@ export default function About() {
               </div>
             </div>
 
-            <Link href="/about" className="px-5 py-4 bg-[#00BFD2] rounded-[247px] flex flex-col justify-start items-start gap-2.5 overflow-hidden hover:opacity-90 transition-opacity mt-2">
+            <Link href="/about" className="px-5 py-4 bg-[#00BFD2] rounded-[247px] flex flex-col justify-center lg:justify-start items-center lg:items-start gap-2.5 overflow-hidden hover:opacity-90 transition-opacity mt-2">
               <div className="self-stretch flex justify-start items-center gap-2.5">
                 <div className="text-center justify-center text-white text-lg font-bold font-['Inter'] uppercase leading-7 tracking-wide">
                   View more about us

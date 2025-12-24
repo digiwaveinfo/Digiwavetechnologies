@@ -3,7 +3,7 @@ import Section from "@/components/Section";
 export default function ProductWhoWeAre() {
   return (
     <Section spacing="large">
-      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12">
+      <div className="max-w-[1800px] mx-auto flex flex-col lg:flex-row items-center gap-12">
         <div className="flex-1">
           <h2 className="font-poppins font-bold text-4xl md:text-5xl text-[#00114C] leading-tight mb-4">
             Who We Are Who We Are Who We Are

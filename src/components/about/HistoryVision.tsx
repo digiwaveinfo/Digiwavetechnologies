@@ -4,7 +4,7 @@ import { History, Eye, Target } from "lucide-react";
 export default function HistoryVision() {
     return (
         <section className="w-full bg-white py-20">
-            <div className="container mx-auto px-6 lg:px-20">
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8 2xl:px-12 max-w-[1800px]">
                 <div className="flex flex-wrap justify-center gap-14">
                     {/* Card 1: Our History */}
                     <div className="p-7 bg-white rounded-3xl shadow-[2px_3px_6.3px_1px_rgba(64,64,64,0.27)] flex flex-col justify-start items-start gap-5 max-w-sm hover:translate-y-[-5px] transition-transform duration-300">

@@ -5,11 +5,11 @@ interface SectionProps {
   className?: string;
 }
 
-export default function Section({ 
-  children, 
-  bgColor = 'white', 
+export default function Section({
+  children,
+  bgColor = 'white',
   spacing = 'medium',
-  className = '' 
+  className = ''
 }: SectionProps) {
   const bgClasses = {
     white: 'bg-white',
@@ -24,7 +24,7 @@ export default function Section({
 
   return (
     <section className={`w-full ${bgClasses[bgColor]} ${spacingClasses[spacing]} ${className}`}>
-      <div className="container mx-auto px-6 lg:px-20 max-w-[1440px]">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 2xl:px-12 max-w-[1800px]">
         {children}
       </div>
     </section>

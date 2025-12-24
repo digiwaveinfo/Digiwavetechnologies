@@ -22,7 +22,6 @@ export default function ProductPage() {
       <ProductProcess />
       <ProductClientLogos />
       <Contact />
-      <Newsletter />
       <Footer />
     </div>
   );

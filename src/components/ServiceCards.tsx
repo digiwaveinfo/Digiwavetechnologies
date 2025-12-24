@@ -21,23 +21,23 @@ export default function ServiceCards() {
   ];
 
   return (
-    <section className="py-12 px-20">
-      <div className="flex items-center gap-14 max-w-[1280px] mx-auto">
+    <section className="py-12 px-4 sm:px-6 lg:px-8 2xl:px-12">
+      <div className="flex flex-col lg:flex-row items-stretch gap-8 lg:gap-14 max-w-[1800px] mx-auto">
         {services.map((service, index) => (
-          <div 
-            key={index} 
+          <div
+            key={index}
             className="flex-1 bg-white rounded-[26px] p-8 shadow-[0_1px_17px_rgba(0,0,0,0.12)] hover:shadow-[0_4px_24px_rgba(0,0,0,0.15)] transition-shadow"
           >
             <div className="flex flex-col gap-12">
               <div className="flex flex-col gap-5">
-                <div 
+                <div
                   className="w-[89px] h-[89px] rounded-full flex items-center justify-center"
                   style={{ backgroundColor: service.bgColor }}
                 >
-                  <img 
-                    src={service.icon} 
-                    alt={service.title} 
-                    className="w-[50px] h-[50px]" 
+                  <img
+                    src={service.icon}
+                    alt={service.title}
+                    className="w-[50px] h-[50px]"
                   />
                 </div>
                 <h3 className="text-brand-dark-blue font-inter font-bold text-[26px] leading-[39px]">
@@ -49,31 +49,31 @@ export default function ServiceCards() {
               </div>
               <button className="flex items-center gap-2.5 text-brand-black font-inter font-medium text-lg hover:text-brand-cyan transition-colors group">
                 Read More
-                <svg 
-                  className="w-6 h-6 transition-transform group-hover:translate-x-1" 
-                  viewBox="0 0 24 24" 
-                  fill="none" 
+                <svg
+                  className="w-6 h-6 transition-transform group-hover:translate-x-1"
+                  viewBox="0 0 24 24"
+                  fill="none"
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <path 
-                    d="M5 12H19" 
-                    stroke="currentColor" 
-                    strokeWidth="1.5" 
-                    strokeLinecap="round" 
+                  <path
+                    d="M5 12H19"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
                     strokeLinejoin="round"
                   />
-                  <path 
-                    d="M15 16L19 12" 
-                    stroke="currentColor" 
-                    strokeWidth="1.5" 
-                    strokeLinecap="round" 
+                  <path
+                    d="M15 16L19 12"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
                     strokeLinejoin="round"
                   />
-                  <path 
-                    d="M15 8L19 12" 
-                    stroke="currentColor" 
-                    strokeWidth="1.5" 
-                    strokeLinecap="round" 
+                  <path
+                    d="M15 8L19 12"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
                     strokeLinejoin="round"
                   />
                 </svg>

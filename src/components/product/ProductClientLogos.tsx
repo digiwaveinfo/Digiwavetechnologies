@@ -8,8 +8,8 @@ const CLIENT_LOGOS = [
 
 export default function ProductClientLogos() {
   return (
-    <section className="px-5 md:px-20 py-16 bg-gray-50">
-      <div className="max-w-7xl mx-auto">
+    <section className="px-4 sm:px-6 lg:px-8 2xl:px-12 py-16 bg-gray-50">
+      <div className="max-w-[1800px] mx-auto">
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 items-center opacity-60 grayscale hover:grayscale-0 transition-all">
           {CLIENT_LOGOS.map((logo, index) => (
             <img

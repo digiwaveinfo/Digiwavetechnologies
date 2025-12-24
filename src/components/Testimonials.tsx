@@ -35,7 +35,7 @@ export default function Testimonials() {
 
   return (
     <section className="w-full py-16 md:py-24 bg-white">
-      <div className="container mx-auto px-6 lg:px-20 max-w-[1440px]">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 2xl:px-12 max-w-[1800px]">
         <div className="flex flex-col lg:flex-row justify-start items-stretch gap-5">
           {/* Stats Card */}
           <div className="w-full lg:w-96 p-[50px] bg-white rounded-[10px] shadow-[0px_4px_23px_0px_rgba(174,191,210,0.30)] flex flex-col justify-between">

@@ -20,7 +20,7 @@ const TECHNOLOGIES = [
 export default function ProductTechnologies() {
   return (
     <Section spacing="large">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-[1800px] mx-auto">
         <SectionHeader
           label="Technologies we used"
           title="Built Using Future-Ready Technologies"

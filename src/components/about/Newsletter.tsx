@@ -3,7 +3,7 @@ import React from "react";
 export default function Newsletter() {
     return (
         <section className="w-full bg-white pb-20">
-            <div className="container mx-auto px-6 lg:px-20">
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8 2xl:px-12 max-w-[1800px]">
                 <div className="relative w-full bg-sky-950 rounded-3xl overflow-hidden p-8 lg:p-16 flex flex-col lg:flex-row items-center justify-between gap-10">
                     {/* Background Vectors */}
                     <div className="absolute inset-0 pointer-events-none opacity-10">

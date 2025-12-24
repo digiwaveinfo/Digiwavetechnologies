@@ -3,15 +3,15 @@ import Section from "@/components/Section";
 export default function ProductWhatWeOffer() {
   return (
     <Section spacing="large">
-      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-11">
-        <div className="w-full lg:w-[693px] h-96 relative rounded-3xl overflow-hidden">
+      <div className="max-w-[1800px] mx-auto flex flex-col lg:flex-row items-center justify-center gap-11">
+        <div className="w-full lg:w-1/2 h-96 relative rounded-3xl overflow-hidden">
           <img
             src="https://api.builder.io/api/v1/image/assets/TEMP/b136b83f82601fc5126fbdf7556921a346fcf0cf?width=1760"
             alt="Modern skyscraper architecture"
             className="w-full h-full object-cover"
           />
         </div>
-        <div className="w-full lg:w-[542px] flex flex-col gap-7">
+        <div className="w-full lg:w-1/2 flex flex-col gap-7">
           <div className="w-full lg:w-[533px] flex flex-col gap-2.5">
             <div className="flex flex-col gap-3.5">
               <div className="text-[#00BFD2] text-xl font-medium font-['Inter']">

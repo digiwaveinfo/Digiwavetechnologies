@@ -25,8 +25,8 @@ export default function Newsletter({
   };
 
   return (
-    <div className="w-full h-72 bg-sky-950 border border-cyan-400/5 flex items-center justify-center px-20">
-      <div className="w-[1272px] flex justify-between items-center">
+    <div className="w-full h-auto min-h-72 bg-sky-950 border border-cyan-400/5 flex items-center justify-center px-4 sm:px-6 lg:px-8 2xl:px-12 py-10">
+      <div className="w-full max-w-[1800px] flex flex-col lg:flex-row justify-between items-center gap-8">
         <div className="w-[536px] space-y-5">
           <div className="text-cyan-500 text-base font-bold uppercase tracking-wide">
             {title}
@@ -45,7 +45,7 @@ export default function Newsletter({
               className="w-[464px] px-5 py-4 bg-white rounded-tl-[57px] rounded-tr-[52px] rounded-bl-[57px] rounded-br-[52px] text-indigo-950 text-lg font-semibold outline-none"
               required
             />
-            <button 
+            <button
               type="submit"
               className="w-52 px-5 py-4 bg-cyan-500 rounded-tl-[52px] rounded-tr-[57px] rounded-bl-[52px] rounded-br-[57px] flex justify-center items-center hover:bg-cyan-600 transition-colors"
             >

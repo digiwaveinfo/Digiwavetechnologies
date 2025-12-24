@@ -1,7 +1,7 @@
 export default function WhoWeAre() {
   return (
-    <section className="py-20 px-20">
-      <div className="flex items-center gap-12 max-w-[1280px] mx-auto">
+    <section className="py-20 px-4 sm:px-6 lg:px-8 2xl:px-12">
+      <div className="flex flex-col lg:flex-row items-center gap-12 max-w-[1800px] mx-auto">
         <div className="flex-[0_0_501px]">
           <h2 className="text-brand-dark-blue font-inter font-bold text-[40px] leading-[60px] mb-4">
             Who We Are Who We AreWho We Are

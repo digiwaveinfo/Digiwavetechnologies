@@ -36,16 +36,16 @@ const PROCESS_STEPS = [
 export default function ProductProcess() {
   return (
     <Section spacing="large" className="relative overflow-hidden">
-      <div className="w-[1280px] h-[1232px] mx-auto relative">
+      <div className="w-full max-w-[1800px] mx-auto relative">
         {/* Decorative curve */}
         <div className="absolute left-[314.45px] top-[169.13px]">
           <svg width="738" height="958" viewBox="0 0 738 958" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M74.5133 119.867C74.5133 119.867 647.395 -125.518 693.013 87.3668C744.013 325.366 -104.614 289.932 20.0133 493.867C144.64 697.802 537.985 274.139 632.013 493.867C727.013 715.866 -138.987 668.866 20.0133 895.367C157.409 1091.09 737.513 758.366 737.513 758.366" stroke="#84CDCC" strokeDasharray="12 12"/>
+            <path d="M74.5133 119.867C74.5133 119.867 647.395 -125.518 693.013 87.3668C744.013 325.366 -104.614 289.932 20.0133 493.867C144.64 697.802 537.985 274.139 632.013 493.867C727.013 715.866 -138.987 668.866 20.0133 895.367C157.409 1091.09 737.513 758.366 737.513 758.366" stroke="#84CDCC" strokeDasharray="12 12" />
           </svg>
         </div>
-        
+
         {/* Header and Content */}
-        <div className="w-[1280px] absolute left-0 top-0 flex flex-col items-center gap-7">
+        <div className="w-full max-w-[1800px] relative flex flex-col items-center gap-7">
           <div className="w-[727px] flex flex-col items-center gap-2.5">
             <div className="text-[#00BFD2] text-xl font-medium font-['Inter'] text-center">
               How does it works
@@ -54,11 +54,11 @@ export default function ProductProcess() {
               Our Process
             </div>
           </div>
-          
+
           {/* Process Cards Grid */}
-          <div className="w-full flex justify-start items-start gap-8 flex-wrap">
+          <div className="w-full flex justify-center items-start gap-8 flex-wrap">
             {PROCESS_STEPS.map((step, index) => (
-              <div key={index} className="w-[624px] h-80 relative bg-gray-300/10 rounded-3xl shadow-[1px_0px_5.300000190734863px_1px_rgba(64,64,64,0.27)] border border-gray-300/20 overflow-hidden hover:bg-cyan-400/5 hover:shadow-[1px_0px_5.300000190734863px_1px_rgba(0,242,217,0.06)] hover:border-2 hover:border-cyan-500 transition-all duration-300">
+              <div key={index} className="w-full lg:w-[calc(50%-1rem)] h-80 relative bg-gray-300/10 rounded-3xl shadow-[1px_0px_5.300000190734863px_1px_rgba(64,64,64,0.27)] border border-gray-300/20 overflow-hidden hover:bg-cyan-400/5 hover:shadow-[1px_0px_5.300000190734863px_1px_rgba(0,242,217,0.06)] hover:border-2 hover:border-cyan-500 transition-all duration-300">
                 <div className="left-[22px] top-[-1px] absolute text-gray-300/20 text-9xl font-extrabold font-['Inter'] hover:text-teal-200/20 transition-colors duration-300">
                   {step.number}
                 </div>

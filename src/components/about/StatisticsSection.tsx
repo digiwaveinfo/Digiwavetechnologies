@@ -5,7 +5,7 @@ export default function StatisticsSection() {
     return (
         <section className="w-full bg-neutral-100 py-20 overflow-hidden relative">
             {/* Container for the content */}
-            <div className="container mx-auto px-6 lg:px-20 relative">
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8 2xl:px-12 relative max-w-[1800px]">
                 <div className="lg:h-[737px] relative flex flex-col items-center gap-8 lg:block">
 
                     {/* Background Skyscraper Image (Desktop Only) */}

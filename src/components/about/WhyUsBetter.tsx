@@ -117,7 +117,7 @@ export default function WhyUsBetter() {
                 <Image src="/about/Whay-us-background.png" alt="Background Office" fill className="object-fill" />
             </div>
 
-            <div className="container mx-auto px-6 lg:px-20 relative z-10 h-full flex items-center">
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8 2xl:px-12 relative z-10 h-full flex items-center max-w-[1800px]">
                 <div className="w-full flex flex-col lg:flex-row items-center gap-16">
 
                     {/* Left Image (Business Man) */}

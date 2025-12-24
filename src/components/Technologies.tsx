@@ -66,7 +66,7 @@ export default function Technologies() {
 
   return (
     <section className="w-full py-16 md:py-24 bg-white flex flex-col justify-start items-center">
-      <div className="container mx-auto px-6 lg:px-20 flex flex-col items-center gap-12 w-full max-w-[1440px]">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 2xl:px-12 flex flex-col items-center gap-12 w-full max-w-[1800px]">
         {/* Header */}
         <div className="text-center text-[#00BFD2] text-xl font-medium font-['Poppins']">
           Technologies we used
