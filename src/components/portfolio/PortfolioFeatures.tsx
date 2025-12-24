@@ -1,36 +1,54 @@
-export default function PortfolioFeatures() {
+import { ReactNode } from "react";
+
+interface FeaturesProps {
+  title?: string;
+  leftContent?: ReactNode;
+  rightContent?: ReactNode;
+}
+
+export default function Features({
+  title = "Features",
+  leftContent,
+  rightContent,
+}: FeaturesProps) {
   return (
-    <section className="py-10 sm:py-16 px-5 sm:px-10 lg:px-20 bg-white">
-      <div className="max-w-[1280px] mx-auto">
-        <div className="w-full inline-flex flex-col justify-start items-start gap-2.5">
-          {/* Title */}
-          <div className="self-stretch h-14 justify-start text-sky-950 text-4xl font-bold font-['Inter'] leading-[60px]">
-            Features
+    <section className="w-full px-4 sm:px-6 lg:px-8 2xl:px-12 py-10 sm:py-12 lg:py-16">
+      <div className="max-w-[1800px] mx-auto flex flex-col gap-4">
+        {/* Title */}
+        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold leading-tight lg:leading-[60px] text-[#0A2540]">
+          {title}
+        </h2>
+
+        {/* Two Column Layout */}
+        <div className="flex flex-col lg:flex-row items-start gap-6 lg:gap-16">
+          {/* Left Column */}
+          <div className="flex-1 text-sm sm:text-base font-normal leading-relaxed lg:leading-[30px] text-[#1a1a1a]">
+            {leftContent || (
+              <>
+                Lorem ipsum dolor sit amet consectetur.<br />
+                Nullam sit aliquet facilisis in mauris.<br />
+                Viverra at commodo sed nec feugiat adipiscing.<br />
+                Risus pharetra amet velit urna amet etiam fermentum proin sed.<br />
+                In elementum orci tristique mauris massa in suspendisse vulputate ultricies.<br />
+                Lorem ipsum dolor sit amet consectetur. Nullam sit aliquet facilisis in mauris.<br />
+                Viverra at commodo sed nec feugiat adipiscing.
+              </>
+            )}
           </div>
-          
-          {/* Content Container */}
-          <div className="self-stretch inline-flex justify-start items-center gap-16 flex-col lg:flex-row">
-            {/* Left Column */}
-            <div className="w-full lg:w-[604px] h-52 justify-start text-stone-950 text-base font-normal font-['Inter'] leading-8">
-              Lorem ipsum dolor sit amet consectetur. <br/>
-              Nullam sit aliquet facilisis in mauris. <br/>
-              Viverra at commodo sed nec feugiat adipiscing. <br/>
-              Risus pharetra amet velit urna amet etiam fermentum proin sed. <br/>
-              In elementum orci tristique mauris massa in suspendisse vulputate ultricies.<br/>
-              Lorem ipsum dolor sit amet consectetur. Nullam sit aliquet facilisis in mauris. <br/>
-              Viverra at commodo sed nec feugiat adipiscing.
-            </div>
-            
-            {/* Right Column */}
-            <div className="w-full lg:w-[604px] h-52 justify-start text-stone-950 text-base font-normal font-['Inter'] leading-8">
-              Lorem ipsum dolor sit amet consectetur. <br/>
-              Nullam sit aliquet facilisis in mauris. <br/>
-              Viverra at commodo sed nec feugiat adipiscing. <br/>
-              Risus pharetra amet velit urna amet etiam fermentum proin sed. <br/>
-              In elementum orci tristique mauris massa in suspendisse vulputate ultricies.<br/>
-              Lorem ipsum dolor sit amet consectetur. Nullam sit aliquet facilisis in mauris. <br/>
-              Viverra at commodo sed nec feugiat adipiscing.
-            </div>
+
+          {/* Right Column */}
+          <div className="flex-1 text-sm sm:text-base font-normal leading-relaxed lg:leading-[30px] text-[#1a1a1a]">
+            {rightContent || (
+              <>
+                Lorem ipsum dolor sit amet consectetur.<br />
+                Nullam sit aliquet facilisis in mauris.<br />
+                Viverra at commodo sed nec feugiat adipiscing.<br />
+                Risus pharetra amet velit urna amet etiam fermentum proin sed.<br />
+                In elementum orci tristique mauris massa in suspendisse vulputate ultricies.<br />
+                Lorem ipsum dolor sit amet consectetur. Nullam sit aliquet facilisis in mauris.<br />
+                Viverra at commodo sed nec feugiat adipiscing.
+              </>
+            )}
           </div>
         </div>
       </div>

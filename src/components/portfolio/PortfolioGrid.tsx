@@ -48,8 +48,8 @@ const portfolioItems = [
 export default function PortfolioGrid() {
   return (
     <section className="py-10 sm:py-20 px-4 sm:px-6 lg:px-8 2xl:px-12 bg-white">
-      <div className="max-w-[1800px] mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+      <div className="max-w-[1600px] mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {portfolioItems.map((item, index) => (
             <PortfolioCard
               key={index}
