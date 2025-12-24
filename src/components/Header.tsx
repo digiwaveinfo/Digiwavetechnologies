@@ -62,7 +62,7 @@ export default function Header() {
       </div>
 
       {/* Main Navigation */}
-      <div className="w-full h-20 flex items-center justify-between px-4 sm:px-6 lg:px-8 2xl:px-12">
+      <div className="w-full h-14 lg:h-20 flex items-center justify-between px-4 sm:px-6 lg:px-8 2xl:px-12">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-3.5">
           <img
