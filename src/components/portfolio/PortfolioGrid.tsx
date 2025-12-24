@@ -2,36 +2,42 @@ import PortfolioCard from "@/components/PortfolioCard";
 
 const portfolioItems = [
   {
+    id: "estate-facility",
     title: "Estate Facility",
     description: "Lorem ipsum dolor sit amet consectetur. Nullam sit aliquet facilisis in mauris. Viverra at commodo sed nec feugiat adipiscing.",
     imageUrl: "/portfolio-card-image.png",
     technologies: ["PHP", "Swift", "Python"]
   },
   {
+    id: "estate-facility-2",
     title: "Estate Facility",
     description: "Lorem ipsum dolor sit amet consectetur. Nullam sit aliquet facilisis in mauris. Viverra at commodo sed nec feugiat adipiscing.",
     imageUrl: "/portfolio-card-image.png",
     technologies: ["PHP", "Swift", "Python"]
   },
   {
+    id: "estate-facility-3",
     title: "Estate Facility",
     description: "Lorem ipsum dolor sit amet consectetur. Nullam sit aliquet facilisis in mauris. Viverra at commodo sed nec feugiat adipiscing.",
     imageUrl: "/portfolio-card-image.png",
     technologies: ["PHP", "Swift", "Python"]
   },
   {
+    id: "estate-facility-4",
     title: "Estate Facility",
     description: "Lorem ipsum dolor sit amet consectetur. Nullam sit aliquet facilisis in mauris. Viverra at commodo sed nec feugiat adipiscing.",
     imageUrl: "/portfolio-card-image.png",
     technologies: ["PHP", "Swift", "Python"]
   },
   {
+    id: "estate-facility-5",
     title: "Estate Facility",
     description: "Lorem ipsum dolor sit amet consectetur. Nullam sit aliquet facilisis in mauris. Viverra at commodo sed nec feugiat adipiscing.",
     imageUrl: "/portfolio-card-image.png",
     technologies: ["PHP", "Swift", "Python"]
   },
   {
+    id: "estate-facility-6",
     title: "Estate Facility",
     description: "Lorem ipsum dolor sit amet consectetur. Nullam sit aliquet facilisis in mauris. Viverra at commodo sed nec feugiat adipiscing.",
     imageUrl: "/portfolio-card-image.png",
@@ -47,6 +53,7 @@ export default function PortfolioGrid() {
           {portfolioItems.map((item, index) => (
             <PortfolioCard
               key={index}
+              id={item.id}
               title={item.title}
               description={item.description}
               imageUrl={item.imageUrl}

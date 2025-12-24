@@ -24,11 +24,11 @@ export default function Contact() {
   ];
 
   return (
-    <section className="w-full py-16 md:py-24 bg-neutral-100 overflow-hidden">
+    <section className="w-full py-12 md:py-16 bg-neutral-100 overflow-hidden">
       <div className="container mx-auto px-6 lg:px-20 max-w-[1440px]">
         <div className="flex flex-col lg:flex-row justify-start items-stretch gap-7">
           {/* Left Card - Info */}
-          <div className="w-full lg:w-96 p-8 md:p-[50px] bg-white rounded-[10px] shadow-[0px_4px_23px_0px_rgba(174,191,210,0.30)] flex flex-col">
+          <div className="w-full lg:w-96 p-6 md:p-8 bg-white rounded-[10px] shadow-[0px_4px_23px_0px_rgba(174,191,210,0.30)] flex flex-col">
             <div>
               <h2 className="text-sky-950 text-4xl md:text-5xl font-bold font-['Inter'] leading-[60px]">
                 Let's Start
@@ -63,7 +63,7 @@ export default function Contact() {
             </div>
 
             {/* Steps */}
-            <div className="flex flex-col gap-2 mt-12 relative">
+            <div className="flex flex-col gap-2 mt-8 relative">
               <div className="absolute left-5 top-5 bottom-5 w-px bg-sky-700" />
               {steps.map((step, index) => (
                 <div key={index} className="flex items-center gap-3">
@@ -81,11 +81,11 @@ export default function Contact() {
           </div>
 
           {/* Right Card - Form */}
-          <div className="flex-1 p-8 md:p-[50px] bg-white rounded-[10px] shadow-[0px_4px_23px_0px_rgba(174,191,210,0.30)]">
+          <div className="flex-1 p-6 md:p-8 bg-white rounded-[10px] shadow-[0px_4px_23px_0px_rgba(174,191,210,0.30)]">
             <div className="text-[#00BFD2] text-xl font-medium font-['Poppins'] mb-4">
               Contact Us
             </div>
-            <h3 className="text-slate-900 text-xl md:text-2xl font-semibold font-['Inter'] leading-9 mb-8">
+            <h3 className="text-slate-900 text-xl md:text-2xl font-semibold font-['Inter'] leading-9 mb-6">
               Send us a message, and we'll promptly discuss your<br className="hidden md:block" />project with you.
             </h3>
 
