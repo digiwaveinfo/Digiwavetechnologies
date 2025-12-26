@@ -167,7 +167,7 @@ export default function Contact() {
               <div className="flex justify-center md:justify-end">
                 <button
                   type="submit"
-                  className="px-5 py-4 bg-cyan-500 rounded-[247px] inline-flex items-center gap-2.5 hover:opacity-90 transition-opacity cursor-pointer"
+                  className="px-5 py-4 bg-[#00BFD2] rounded-[247px] inline-flex items-center gap-2.5 hover:opacity-90 transition-opacity cursor-pointer"
                 >
                   <span className="text-white text-lg font-bold font-['Inter'] uppercase leading-7 tracking-wide">
                     Send Inquiry
