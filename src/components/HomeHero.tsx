@@ -27,27 +27,30 @@ export default function HomeHero() {
             </div>
 
             {/* Main Heading */}
-            <div className="self-stretch justify-center">
-              <span className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold font-['Inter'] leading-tight lg:leading-[68px]">
-                Transforming Ideas into{" "}
+            <div className="self-stretch justify-center flex flex-col space-y-1">
+              <span className="text-white text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold font-['Inter'] leading-tight whitespace-nowrap">
+                Digiwave Technologies Empowering
               </span>
-              <span className="text-cyan-300 text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold font-['Inter'] leading-tight lg:leading-[68px]">
-                Scalable Digital Solutions.
+              <span className="text-white text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold font-['Inter'] leading-tight whitespace-nowrap">
+                Businesses with Intelligent
+              </span>
+              <span className="text-cyan-300 text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold font-['Inter'] leading-tight whitespace-nowrap">
+                Tech Solutions
               </span>
             </div>
 
             {/* Description */}
             <div className="self-stretch justify-center text-white text-sm sm:text-base lg:text-lg font-normal font-['Inter'] leading-6 max-w-lg lg:max-w-none mx-auto lg:mx-0">
-              At Digiwave Technologies, we design, develop, and deploy intelligent digital solutions — from web applications to AI-powered systems.
+              We deliver AI-powered systems, scalable web & mobile applications, and secure cloud services that accelerate innovation and growth.
             </div>
           </div>
 
           {/* Buttons */}
           <div className="inline-flex justify-center lg:justify-start items-center gap-3 mt-2 sm:mt-0">
-            {/* Contact Us Button */}
+            {/* Book Demo Button */}
             <div className="h-12 sm:h-16 px-4 sm:px-5 py-3 sm:py-4 bg-cyan-500 rounded-[247px] inline-flex justify-center items-center gap-2.5 overflow-hidden hover:bg-cyan-600 transition-colors cursor-pointer">
               <div className="text-white text-base sm:text-lg font-bold font-['Inter'] uppercase leading-7 tracking-wide">
-                Contact Us
+                BOOK DEMO
               </div>
             </div>
 

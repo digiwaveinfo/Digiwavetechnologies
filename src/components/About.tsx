@@ -4,7 +4,7 @@ export default function About() {
   return (
     <section className="w-full bg-neutral-100 overflow-hidden py-16 lg:py-0">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 2xl:px-12 relative max-w-[1800px]">
-        <div className="flex flex-col lg:flex-row items-center lg:items-start lg:h-[705px]">
+        <div className="flex flex-col lg:flex-row items-center lg:items-start lg:h-[750px]">
 
           {/* Images Section */}
           <div className="relative w-full lg:w-[800px] h-[500px] lg:h-full mb-12 lg:mb-0">
@@ -27,79 +27,47 @@ export default function About() {
           </div>
 
           {/* Content Section */}
-          <div className="w-full lg:w-[542px] lg:mt-[138px] flex flex-col justify-start items-center lg:items-start gap-7 z-20">
+          <div className="w-full lg:w-[600px] lg:mt-[100px] flex flex-col justify-start items-center lg:items-start gap-6 z-20">
 
+            {/* Who We Are */}
             <div className="w-full flex flex-col justify-start items-center lg:items-start gap-2.5">
-              <div className="self-stretch flex flex-col justify-start items-center lg:items-start gap-3.5">
+              <div className="self-stretch flex flex-col justify-start items-center lg:items-start gap-3">
                 <div className="text-[#00BFD2] text-xl font-medium font-['Inter']">
                   About Us
                 </div>
-                <div className="text-[#0e2a47] text-4xl font-bold font-['Inter']">
+                <div className="text-[#0e2a47] text-3xl lg:text-4xl font-bold font-['Inter']">
                   Who We Are
                 </div>
               </div>
-              <div className="text-[#0c0c0c] text-base font-normal font-['Inter'] leading-6 mt-2 text-center lg:text-left">
-                Digiwave Technologies is a forward-thinking IT solutions company
-                focused on building scalable, secure, and future-ready digital
-                products.
-                <br />
-                <br />
-                We help businesses transform their ideas into powerful software
-                using modern technology, strategic planning, and user-first
-                design.
+              <div className="text-[#0c0c0c] text-base font-normal font-['Inter'] leading-7 mt-1 text-center lg:text-left">
+                Digiwave Technologies is a global IT services company delivering cutting-edge AI/ML, Cloud, Mobile & Web solutions that empower businesses to innovate and scale.
               </div>
             </div>
 
-            <div className="w-full flex flex-col sm:flex-row justify-center lg:justify-start items-center lg:items-start sm:items-center gap-8 lg:gap-16">
-              {/* Feature 01 */}
-              <div className="flex justify-start items-center gap-3">
-                <div className="relative w-[41px] h-[37px]">
-                  <svg
-                    width="41"
-                    height="37"
-                    viewBox="0 0 41 37"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <rect width="41" height="37" rx="5" fill="#62F4F3" />
-                  </svg>
-                  <div className="absolute inset-0 flex items-center justify-center text-white text-base font-extrabold font-['Poppins']">
-                    01
-                  </div>
-                </div>
-                <div className="text-[#0c0c0c] text-base font-normal font-['Inter'] leading-6 max-w-[180px]">
-                  Agile Development Approach
-                </div>
+            {/* Our Mission */}
+            <div className="w-full flex flex-col justify-start items-center lg:items-start gap-2">
+              <div className="text-[#0e2a47] text-xl lg:text-2xl font-bold font-['Inter']">
+                Our Mission
               </div>
-
-              {/* Feature 02 */}
-              <div className="flex justify-start items-center gap-3">
-                <div className="relative w-[41px] h-[37px]">
-                  <svg
-                    width="41"
-                    height="37"
-                    viewBox="0 0 41 37"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <rect width="41" height="37" rx="5" fill="#0064AC" />
-                  </svg>
-                  <div className="absolute inset-0 flex items-center justify-center text-white text-base font-extrabold font-['Poppins']">
-                    02
-                  </div>
-                </div>
-                <div className="text-[#0c0c0c] text-base font-normal font-['Inter'] leading-6 max-w-[180px]">
-                  Reliable Support & Maintenance
-                </div>
+              <div className="text-[#0c0c0c] text-base font-normal font-['Inter'] leading-7 text-center lg:text-left">
+                To help forward-looking businesses harness the power of technology — from automation with AI to responsive, user-centric applications.
               </div>
             </div>
 
-            <Link href="/about" className="px-5 py-4 bg-[#00BFD2] rounded-[247px] flex flex-col justify-center lg:justify-start items-center lg:items-start gap-2.5 overflow-hidden hover:opacity-90 transition-opacity mt-2">
-              <div className="self-stretch flex justify-start items-center gap-2.5">
-                <div className="text-center justify-center text-white text-lg font-bold font-['Inter'] uppercase leading-7 tracking-wide">
-                  View more about us
-                </div>
+            {/* Our Vision */}
+            <div className="w-full flex flex-col justify-start items-center lg:items-start gap-2">
+              <div className="text-[#0e2a47] text-xl lg:text-2xl font-bold font-['Inter']">
+                Our Vision
               </div>
+              <div className="text-[#0c0c0c] text-base font-normal font-['Inter'] leading-7 text-center lg:text-left">
+                Become the most trusted partner for digital transformation — speed, quality, security, and innovation at our core.
+              </div>
+            </div>
+
+            <Link href="/about" className="px-4 py-3 bg-[#00BFD2] rounded-full flex justify-center lg:justify-start items-center gap-2.5 overflow-hidden hover:opacity-90 transition-opacity mt-2">
+              <span className="text-center text-white text-base font-bold font-['Inter'] uppercase leading-6 tracking-wide">
+                View more about us
+              </span>
             </Link>
 
           </div>

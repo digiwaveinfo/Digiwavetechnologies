@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Poppins, Rubik } from "next/font/google";
 import "./globals.css";
 import { Providers } from "./providers";
+import ChatBot from "@/components/ChatBot";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const poppins = Poppins({ subsets: ["latin"], weight: ["400", "500", "700", "800"], variable: "--font-poppins" });
@@ -28,6 +29,7 @@ export default function RootLayout({
       >
         <Providers>
           {children}
+          <ChatBot />
         </Providers>
       </body>
     </html>
