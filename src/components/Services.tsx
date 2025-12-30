@@ -17,7 +17,7 @@ export default function Services() {
     },
     {
       id: "web-application-development",
-      title: "Web App Dev",
+      title: "Web App development",
       description:
         "Custom high-performance web solutions tailored for scale and performance.",
       image:
@@ -26,7 +26,7 @@ export default function Services() {
     },
     {
       id: "mobile-app-development",
-      title: "Mobile App Dev",
+      title: "Mobile App development",
       description:
         "Android, iOS, and cross-platform apps built for engagement and user experience.",
       image:
