@@ -10,6 +10,7 @@ import FounderQuote from "@/components/about/FounderQuote";
 import TeamCollage from "@/components/about/TeamCollage";
 import CoreValues from "@/components/about/CoreValues";
 import WhyUsBetter from "@/components/about/WhyUsBetter";
+import FAQ from "@/components/about/FAQ";
 import Contact from "@/components/Contact";
 
 export default function AboutPage() {
@@ -27,6 +28,7 @@ export default function AboutPage() {
                 <TeamCollage />
                 <WhyUsBetter />
                 <CoreValues />
+                <FAQ />
                 <Contact />
             </main>
             <Footer />

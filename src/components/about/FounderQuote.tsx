@@ -6,38 +6,29 @@ export default function FounderQuote() {
         <section className="w-full bg-white pb-20 pt-10">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 2xl:px-12 flex flex-col items-center gap-11 max-w-[1800px]">
                 <div className="text-center">
-                    <h3 className="text-cyan-500 text-xl font-medium font-['Poppins'] mb-2">Work We’re Proud Of</h3>
+                    <h3 className="text-cyan-500 text-xl font-medium font-['Poppins'] mb-2">Work We're Proud Of</h3>
                     <h2 className="text-sky-950 text-4xl font-bold font-['Poppins']">Hear it from the Founder</h2>
                 </div>
 
-                <div className="relative w-full rounded-2xl shadow-[0px_4px_23px_0px_rgba(0,0,0,0.16)] overflow-hidden min-h-[620px] flex flex-col lg:block items-start p-8 lg:p-0">
+                <div className="relative w-full rounded-2xl shadow-[0px_4px_23px_0px_rgba(0,0,0,0.16)] overflow-hidden flex items-center justify-center py-12 px-6 lg:py-16 lg:px-20">
 
                     {/* Background Image */}
                     <div className="absolute inset-0 z-0">
                         <Image
-                            src="/about/Founder-background.png"
+                            src="/founder.png"
                             alt="Background"
                             fill
-                            className="object-fill scale-110"
+                            className="object-cover"
                         />
+                        {/* Dark overlay for better text readability */}
+                        <div className="absolute inset-0 bg-black/40"></div>
                     </div>
 
-                    {/* Image Container - Matches Frame 1618875492 */}
-                    <div className="relative lg:absolute lg:left-[139px] lg:top-[151px] w-80 h-80 bg-neutral-200 rounded-[10px] overflow-hidden mb-8 lg:mb-0 shrink-0 z-10">
-                        <Image
-                            src="/about/co_founder 1.png"
-                            alt="Co-Founder"
-                            width={320}
-                            height={320}
-                            className="w-80 h-80 rounded-2xl object-fill absolute lg:left-[0px] lg:top-[0px]"
-                        />
-                    </div>
-
-                    {/* Text Content - Matches provided text block */}
-                    <div className="relative z-10 w-full lg:w-[712px] lg:absolute lg:left-[489px] lg:top-[196px] text-white text-base font-normal font-['Inter'] leading-6 text-left">
-                        Lorem ipsum dolor sit amet consectetur. Malesuada pharetra tempus augue suspendisse ultrices cursus sed. Rhoncus arcu sollicitudin in pharetra bibendum felis sollicitudin. Risus suspendisse maecenas sapien amet elementum pellentesque sagittis. Eu in elementum eu ac porttitor enim quam. Sit porta et bibendum ac odio tristique neque vulputate. Metus nunc id libero interdum. Ornare libero nam et diam et. Donec pulvinar sit purus odio.
-                        <br /><br />
-                        Nisl lobortis quis orci nullam enim egestas. Bibendum neque arcu mi nisl elementum. Odio tincidunt risus fermentum urna risus massa feugiat duis. Urna phasellus in facilisis proin. Semper in et enim risus ultricies. Duis morbi aenean fermentum adipiscing senectus turpis. Ut.
+                    {/* Text Content */}
+                    <div className="relative z-10 max-w-4xl text-center">
+                        <p className="text-white text-lg lg:text-xl font-normal font-['Inter'] leading-8 lg:leading-9">
+                            "At Digiwave, we believe technology should be an accelerator, not a hurdle. Our mission is to bridge the gap between human creativity and artificial intelligence, ensuring that every business—from startups to enterprises—has the tools to lead their industry."
+                        </p>
                     </div>
                 </div>
             </div>

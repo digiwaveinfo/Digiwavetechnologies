@@ -29,22 +29,22 @@ export default function CoreValues() {
     const values = [
         {
             title: "Passionate",
-            description: "We are intensely enthusiastic about providing a superior experience.",
+            description: "We are obsessed with solving 'unsolvable' problems.",
             icon: <PassionateIcon />,
         },
         {
             title: "Respectful",
-            description: "We are polite and kind to one another, even when it gets tough.",
+            description: "We treat our clients' businesses as our own.",
             icon: <RespectfulIcon />,
         },
         {
             title: "Ownership",
-            description: "We are empowered to do our jobs and work towards a common goal.",
+            description: "We don't just deliver; we take responsibility for the outcome.",
             icon: <OwnershipIcon />,
         },
         {
             title: "Unified",
-            description: "We work as a team and trust each other to create a seamless experience.",
+            description: "We operate as an extension of your team—Better Together.",
             icon: <UnifiedIcon />,
         },
     ];

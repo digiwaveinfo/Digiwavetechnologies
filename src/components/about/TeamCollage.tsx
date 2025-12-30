@@ -10,16 +10,16 @@ export default function TeamCollage() {
                 <div className="flex flex-col h-full gap-4">
                     <div className="relative w-full h-[58%] rounded-2xl overflow-hidden">
                         <Image
-                            src="https://placehold.co/510x341"
-                            alt="Celebrating successful deal"
+                            src="/image1.png"
+                            alt="Team image 1"
                             fill
                             className="object-cover"
                         />
                     </div>
                     <div className="relative w-full h-[42%] rounded-2xl overflow-hidden">
                         <Image
-                            src="https://placehold.co/392x230"
-                            alt="Business meeting"
+                            src="/image3.png"
+                            alt="Team image 3"
                             fill
                             className="object-cover"
                         />
@@ -29,8 +29,8 @@ export default function TeamCollage() {
                 {/* Column 2 */}
                 <div className="relative w-full h-full rounded-2xl overflow-hidden">
                     <Image
-                        src="https://placehold.co/397x595"
-                        alt="Office desk view"
+                        src="/image4.png"
+                        alt="Team image 4"
                         fill
                         className="object-cover"
                     />
@@ -40,16 +40,16 @@ export default function TeamCollage() {
                 <div className="flex flex-col h-full gap-4">
                     <div className="relative w-full h-[42%] rounded-2xl overflow-hidden">
                         <Image
-                            src="https://placehold.co/392x262"
-                            alt="Entrepreneurs working together"
+                            src="/image5.png"
+                            alt="Team image 5"
                             fill
                             className="object-cover"
                         />
                     </div>
                     <div className="relative w-full h-[58%] rounded-2xl overflow-hidden">
                         <Image
-                            src="https://placehold.co/512x341"
-                            alt="Businessmen using laptop"
+                            src="/image6.png"
+                            alt="Team image 6"
                             fill
                             className="object-cover"
                         />
@@ -59,8 +59,8 @@ export default function TeamCollage() {
                 {/* Column 4 */}
                 <div className="relative w-full h-full rounded-2xl overflow-hidden">
                     <Image
-                        src="https://placehold.co/405x591"
-                        alt="People working scenes"
+                        src="/image7.png"
+                        alt="Team image 7"
                         fill
                         className="object-cover"
                     />
@@ -73,30 +73,30 @@ export default function TeamCollage() {
                 {/* Row 1 */}
                 <div className="flex gap-4 h-64">
                     <div className="relative w-1/2 h-full rounded-xl overflow-hidden">
-                        <Image src="https://placehold.co/510x341" alt="Mobile 1" fill className="object-cover" />
+                        <Image src="/image1.png" alt="Team image 1" fill className="object-cover" />
                     </div>
                     <div className="relative w-1/2 h-full rounded-xl overflow-hidden">
-                        <Image src="https://placehold.co/392x262" alt="Mobile 2" fill className="object-cover" />
+                        <Image src="/image3.png" alt="Team image 3" fill className="object-cover" />
                     </div>
                 </div>
 
                 {/* Row 2 */}
                 <div className="flex gap-4 h-80">
                     <div className="relative w-1/2 h-full rounded-xl overflow-hidden">
-                        <Image src="https://placehold.co/397x595" alt="Mobile 3" fill className="object-cover" />
+                        <Image src="/image4.png" alt="Team image 4" fill className="object-cover" />
                     </div>
                     <div className="relative w-1/2 h-full rounded-xl overflow-hidden">
-                        <Image src="https://placehold.co/405x591" alt="Mobile 4" fill className="object-cover" />
+                        <Image src="/image5.png" alt="Team image 5" fill className="object-cover" />
                     </div>
                 </div>
 
                 {/* Row 3 */}
                 <div className="flex gap-4 h-64">
                     <div className="relative w-1/2 h-full rounded-xl overflow-hidden">
-                        <Image src="https://placehold.co/392x230" alt="Mobile 5" fill className="object-cover" />
+                        <Image src="/image6.png" alt="Team image 6" fill className="object-cover" />
                     </div>
                     <div className="relative w-1/2 h-full rounded-xl overflow-hidden">
-                        <Image src="https://placehold.co/512x341" alt="Mobile 6" fill className="object-cover" />
+                        <Image src="/image7.png" alt="Team image 7" fill className="object-cover" />
                     </div>
                 </div>
             </div>

@@ -2,99 +2,76 @@ import React from "react";
 import Image from "next/image";
 
 export default function StatisticsSection() {
-    return (
-        <section className="w-full bg-neutral-100 py-20 overflow-hidden relative">
-            {/* Container for the content */}
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8 2xl:px-12 relative max-w-[1800px]">
-                <div className="lg:h-[737px] relative flex flex-col items-center gap-8 lg:block">
+  const stats = [
+    {
+      icon: "/calender.png",
+      value: "3+",
+      label: "Years of Experience",
+    },
+    {
+      icon: "/client.png",
+      value: "10+",
+      label: "Active Clients",
+    },
+    {
+      icon: "/done-icon.png",
+      value: "10+",
+      label: "Successful Project",
+    },
+    {
+      icon: "/active-work.png",
+      value: "99.99%",
+      label: "Accurate work",
+    },
+  ];
 
-                    {/* Background Skyscraper Image (Desktop Only) */}
-                    <div className="hidden lg:block absolute left-[863px] top-[82px] w-[497px] h-[573px] bg-neutral-200 rounded-3xl overflow-hidden shadow-lg z-0">
-                        <Image
-                            src="https://placehold.co/908x606"
-                            alt="Low angle view skyscrapers"
-                            fill
-                            className="object-cover object-left"
-                        />
+  return (
+    <section className="w-full bg-[#F5F5F5] py-12 md:py-16 lg:py-20">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 2xl:px-12 max-w-[1800px]">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+          {/* Left side - Stats Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8">
+            {stats.map((stat, index) => (
+              <div
+                key={index}
+                className="flex p-[30px] items-center gap-2.5 rounded-[26px] bg-white shadow-[2px_3px_6.3px_1px_rgba(64,64,64,0.27)] min-h-[240px] lg:min-h-[273px]"
+              >
+                <div className="flex flex-col justify-between h-full w-full">
+                  <div className="w-20 h-20 relative mb-auto">
+                    <Image
+                      src={stat.icon}
+                      alt={stat.label}
+                      width={80}
+                      height={80}
+                      className="object-contain"
+                    />
+                  </div>
+                  <div className="flex flex-col gap-[5px] mt-6">
+                    <div className="font-['Poppins'] font-bold text-[40px] leading-[60px] text-[#00114C]">
+                      {stat.value}
                     </div>
-
-                    {/* Card 1: Years of Experience */}
-                    <div className="relative lg:absolute lg:left-[80px] lg:top-[82px] w-80 h-72 p-7 bg-white rounded-3xl shadow-[2px_3px_6.3px_1px_rgba(64,64,64,0.27)] flex flex-col justify-between items-start z-10">
-                        <Image
-                            src="https://placehold.co/81x81"
-                            alt="Experience Icon"
-                            width={80}
-                            height={80}
-                            className="w-20 h-20"
-                        />
-                        <div className="flex flex-col gap-[5px]">
-                            <div className="text-sky-950 text-4xl font-bold font-['Poppins'] leading-[60px]">
-                                3+
-                            </div>
-                            <div className="text-stone-950 text-base font-normal font-['Inter'] leading-6">
-                                Years of Experience
-                            </div>
-                        </div>
+                    <div className="font-['Inter'] font-normal text-base leading-6 text-[#0F0F10]">
+                      {stat.label}
                     </div>
-
-                    {/* Card 2: Active Clients */}
-                    <div className="relative lg:absolute lg:left-[472px] lg:top-[82px] w-80 h-72 p-7 bg-white rounded-3xl shadow-[2px_3px_6.3px_1px_rgba(64,64,64,0.27)] flex flex-col justify-between items-start z-10">
-                        <Image
-                            src="https://placehold.co/81x81"
-                            alt="Clients Icon"
-                            width={80}
-                            height={80}
-                            className="w-20 h-20"
-                        />
-                        <div className="flex flex-col gap-[5px]">
-                            <div className="text-sky-950 text-4xl font-bold font-['Poppins'] leading-[60px]">
-                                10+
-                            </div>
-                            <div className="text-stone-950 text-base font-normal font-['Inter'] leading-6">
-                                Active Clients
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Card 3: Successful Project */}
-                    <div className="relative lg:absolute lg:left-[80px] lg:top-[382px] w-80 h-72 p-7 bg-white rounded-3xl shadow-[2px_3px_6.3px_1px_rgba(64,64,64,0.27)] flex flex-col justify-between items-start z-10">
-                        <Image
-                            src="https://placehold.co/81x81"
-                            alt="Projects Icon"
-                            width={80}
-                            height={80}
-                            className="w-20 h-20"
-                        />
-                        <div className="flex flex-col gap-[5px]">
-                            <div className="text-sky-950 text-4xl font-bold font-['Poppins'] leading-[60px]">
-                                10+
-                            </div>
-                            <div className="text-stone-950 text-base font-normal font-['Inter'] leading-6">
-                                Successful Project
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Card 4: Accurate work */}
-                    <div className="relative lg:absolute lg:left-[472px] lg:top-[382px] w-80 h-72 p-7 bg-white rounded-3xl shadow-[2px_3px_6.3px_1px_rgba(64,64,64,0.27)] flex flex-col justify-between items-start z-10">
-                        <Image
-                            src="https://placehold.co/81x81"
-                            alt="Accuracy Icon"
-                            width={80}
-                            height={80}
-                            className="w-20 h-20"
-                        />
-                        <div className="flex flex-col gap-[5px]">
-                            <div className="text-sky-950 text-4xl font-bold font-['Poppins'] leading-[60px]">
-                                99.99%
-                            </div>
-                            <div className="text-stone-950 text-base font-normal font-['Inter'] leading-6">
-                                Accurate work
-                            </div>
-                        </div>
-                    </div>
+                  </div>
                 </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Right side - Image */}
+          <div className="flex justify-center lg:justify-end">
+            <div className="w-full max-w-[500px] h-[400px] lg:h-[550px] relative">
+              <Image
+                src="/Group.png"
+                alt="Modern skyscraper buildings"
+                fill
+                className="object-cover rounded-2xl"
+              />
             </div>
-        </section>
-    );
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 }

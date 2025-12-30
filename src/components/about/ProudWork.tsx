@@ -42,19 +42,19 @@ export default function ProudWork() {
                 {/* Logos Grid */}
                 <div className="flex flex-wrap justify-center items-center gap-10 lg:gap-16">
                     <div className="w-32 h-28 relative grayscale hover:grayscale-0 transition-all">
-                        <Image src="https://placehold.co/136x111" alt="Clutch Top 1000" fill className="object-contain" />
+                        <Image src="/1Figure.png" alt="Figure 1" fill className="object-contain" />
                     </div>
                     <div className="w-28 h-28 relative grayscale hover:grayscale-0 transition-all">
-                        <Image src="https://placehold.co/120x120" alt="Forbes 2022" fill className="object-contain" />
+                        <Image src="/2Figure.png" alt="Figure 2" fill className="object-contain" />
                     </div>
                     <div className="w-28 h-28 relative grayscale hover:grayscale-0 transition-all">
-                        <Image src="https://placehold.co/112x120" alt="Top Clutch" fill className="object-contain" />
+                        <Image src="/3 Figure.png" alt="Figure 3" fill className="object-contain" />
                     </div>
                     <div className="w-32 h-28 relative grayscale hover:grayscale-0 transition-all">
-                        <Image src="https://placehold.co/136x114" alt="NYC MSP" fill className="object-contain" />
+                        <Image src="/4Figure.png" alt="Figure 4" fill className="object-contain" />
                     </div>
                     <div className="w-24 h-28 relative grayscale hover:grayscale-0 transition-all">
-                        <Image src="https://placehold.co/100x120" alt="Google" fill className="object-contain" />
+                        <Image src="/5Figure.png" alt="Figure 5" fill className="object-contain" />
                     </div>
                 </div>
             </div>

@@ -118,7 +118,7 @@ export default function WhyUsBetter() {
             </div>
 
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 2xl:px-12 relative z-10 h-full flex items-center max-w-[1800px]">
-                <div className="w-full flex flex-col lg:flex-row items-center gap-16">
+                <div className="w-full flex flex-col lg:flex-row items-center justify-center gap-16">
 
                     {/* Left Image (Business Man) */}
                     <div className="hidden lg:block w-[520px] h-[502px] relative bg-stone-300 rounded-[19px] overflow-hidden shrink-0">
@@ -132,7 +132,7 @@ export default function WhyUsBetter() {
                     </div>
 
                     {/* Right Content */}
-                    <div className="flex-1 text-white">
+                    <div className="text-white">
                         <div className="mb-8">
                             <h3 className="text-cyan-500 text-xl font-medium font-['Poppins'] mb-2">Why Us Better</h3>
                             <h2 className="text-white text-4xl font-bold font-['Poppins'] leading-tight w-full max-w-[727px]">
