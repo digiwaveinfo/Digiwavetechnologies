@@ -130,7 +130,7 @@ export default function Testimonials() {
               <div className="flex gap-2">
                 <button
                   onClick={prevSlide}
-                  className="w-9 h-9 sm:w-10 sm:h-10 bg-cyan-300 rounded-full flex items-center justify-center hover:bg-cyan-400 transition-colors"
+                  className="w-9 h-9 sm:w-10 sm:h-10 bg-[#00BFD2] rounded-full flex items-center justify-center hover:opacity-90 transition-opacity"
                 >
                   <svg width="14" height="16" viewBox="0 0 14 16" fill="none">
                     <path d="M0.28125 7.28125C0.09375 7.48958 0 7.72917 0 8C0 8.27083 0.09375 8.51042 0.28125 8.71875L5.28125 13.7188C5.48958 13.9062 5.72917 14 6 14C6.27083 14 6.51042 13.9062 6.71875 13.7188C6.90625 13.5104 7 13.2708 7 13C7 12.7292 6.90625 12.4896 6.71875 12.2812L3.40625 9H13C13.2917 9 13.5312 8.90625 13.7188 8.71875C13.9062 8.53125 14 8.29167 14 8C14 7.70833 13.9062 7.46875 13.7188 7.28125C13.5312 7.09375 13.2917 7 13 7H3.40625L6.71875 3.71875C6.90625 3.51042 7 3.27083 7 3C7 2.72917 6.90625 2.48958 6.71875 2.28125C6.51042 2.09375 6.27083 2 6 2C5.72917 2 5.48958 2.09375 5.28125 2.28125L0.28125 7.28125Z" fill="#00114C" />
@@ -138,7 +138,7 @@ export default function Testimonials() {
                 </button>
                 <button
                   onClick={nextSlide}
-                  className="w-9 h-9 sm:w-10 sm:h-10 bg-cyan-300 rounded-full flex items-center justify-center hover:bg-cyan-400 transition-colors"
+                  className="w-9 h-9 sm:w-10 sm:h-10 bg-[#00BFD2] rounded-full flex items-center justify-center hover:opacity-90 transition-opacity"
                 >
                   <svg width="14" height="16" viewBox="0 0 14 16" fill="none">
                     <path d="M13.7188 8.71875C13.9062 8.51042 14 8.27083 14 8C14 7.72917 13.9062 7.48958 13.7188 7.28125L8.71875 2.28125C8.51042 2.09375 8.27083 2 8 2C7.72917 2 7.48958 2.09375 7.28125 2.28125C7.09375 2.48958 7 2.72917 7 3C7 3.27083 7.09375 3.51042 7.28125 3.71875L10.5938 7H1C0.708333 7 0.46875 7.09375 0.28125 7.28125C0.09375 7.46875 0 7.70833 0 8C0 8.29167 0.09375 8.53125 0.28125 8.71875C0.46875 8.90625 0.708333 9 1 9H10.5938L7.28125 12.2812C7.09375 12.4896 7 12.7292 7 13C7 13.2708 7.09375 13.5104 7.28125 13.7188C7.48958 13.9062 7.72917 14 8 14C8.27083 14 8.51042 13.9062 8.71875 13.7188L13.7188 8.71875Z" fill="#00114C" />

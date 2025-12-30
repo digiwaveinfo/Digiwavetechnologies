@@ -49,7 +49,7 @@ export default function HomeHero() {
           {/* Buttons */}
           <div className="inline-flex justify-center lg:justify-start items-center gap-3 mt-2 sm:mt-0">
             {/* Book Demo Button */}
-            <div className="h-12 sm:h-16 px-4 sm:px-5 py-3 sm:py-4 bg-cyan-500 rounded-[247px] inline-flex justify-center items-center gap-2.5 overflow-hidden hover:bg-cyan-600 transition-colors cursor-pointer">
+            <div className="h-12 sm:h-16 px-4 sm:px-5 py-3 sm:py-4 bg-[#00BFD2] rounded-[247px] inline-flex justify-center items-center gap-2.5 overflow-hidden hover:opacity-90 transition-opacity cursor-pointer">
               <div className="text-white text-base sm:text-lg font-bold font-['Inter'] uppercase leading-7 tracking-wide">
                 BOOK DEMO
               </div>
