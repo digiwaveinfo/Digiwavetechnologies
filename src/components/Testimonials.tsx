@@ -10,6 +10,7 @@ const StarIcon = () => (
 
 export default function Testimonials() {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [isExpanded, setIsExpanded] = useState(false);
 
   const reviews = [
     {
@@ -30,8 +31,14 @@ export default function Testimonials() {
     },
   ];
 
-  const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % reviews.length);
-  const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + reviews.length) % reviews.length);
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % reviews.length);
+    setIsExpanded(false);
+  };
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + reviews.length) % reviews.length);
+    setIsExpanded(false);
+  };
 
   return (
     <section className="w-full py-16 md:py-24 bg-white">
@@ -81,9 +88,19 @@ export default function Testimonials() {
               <h3 className="text-sky-700 text-xl sm:text-2xl md:text-3xl font-bold font-['Inter'] leading-tight sm:leading-9 mb-4 sm:mb-6">
                 "{reviews[currentSlide].quote}"
               </h3>
-              <p className="text-sky-950 text-sm sm:text-base md:text-xl font-normal font-['Inter'] leading-6 sm:leading-8">
-                {reviews[currentSlide].text}
-              </p>
+              <div className="relative">
+                <p className={`text-sky-950 text-sm sm:text-base md:text-xl font-normal font-['Inter'] leading-6 sm:leading-8 ${!isExpanded ? 'line-clamp-2' : ''}`}>
+                  {reviews[currentSlide].text}
+                </p>
+                {reviews[currentSlide].text.length > 100 && (
+                  <button
+                    onClick={() => setIsExpanded(!isExpanded)}
+                    className="text-[#00BFD2] text-sm font-medium mt-2 hover:underline"
+                  >
+                    {isExpanded ? 'Read less' : 'Read more'}
+                  </button>
+                )}
+              </div>
             </div>
 
             {/* Author & Navigation */}

@@ -1,22 +1,29 @@
 "use client";
 
+function HeroVideo() {
+  return (
+    <video
+      autoPlay
+      muted
+      loop
+      playsInline
+      suppressHydrationWarning
+      className="absolute inset-0 w-full h-full object-cover object-[center_70%] md:object-center"
+    >
+      <source src="/Hero-background.mp4" type="video/mp4" />
+    </video>
+  );
+}
+
 export default function HomeHero() {
   return (
     <section className="relative h-[500px] sm:h-[600px] md:h-[700px] lg:h-[752px] bg-[#0e2a47] overflow-hidden">
       {/* Background Video */}
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline
-        className="absolute inset-0 w-full h-full object-cover object-[center_70%] md:object-center"
-      >
-        <source src="/Hero-background.mp4" type="video/mp4" />
-      </video>
+      <HeroVideo />
 
       {/* Content Container */}
       <div className="relative z-10 h-full flex items-center justify-center lg:justify-start px-4 sm:px-6 lg:px-8 2xl:px-12">
-        <div className="w-full max-w-[619px] inline-flex flex-col justify-start items-center lg:items-start gap-5 sm:gap-7 text-center lg:text-left">
+        <div className="w-full max-w-[619px] xl:max-w-[750px] inline-flex flex-col justify-start items-center lg:items-start gap-5 sm:gap-7 text-center lg:text-left">
           {/* Main Content */}
           <div className="self-stretch flex flex-col justify-start items-center lg:items-start gap-4 sm:gap-5">
             {/* Free Consultation Badge */}
@@ -27,10 +34,9 @@ export default function HomeHero() {
             </div>
 
             {/* Main Heading */}
-            <h1 className="self-stretch justify-center flex flex-col space-y-1 text-white text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold font-['Inter'] leading-tight">
-              <span>Digiwave Technologies Empowering</span>
-              <span>Businesses with Intelligent</span>
-              <span className="text-cyan-300">Tech Solutions</span>
+            <h1 className="self-stretch justify-center flex flex-col space-y-1 text-white text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-[42px] font-bold font-['Inter'] leading-tight">
+              <span className="xl:whitespace-nowrap">Digiwave Technologies Empowering Businesses</span>
+              <span>with Intelligent <span className="text-cyan-300">Tech Solutions</span></span>
             </h1>
 
             {/* Description */}

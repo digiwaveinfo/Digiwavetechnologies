@@ -322,14 +322,14 @@ export default function Services() {
                     </div>
 
                     {/* Content Card - Overlapping */}
-                    <div className="w-[85%] h-48 absolute top-[202px] bg-white rounded-3xl shadow-[0px_6px_20px_0px_rgba(0,0,0,0.04)] overflow-hidden z-10 flex flex-col items-center justify-center px-4 transition-all hover:shadow-lg group-hover:shadow-xl">
+                    <div className="w-[85%] h-48 absolute top-[202px] bg-white rounded-3xl shadow-[0px_6px_20px_0px_rgba(0,0,0,0.04)] overflow-hidden z-10 flex flex-col items-center justify-center px-3 transition-all hover:shadow-lg group-hover:shadow-xl">
                       <div className="flex flex-col justify-center items-center gap-3">
                         <div
-                          className={`text-center ${service.titleColor} text-base lg:text-lg font-bold font-['Inter'] leading-6 whitespace-nowrap`}
+                          className={`text-center ${service.titleColor} text-sm sm:text-base lg:text-lg font-bold font-['Inter'] leading-5 sm:leading-6`}
                         >
                           {service.title}
                         </div>
-                        <div className="text-center text-black text-sm font-normal font-['Rubik'] leading-5 line-clamp-3">
+                        <div className="text-center text-black text-xs sm:text-sm font-normal font-['Rubik'] leading-4 sm:leading-5 line-clamp-3">
                           {service.description}
                         </div>
                       </div>

@@ -67,7 +67,7 @@ export default function ChatBot() {
   const [messages, setMessages] = useState([
     {
       id: 1,
-      text: "Hi! I'm Digi, your assistant. How can I help you today?",
+      text: "Hi! I'm DIGI, your assistant. How can I help you today?",
       isBot: true,
       timestamp: new Date()
     }
@@ -142,7 +142,7 @@ export default function ChatBot() {
                 <AnimatedRobot size={48} />
               </div>
               <div>
-                <h3 className="font-semibold text-base">Digi</h3>
+                <h3 className="font-semibold text-base">DIGI</h3>
                 <div className="flex items-center gap-1.5">
                   <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
                   <p className="text-xs opacity-90">Online now</p>
@@ -190,7 +190,7 @@ export default function ChatBot() {
                 value={inputMessage}
                 onChange={(e) => setInputMessage(e.target.value)}
                 onKeyDown={handleKeyDown}
-                placeholder="Ask Digi anything..."
+                placeholder="Ask DIGI anything..."
                 className="flex-1 px-4 py-3 border border-gray-200 rounded-full focus:outline-none focus:ring-2 focus:ring-[#00BFD2] focus:border-transparent text-sm"
               />
               <button
@@ -215,7 +215,7 @@ export default function ChatBot() {
               <X className="w-3 h-3" />
             </button>
             <p className="text-gray-800 text-sm font-medium mb-1">👋 Need help?</p>
-            <p className="text-gray-600 text-xs">Ask Digi about our services, pricing, or anything else!</p>
+            <p className="text-gray-600 text-xs">Ask DIGI about our services, pricing, or anything else!</p>
             {/* Arrow pointing to robot */}
             <div className="absolute -bottom-2 right-8 w-4 h-4 bg-white border-r border-b border-gray-100 transform rotate-45"></div>
           </div>
