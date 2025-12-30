@@ -72,66 +72,138 @@ const StickyCard = ({ i, card, progress, range, targetScale }: StickyCardProps) 
 
   const scale = useTransform(progress, range, [1, targetScale]);
 
-  // Cards stick just below navbar: 116px navbar + 20px gap
+  // Get background color based on card type
+  const getCardBgColor = (type: string) => {
+    switch (type) {
+      case "blue": return "#0064AC";
+      case "dark": return "#0e2a47";
+      case "teal": return "#ffffff";
+      case "white": return "#ffffff";
+      default: return "#0064AC";
+    }
+  };
+
+  // Cards stick just below navbar
   return (
     <div
       ref={container}
-      className="h-[550px] flex items-start justify-center sticky z-30"
-      style={{ top: `calc(136px + ${i * 30}px)` }}
+      className="min-h-[520px] md:min-h-[470px] flex items-start justify-center sticky z-30"
+      style={{ top: `calc(80px + ${i * 20}px)` }}
     >
+      {/* Mobile Card Layout */}
+      <motion.div
+        style={{ scale, background: getCardBgColor(card.type) }}
+        className="md:hidden relative w-full rounded-2xl overflow-hidden shadow-[0px_4px_23px_rgba(0,0,0,0.16)]"
+      >
+        {/* Mobile Image - at top */}
+        <div className="w-full h-48 bg-stone-100 overflow-hidden relative z-[2]">
+          <img
+            src={card.image}
+            alt={card.title}
+            className="w-full h-full object-cover object-top"
+          />
+        </div>
+
+        {/* Mobile Content */}
+        <div className="p-6 flex flex-col gap-5 relative">
+          {/* Teal overlay for teal cards - only on content area */}
+          {card.type === "teal" && (
+            <div className="absolute inset-0 z-0 bg-[#00BFD2]/10 pointer-events-none" />
+          )}
+          
+          {/* Tag */}
+          <div className="px-6 py-1.5 bg-sky-700/90 rounded-full inline-flex self-start relative z-[1]">
+            <span className="text-white text-sm font-medium font-['Inter']">
+              {card.tag}
+            </span>
+          </div>
+
+          {/* Title */}
+          <h3 className={`${getTextColor(card.type)} text-2xl font-semibold font-['Inter'] leading-tight relative z-[1]`}>
+            {card.title}
+          </h3>
+
+          {/* Description */}
+          <p className={`${getDescColor(card.type)} text-sm font-normal font-['Inter'] leading-6 relative z-[1]`}>
+            {card.description}
+          </p>
+
+          {/* Button */}
+          <Link 
+            href={`/portfolio/${card.id}`}
+            className="px-5 py-3 bg-[#00BFD2] rounded-full inline-flex self-start hover:opacity-90 transition-opacity relative z-[1]"
+          >
+            <span className="text-white text-base font-bold font-['Inter'] uppercase tracking-wide">
+              View details
+            </span>
+          </Link>
+        </div>
+      </motion.div>
+
+      {/* Desktop/Tablet Card Layout */}
       <motion.div
         style={{ scale }}
-        className={`relative flex flex-col w-full max-w-[1600px] h-[500px] rounded-3xl origin-top overflow-hidden shadow-2xl ${getCardBg(card.type)}`}
+        className={`hidden md:block relative w-full max-w-[1600px] h-[450px] rounded-2xl origin-top overflow-hidden shadow-[0px_4px_23px_rgba(0,0,0,0.16)] ${getCardBg(card.type)}`}
       >
-        {/* Teal overlay for teal cards */}
+        {/* Teal overlay for teal cards - only on left content area */}
         {card.type === "teal" && (
-          <div className="absolute inset-0 z-0 bg-teal-300/10 pointer-events-none" />
+          <div className="absolute left-0 top-0 w-[64%] h-full z-[1] bg-[#00BFD2]/10 pointer-events-none" />
         )}
-        
-        <div className="flex flex-col lg:flex-row h-full w-full">
-          {/* Background Image for blue/dark cards */}
-          {card.backgroundImage && (
-            <img
-              src={card.backgroundImage}
-              alt="Card Background"
-              className="absolute inset-0 z-0 w-full h-full object-fill pointer-events-none scale-[1.15]"
-            />
-          )}
 
-          {/* Content Section */}
-          <div className="w-full lg:w-[60%] p-8 lg:p-[40px] xl:p-[60px] flex flex-col justify-center items-start gap-7 order-2 lg:order-1 relative z-10">
-            <div className="flex flex-col justify-start items-start gap-7">
-              <div className="px-8 py-1.5 bg-sky-700/90 backdrop-blur-sm rounded-full inline-flex justify-center items-center gap-2.5 overflow-hidden">
-                <div className="text-white text-base font-medium font-['Inter'] leading-6">
-                  {card.tag}
-                </div>
-              </div>
-              <div className="flex flex-col justify-start items-start gap-3.5">
-                <div className={`${getTextColor(card.type)} text-3xl md:text-4xl lg:text-5xl font-semibold font-['Inter'] leading-tight`}>
-                  {card.title}
-                </div>
-                <div className={`${getDescColor(card.type)} text-base font-normal font-['Inter'] leading-6 max-w-[600px]`}>
-                  {card.description}
-                </div>
-              </div>
-            </div>
-            <div className="mt-4 px-6 py-3 bg-[#00BFD2] text-white rounded-full flex flex-col justify-start items-start gap-2.5 overflow-hidden cursor-pointer hover:opacity-90 transition-opacity shadow-lg">
-              <Link href={`/portfolio/${card.id}`} className="inline-flex justify-start items-center gap-2.5">
-                <div className="text-center justify-center text-lg font-bold font-['Inter'] uppercase leading-7 tracking-wide">
-                  View details
-                </div>
-              </Link>
-            </div>
+        {/* Background Image for blue/dark cards */}
+        {card.backgroundImage && (
+          <img
+            src={card.backgroundImage}
+            alt="Card Background"
+            className="absolute inset-0 z-0 w-full h-full object-fill pointer-events-none scale-[1.15]"
+          />
+        )}
+
+        {/* Background color for cards without background image */}
+        {!card.backgroundImage && (
+          <div 
+            className="absolute inset-0 z-0" 
+            style={{ background: getCardBgColor(card.type) }}
+          />
+        )}
+
+        {/* Content Section */}
+        <div className="absolute left-0 top-0 w-[64%] h-full p-8 lg:p-[40px] xl:p-[60px] flex flex-col justify-center items-start gap-6 lg:gap-7 z-10">
+          {/* Tag */}
+          <div className="px-8 py-1.5 bg-sky-700/90 backdrop-blur-sm rounded-full inline-flex">
+            <span className="text-white text-base font-medium font-['Inter']">
+              {card.tag}
+            </span>
           </div>
 
-          {/* Image Section */}
-          <div className="w-full lg:w-[40%] h-48 lg:h-auto relative overflow-hidden order-1 lg:order-2 bg-stone-100 dark:bg-stone-800">
-            <img
-              src={card.image}
-              alt={card.title}
-              className="w-full h-full object-cover"
-            />
+          {/* Title and Description */}
+          <div className="flex flex-col gap-4">
+            <h3 className={`${getTextColor(card.type)} text-3xl lg:text-4xl xl:text-[46px] font-semibold font-['Inter'] leading-tight`}>
+              {card.title}
+            </h3>
+            <p className={`${getDescColor(card.type)} text-base font-normal font-['Inter'] leading-6 max-w-[600px]`}>
+              {card.description}
+            </p>
           </div>
+
+          {/* Button */}
+          <Link 
+            href={`/portfolio/${card.id}`}
+            className="px-6 py-4 bg-[#00BFD2] rounded-full inline-flex hover:opacity-90 transition-opacity"
+          >
+            <span className="text-white text-lg font-bold font-['Inter'] uppercase tracking-wide">
+              View details
+            </span>
+          </Link>
+        </div>
+
+        {/* Image Section - positioned absolutely on right */}
+        <div className="absolute right-0 top-0 w-[36%] h-full bg-stone-100 overflow-hidden">
+          <img
+            src={card.image}
+            alt={card.title}
+            className="w-full h-full object-cover"
+          />
         </div>
       </motion.div>
     </div>

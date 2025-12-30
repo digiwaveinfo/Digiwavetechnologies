@@ -1,6 +1,6 @@
 export default function SupportBanner() {
   return (
-    <section className="w-full relative h-[500px] bg-slate-900 overflow-hidden flex items-center justify-center">
+    <section className="w-full relative h-[350px] md:h-[35/*  */0px] bg-slate-900 overflow-hidden flex items-center justify-center">
       {/* Background Video */}
       <video
         autoPlay

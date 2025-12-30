@@ -21,8 +21,13 @@ export default function Header() {
 
   return (
     <header className="w-full bg-white shadow-[0px_4px_4px_0px_rgba(181,181,181,0.25)] sticky top-0 z-50 flex flex-col">
-      {/* Top Bar - Social Icons */}
-      <div className="w-full bg-[#00BFD2] h-9 flex items-center justify-end px-4 sm:px-6 lg:px-8 2xl:px-12">
+      {/* Top Bar - Email & Social Icons */}
+      <div className="w-full bg-[#00BFD2] h-9 flex items-center justify-between px-4 sm:px-6 lg:px-8 2xl:px-12">
+        {/* Email */}
+        <a href="mailto:info@digiwavetechnologies.in" className="flex items-center gap-2 text-white hover:opacity-80 transition-opacity">
+          <span className="text-sm font-medium hidden sm:inline">info@digiwavetechnologies.in</span>
+        </a>
+        
         <div className="flex justify-start items-center gap-3">
           {/* Facebook */}
           <a href="#" className="relative w-6 h-6 hover:opacity-80 transition-opacity">
@@ -68,17 +73,17 @@ export default function Header() {
           <img
             src="https://api.builder.io/api/v1/image/assets/TEMP/53464a68dade6f8a9a2888ca2325aca87ab049c8?width=191"
             alt="Digiwave Logo"
-            className="w-20 h-10 object-contain"
+            className="w-20 h-10 object-fill"
           />
           <img
             src="https://api.builder.io/api/v1/image/assets/TEMP/c4036386951a1d6ca44a4c518adf6a756d6a4c54?width=437"
             alt="Digiwave Technologies"
-            className="w-48 h-10 object-contain hidden sm:block"
+            className="w-48 h-8 object-fill object-left hidden sm:block translate-y-[5px]"
           />
         </Link>
 
         {/* Desktop Menu */}
-        <div className="hidden lg:flex items-center gap-2.5">
+        <div className="hidden xl:flex items-center gap-2.5">
           {navLinks.map((link) => (
             <Link
               key={link.href}
@@ -93,7 +98,7 @@ export default function Header() {
         </div>
 
         {/* Contact Us Button */}
-        <div className="hidden lg:flex">
+        <div className="hidden xl:flex">
           <Link href="/contact" className="w-48 px-5 py-4 bg-[#00BFD2] rounded-[247px] flex justify-center items-center gap-2.5 hover:opacity-90 transition-opacity">
             <span className="text-white text-sm font-bold font-['Inter'] uppercase leading-4 tracking-wide">Contact Us</span>
             <svg width="13" height="16" viewBox="0 0 13 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -104,7 +109,7 @@ export default function Header() {
 
         {/* Mobile Menu Button */}
         <button
-          className="lg:hidden p-2 text-gray-600"
+          className="xl:hidden p-2 text-gray-600"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label="Toggle mobile menu"
         >
@@ -118,7 +123,7 @@ export default function Header() {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="lg:hidden bg-white border-t border-gray-100 shadow-lg">
+        <div className="xl:hidden bg-white border-t border-gray-100 shadow-lg">
           <nav className="flex flex-col py-4 px-4 sm:px-6">
             {navLinks.map((link) => (
               <Link

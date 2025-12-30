@@ -38,23 +38,23 @@ export default function Testimonials() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 2xl:px-12 max-w-[1800px]">
         <div className="flex flex-col lg:flex-row justify-start items-stretch gap-5">
           {/* Stats Card */}
-          <div className="w-full lg:w-96 p-[50px] bg-white rounded-[10px] shadow-[0px_4px_23px_0px_rgba(174,191,210,0.30)] flex flex-col justify-between">
+          <div className="w-full lg:w-96 p-6 sm:p-8 md:p-[50px] bg-white rounded-[10px] shadow-[0px_4px_23px_0px_rgba(174,191,210,0.30)] flex flex-col justify-between">
             <div>
-              <div className="text-[#00BFD2] text-4xl md:text-5xl font-bold font-['Inter'] leading-[66px]">3,900+</div>
-              <div className="text-sky-950 text-3xl md:text-5xl font-bold font-['Inter'] leading-[54px] mt-2">
+              <div className="text-[#00BFD2] text-3xl sm:text-4xl md:text-5xl font-bold font-['Inter'] leading-tight md:leading-[66px]">3,900+</div>
+              <div className="text-sky-950 text-2xl sm:text-3xl md:text-5xl font-bold font-['Inter'] leading-tight md:leading-[54px] mt-2">
                 customers<br />win deals<br />with Techco
               </div>
             </div>
 
             {/* Review Logos */}
-            <div className="flex flex-col sm:flex-row gap-8 mt-8">
+            <div className="flex flex-row gap-6 sm:gap-8 mt-6 sm:mt-8">
               {/* Clutch */}
               <div className="flex flex-col gap-2">
-                <div className="text-2xl font-bold">C</div>
+                <div className="text-xl sm:text-2xl font-bold">C</div>
                 <div className="flex gap-1">
                   {[...Array(5)].map((_, i) => <StarIcon key={i} />)}
                 </div>
-                <div className="text-sm">
+                <div className="text-xs sm:text-sm">
                   <span className="text-zinc-600">From </span>
                   <span className="text-slate-900 font-bold">200+</span>
                   <span className="text-zinc-600"> reviews</span>
@@ -62,11 +62,11 @@ export default function Testimonials() {
               </div>
               {/* G2 */}
               <div className="flex flex-col gap-2">
-                <div className="text-2xl font-bold text-red-500">G2</div>
+                <div className="text-xl sm:text-2xl font-bold text-red-500">G2</div>
                 <div className="flex gap-1">
                   {[...Array(5)].map((_, i) => <StarIcon key={i} />)}
                 </div>
-                <div className="text-sm">
+                <div className="text-xs sm:text-sm">
                   <span className="text-zinc-600">From </span>
                   <span className="text-slate-900 font-bold">300+</span>
                   <span className="text-zinc-600"> reviews</span>
@@ -76,20 +76,20 @@ export default function Testimonials() {
           </div>
 
           {/* Testimonial Card */}
-          <div className="flex-1 p-8 md:p-[50px] bg-white rounded-[10px] shadow-[0px_4px_23px_0px_rgba(174,191,210,0.30)] flex flex-col justify-between">
+          <div className="flex-1 p-6 sm:p-8 md:p-[50px] bg-white rounded-[10px] shadow-[0px_4px_23px_0px_rgba(174,191,210,0.30)] flex flex-col justify-between">
             <div>
-              <h3 className="text-sky-700 text-2xl md:text-3xl font-bold font-['Inter'] leading-9 mb-6">
+              <h3 className="text-sky-700 text-xl sm:text-2xl md:text-3xl font-bold font-['Inter'] leading-tight sm:leading-9 mb-4 sm:mb-6">
                 "{reviews[currentSlide].quote}"
               </h3>
-              <p className="text-sky-950 text-base md:text-xl font-normal font-['Inter'] leading-8">
+              <p className="text-sky-950 text-sm sm:text-base md:text-xl font-normal font-['Inter'] leading-6 sm:leading-8">
                 {reviews[currentSlide].text}
               </p>
             </div>
 
             {/* Author & Navigation */}
-            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-6 mt-8">
-              <div className="flex items-center gap-4">
-                <div className="w-20 h-24 md:w-28 md:h-32 bg-sky-100 rounded-[10px] overflow-hidden">
+            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4 sm:gap-6 mt-6 sm:mt-8">
+              <div className="flex items-center gap-3 sm:gap-4">
+                <div className="w-16 h-20 sm:w-20 sm:h-24 md:w-28 md:h-32 bg-sky-100 rounded-[10px] overflow-hidden flex-shrink-0">
                   <img
                     src={reviews[currentSlide].image}
                     alt={reviews[currentSlide].name}
@@ -97,13 +97,13 @@ export default function Testimonials() {
                   />
                 </div>
                 <div>
-                  <div className="text-slate-900 text-lg md:text-xl font-semibold font-['Inter']">
+                  <div className="text-slate-900 text-base sm:text-lg md:text-xl font-semibold font-['Inter']">
                     {reviews[currentSlide].name}
                   </div>
-                  <div className="text-zinc-600 text-sm font-medium font-['Inter']">
+                  <div className="text-zinc-600 text-xs sm:text-sm font-medium font-['Inter']">
                     {reviews[currentSlide].role}
                   </div>
-                  <div className="text-slate-900 text-xs font-medium font-['Inter'] mt-2">
+                  <div className="text-slate-900 text-xs font-medium font-['Inter'] mt-1 sm:mt-2">
                     📍 {reviews[currentSlide].location}
                   </div>
                 </div>
@@ -113,7 +113,7 @@ export default function Testimonials() {
               <div className="flex gap-2">
                 <button
                   onClick={prevSlide}
-                  className="w-10 h-10 bg-cyan-300 rounded-full flex items-center justify-center hover:bg-cyan-400 transition-colors"
+                  className="w-9 h-9 sm:w-10 sm:h-10 bg-cyan-300 rounded-full flex items-center justify-center hover:bg-cyan-400 transition-colors"
                 >
                   <svg width="14" height="16" viewBox="0 0 14 16" fill="none">
                     <path d="M0.28125 7.28125C0.09375 7.48958 0 7.72917 0 8C0 8.27083 0.09375 8.51042 0.28125 8.71875L5.28125 13.7188C5.48958 13.9062 5.72917 14 6 14C6.27083 14 6.51042 13.9062 6.71875 13.7188C6.90625 13.5104 7 13.2708 7 13C7 12.7292 6.90625 12.4896 6.71875 12.2812L3.40625 9H13C13.2917 9 13.5312 8.90625 13.7188 8.71875C13.9062 8.53125 14 8.29167 14 8C14 7.70833 13.9062 7.46875 13.7188 7.28125C13.5312 7.09375 13.2917 7 13 7H3.40625L6.71875 3.71875C6.90625 3.51042 7 3.27083 7 3C7 2.72917 6.90625 2.48958 6.71875 2.28125C6.51042 2.09375 6.27083 2 6 2C5.72917 2 5.48958 2.09375 5.28125 2.28125L0.28125 7.28125Z" fill="#00114C" />
@@ -121,7 +121,7 @@ export default function Testimonials() {
                 </button>
                 <button
                   onClick={nextSlide}
-                  className="w-10 h-10 bg-cyan-300 rounded-full flex items-center justify-center hover:bg-cyan-400 transition-colors"
+                  className="w-9 h-9 sm:w-10 sm:h-10 bg-cyan-300 rounded-full flex items-center justify-center hover:bg-cyan-400 transition-colors"
                 >
                   <svg width="14" height="16" viewBox="0 0 14 16" fill="none">
                     <path d="M13.7188 8.71875C13.9062 8.51042 14 8.27083 14 8C14 7.72917 13.9062 7.48958 13.7188 7.28125L8.71875 2.28125C8.51042 2.09375 8.27083 2 8 2C7.72917 2 7.48958 2.09375 7.28125 2.28125C7.09375 2.48958 7 2.72917 7 3C7 3.27083 7.09375 3.51042 7.28125 3.71875L10.5938 7H1C0.708333 7 0.46875 7.09375 0.28125 7.28125C0.09375 7.46875 0 7.70833 0 8C0 8.29167 0.09375 8.53125 0.28125 8.71875C0.46875 8.90625 0.708333 9 1 9H10.5938L7.28125 12.2812C7.09375 12.4896 7 12.7292 7 13C7 13.2708 7.09375 13.5104 7.28125 13.7188C7.48958 13.9062 7.72917 14 8 14C8.27083 14 8.51042 13.9062 8.71875 13.7188L13.7188 8.71875Z" fill="#00114C" />
