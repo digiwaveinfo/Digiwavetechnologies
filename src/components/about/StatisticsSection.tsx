@@ -28,13 +28,13 @@ export default function StatisticsSection() {
   return (
     <section className="w-full bg-[#F5F5F5] py-12 md:py-16 lg:py-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 2xl:px-12 max-w-[1800px]">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
           {/* Left side - Stats Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8">
             {stats.map((stat, index) => (
               <div
                 key={index}
-                className="flex p-[30px] items-center gap-2.5 rounded-[26px] bg-white shadow-[2px_3px_6.3px_1px_rgba(64,64,64,0.27)] min-h-[240px] lg:min-h-[273px]"
+                className="flex p-[30px] items-center gap-2.5 rounded-[26px] bg-white shadow-[2px_3px_6.3px_1px_rgba(64,64,64,0.27)]"
               >
                 <div className="flex flex-col justify-between h-full w-full">
                   <div className="w-20 h-20 relative mb-auto">
@@ -60,15 +60,13 @@ export default function StatisticsSection() {
           </div>
 
           {/* Right side - Image */}
-          <div className="flex justify-center lg:justify-end">
-            <div className="w-full max-w-[500px] h-[400px] lg:h-[550px] relative">
-              <Image
-                src="/Group.png"
-                alt="Modern skyscraper buildings"
-                fill
-                className="object-cover rounded-2xl"
-              />
-            </div>
+          <div className="relative w-full h-full min-h-[400px]">
+            <Image
+              src="/Group.png"
+              alt="Modern skyscraper buildings"
+              fill
+              className="object-cover rounded-2xl"
+            />
           </div>
         </div>
       </div>
