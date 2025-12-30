@@ -4,32 +4,32 @@ const PROCESS_STEPS = [
   {
     number: "1",
     title: "Requirement Analysis",
-    description: "We begin by deeply understanding your business objectives, target audience, and technical requirements. This phase helps us align the solution with your long-term vision and avoid costly rework later."
+    description: "We deep-dive into your vision."
   },
   {
     number: "2",
-    title: "UI/UX Design",
-    description: "Our design team focuses on creating intuitive, visually engaging, and user-centered interfaces. Every screen is crafted to ensure ease of use and seamless navigation."
+    title: "Strategic Design",
+    description: "UI/UX crafted for your specific target audience."
   },
   {
     number: "3",
-    title: "Building Scalable & Secure Solutions",
-    description: "Using modern frameworks and clean coding practices, we transform designs into functional, high-performance applications."
+    title: "Agile Development",
+    description: "Sprints with frequent updates and feedback loops."
   },
   {
     number: "4",
-    title: "Testing & Quality Assurance",
-    description: "We rigorously test the application to identify bugs, improve performance, and ensure a seamless user experience across devices."
+    title: "Rigorous QA",
+    description: "Automated and manual testing for a bug-free launch."
   },
   {
     number: "5",
-    title: "Launching with Confidence",
-    description: "Once the application passes all quality checks, we ensure a smooth and secure deployment with minimal downtime."
+    title: "Deployment & Launch",
+    description: "Secure go-live with 24/7 monitoring."
   },
   {
     number: "6",
-    title: "Continuous Improvement & Growth",
-    description: "Our relationship doesn't end at launch. We provide ongoing support to keep your product secure, updated, and competitive."
+    title: "Continuous Growth",
+    description: "Post-launch support and AI-driven optimizations."
   }
 ];
 

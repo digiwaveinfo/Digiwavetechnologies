@@ -12,6 +12,7 @@ import CoreValues from "@/components/about/CoreValues";
 import WhyUsBetter from "@/components/about/WhyUsBetter";
 import FAQ from "@/components/about/FAQ";
 import Contact from "@/components/Contact";
+import ProductProcess from "@/components/product/ProductProcess";
 
 export default function AboutPage() {
     return (
@@ -28,6 +29,7 @@ export default function AboutPage() {
                 <TeamCollage />
                 <WhyUsBetter />
                 <CoreValues />
+                <ProductProcess />
                 <FAQ />
                 <Contact />
             </main>

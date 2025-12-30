@@ -85,9 +85,9 @@ export default function Footer() {
                 <Link href="/services" className="text-sky-950 text-base font-normal font-['Inter'] leading-6 hover:text-[#00BFD2] transition-colors">
                   Services
                 </Link>
-                <Link href="/product" className="text-sky-950 text-base font-normal font-['Inter'] leading-6 hover:text-[#00BFD2] transition-colors">
+                {/* <Link href="/product" className="text-sky-950 text-base font-normal font-['Inter'] leading-6 hover:text-[#00BFD2] transition-colors">
                   Product
-                </Link>
+                </Link> */}
                 <Link href="/portfolio" className="text-sky-950 text-base font-normal font-['Inter'] leading-6 hover:text-[#00BFD2] transition-colors">
                   Portfolio
                 </Link>

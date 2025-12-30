@@ -1,9 +1,9 @@
 export default function WhoWeAre() {
   return (
-    <section className="py-16 lg:py-24 px-4 sm:px-6 lg:px-8 2xl:px-12 bg-white">
+    <section className="py-12 lg:py-16 px-4 sm:px-6 lg:px-8 2xl:px-12 bg-white">
       <div className="max-w-[1280px] mx-auto">
         {/* Who We Are Section */}
-        <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-16 mb-16">
+        <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
           <div className="w-full lg:flex-[0_0_400px]">
             <h2 className="text-sky-950 font-inter font-bold text-3xl lg:text-[40px] leading-tight lg:leading-[60px] mb-4 text-center lg:text-left">
               Who We Are
