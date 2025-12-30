@@ -18,9 +18,9 @@ export default function Contact() {
 
   const steps = [
     "Share your requirements",
-    "Discuss them with our experts",
-    "Get a free quote",
-    "Start the project",
+    "Discuss with our AI & Tech experts",
+    "Get a customized, transparent quote",
+    "Kick off your project",
   ];
 
   return (
