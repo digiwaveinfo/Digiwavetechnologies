@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { submitContactForm } from "@/lib/api";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -10,10 +11,30 @@ export default function Contact() {
     company: "",
     message: "",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<{
+    type: 'success' | 'error' | null;
+    message: string;
+  }>({ type: null, message: '' });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
+    setIsSubmitting(true);
+    setSubmitStatus({ type: null, message: '' });
+
+    const result = await submitContactForm({
+      ...formData,
+      source_page: 'home_contact_section',
+    });
+
+    setIsSubmitting(false);
+    
+    if (result.success) {
+      setSubmitStatus({ type: 'success', message: result.message || 'Thank you for contacting us!' });
+      setFormData({ name: "", email: "", phone: "", company: "", message: "" });
+    } else {
+      setSubmitStatus({ type: 'error', message: result.message || 'Something went wrong. Please try again.' });
+    }
   };
 
   const steps = [
@@ -88,6 +109,17 @@ export default function Contact() {
             <h3 className="text-slate-900 text-xl md:text-2xl font-semibold font-['Inter'] leading-9 mb-6">
               Send us a message, and we'll promptly discuss your<br className="hidden md:block" />project with you.
             </h3>
+
+            {/* Status Messages */}
+            {submitStatus.type && (
+              <div className={`mb-4 p-4 rounded-lg ${
+                submitStatus.type === 'success' 
+                  ? 'bg-green-50 text-green-800 border border-green-200' 
+                  : 'bg-red-50 text-red-800 border border-red-200'
+              }`}>
+                {submitStatus.message}
+              </div>
+            )}
 
             <form onSubmit={handleSubmit} className="flex flex-col gap-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -167,16 +199,19 @@ export default function Contact() {
               <div className="flex justify-center md:justify-end">
                 <button
                   type="submit"
-                  className="px-5 py-4 bg-[#00BFD2] rounded-[247px] inline-flex items-center gap-2.5 hover:opacity-90 transition-opacity cursor-pointer"
+                  disabled={isSubmitting}
+                  className="px-5 py-4 bg-[#00BFD2] rounded-[247px] inline-flex items-center gap-2.5 hover:opacity-90 transition-opacity cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   <span className="text-white text-lg font-bold font-['Inter'] uppercase leading-7 tracking-wide">
-                    Send Inquiry
+                    {isSubmitting ? 'Sending...' : 'Send Inquiry'}
                   </span>
-                  <div className="relative">
-                    <svg width="22" height="27" viewBox="0 0 22 27" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M19.4062 6.75C19.4062 6.25781 19.248 5.85352 18.9316 5.53711C18.6152 5.2207 18.2109 5.0625 17.7188 5.0625H5.90625C5.41406 5.0625 5.00977 5.2207 4.69336 5.53711C4.37695 5.85352 4.21875 6.25781 4.21875 6.75C4.21875 7.24219 4.37695 7.64648 4.69336 7.96289C5.00977 8.2793 5.41406 8.4375 5.90625 8.4375H13.6582L3.00586 19.0371C2.68945 19.3887 2.53125 19.793 2.53125 20.25C2.53125 20.707 2.68945 21.1113 3.00586 21.4629C3.35742 21.7793 3.76172 21.9375 4.21875 21.9375C4.67578 21.9375 5.08008 21.7793 5.43164 21.4629L16.0312 10.8105V18.5625C16.0312 19.0547 16.1895 19.459 16.5059 19.7754C16.8223 20.0918 17.2266 20.25 17.7188 20.25C18.2109 20.25 18.6152 20.0918 18.9316 19.7754C19.248 19.459 19.4062 19.0547 19.4062 18.5625V6.75Z" fill="white" />
-                    </svg>
-                  </div>
+                  {!isSubmitting && (
+                    <div className="relative">
+                      <svg width="22" height="27" viewBox="0 0 22 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M19.4062 6.75C19.4062 6.25781 19.248 5.85352 18.9316 5.53711C18.6152 5.2207 18.2109 5.0625 17.7188 5.0625H5.90625C5.41406 5.0625 5.00977 5.2207 4.69336 5.53711C4.37695 5.85352 4.21875 6.25781 4.21875 6.75C4.21875 7.24219 4.37695 7.64648 4.69336 7.96289C5.00977 8.2793 5.41406 8.4375 5.90625 8.4375H13.6582L3.00586 19.0371C2.68945 19.3887 2.53125 19.793 2.53125 20.25C2.53125 20.707 2.68945 21.1113 3.00586 21.4629C3.35742 21.7793 3.76172 21.9375 4.21875 21.9375C4.67578 21.9375 5.08008 21.7793 5.43164 21.4629L16.0312 10.8105V18.5625C16.0312 19.0547 16.1895 19.459 16.5059 19.7754C16.8223 20.0918 17.2266 20.25 17.7188 20.25C18.2109 20.25 18.6152 20.0918 18.9316 19.7754C19.248 19.459 19.4062 19.0547 19.4062 18.5625V6.75Z" fill="white" />
+                      </svg>
+                    </div>
+                  )}
                 </button>
               </div>
             </form>
