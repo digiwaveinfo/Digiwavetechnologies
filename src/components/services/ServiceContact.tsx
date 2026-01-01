@@ -18,8 +18,8 @@ interface ServiceContactProps {
 }
 
 const defaultContactInfo: ContactInfo = {
-  phone: "+880-1680-6361-89",
-  email: "contact@digiwave.com"
+  phone: "+91 9428418099",
+  email: "info@digiwavetechnologies.in"
 };
 
 const defaultProcessSteps: ProcessStep[] = [
@@ -29,9 +29,9 @@ const defaultProcessSteps: ProcessStep[] = [
   { number: "04", description: "Start the project" }
 ];
 
-export default function ServiceContact({ 
+export default function ServiceContact({
   contactInfo = defaultContactInfo,
-  processSteps = defaultProcessSteps 
+  processSteps = defaultProcessSteps
 }: ServiceContactProps) {
   const [formData, setFormData] = useState({
     name: "",
@@ -84,7 +84,7 @@ export default function ServiceContact({
           {/* Process Steps */}
           <div className="space-y-12 relative">
             <div className="absolute left-5 top-0 w-px h-48 bg-sky-700"></div>
-            
+
             {processSteps.map((step, index) => (
               <div key={index} className="flex items-center gap-12 relative">
                 <div className="w-10 h-10 bg-white rounded-full border border-sky-700 flex items-center justify-center z-10">
@@ -125,7 +125,7 @@ export default function ServiceContact({
                 required
               />
             </div>
-            
+
             <div className="grid grid-cols-2 gap-6">
               <input
                 type="tel"

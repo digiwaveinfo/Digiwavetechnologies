@@ -126,13 +126,13 @@ export default function Footer() {
                     <path d="M3.667 3.667h14.666c1.009 0 1.834.825 1.834 1.833v11c0 1.008-.825 1.833-1.834 1.833H3.667c-1.008 0-1.834-.825-1.834-1.833v-11c0-1.008.826-1.833 1.834-1.833z" stroke="#00114C" strokeWidth="1.833" strokeLinecap="round" strokeLinejoin="round" />
                     <path d="M20.167 5.5L11 11.917 1.833 5.5" stroke="#00114C" strokeWidth="1.833" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
-                  <span className="text-sky-950 text-base font-normal font-['Inter'] leading-6">contact@digiwave.com</span>
+                  <span className="text-sky-950 text-base font-normal font-['Inter'] leading-6">info@digiwavetechnologies.in</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
                     <path d="M20.167 15.51v2.75a1.833 1.833 0 01-2 1.833 18.15 18.15 0 01-7.91-2.814 17.883 17.883 0 01-5.5-5.5 18.15 18.15 0 01-2.814-7.947 1.833 1.833 0 011.824-2H6.517c.445-.004.88.153 1.23.445.35.29.57.697.623 1.138a11.77 11.77 0 00.642 2.577c.123.328.15.685.077 1.027a1.833 1.833 0 01-.492.88l-1.164 1.165a14.667 14.667 0 005.5 5.5l1.165-1.165c.233-.234.527-.399.849-.476.322-.077.66-.05.968.077.853.31 1.738.525 2.636.642a1.834 1.834 0 011.616 1.87z" stroke="#00114C" strokeWidth="1.833" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
-                  <span className="text-sky-950 text-base font-normal font-['Inter'] leading-6">+91 99856 89222</span>
+                  <span className="text-sky-950 text-base font-normal font-['Inter'] leading-6">+91 9428418099</span>
                 </div>
               </div>
 

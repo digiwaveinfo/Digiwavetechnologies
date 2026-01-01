@@ -28,7 +28,7 @@ export default function Contact() {
     });
 
     setIsSubmitting(false);
-    
+
     if (result.success) {
       setSubmitStatus({ type: 'success', message: result.message || 'Thank you for contacting us!' });
       setFormData({ name: "", email: "", phone: "", company: "", message: "" });
@@ -68,7 +68,7 @@ export default function Contact() {
                   </svg>
                 </div>
                 <span className="text-stone-950 text-base font-medium font-['Inter']">
-                  +880-1680-6361-89
+                  +91 9428418099
                 </span>
               </div>
               <div className="flex items-center gap-4">
@@ -78,7 +78,7 @@ export default function Contact() {
                   </svg>
                 </div>
                 <span className="text-stone-950 text-base font-medium font-['Inter']">
-                  contact@digiwave.com
+                  info@digiwavetechnologies.in
                 </span>
               </div>
             </div>
@@ -112,11 +112,10 @@ export default function Contact() {
 
             {/* Status Messages */}
             {submitStatus.type && (
-              <div className={`mb-4 p-4 rounded-lg ${
-                submitStatus.type === 'success' 
-                  ? 'bg-green-50 text-green-800 border border-green-200' 
+              <div className={`mb-4 p-4 rounded-lg ${submitStatus.type === 'success'
+                  ? 'bg-green-50 text-green-800 border border-green-200'
                   : 'bg-red-50 text-red-800 border border-red-200'
-              }`}>
+                }`}>
                 {submitStatus.message}
               </div>
             )}

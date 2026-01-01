@@ -23,7 +23,7 @@ export default function LetsStart() {
                                         <Phone size={20} />
                                     </div>
                                     <span className="text-stone-950 text-base font-medium font-['Inter']">
-                                        +880-1680-6361-89
+                                        +91 9428418099
                                     </span>
                                 </div>
                                 <div className="flex items-center gap-4">
@@ -31,7 +31,7 @@ export default function LetsStart() {
                                         <Mail size={20} />
                                     </div>
                                     <span className="text-stone-950 text-base font-medium font-['Inter']">
-                                        contact@digiwave.com
+                                        info@digiwavetechnologies.in
                                     </span>
                                 </div>
                             </div>
