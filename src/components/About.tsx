@@ -65,7 +65,7 @@ export default function About() {
                 <li className="flex items-center gap-2">
                   <span className="text-[#00BFD2] text-sm flex-shrink-0">✔</span>
                   <span className="text-[#0c0c0c] text-sm sm:text-base font-normal font-['Inter'] leading-6">
-                    100% quality focus & reliable support
+                    99.99% quality focus & reliable support
                   </span>
                 </li>
                 <li className="flex items-start gap-2">
