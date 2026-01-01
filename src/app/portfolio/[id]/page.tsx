@@ -57,7 +57,10 @@ export default async function PortfolioDetailPage({ params }: PortfolioDetailPag
         solution={portfolio.solution_description}
       />
       
-      <DesignSection galleryImages={portfolio.gallery_images} />
+      <DesignSection 
+        galleryImages={portfolio.gallery_images} 
+        showcaseImageUrl={portfolio.showcase_image_url}
+      />
       
       <Contact />
       <Footer />

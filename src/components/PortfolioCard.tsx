@@ -17,10 +17,10 @@ export default function PortfolioCard({ id, title, description, imageUrl, techno
   const restWords = titleParts.slice(1).join(' ') || '';
 
   return (
-    <div className="w-full max-w-[780px] mx-auto px-1 py-4 md:py-6">
-      <div className="relative w-full rounded-[26px] bg-white shadow-[2px_6px_8.4px_-3px_rgba(64,64,64,0.27)] overflow-hidden">
+    <div className="w-full">
+      <div className="relative w-full h-[520px] rounded-[20px] bg-white shadow-[2px_6px_8.4px_-3px_rgba(64,64,64,0.27)] overflow-hidden flex flex-col">
         {/* Top Section - Simple Image */}
-        <div className="relative w-full h-[200px] md:h-[285px] overflow-hidden">
+        <div className="relative w-full h-[220px] flex-shrink-0 overflow-hidden">
           <img
             src={imageUrl || "/portfolio-card-image.png"}
             alt={title}
@@ -29,36 +29,35 @@ export default function PortfolioCard({ id, title, description, imageUrl, techno
         </div>
 
         {/* Content Section */}
-        <div className="relative px-5 md:px-[20px] pt-6 md:pt-[23px] pb-8 md:pb-[31px]">
-          {/* Tag Label */}
-          <div className="flex items-center gap-2 mb-6 md:mb-[49px]">
-            <MobileIcon />
-            <span className="text-[#00BFD2] font-medium text-sm">{tag}</span>
-          </div>
+        <div className="relative px-5 pt-4 pb-5 flex flex-col flex-1">
+          {/* Top Row - Tag and Styled Title */}
+          <div className="flex items-start justify-between mb-4">
+            {/* Tag Label */}
+            <div className="flex items-center gap-2">
+              <MobileIcon />
+              <span className="text-[#00BFD2] font-medium text-sm">{tag}</span>
+            </div>
 
-          {/* Project Name - Positioned Absolutely on Desktop */}
-          <div className="hidden md:block absolute top-[13px] right-[23px]">
-            <div className="text-center">
-              <div className="flex flex-col gap-[-15px]">
-                <h3 className="text-[#37B7FE] font-['Alumni_Sans'] text-[38.5px] font-extrabold leading-[46px] tracking-[0.577px]">{firstWord}</h3>
-                {restWords && (
-                  <h3 className="text-[#034175] font-['Alumni_Sans'] text-[38.5px] font-extrabold leading-[44px] tracking-[0.577px]">{restWords}</h3>
-                )}
-              </div>
-              <p className="text-[#37B7FE] text-[8px] font-semibold leading-[11.3px] tracking-[0.121px] mt-1">{subtitle}</p>
+            {/* Project Name - Styled on Right */}
+            <div className="text-right hidden md:block flex-shrink-0">
+              <h3 className="text-[#37B7FE] font-['Alumni_Sans'] text-[24px] font-extrabold leading-[26px] tracking-[0.3px] whitespace-nowrap">{firstWord}</h3>
+              {restWords && (
+                <h3 className="text-[#034175] font-['Alumni_Sans'] text-[24px] font-extrabold leading-[24px] tracking-[0.3px] whitespace-nowrap">{restWords}</h3>
+              )}
+              <p className="text-[#37B7FE] text-[7px] font-semibold leading-[9px] tracking-[0.1px] mt-0.5 whitespace-nowrap">{subtitle}</p>
             </div>
           </div>
 
           {/* Main Content */}
-          <div className="max-w-[580px]">
-            <h1 className="text-black font-bold text-2xl md:text-[40px] leading-tight md:leading-[60px] mb-2 md:mb-[10px]">{title}</h1>
-            <p className="text-black text-sm md:text-base leading-relaxed md:leading-[24px] mb-6 md:mb-[20px]">{description}</p>
+          <div className="flex-1">
+            <h1 className="text-black font-bold text-lg leading-tight mb-2 whitespace-nowrap overflow-hidden text-ellipsis">{title}</h1>
+            <p className="text-black text-sm leading-relaxed line-clamp-4">{description}</p>
           </div>
 
           {/* Bottom Section - Tech Icons and Arrow */}
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between mt-auto pt-3">
             {/* Tech Icons */}
-            <div className="flex items-center gap-2 md:gap-[10px]">
+            <div className="flex items-center gap-2">
               {technologies.slice(0, 3).map((tech, index) => (
                 <TechIcon key={index} name={tech} />
               ))}
@@ -67,7 +66,7 @@ export default function PortfolioCard({ id, title, description, imageUrl, techno
             {/* Arrow Button */}
             <Link
               href={`/portfolio/${id}`}
-              className="flex items-center justify-center w-[80px] md:w-[115px] h-[50px] md:h-[60px] rounded-[5px] bg-[rgba(129,188,255,0.14)] hover:bg-[rgba(129,188,255,0.24)] transition-colors"
+              className="flex items-center justify-center w-[80px] h-[48px] rounded-[5px] bg-[rgba(129,188,255,0.14)] hover:bg-[rgba(129,188,255,0.24)] transition-colors"
               aria-label="Learn more"
             >
               <ArrowIcon />
@@ -90,11 +89,11 @@ function TechIcon({ name }: { name: string }) {
     if (lowerName.includes('node')) return <NodeIcon />;
     if (lowerName.includes('java')) return <JavaIcon />;
     // Default icon with first letter
-    return <span className="text-white font-bold text-lg">{name.charAt(0).toUpperCase()}</span>;
+    return <span className="text-white font-bold text-sm">{name.charAt(0).toUpperCase()}</span>;
   };
 
   return (
-    <div className="w-[50px] h-[50px] md:w-[60.625px] md:h-[60.625px] rounded-full bg-gradient-to-br from-[#a8b5e0] via-[#8F9ED1] to-[#7889c4] flex items-center justify-center shadow-sm" title={name}>
+    <div className="w-[40px] h-[40px] rounded-full bg-gradient-to-br from-[#a8b5e0] via-[#8F9ED1] to-[#7889c4] flex items-center justify-center shadow-sm" title={name}>
       {getIcon()}
     </div>
   );
@@ -103,7 +102,7 @@ function TechIcon({ name }: { name: string }) {
 // SVG Icons
 function MobileIcon() {
   return (
-    <svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg width="22" height="22" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
       <g clipPath="url(#clip0_92_2300)">
         <path d="M7.25 6.04167C7.25 5.40073 7.50461 4.78604 7.95783 4.33283C8.41104 3.87961 9.02573 3.625 9.66667 3.625H19.3333C19.9743 3.625 20.589 3.87961 21.0422 4.33283C21.4954 4.78604 21.75 5.40073 21.75 6.04167V22.9583C21.75 23.5993 21.4954 24.214 21.0422 24.6672C20.589 25.1204 19.9743 25.375 19.3333 25.375H9.66667C9.02573 25.375 8.41104 25.1204 7.95783 24.6672C7.50461 24.214 7.25 23.5993 7.25 22.9583V6.04167Z" stroke="#00BFD2" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
         <path d="M13.2915 4.83325H15.7082" stroke="#00BFD2" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -120,7 +119,7 @@ function MobileIcon() {
 
 function ArrowIcon() {
   return (
-    <svg width="49" height="49" viewBox="0 0 49 49" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg width="36" height="36" viewBox="0 0 49 49" fill="none" xmlns="http://www.w3.org/2000/svg">
       <g clipPath="url(#clip0_92_1959)">
         <path d="M6.125 24.5H42.875" stroke="#034175" strokeWidth="4.08333" strokeLinecap="round" strokeLinejoin="round" />
         <path d="M36.75 30.625L42.875 24.5L36.75 18.375" stroke="#034175" strokeWidth="4.08333" strokeLinecap="round" strokeLinejoin="round" />

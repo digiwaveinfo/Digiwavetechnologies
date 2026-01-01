@@ -29,6 +29,8 @@ export interface PortfolioItem {
   tag: string;
   card_image_url?: string;
   hero_image_url?: string;
+  home_featured_image_url?: string;
+  showcase_image_url?: string;
   technologies: string[];
   problem_statement: string;
   solution_description: string;
@@ -36,6 +38,7 @@ export interface PortfolioItem {
   gallery_images: string[];
   live_url?: string;
   is_featured: boolean;
+  is_home_featured: boolean;
   display_order: number;
 }
 
@@ -77,6 +80,27 @@ export async function getFeaturedPortfolios(): Promise<PortfolioItem[]> {
     return response.json();
   } catch (error) {
     console.error('Error fetching featured portfolios:', error);
+    return [];
+  }
+}
+
+// Fetch home featured portfolios for homepage sticky cards (max 4)
+export async function getHomeFeaturedPortfolios(): Promise<PortfolioItem[]> {
+  try {
+    const response = await fetch(`${API_BASE_URL}/portfolio/home-featured/`, {
+      method: 'GET',
+      headers: { 'Content-Type': 'application/json' },
+      next: { revalidate: 60 },
+    });
+    
+    if (!response.ok) {
+      console.error('Failed to fetch home featured portfolios');
+      return [];
+    }
+    
+    return response.json();
+  } catch (error) {
+    console.error('Error fetching home featured portfolios:', error);
     return [];
   }
 }

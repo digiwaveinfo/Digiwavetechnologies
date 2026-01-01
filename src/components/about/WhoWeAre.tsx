@@ -47,7 +47,7 @@ export default function WhoWeAre() {
                         </div>
                     </div>
                     <div className="flex-1 text-stone-950 text-base font-normal font-['Inter'] leading-6 text-center lg:text-left">
-                        Lorem ipsum dolor sit amet consectetur. Nullam sit aliquet facilisis in mauris. Viverra at commodo sed nec feugiat adipiscing. Risus pharetra amet velit urna amet etiam fermentum proin sed. In elementum orci tristique mauris massa in suspendisse vulputate ultricies.Lorem ipsum dolor sit amet consectetur. Nullam sit aliquet facilisis in mauris. Viverra at commodo sed nec feugiat adipiscing. Risus pharetra amet velit urna amet etiam fermentum proin sed. In elementum orci tristique mauri
+                        Digiwave Technologies is a global IT services company delivering cutting-edge AI/ML, Cloud, Mobile, and Web solutions. We don't just write code; we build the digital backbone that empowers businesses to innovate at speed and scale in an AI-driven world. Our team of passionate developers, designers, and strategists work collaboratively to transform complex challenges into elegant, scalable solutions. From startups to enterprises, we partner with organizations to accelerate their digital transformation journey and create lasting impact through technology.
                     </div>
                 </div>
             </div>

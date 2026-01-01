@@ -45,7 +45,7 @@ export default function Contact() {
   ];
 
   return (
-    <section className="w-full py-12 md:py-16 bg-neutral-100 overflow-hidden">
+    <section id="contact" className="w-full py-12 md:py-16 bg-neutral-100 overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 2xl:px-12 max-w-[1800px]">
         <div className="flex flex-col lg:flex-row justify-start items-stretch gap-7">
           {/* Left Card - Info */}
@@ -129,7 +129,7 @@ export default function Contact() {
                     placeholder="Your Name"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full h-14 pl-12 pr-4 bg-white rounded-[10px] outline outline-1 outline-sky-700/10 text-stone-950 placeholder:text-stone-500 font-['Inter'] focus:outline-none transition-colors"
+                    className="w-full h-14 pl-12 pr-4 bg-white rounded-[10px] outline outline-1 outline-sky-700/10 text-stone-950 placeholder:text-stone-500 font-['Inter'] focus:outline-[#00BFD2] focus:outline-2 transition-colors"
                   />
                   <div className="absolute left-[21px] top-[19px]">
                     <svg width="14" height="16" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -143,7 +143,7 @@ export default function Contact() {
                     placeholder="Email Address"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full h-14 pl-12 pr-4 bg-white rounded-[10px] outline outline-1 outline-sky-700/10 text-stone-950 placeholder:text-stone-500 font-['Inter'] focus:outline-none transition-colors"
+                    className="w-full h-14 pl-12 pr-4 bg-white rounded-[10px] outline outline-1 outline-sky-700/10 text-stone-950 placeholder:text-stone-500 font-['Inter'] focus:outline-[#00BFD2] focus:outline-2 transition-colors"
                   />
                   <div className="absolute left-[21px] top-[19px]">
                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -157,7 +157,7 @@ export default function Contact() {
                     placeholder="Your Phone No."
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    className="w-full h-14 pl-12 pr-4 bg-white rounded-[10px] outline outline-1 outline-sky-700/10 text-stone-950 placeholder:text-stone-500 font-['Inter'] focus:outline-none transition-colors"
+                    className="w-full h-14 pl-12 pr-4 bg-white rounded-[10px] outline outline-1 outline-sky-700/10 text-stone-950 placeholder:text-stone-500 font-['Inter'] focus:outline-[#00BFD2] focus:outline-2 transition-colors"
                   />
                   <div className="absolute left-[21px] top-[19px]">
                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -171,7 +171,7 @@ export default function Contact() {
                     placeholder="Your Company Name"
                     value={formData.company}
                     onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                    className="w-full h-14 pl-12 pr-4 bg-white rounded-[10px] outline outline-1 outline-sky-700/10 text-stone-950 placeholder:text-stone-500 font-['Inter'] focus:outline-none transition-colors"
+                    className="w-full h-14 pl-12 pr-4 bg-white rounded-[10px] outline outline-1 outline-sky-700/10 text-stone-950 placeholder:text-stone-500 font-['Inter'] focus:outline-[#00BFD2] focus:outline-2 transition-colors"
                   />
                   <div className="absolute left-[21px] top-[19px]">
                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -187,7 +187,7 @@ export default function Contact() {
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   rows={5}
-                  className="w-full pl-12 pr-4 py-4 bg-white rounded-xl outline outline-1 outline-sky-700/10 text-stone-950 placeholder:text-stone-500 font-['Inter'] focus:outline-none transition-colors resize-none"
+                  className="w-full pl-12 pr-4 py-4 bg-white rounded-xl outline outline-1 outline-sky-700/10 text-stone-950 placeholder:text-stone-500 font-['Inter'] focus:outline-[#00BFD2] focus:outline-2 transition-colors resize-none"
                 />
                 <div className="absolute left-[21px] top-[21px]">
                   <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">

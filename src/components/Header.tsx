@@ -99,12 +99,20 @@ export default function Header() {
 
         {/* Contact Us Button */}
         <div className="hidden xl:flex">
-          <Link href="/contact" className="w-48 px-5 py-4 bg-[#00BFD2] rounded-[247px] flex justify-center items-center gap-2.5 hover:opacity-90 transition-opacity">
+          <button 
+            onClick={() => {
+              const contactSection = document.getElementById('contact');
+              if (contactSection) {
+                contactSection.scrollIntoView({ behavior: 'smooth' });
+              }
+            }}
+            className="w-48 px-5 py-4 bg-[#00BFD2] rounded-[247px] flex justify-center items-center gap-2.5 hover:opacity-90 transition-opacity"
+          >
             <span className="text-white text-sm font-bold font-['Inter'] uppercase leading-4 tracking-wide">Contact Us</span>
             <svg width="13" height="16" viewBox="0 0 13 16" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M11.5 4C11.5 3.70833 11.4062 3.46875 11.2188 3.28125C11.0312 3.09375 10.7917 3 10.5 3H3.5C3.20833 3 2.96875 3.09375 2.78125 3.28125C2.59375 3.46875 2.5 3.70833 2.5 4C2.5 4.29167 2.59375 4.53125 2.78125 4.71875C2.96875 4.90625 3.20833 5 3.5 5H8.09375L1.78125 11.2812C1.59375 11.4896 1.5 11.7292 1.5 12C1.5 12.2708 1.59375 12.5104 1.78125 12.7188C1.98958 12.9062 2.22917 13 2.5 13C2.77083 13 3.01042 12.9062 3.21875 12.7188L9.5 6.40625V11C9.5 11.2917 9.59375 11.5312 9.78125 11.7188C9.96875 11.9062 10.2083 12 10.5 12C10.7917 12 11.0312 11.9062 11.2188 11.7188C11.4062 11.5312 11.5 11.2917 11.5 11V4Z" fill="white" />
             </svg>
-          </Link>
+          </button>
         </div>
 
         {/* Mobile Menu Button */}
@@ -138,13 +146,18 @@ export default function Header() {
                 {link.label}
               </Link>
             ))}
-            <Link
-              href="/contact"
-              onClick={() => setIsMobileMenuOpen(false)}
+            <button
+              onClick={() => {
+                setIsMobileMenuOpen(false);
+                const contactSection = document.getElementById('contact');
+                if (contactSection) {
+                  contactSection.scrollIntoView({ behavior: 'smooth' });
+                }
+              }}
               className="mt-4 py-3 px-4 bg-[#00BFD2] rounded-full text-center text-white text-sm font-bold font-['Inter'] uppercase tracking-wide hover:opacity-90 transition-opacity"
             >
               Contact Us
-            </Link>
+            </button>
           </nav>
         </div>
       )}

@@ -1,10 +1,11 @@
 interface DesignSectionProps {
   galleryImages?: string[];
+  showcaseImageUrl?: string;
 }
 
-export default function DesignSection({ galleryImages }: DesignSectionProps) {
-  // Use first gallery image or default
-  const mainImage = galleryImages?.[0] || "/design-portfolio-image.png";
+export default function DesignSection({ galleryImages, showcaseImageUrl }: DesignSectionProps) {
+  // Use showcase image first, then first gallery image, then default
+  const mainImage = showcaseImageUrl || galleryImages?.[0] || "/design-portfolio-image.png";
   
   return (
     <section className="py-8 sm:py-12 lg:py-16 bg-white">
