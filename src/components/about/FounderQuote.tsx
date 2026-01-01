@@ -27,7 +27,7 @@ export default function FounderQuote() {
                     {/* Text Content */}
                     <div className="relative z-10 max-w-4xl text-center">
                         <p className="text-white text-lg lg:text-xl font-normal font-['Inter'] leading-8 lg:leading-9">
-                            "At Digiwave, we believe technology should be an accelerator, not a hurdle. Our mission is to bridge the gap between human creativity and artificial intelligence, ensuring that every business—from startups to enterprises—has the tools to lead their industry."
+                            "At Digiwave, we believe technology should be an accelerator, not a hurdle. Our mission is to bridge the gap between human creativity and artificial intelligence, ensuring that every business from startups to enterprises has the tools to lead their industry."
                         </p>
                     </div>
                 </div>
