@@ -8,27 +8,29 @@ export default function FAQ() {
 
   const faqs = [
     {
-      question: "Lorem ipsum dolor sit amet consectetur. Eu leo enim.",
+      question: "What services does Digiwave Technologies offer?",
       answer:
-        "Lorem ipsum dolor sit amet consectetur. Accumsan commodo fringilla nec ligula sollicitudin amet. Sagittis nunc mattis arcu sit quis gravida. Diam ultrices id est urna eu. Aliquam ut odio in facilisi interdum non in. Ut faucibus at gravida viverra malesuada ac a pretium. Sed tellus ac ligula malesuada tincidunt in augue. Euismod sed erat quam nulla at odio sit erat et. Amet facilisis a augue iaculis imperdiet tellus mi vulputate ac.\nSit ac dui volutpat semper faucibus. Nibh tempus platea id.",
+        "Digiwave Technologies offers a comprehensive range of IT services including AI & Machine Learning solutions, Web Application Development, Mobile App Development (Android, iOS, and cross-platform), Cloud & DevOps services, Data Intelligence & Automation, and IoT Solutions. We deliver scalable, high-performance solutions tailored to your business needs.",
     },
     {
-      question:
-        "Lorem ipsum dolor sit amet consectetur. Porttitor arcu sed et hac proin id dolor phasellus luctus. Consectetur.",
-      answer: "",
+      question: "What technologies do you work with?",
+      answer:
+        "We work with a wide range of modern technologies including React, Next.js, Vue.js, Angular for frontend; Python, PHP, Java, Go, Node.js for backend; React Native, Flutter, Swift, Kotlin for mobile; PostgreSQL, MongoDB, MySQL, Redis for databases; and AWS, Azure, Docker, Kubernetes for cloud and DevOps. We choose the best technology stack based on your project requirements.",
     },
     {
-      question:
-        "Lorem ipsum dolor sit amet consectetur. Maecenas eu purus placerat suscipit vel blandit ut pellentesque.",
-      answer: "",
+      question: "How do I get started with a project?",
+      answer:
+        "Getting started is simple! First, share your requirements with us through our contact form or schedule a free consultation. Then, discuss your project with our AI & Tech experts. We'll provide you with a customized, transparent quote. Once approved, we kick off your project with a dedicated team assigned to deliver results.",
     },
     {
-      question: "Lorem ipsum dolor sit amet consectetur. Enim ultricies.",
-      answer: "",
+      question: "Which industries does Digiwave serve?",
+      answer:
+        "We have proven success across multiple industries including Finance, Healthcare, Inventory Management, Marketing, and Business Management sectors. Our solutions are designed to address industry-specific challenges while leveraging cutting-edge technology to drive innovation and growth.",
     },
     {
-      question: "Lorem ipsum dolor sit amet consectetur. Id mattis.",
-      answer: "",
+      question: "What makes Digiwave different from other IT companies?",
+      answer:
+        "Digiwave stands out with our dedicated team of expert engineers, tailored solutions with transparent communication, 100% quality focus, and reliable ongoing support. We combine deep technical expertise with a client-first approach, ensuring every project is delivered on time and exceeds expectations.",
     },
   ];
 

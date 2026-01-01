@@ -6,16 +6,23 @@ interface PortfolioCardProps {
   description: string;
   imageUrl: string;
   technologies: string[];
+  tag?: string;
+  subtitle?: string;
 }
 
-export default function PortfolioCard({ id, title, description, imageUrl, technologies }: PortfolioCardProps) {
+export default function PortfolioCard({ id, title, description, imageUrl, technologies, tag = "Mobile App", subtitle = "All Services One Solution" }: PortfolioCardProps) {
+  // Split title into two parts for the styled display on the right
+  const titleParts = title.split(' ');
+  const firstWord = titleParts[0] || '';
+  const restWords = titleParts.slice(1).join(' ') || '';
+
   return (
     <div className="w-full max-w-[780px] mx-auto px-1 py-4 md:py-6">
       <div className="relative w-full rounded-[26px] bg-white shadow-[2px_6px_8.4px_-3px_rgba(64,64,64,0.27)] overflow-hidden">
         {/* Top Section - Simple Image */}
         <div className="relative w-full h-[200px] md:h-[285px] overflow-hidden">
           <img
-            src="/portfolio-card-image.png"
+            src={imageUrl || "/portfolio-card-image.png"}
             alt={title}
             className="w-full h-full object-cover"
           />
@@ -23,20 +30,22 @@ export default function PortfolioCard({ id, title, description, imageUrl, techno
 
         {/* Content Section */}
         <div className="relative px-5 md:px-[20px] pt-6 md:pt-[23px] pb-8 md:pb-[31px]">
-          {/* Mobile App Label */}
+          {/* Tag Label */}
           <div className="flex items-center gap-2 mb-6 md:mb-[49px]">
             <MobileIcon />
-            <span className="text-[#00BFD2] font-medium text-sm">Mobile App</span>
+            <span className="text-[#00BFD2] font-medium text-sm">{tag}</span>
           </div>
 
-          {/* Estate Facility Branding - Positioned Absolutely on Desktop */}
+          {/* Project Name - Positioned Absolutely on Desktop */}
           <div className="hidden md:block absolute top-[13px] right-[23px]">
             <div className="text-center">
               <div className="flex flex-col gap-[-15px]">
-                <h3 className="text-[#37B7FE] font-['Alumni_Sans'] text-[38.5px] font-extrabold leading-[46px] tracking-[0.577px]">Estate</h3>
-                <h3 className="text-[#034175] font-['Alumni_Sans'] text-[38.5px] font-extrabold leading-[44px] tracking-[0.577px]">Facility</h3>
+                <h3 className="text-[#37B7FE] font-['Alumni_Sans'] text-[38.5px] font-extrabold leading-[46px] tracking-[0.577px]">{firstWord}</h3>
+                {restWords && (
+                  <h3 className="text-[#034175] font-['Alumni_Sans'] text-[38.5px] font-extrabold leading-[44px] tracking-[0.577px]">{restWords}</h3>
+                )}
               </div>
-              <p className="text-[#37B7FE] text-[8px] font-semibold leading-[11.3px] tracking-[0.121px] mt-1">All Services One Solution</p>
+              <p className="text-[#37B7FE] text-[8px] font-semibold leading-[11.3px] tracking-[0.121px] mt-1">{subtitle}</p>
             </div>
           </div>
 
@@ -50,9 +59,9 @@ export default function PortfolioCard({ id, title, description, imageUrl, techno
           <div className="flex items-center justify-between">
             {/* Tech Icons */}
             <div className="flex items-center gap-2 md:gap-[10px]">
-              <TechIcon icon={<PHPIconSmall />} />
-              <TechIcon icon={<SwiftIconSmall />} />
-              <TechIcon icon={<PythonIcon />} />
+              {technologies.slice(0, 3).map((tech, index) => (
+                <TechIcon key={index} name={tech} />
+              ))}
             </div>
 
             {/* Arrow Button */}
@@ -70,11 +79,23 @@ export default function PortfolioCard({ id, title, description, imageUrl, techno
   );
 }
 
-// Tech Icon Wrapper
-function TechIcon({ icon }: { icon: React.ReactNode }) {
+// Tech Icon Wrapper with dynamic icon based on tech name
+function TechIcon({ name }: { name: string }) {
+  const getIcon = () => {
+    const lowerName = name.toLowerCase();
+    if (lowerName.includes('php')) return <PHPIconSmall />;
+    if (lowerName.includes('swift')) return <SwiftIconSmall />;
+    if (lowerName.includes('python')) return <PythonIcon />;
+    if (lowerName.includes('react')) return <ReactIcon />;
+    if (lowerName.includes('node')) return <NodeIcon />;
+    if (lowerName.includes('java')) return <JavaIcon />;
+    // Default icon with first letter
+    return <span className="text-white font-bold text-lg">{name.charAt(0).toUpperCase()}</span>;
+  };
+
   return (
-    <div className="w-[50px] h-[50px] md:w-[60.625px] md:h-[60.625px] rounded-full bg-gradient-to-br from-[#a8b5e0] via-[#8F9ED1] to-[#7889c4] flex items-center justify-center shadow-sm">
-      {icon}
+    <div className="w-[50px] h-[50px] md:w-[60.625px] md:h-[60.625px] rounded-full bg-gradient-to-br from-[#a8b5e0] via-[#8F9ED1] to-[#7889c4] flex items-center justify-center shadow-sm" title={name}>
+      {getIcon()}
     </div>
   );
 }
@@ -176,6 +197,36 @@ function PythonIcon() {
           <rect width="19.4" height="19.4" fill="white" />
         </clipPath>
       </defs>
+    </svg>
+  );
+}
+
+
+function ReactIcon() {
+  return (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="12" cy="12" r="2.5" fill="#61DAFB"/>
+      <ellipse cx="12" cy="12" rx="10" ry="4" stroke="#61DAFB" strokeWidth="1.5" fill="none"/>
+      <ellipse cx="12" cy="12" rx="10" ry="4" stroke="#61DAFB" strokeWidth="1.5" fill="none" transform="rotate(60 12 12)"/>
+      <ellipse cx="12" cy="12" rx="10" ry="4" stroke="#61DAFB" strokeWidth="1.5" fill="none" transform="rotate(120 12 12)"/>
+    </svg>
+  );
+}
+
+function NodeIcon() {
+  return (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12 2L3 7V17L12 22L21 17V7L12 2Z" fill="#339933"/>
+      <path d="M12 6L7 9V15L12 18L17 15V9L12 6Z" fill="#fff"/>
+    </svg>
+  );
+}
+
+function JavaIcon() {
+  return (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M8.851 18.56s-.917.534.653.714c1.902.218 2.874.187 4.969-.211 0 0 .552.346 1.321.646-4.699 2.013-10.633-.118-6.943-1.149M8.276 15.933s-1.028.762.542.924c2.032.209 3.636.227 6.413-.308 0 0 .384.389.987.602-5.679 1.661-12.007.13-7.942-1.218" fill="#5382A1"/>
+      <path d="M13.116 11.475c1.158 1.333-.304 2.533-.304 2.533s2.939-1.518 1.589-3.418c-1.261-1.772-2.228-2.652 3.007-5.688 0 0-8.216 2.051-4.292 6.573" fill="#E76F00"/>
     </svg>
   );
 }

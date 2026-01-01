@@ -11,9 +11,10 @@ export default function PortfolioDetailHero({ title, description }: PortfolioDet
           <h1 className="text-sky-950 text-2xl sm:text-3xl lg:text-4xl font-bold font-['Inter'] leading-tight lg:leading-[60px]">
             {title}
           </h1>
-          <p className="text-stone-950 text-sm sm:text-base font-normal font-['Inter'] leading-relaxed lg:leading-6">
-            {description}
-          </p>
+          <div 
+            className="text-stone-950 text-sm sm:text-base font-normal font-['Inter'] leading-relaxed lg:leading-6 prose prose-sm max-w-none"
+            dangerouslySetInnerHTML={{ __html: description }}
+          />
         </div>
       </div>
     </section>

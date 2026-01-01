@@ -7,42 +7,15 @@ import TechIntegration from "@/components/portfolio/TechIntegration";
 import PortfolioFeatures from "@/components/portfolio/PortfolioFeatures";
 import ProblemSolution from "@/components/portfolio/ProblemSolution";
 import DesignSection from "@/components/portfolio/DesignSection";
+import { getPortfolioBySlug } from "@/lib/api";
 
 interface PortfolioDetailPageProps {
   params: Promise<{ id: string }>;
 }
 
-// Portfolio data - in a real app this would come from a database or API
-const portfolioData: Record<string, { title: string; description: string }> = {
-  "estate-facility": {
-    title: "Estate Facility",
-    description: "Lorem ipsum dolor sit amet consectetur. Nullam sit aliquet facilisis in mauris. Viverra at commodo sed nec feugiat adipiscing. Risus pharetra amet velit urna amet etiam fermentum proin sed. In elementum orci tristique mauris massa in suspendisse vulputate ultricies.Lorem ipsum dolor sit amet consectetur. Nullam sit aliquet facilisis in mauris. Viverra at commodo sed nec feugiat adipiscing. Risus pharetra amet velit urna amet etiam fermentum proin sed. In elementum orci tristique mauri"
-  },
-  "estate-facility-2": {
-    title: "Estate Facility",
-    description: "Lorem ipsum dolor sit amet consectetur. Nullam sit aliquet facilisis in mauris. Viverra at commodo sed nec feugiat adipiscing. Risus pharetra amet velit urna amet etiam fermentum proin sed. In elementum orci tristique mauris massa in suspendisse vulputate ultricies.Lorem ipsum dolor sit amet consectetur. Nullam sit aliquet facilisis in mauris. Viverra at commodo sed nec feugiat adipiscing. Risus pharetra amet velit urna amet etiam fermentum proin sed. In elementum orci tristique mauri"
-  },
-  "estate-facility-3": {
-    title: "Estate Facility",
-    description: "Lorem ipsum dolor sit amet consectetur. Nullam sit aliquet facilisis in mauris. Viverra at commodo sed nec feugiat adipiscing. Risus pharetra amet velit urna amet etiam fermentum proin sed. In elementum orci tristique mauris massa in suspendisse vulputate ultricies.Lorem ipsum dolor sit amet consectetur. Nullam sit aliquet facilisis in mauris. Viverra at commodo sed nec feugiat adipiscing. Risus pharetra amet velit urna amet etiam fermentum proin sed. In elementum orci tristique mauri"
-  },
-  "estate-facility-4": {
-    title: "Estate Facility",
-    description: "Lorem ipsum dolor sit amet consectetur. Nullam sit aliquet facilisis in mauris. Viverra at commodo sed nec feugiat adipiscing. Risus pharetra amet velit urna amet etiam fermentum proin sed. In elementum orci tristique mauris massa in suspendisse vulputate ultricies.Lorem ipsum dolor sit amet consectetur. Nullam sit aliquet facilisis in mauris. Viverra at commodo sed nec feugiat adipiscing. Risus pharetra amet velit urna amet etiam fermentum proin sed. In elementum orci tristique mauri"
-  },
-  "estate-facility-5": {
-    title: "Estate Facility",
-    description: "Lorem ipsum dolor sit amet consectetur. Nullam sit aliquet facilisis in mauris. Viverra at commodo sed nec feugiat adipiscing. Risus pharetra amet velit urna amet etiam fermentum proin sed. In elementum orci tristique mauris massa in suspendisse vulputate ultricies.Lorem ipsum dolor sit amet consectetur. Nullam sit aliquet facilisis in mauris. Viverra at commodo sed nec feugiat adipiscing. Risus pharetra amet velit urna amet etiam fermentum proin sed. In elementum orci tristique mauri"
-  },
-  "estate-facility-6": {
-    title: "Estate Facility",
-    description: "Lorem ipsum dolor sit amet consectetur. Nullam sit aliquet facilisis in mauris. Viverra at commodo sed nec feugiat adipiscing. Risus pharetra amet velit urna amet etiam fermentum proin sed. In elementum orci tristique mauris massa in suspendisse vulputate ultricies.Lorem ipsum dolor sit amet consectetur. Nullam sit aliquet facilisis in mauris. Viverra at commodo sed nec feugiat adipiscing. Risus pharetra amet velit urna amet etiam fermentum proin sed. In elementum orci tristique mauri"
-  }
-};
-
 export default async function PortfolioDetailPage({ params }: PortfolioDetailPageProps) {
   const { id } = await params;
-  const portfolio = portfolioData[id];
+  const portfolio = await getPortfolioBySlug(id);
   
   // If portfolio not found, show default content
   if (!portfolio) {
@@ -67,18 +40,24 @@ export default async function PortfolioDetailPage({ params }: PortfolioDetailPag
       
       <PortfolioDetailHero 
         title={portfolio.title}
-        description={portfolio.description}
+        description={portfolio.full_description}
       />
       
-      <PortfolioImageSection />
+      <PortfolioImageSection 
+        heroImage={portfolio.hero_image_url} 
+        title={portfolio.title}
+      />
       
-      <TechIntegration />
+      <TechIntegration technologies={portfolio.technologies} />
       
-      <PortfolioFeatures />
+      <PortfolioFeatures features={portfolio.features} />
       
-      <ProblemSolution />
+      <ProblemSolution 
+        problem={portfolio.problem_statement}
+        solution={portfolio.solution_description}
+      />
       
-      <DesignSection />
+      <DesignSection galleryImages={portfolio.gallery_images} />
       
       <Contact />
       <Footer />
