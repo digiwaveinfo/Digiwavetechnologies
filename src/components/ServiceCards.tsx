@@ -231,8 +231,8 @@ export default function ServiceCards() {
                       href={`/services/${service.id}`}
                       className="block bg-white rounded-[26px] p-8 shadow-[0_1px_17px_rgba(0,0,0,0.12)] hover:shadow-[0_4px_24px_rgba(0,0,0,0.15)] transition-shadow h-full cursor-pointer group"
                     >
-                      <div className="flex flex-col gap-12">
-                        <div className="flex flex-col gap-5">
+                      <div className="flex flex-col h-full">
+                        <div className="flex flex-col gap-5 flex-grow">
                           <div
                             className="w-[89px] h-[89px] rounded-full flex items-center justify-center"
                             style={{ backgroundColor: service.bgColor }}
@@ -246,7 +246,7 @@ export default function ServiceCards() {
                             {service.description}
                           </p>
                         </div>
-                        <span className="flex items-center gap-2.5 text-[#0c0c0c] font-inter font-medium text-lg group-hover:text-[#00BFD2] transition-colors cursor-pointer">
+                        <span className="flex items-center gap-2.5 text-[#0c0c0c] font-inter font-medium text-lg group-hover:text-[#00BFD2] transition-colors cursor-pointer mt-8">
                           Read More
                           <svg
                             className="w-6 h-6 transition-transform group-hover:translate-x-1"
