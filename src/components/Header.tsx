@@ -69,16 +69,14 @@ export default function Header() {
       {/* Main Navigation */}
       <div className="w-full h-14 lg:h-20 flex items-center justify-between px-4 sm:px-6 lg:px-8 2xl:px-12">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-3.5">
+        <Link href="/" className="flex items-center">
           <img
-            src="https://api.builder.io/api/v1/image/assets/TEMP/53464a68dade6f8a9a2888ca2325aca87ab049c8?width=191"
-            alt="Digiwave Logo"
-            className="w-20 h-10 object-fill"
-          />
-          <img
-            src="https://api.builder.io/api/v1/image/assets/TEMP/c4036386951a1d6ca44a4c518adf6a756d6a4c54?width=437"
+            src="/full-logo.svg"
+            // OLD: Two separate images - Logo.svg and named-logo.png
+            // OLD: "https://api.builder.io/api/v1/image/assets/TEMP/53464a68dade6f8a9a2888ca2325aca87ab049c8?width=191"
+            // OLD: "https://api.builder.io/api/v1/image/assets/TEMP/c4036386951a1d6ca44a4c518adf6a756d6a4c54?width=437"
             alt="Digiwave Technologies"
-            className="w-48 h-8 object-fill object-left hidden sm:block translate-y-[5px]"
+            className="h-12 lg:h-14 w-auto object-contain"
           />
         </Link>
 

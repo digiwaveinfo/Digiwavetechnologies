@@ -56,16 +56,14 @@ export default function Footer() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8 px-2 sm:px-0">
             {/* Company Info */}
             <div className="flex flex-col gap-7">
-              <div className="flex items-center gap-3.5">
+              <div className="flex items-center">
                 <img
-                  src="https://api.builder.io/api/v1/image/assets/TEMP/53464a68dade6f8a9a2888ca2325aca87ab049c8?width=191"
-                  alt="Digiwave Logo"
-                  className="w-20 h-12 object-contain"
-                />
-                <img
-                  src="https://api.builder.io/api/v1/image/assets/TEMP/c4036386951a1d6ca44a4c518adf6a756d6a4c54?width=437"
+                  src="/full-logo.svg"
+                  // OLD: Two separate images - Logo.svg and named-logo.png
+                  // OLD: "https://api.builder.io/api/v1/image/assets/TEMP/53464a68dade6f8a9a2888ca2325aca87ab049c8?width=191"
+                  // OLD: "https://api.builder.io/api/v1/image/assets/TEMP/c4036386951a1d6ca44a4c518adf6a756d6a4c54?width=437"
                   alt="Digiwave Technologies"
-                  className="w-48 h-10 object-contain hidden sm:block"
+                  className="h-14 w-auto object-contain"
                 />
               </div>
               <p className="text-stone-950 text-base font-normal font-['Inter'] leading-6 max-w-[320px]">

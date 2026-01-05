@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Contact from "@/components/Contact";
@@ -21,7 +22,8 @@ const serviceData: Record<string, {
     title: "AI & Machine Learning Solutions",
     description: "Intelligent systems that automate, analyze, and optimize business processes.",
     fullDescription: "Transform your business with cutting-edge AI and Machine Learning solutions. Our expert team develops intelligent systems that can automate complex processes, analyze vast amounts of data, and provide actionable insights to drive your business forward.",
-    heroImage: "https://api.builder.io/api/v1/image/assets/TEMP/7309ec19426c194dd2e948fe4906e3ab122a4585?width=970",
+    heroImage: "/Home-technologies/Ai-Ml.jpg",
+    // OLD: "https://api.builder.io/api/v1/image/assets/TEMP/7309ec19426c194dd2e948fe4906e3ab122a4585?width=970",
     features: [
       "Predictive Analytics & Forecasting",
       "Natural Language Processing (NLP)",
@@ -48,7 +50,8 @@ const serviceData: Record<string, {
     title: "Web Application Development",
     description: "Custom high-performance web solutions tailored for scale and performance.",
     fullDescription: "Build powerful, scalable web applications that drive your business growth. Our development team creates custom web solutions using modern frameworks and technologies, ensuring optimal performance, security, and user experience.",
-    heroImage: "https://api.builder.io/api/v1/image/assets/TEMP/3f5c6b3d663ecc01e18ae177e232243b61d97576?width=806",
+    heroImage: "/Home-technologies/webdevelopment.jpg",
+    // OLD: "https://api.builder.io/api/v1/image/assets/TEMP/3f5c6b3d663ecc01e18ae177e232243b61d97576?width=806",
     features: [
       "Custom Web Application Development",
       "Responsive & Mobile-First Design",
@@ -75,7 +78,8 @@ const serviceData: Record<string, {
     title: "Mobile App Development",
     description: "Android, iOS, and cross-platform apps built for engagement and user experience.",
     fullDescription: "Create engaging mobile experiences that connect with your users. Our mobile development team specializes in building native and cross-platform applications that deliver exceptional performance and user experience.",
-    heroImage: "https://api.builder.io/api/v1/image/assets/TEMP/917d50598d6a8f171dd1a7d201159fde9ed14c99?width=970",
+    heroImage: "/Home-technologies/App-development.jpg",
+    // OLD: "https://api.builder.io/api/v1/image/assets/TEMP/917d50598d6a8f171dd1a7d201159fde9ed14c99?width=970",
     features: [
       "Native iOS & Android Development",
       "Cross-Platform Solutions (React Native, Flutter)",
@@ -102,7 +106,8 @@ const serviceData: Record<string, {
     title: "Cloud & DevOps Services",
     description: "Scalable cloud infrastructure and automated deployment solutions.",
     fullDescription: "Accelerate your development and deployment processes with our comprehensive Cloud & DevOps services. We help organizations migrate to the cloud, implement CI/CD pipelines, and establish robust infrastructure that scales with your business needs.",
-    heroImage: "https://api.builder.io/api/v1/image/assets/TEMP/3f5c6b3d663ecc01e18ae177e232243b61d97576?width=806",
+    heroImage: "/Home-technologies/cloud.jpg",
+    // OLD: "https://api.builder.io/api/v1/image/assets/TEMP/3f5c6b3d663ecc01e18ae177e232243b61d97576?width=806",
     features: [
       "Cloud Migration & Architecture",
       "CI/CD Pipeline Implementation",
@@ -129,7 +134,8 @@ const serviceData: Record<string, {
     title: "Automation & Data Intelligence",
     description: "Smart automation and data-driven insights for business optimization.",
     fullDescription: "Unlock the power of your data and automate your business processes with our comprehensive automation and data intelligence solutions. We help organizations streamline operations, gain valuable insights from their data, and make informed decisions.",
-    heroImage: "https://api.builder.io/api/v1/image/assets/TEMP/7309ec19426c194dd2e948fe4906e3ab122a4585?width=970",
+    heroImage: "/Home-technologies/data-inteligence.jpg",
+    // OLD: "https://api.builder.io/api/v1/image/assets/TEMP/7309ec19426c194dd2e948fe4906e3ab122a4585?width=970",
     features: [
       "Business Process Automation",
       "Data Analytics & Visualization",
@@ -150,6 +156,34 @@ const serviceData: Record<string, {
       { number: "70%", label: "Manual Work Reduced" },
       { number: "10x", label: "Faster Processing" },
       { number: "95%", label: "Data Accuracy" }
+    ]
+  },
+  "iot-solutions": {
+    title: "IoT Solutions",
+    description: "Connected device ecosystems enabling smart monitoring, control, and data collection.",
+    fullDescription: "Build connected ecosystems with our comprehensive IoT solutions. We design and develop smart device networks that enable real-time monitoring, automated control, and intelligent data collection for industrial and consumer applications.",
+    heroImage: "/Home-technologies/Iot.jpg",
+    // OLD: "https://api.builder.io/api/v1/image/assets/TEMP/917d50598d6a8f171dd1a7d201159fde9ed14c99?width=970",
+    features: [
+      "Smart Device Integration",
+      "Real-time Monitoring Systems",
+      "Industrial IoT (IIoT) Solutions",
+      "Sensor Networks & Data Collection",
+      "Edge Computing Implementation",
+      "IoT Security & Management"
+    ],
+    benefits: [
+      "Real-time visibility into operations",
+      "Predictive maintenance capabilities",
+      "Reduced operational costs",
+      "Enhanced automation",
+      "Data-driven optimization"
+    ],
+    technologies: ["Arduino", "Raspberry Pi", "AWS IoT", "Azure IoT Hub", "MQTT", "LoRaWAN"],
+    stats: [
+      { number: "50%", label: "Cost Reduction" },
+      { number: "Real-time", label: "Monitoring" },
+      { number: "99%", label: "Device Uptime" }
     ]
   }
 };
@@ -212,9 +246,9 @@ export default async function ServiceDetailPage({ params }: ServiceDetailPagePro
                 ))}
               </div>
               
-              <button className="bg-[#00BFD2] text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-[#00BFD2]/90 transition-all duration-300 hover:scale-105 shadow-lg">
+              <Link href="/#contact" className="inline-block bg-[#00BFD2] text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-[#00BFD2]/90 transition-all duration-300 hover:scale-105 shadow-lg">
                 BOOK DEMO
-              </button>
+              </Link>
             </div>
             
             {/* Hero Image */}
@@ -268,22 +302,53 @@ export default async function ServiceDetailPage({ params }: ServiceDetailPagePro
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {service.features.map((feature, index) => (
-              <div 
-                key={index} 
-                className="group bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border border-gray-100"
-              >
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-[#00BFD2] to-[#62F4F3] rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
-                    <div className="w-6 h-6 bg-white rounded-full"></div>
-                  </div>
-                  <div>
-                    <h3 className="text-[#022030] font-bold text-lg mb-2">{feature}</h3>
-                    <p className="text-gray-600 text-sm">Advanced implementation with modern best practices</p>
+            {service.features.map((feature, index) => {
+              // Multicolored gradients and unique icons for each feature card
+              const iconConfigs = [
+                { 
+                  gradient: 'from-[#FF6B6B] to-[#FFE66D]',
+                  icon: <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" /></svg>
+                },
+                { 
+                  gradient: 'from-[#4ECDC4] to-[#44A08D]',
+                  icon: <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg>
+                },
+                { 
+                  gradient: 'from-[#667eea] to-[#764ba2]',
+                  icon: <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" /></svg>
+                },
+                { 
+                  gradient: 'from-[#f093fb] to-[#f5576c]',
+                  icon: <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" /></svg>
+                },
+                { 
+                  gradient: 'from-[#4facfe] to-[#00f2fe]',
+                  icon: <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" /></svg>
+                },
+                { 
+                  gradient: 'from-[#43e97b] to-[#38f9d7]',
+                  icon: <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+                },
+              ];
+              const config = iconConfigs[index % iconConfigs.length];
+              
+              return (
+                <div 
+                  key={index} 
+                  className="group bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border border-gray-100"
+                >
+                  <div className="flex items-start gap-4">
+                    <div className={`w-12 h-12 bg-gradient-to-br ${config.gradient} rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300`}>
+                      {config.icon}
+                    </div>
+                    <div>
+                      <h3 className="text-[#022030] font-bold text-lg mb-2">{feature}</h3>
+                      <p className="text-gray-600 text-sm">Advanced implementation with modern best practices</p>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
@@ -299,33 +364,57 @@ export default async function ServiceDetailPage({ params }: ServiceDetailPagePro
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {service.benefits.map((benefit, index) => (
-              <div 
-                key={index} 
-                className="group flex items-start gap-6 p-6 rounded-2xl hover:bg-gradient-to-r hover:from-blue-50 hover:to-cyan-50 transition-all duration-300"
-              >
-                <div className="w-12 h-12 bg-gradient-to-br from-[#00BFD2] to-[#62F4F3] rounded-full flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
-                  <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                  </svg>
+            {service.benefits.map((benefit, index) => {
+              // Multicolored gradients and unique icons for each benefit
+              const iconConfigs = [
+                { 
+                  gradient: 'from-[#FF6B6B] to-[#FFE66D]',
+                  icon: <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>
+                },
+                { 
+                  gradient: 'from-[#667eea] to-[#764ba2]',
+                  icon: <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+                },
+                { 
+                  gradient: 'from-[#4ECDC4] to-[#44A08D]',
+                  icon: <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                },
+                { 
+                  gradient: 'from-[#f093fb] to-[#f5576c]',
+                  icon: <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                },
+                { 
+                  gradient: 'from-[#4facfe] to-[#00f2fe]',
+                  icon: <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
+                },
+              ];
+              const config = iconConfigs[index % iconConfigs.length];
+              
+              return (
+                <div 
+                  key={index} 
+                  className="group flex items-start gap-6 p-6 rounded-2xl hover:bg-gradient-to-r hover:from-blue-50 hover:to-cyan-50 transition-all duration-300"
+                >
+                  <div className={`w-12 h-12 bg-gradient-to-br ${config.gradient} rounded-full flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300`}>
+                    {config.icon}
+                  </div>
+                  <div>
+                    <h3 className="text-[#022030] font-bold text-lg mb-2">{benefit}</h3>
+                    <p className="text-gray-600">Proven results that make a real difference to your business operations</p>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="text-[#022030] font-bold text-lg mb-2">{benefit}</h3>
-                  <p className="text-gray-600">Proven results that make a real difference to your business operations</p>
-                </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
 
-      {/* Modern CTA Section */}
-      <section className="relative py-20 px-5 sm:px-10 lg:px-20 bg-gradient-to-br from-[#022030] via-[#034175] to-[#00BFD2] overflow-hidden">
-        {/* Background Animation */}
-        <div className="absolute inset-0">
-          <div className="absolute w-96 h-96 bg-white/5 rounded-full -top-48 -left-48 animate-pulse"></div>
-          <div className="absolute w-96 h-96 bg-white/5 rounded-full -bottom-48 -right-48 animate-pulse delay-1000"></div>
-        </div>
+      {/* Modern CTA Section - Same style as Hero */}
+      <section className="relative bg-[#022030] py-20 px-5 sm:px-10 lg:px-20 overflow-hidden">
+        {/* Animated Background Elements - Same as Hero */}
+        <div className="absolute w-6 h-[925px] rotate-[43deg] bg-[#62F4F3] blur-[68px] opacity-80 -left-52 -top-36 animate-pulse" />
+        <div className="absolute w-6 h-[925px] rotate-[43deg] bg-[#62F4F3] blur-[68px] opacity-80 left-[436px] -top-14 animate-pulse delay-1000" />
+        <div className="absolute w-6 h-[925px] rotate-[43deg] bg-[#62F4F3] blur-[68px] opacity-80 right-0 top-28 animate-pulse delay-2000" />
         
         <div className="relative z-10 max-w-[1280px] mx-auto text-center">
           <h2 className="text-white text-4xl sm:text-5xl font-bold font-['Inter'] leading-tight mb-6">
@@ -336,12 +425,12 @@ export default async function ServiceDetailPage({ params }: ServiceDetailPagePro
           </p>
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-            <button className="bg-white text-[#022030] px-10 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition-all duration-300 hover:scale-105 shadow-xl">
+            <Link href="/#contact" className="bg-white text-[#022030] px-10 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition-all duration-300 hover:scale-105 shadow-xl">
               BOOK DEMO
-            </button>
-            <button className="border-2 border-white text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-[#022030] transition-all duration-300 hover:scale-105">
+            </Link>
+            <Link href="/portfolio" className="border-2 border-white text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-[#022030] transition-all duration-300 hover:scale-105">
               VIEW PORTFOLIO
-            </button>
+            </Link>
           </div>
         </div>
       </section>

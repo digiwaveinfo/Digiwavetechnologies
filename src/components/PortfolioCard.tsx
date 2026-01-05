@@ -23,6 +23,18 @@ export default function PortfolioCard({ id, title, description, imageUrl, techno
   const firstWord = titleParts[0] || '';
   const restWords = titleParts.slice(1).join(' ') || '';
 
+  // Filter to show only main technologies (language, platform) on card
+  // Other categories (framework, library, database, tool) will be shown on detail page
+  const mainCategories = ['language', 'platform'];
+  const mainTechnologies = technologies.filter(tech => 
+    tech.category && mainCategories.includes(tech.category)
+  );
+  
+  // If no main technologies found, fall back to first 3 of any category
+  const displayTechnologies = mainTechnologies.length > 0 
+    ? mainTechnologies.slice(0, 3) 
+    : technologies.slice(0, 3);
+
   return (
     <div className="w-full">
       <div className="relative w-full h-[520px] rounded-[20px] bg-white shadow-[2px_6px_8.4px_-3px_rgba(64,64,64,0.27)] overflow-hidden flex flex-col">
@@ -63,9 +75,9 @@ export default function PortfolioCard({ id, title, description, imageUrl, techno
 
           {/* Bottom Section - Tech Icons and Arrow */}
           <div className="flex items-center justify-between mt-auto pt-3">
-            {/* Tech Icons */}
+            {/* Tech Icons - Only main technologies (language, platform) */}
             <div className="flex items-center gap-2">
-              {technologies.slice(0, 3).map((tech, index) => (
+              {displayTechnologies.map((tech, index) => (
                 <TechIcon key={index} tech={tech} />
               ))}
             </div>
