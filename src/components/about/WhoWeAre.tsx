@@ -13,7 +13,7 @@ export default function WhoWeAre() {
                     {/* Large Image */}
                     <div className="relative w-full lg:w-[60%] h-[300px] lg:h-[573px] bg-neutral-200 rounded-3xl overflow-hidden">
                         <Image
-                            src="/about/hero-over-image1.png"
+                            src="/about/hero-over-image1.webp"
                             alt="Low angle view skyscrapers"
                             fill
                             className="object-cover"
@@ -23,7 +23,7 @@ export default function WhoWeAre() {
                     {/* Small Image with Play Button */}
                     <div className="relative w-full lg:w-[40%] h-[300px] lg:h-[573px] bg-neutral-200 rounded-3xl overflow-hidden">
                         <Image
-                            src="/about/hero-over0image2.png"
+                            src="/about/hero-over0image2.webp"
                             alt="Skyscrapers"
                             fill
                             className="object-cover"

@@ -5,7 +5,7 @@ export default function PortfolioHero() {
     <HeroSection
       label="Portfolio"
       title="Portfolio"
-      backgroundImage="/service-hero-background.png"
+      backgroundImage="/service-hero-background.webp"
       height="medium"
     />
   );

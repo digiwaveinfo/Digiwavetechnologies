@@ -38,7 +38,7 @@ export default function BetterTogether() {
                         <div className="absolute w-[880px] h-[588px] left-[-62px] top-0 pointer-events-none" />
 
                         <Image
-                            src="/about/bettertogether.png"
+                            src="/about/bettertogether.webp"
                             alt="Group of people working out business plan in office"
                             fill
                             className="object-fill object-top"

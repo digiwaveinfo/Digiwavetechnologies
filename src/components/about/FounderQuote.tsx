@@ -15,7 +15,7 @@ export default function FounderQuote() {
                     {/* Background Image */}
                     <div className="absolute inset-0 z-0">
                         <Image
-                            src="/founder.png"
+                            src="/founder.webp"
                             alt="Background"
                             fill
                             className="object-cover"

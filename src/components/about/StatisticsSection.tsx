@@ -4,22 +4,22 @@ import Image from "next/image";
 export default function StatisticsSection() {
   const stats = [
     {
-      icon: "/calender.png",
+      icon: "/calender.webp",
       value: "3+",
       label: "Years of Experience",
     },
     {
-      icon: "/client.png",
+      icon: "/client.webp",
       value: "10+",
       label: "Active Clients",
     },
     {
-      icon: "/done-icon.png",
+      icon: "/done-icon.webp",
       value: "10+",
       label: "Successful Project",
     },
     {
-      icon: "/active-work.png",
+      icon: "/active-work.webp",
       value: "99.99%",
       label: "Accurate work",
     },
@@ -62,7 +62,7 @@ export default function StatisticsSection() {
           {/* Right side - Image */}
           <div className="relative w-full h-full min-h-[400px]">
             <Image
-              src="/Group.png"
+              src="/Group.webp"
               alt="Modern skyscraper buildings"
               fill
               className="object-cover rounded-2xl"

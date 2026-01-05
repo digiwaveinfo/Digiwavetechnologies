@@ -10,7 +10,7 @@ export default function TeamCollage() {
                 <div className="flex flex-col h-full gap-4">
                     <div className="relative w-full h-[58%] rounded-2xl overflow-hidden">
                         <Image
-                            src="/image1.png"
+                            src="/image1.webp"
                             alt="Team image 1"
                             fill
                             className="object-cover"
@@ -18,7 +18,7 @@ export default function TeamCollage() {
                     </div>
                     <div className="relative w-full h-[42%] rounded-2xl overflow-hidden">
                         <Image
-                            src="/image3.png"
+                            src="/image3.webp"
                             alt="Team image 3"
                             fill
                             className="object-cover"
@@ -29,7 +29,7 @@ export default function TeamCollage() {
                 {/* Column 2 */}
                 <div className="relative w-full h-full rounded-2xl overflow-hidden">
                     <Image
-                        src="/image4.png"
+                        src="/image4.webp"
                         alt="Team image 4"
                         fill
                         className="object-cover"
@@ -40,7 +40,7 @@ export default function TeamCollage() {
                 <div className="flex flex-col h-full gap-4">
                     <div className="relative w-full h-[42%] rounded-2xl overflow-hidden">
                         <Image
-                            src="/image5.png"
+                            src="/image5.webp"
                             alt="Team image 5"
                             fill
                             className="object-cover"
@@ -48,7 +48,7 @@ export default function TeamCollage() {
                     </div>
                     <div className="relative w-full h-[58%] rounded-2xl overflow-hidden">
                         <Image
-                            src="/image6.png"
+                            src="/image6.webp"
                             alt="Team image 6"
                             fill
                             className="object-cover"
@@ -59,7 +59,7 @@ export default function TeamCollage() {
                 {/* Column 4 */}
                 <div className="relative w-full h-full rounded-2xl overflow-hidden">
                     <Image
-                        src="/image7.png"
+                        src="/image7.webp"
                         alt="Team image 7"
                         fill
                         className="object-cover"
@@ -73,30 +73,30 @@ export default function TeamCollage() {
                 {/* Row 1 */}
                 <div className="flex gap-4 h-64">
                     <div className="relative w-1/2 h-full rounded-xl overflow-hidden">
-                        <Image src="/image1.png" alt="Team image 1" fill className="object-cover" />
+                        <Image src="/image1.webp" alt="Team image 1" fill className="object-cover" />
                     </div>
                     <div className="relative w-1/2 h-full rounded-xl overflow-hidden">
-                        <Image src="/image3.png" alt="Team image 3" fill className="object-cover" />
+                        <Image src="/image3.webp" alt="Team image 3" fill className="object-cover" />
                     </div>
                 </div>
 
                 {/* Row 2 */}
                 <div className="flex gap-4 h-80">
                     <div className="relative w-1/2 h-full rounded-xl overflow-hidden">
-                        <Image src="/image4.png" alt="Team image 4" fill className="object-cover" />
+                        <Image src="/image4.webp" alt="Team image 4" fill className="object-cover" />
                     </div>
                     <div className="relative w-1/2 h-full rounded-xl overflow-hidden">
-                        <Image src="/image5.png" alt="Team image 5" fill className="object-cover" />
+                        <Image src="/image5.webp" alt="Team image 5" fill className="object-cover" />
                     </div>
                 </div>
 
                 {/* Row 3 */}
                 <div className="flex gap-4 h-64">
                     <div className="relative w-1/2 h-full rounded-xl overflow-hidden">
-                        <Image src="/image6.png" alt="Team image 6" fill className="object-cover" />
+                        <Image src="/image6.webp" alt="Team image 6" fill className="object-cover" />
                     </div>
                     <div className="relative w-1/2 h-full rounded-xl overflow-hidden">
-                        <Image src="/image7.png" alt="Team image 7" fill className="object-cover" />
+                        <Image src="/image7.webp" alt="Team image 7" fill className="object-cover" />
                     </div>
                 </div>
             </div>

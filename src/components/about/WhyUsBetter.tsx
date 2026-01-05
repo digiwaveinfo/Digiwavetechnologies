@@ -114,7 +114,7 @@ export default function WhyUsBetter() {
         <section className="relative w-full bg-black py-20 overflow-hidden min-h-[642px]">
             {/* Background Image */}
             <div className="absolute inset-0">
-                <Image src="/about/Whay-us-background.png" alt="Background Office" fill className="object-fill" />
+                <Image src="/about/Whay-us-background.webp" alt="Background Office" fill className="object-fill" />
             </div>
 
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 2xl:px-12 relative z-10 h-full flex items-center max-w-[1800px]">
@@ -123,7 +123,7 @@ export default function WhyUsBetter() {
                     {/* Left Image (Business Man) */}
                     <div className="hidden lg:block w-[520px] h-[502px] relative bg-stone-300 rounded-[19px] overflow-hidden shrink-0">
                         <Image
-                            src="/about/business-man-holding-paper-with-why-choose-us-question .png"
+                            src="/about/business-man-holding-paper-with-why-choose-us-question .webp"
                             alt="Why Choose Us"
                             fill
                             className="object-cover object-center"

@@ -5,7 +5,7 @@ export default function ProductHero() {
     <HeroSection
       label="Product"
       title="Website Development"
-      backgroundImage="/service-hero-background.png"
+      backgroundImage="/service-hero-background.webp"
       height="medium"
     />
   );

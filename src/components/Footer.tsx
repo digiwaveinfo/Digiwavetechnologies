@@ -9,7 +9,7 @@ export default function Footer() {
       <div
         className="w-full py-12 md:py-16 relative overflow-hidden"
         style={{
-          backgroundImage: "url('/footer-top.png')",
+          backgroundImage: "url('/footer-top.webp')",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
@@ -45,7 +45,7 @@ export default function Footer() {
       <div
         className="w-full py-12 md:py-16 relative overflow-hidden"
         style={{
-          backgroundImage: "url('/Footer-bottom.png')",
+          backgroundImage: "url('/Footer-bottom.webp')",
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
