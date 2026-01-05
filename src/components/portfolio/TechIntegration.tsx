@@ -4,7 +4,7 @@ interface Technology {
   description?: string;
   category?: string;
   icon_url?: string;
-  is_active: boolean;
+  is_active?: boolean;
 }
 
 interface TechIntegrationProps {
