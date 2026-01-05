@@ -43,7 +43,7 @@ export default function FAQ() {
       {/* Background image */}
       <div className="absolute inset-0 pointer-events-none">
         <Image
-          src="/faqbackground.png"
+          src="/faqbackground.webp"
           alt=""
           fill
           className="object-fill"

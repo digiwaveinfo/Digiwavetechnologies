@@ -7,7 +7,7 @@ export default function AboutHero() {
             {/* Background Image */}
             <div className="absolute inset-0 z-0">
                 <Image
-                    src="/about/hero-background.png"
+                    src="/about/hero-background.webp"
                     alt="About Hero Background"
                     fill
                     className="object-fill"

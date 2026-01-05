@@ -5,7 +5,7 @@ interface DesignSectionProps {
 
 export default function DesignSection({ galleryImages, showcaseImageUrl }: DesignSectionProps) {
   // Use showcase image first, then first gallery image, then default
-  const mainImage = showcaseImageUrl || galleryImages?.[0] || "/design-portfolio-image.png";
+  const mainImage = showcaseImageUrl || galleryImages?.[0] || "/design-portfolio-image.webp";
   
   return (
     <section className="py-8 sm:py-12 lg:py-16 bg-white">

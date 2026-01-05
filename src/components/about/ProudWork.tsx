@@ -42,19 +42,19 @@ export default function ProudWork() {
                 {/* Logos Grid */}
                 <div className="flex flex-wrap justify-center items-center gap-10 lg:gap-16">
                     <div className="w-32 h-28 relative grayscale hover:grayscale-0 transition-all">
-                        <Image src="/1Figure.png" alt="Figure 1" fill className="object-contain" />
+                        <Image src="/1Figure.webp" alt="Figure 1" fill className="object-contain" />
                     </div>
                     <div className="w-28 h-28 relative grayscale hover:grayscale-0 transition-all">
-                        <Image src="/2Figure.png" alt="Figure 2" fill className="object-contain" />
+                        <Image src="/2Figure.webp" alt="Figure 2" fill className="object-contain" />
                     </div>
                     <div className="w-28 h-28 relative grayscale hover:grayscale-0 transition-all">
-                        <Image src="/3 Figure.png" alt="Figure 3" fill className="object-contain" />
+                        <Image src="/3 Figure.webp" alt="Figure 3" fill className="object-contain" />
                     </div>
                     <div className="w-32 h-28 relative grayscale hover:grayscale-0 transition-all">
-                        <Image src="/4Figure.png" alt="Figure 4" fill className="object-contain" />
+                        <Image src="/4Figure.webp" alt="Figure 4" fill className="object-contain" />
                     </div>
                     <div className="w-24 h-28 relative grayscale hover:grayscale-0 transition-all">
-                        <Image src="/5Figure.png" alt="Figure 5" fill className="object-contain" />
+                        <Image src="/5Figure.webp" alt="Figure 5" fill className="object-contain" />
                     </div>
                 </div>
             </div>

@@ -32,7 +32,7 @@ export default async function PortfolioGrid() {
               id={item.slug}
               title={item.title}
               description={item.short_description}
-              imageUrl={item.card_image_url || "/portfolio-card-image.png"}
+              imageUrl={item.card_image_url || "/portfolio-card-image.webp"}
               technologies={item.technologies || []}
               tag={item.tag}
               subtitle={item.subtitle}

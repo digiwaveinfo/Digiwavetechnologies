@@ -35,8 +35,8 @@ const getCardBgColor = (type: string) => {
 
 const getBackgroundImage = (type: string) => {
   switch (type) {
-    case "blue": return "/portfolio-card-2.png";
-    case "dark": return "/prtfolio-card-3.png";
+    case "blue": return "/portfolio-card-2.webp";
+    case "dark": return "/prtfolio-card-3.webp";
     default: return null;
   }
 };
