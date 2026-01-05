@@ -19,6 +19,13 @@ interface ApiResponse<T = unknown> {
 }
 
 // Portfolio types
+export interface Technology {
+  id: number;
+  name: string;
+  icon_url?: string;
+  category?: string;
+}
+
 export interface PortfolioItem {
   id: string;
   slug: string;
@@ -31,7 +38,7 @@ export interface PortfolioItem {
   hero_image_url?: string;
   home_featured_image_url?: string;
   showcase_image_url?: string;
-  technologies: string[];
+  technologies: Technology[];
   problem_statement: string;
   solution_description: string;
   features: { title: string; description: string }[];
@@ -111,7 +118,7 @@ export async function getPortfolioBySlug(slug: string): Promise<PortfolioItem | 
     const response = await fetch(`${API_BASE_URL}/portfolio/${slug}/`, {
       method: 'GET',
       headers: { 'Content-Type': 'application/json' },
-      next: { revalidate: 60 },
+      next: { revalidate: 10 }, // Revalidate every 10 seconds for faster updates
     });
     
     if (!response.ok) {

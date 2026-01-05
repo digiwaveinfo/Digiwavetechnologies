@@ -10,7 +10,7 @@ const fallbackPortfolios = [
     subtitle: "All Services One Solution",
     short_description: "A comprehensive property management solution with real-time tracking and analytics.",
     tag: "Mobile App",
-    technologies: ["React Native", "Node.js", "MongoDB"],
+    technologies: [{ id: 1, name: "React Native" }, { id: 2, name: "Node.js" }, { id: 3, name: "MongoDB" }],
   },
 ];
 

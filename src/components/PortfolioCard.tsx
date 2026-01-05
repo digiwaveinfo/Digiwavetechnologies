@@ -1,11 +1,18 @@
 import Link from "next/link";
 
+interface Technology {
+  id: number;
+  name: string;
+  icon_url?: string;
+  category?: string;
+}
+
 interface PortfolioCardProps {
   id: string;
   title: string;
   description: string;
   imageUrl: string;
-  technologies: string[];
+  technologies: Technology[];
   tag?: string;
   subtitle?: string;
 }
@@ -59,7 +66,7 @@ export default function PortfolioCard({ id, title, description, imageUrl, techno
             {/* Tech Icons */}
             <div className="flex items-center gap-2">
               {technologies.slice(0, 3).map((tech, index) => (
-                <TechIcon key={index} name={tech} />
+                <TechIcon key={index} tech={tech} />
               ))}
             </div>
 
@@ -78,8 +85,19 @@ export default function PortfolioCard({ id, title, description, imageUrl, techno
   );
 }
 
-// Tech Icon Wrapper with dynamic icon based on tech name
-function TechIcon({ name }: { name: string }) {
+// Tech Icon Wrapper with dynamic icon based on tech name or uploaded icon
+function TechIcon({ tech }: { tech: Technology }) {
+  const name = tech.name || '';
+  
+  // If technology has an uploaded icon, use it
+  if (tech.icon_url) {
+    return (
+      <div className="w-[40px] h-[40px] rounded-full bg-gradient-to-br from-[#a8b5e0] via-[#8F9ED1] to-[#7889c4] flex items-center justify-center shadow-sm overflow-hidden" title={name}>
+        <img src={tech.icon_url} alt={name} className="w-6 h-6 object-contain" />
+      </div>
+    );
+  }
+  
   const getIcon = () => {
     const lowerName = name.toLowerCase();
     if (lowerName.includes('php')) return <PHPIconSmall />;

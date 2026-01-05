@@ -9,10 +9,66 @@ const poppins = Poppins({ subsets: ["latin"], weight: ["400", "500", "700", "800
 const rubik = Rubik({ subsets: ["latin"], weight: ["400"], variable: "--font-rubik" });
 
 export const metadata: Metadata = {
-  title: "Digiwave Technologies",
-  description: "Transforming Ideas into Scalable Digital Solutions",
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'),
+  title: {
+    default: "Digiwave Technologies - Transforming Ideas into Digital Solutions",
+    template: "%s | Digiwave Technologies"
+  },
+  description: "Digiwave Technologies specializes in web development, mobile apps, AI/ML solutions, cloud services, and digital transformation. Transform your ideas into scalable digital solutions.",
+  keywords: [
+    "web development",
+    "mobile app development",
+    "AI solutions",
+    "ML solutions",
+    "cloud services",
+    "digital transformation",
+    "software development",
+    "UI/UX design",
+    "digital marketing",
+    "Digiwave Technologies"
+  ],
+  authors: [{ name: "Digiwave Technologies" }],
+  creator: "Digiwave Technologies",
+  publisher: "Digiwave Technologies",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
   icons: {
     icon: "/Logo.svg",
+    shortcut: "/Logo.svg",
+    apple: "/Logo.svg",
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000',
+    title: "Digiwave Technologies - Transforming Ideas into Digital Solutions",
+    description: "Transforming Ideas into Scalable Digital Solutions with cutting-edge technology",
+    siteName: "Digiwave Technologies",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Digiwave Technologies",
+    description: "Transforming Ideas into Scalable Digital Solutions",
+    creator: "@digiwave",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  verification: {
+    google: 'your-google-verification-code', // Add your Google Search Console verification code
+    // yandex: 'your-yandex-verification-code',
+    // bing: 'your-bing-verification-code',
   },
 };
 
