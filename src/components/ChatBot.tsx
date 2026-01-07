@@ -16,22 +16,22 @@ const AnimatedRobot = ({ size = 80 }: { size?: number }) => (
     {/* Glow effect */}
     <defs>
       <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
-        <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+        <feGaussianBlur stdDeviation="2" result="coloredBlur" />
         <feMerge>
-          <feMergeNode in="coloredBlur"/>
-          <feMergeNode in="SourceGraphic"/>
+          <feMergeNode in="coloredBlur" />
+          <feMergeNode in="SourceGraphic" />
         </feMerge>
       </filter>
     </defs>
-    
+
     {/* Antenna with pulse */}
     <circle cx="40" cy="8" r="5" fill="#00BFD2" className="animate-pulse" filter="url(#glow)" />
     <rect x="38" y="11" width="4" height="9" fill="#00BFD2" />
-    
+
     {/* Head */}
     <rect x="12" y="20" width="56" height="32" rx="8" fill="#00BFD2" />
     <rect x="16" y="24" width="48" height="24" rx="4" fill="#008a9a" opacity="0.3" />
-    
+
     {/* Eyes - animated */}
     <ellipse cx="28" cy="36" rx="7" ry="8" fill="white" />
     <ellipse cx="52" cy="36" rx="7" ry="8" fill="white" />
@@ -40,21 +40,21 @@ const AnimatedRobot = ({ size = 80 }: { size?: number }) => (
     {/* Eye shine */}
     <circle cx="30" cy="34" r="1.5" fill="white" />
     <circle cx="54" cy="34" r="1.5" fill="white" />
-    
+
     {/* Mouth - smile */}
     <path d="M32 44 Q40 50 48 44" stroke="white" strokeWidth="3" strokeLinecap="round" fill="none" />
-    
+
     {/* Body */}
     <rect x="18" y="54" width="44" height="22" rx="6" fill="#00BFD2" />
-    
+
     {/* Body screen/panel */}
     <rect x="26" y="58" width="28" height="10" rx="2" fill="#008a9a" opacity="0.4" />
     <circle cx="40" cy="63" r="3" fill="white" className="animate-pulse" />
-    
+
     {/* Arms - animated wave */}
     <rect x="2" y="56" width="14" height="8" rx="4" fill="#00BFD2" className="origin-right animate-[wave_2s_ease-in-out_infinite]" />
     <rect x="64" y="56" width="14" height="8" rx="4" fill="#00BFD2" />
-    
+
     {/* Hands */}
     <circle cx="4" cy="60" r="4" fill="#00BFD2" className="origin-right animate-[wave_2s_ease-in-out_infinite]" />
     <circle cx="76" cy="60" r="4" fill="#00BFD2" />
@@ -73,6 +73,7 @@ export default function ChatBot() {
     }
   ]);
   const [inputMessage, setInputMessage] = useState("");
+  const [isTyping, setIsTyping] = useState(false);
 
   // Show suggestion bubble after 3 seconds
   useEffect(() => {
@@ -100,7 +101,7 @@ export default function ChatBot() {
     setShowSuggestion(false);
   };
 
-  const sendMessage = () => {
+  const sendMessage = async () => {
     if (inputMessage.trim() === "") return;
 
     const userMessage = {
@@ -112,16 +113,44 @@ export default function ChatBot() {
 
     setMessages(prev => [...prev, userMessage]);
     setInputMessage("");
+    setIsTyping(true);
 
-    setTimeout(() => {
+    try {
+      const apiUrl = process.env.NEXT_PUBLIC_CHATBOT_API_URL || "http://localhost:5000";
+      const response = await fetch(`${apiUrl}/api/chat`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          session_id: "web-session-" + Date.now(),
+          query: userMessage.text
+        })
+      });
+
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+
+      const data = await response.json();
+
       const botResponse = {
         id: messages.length + 2,
-        text: "Thank you for your message! Our team will get back to you soon. For immediate assistance, please contact us at info@digiwavetechnologies.in",
+        text: data.reply || "I apologize, but I didn't get a response.",
         isBot: true,
         timestamp: new Date()
       };
       setMessages(prev => [...prev, botResponse]);
-    }, 1000);
+    } catch (error) {
+      console.error("Chat error:", error);
+      const errorResponse = {
+        id: messages.length + 2,
+        text: "Sorry, I'm having trouble connecting to the server. Please ensure the chatbot backend is running on port 5000.",
+        isBot: true,
+        timestamp: new Date()
+      };
+      setMessages(prev => [...prev, errorResponse]);
+    } finally {
+      setIsTyping(false);
+    }
   };
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
@@ -170,16 +199,29 @@ export default function ChatBot() {
                   </div>
                 )}
                 <div
-                  className={`max-w-[75%] p-3 rounded-2xl text-sm ${
-                    message.isBot
-                      ? "bg-white text-gray-800 shadow-sm"
-                      : "bg-[#00BFD2] text-white"
-                  }`}
+                  className={`max-w-[75%] p-3 rounded-2xl text-sm ${message.isBot
+                    ? "bg-white text-gray-800 shadow-sm"
+                    : "bg-[#00BFD2] text-white"
+                    }`}
                 >
                   {message.text}
                 </div>
               </div>
             ))}
+            {isTyping && (
+              <div className="flex justify-start">
+                <div className="w-8 h-8 mr-2 flex-shrink-0">
+                  <AnimatedRobot size={32} />
+                </div>
+                <div className="bg-white text-gray-800 shadow-sm p-3 rounded-2xl rounded-tl-none">
+                  <div className="flex space-x-1 h-5 items-center px-1">
+                    <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0ms' }}></div>
+                    <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '150ms' }}></div>
+                    <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '300ms' }}></div>
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
 
           {/* Input */}
@@ -208,7 +250,7 @@ export default function ChatBot() {
       {!isOpen && showSuggestion && (
         <div className="fixed bottom-28 right-4 sm:right-6 z-40 animate-[fadeIn_0.3s_ease-out]">
           <div className="bg-white rounded-2xl shadow-xl p-4 max-w-[260px] relative border border-gray-100">
-            <button 
+            <button
               onClick={closeSuggestion}
               className="absolute -top-2 -right-2 w-6 h-6 bg-gray-200 hover:bg-gray-300 rounded-full flex items-center justify-center text-gray-600 transition-colors"
             >
