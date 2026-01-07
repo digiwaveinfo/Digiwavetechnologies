@@ -3,11 +3,11 @@ import Image from "next/image";
 
 export default function WhoWeAre() {
     return (
-        <section className="w-full relative z-20 pb-16 lg:pb-20">
+        <section className="w-full relative z-20 pb-14">
             {/* White Background starting mid-way */}
             <div className="absolute top-[150px] lg:top-[100px] left-0 w-full h-[calc(100%-150px)] lg:h-[calc(100%-100px)] bg-white -z-10" />
 
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8 2xl:px-12 max-w-[1800px]">
+            <div className="mx-auto w-[94%] xl:w-[90%] 2xl:w-[85%]">
                 {/* Images Row - Negative margin to overlap Hero */}
                 <div className="flex flex-col lg:flex-row gap-6 mb-16 -mt-[150px] lg:-mt-[180px]">
                     {/* Large Image */}

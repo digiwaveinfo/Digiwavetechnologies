@@ -60,22 +60,22 @@ export default function ProductProcess() {
             {PROCESS_STEPS.map((step, index) => (
               <div
                 key={index}
-                className="w-full lg:w-[calc(50%-1rem)] min-h-[280px] lg:h-80 relative bg-gray-300/10 rounded-3xl shadow-[1px_0px_5.300000190734863px_1px_rgba(64,64,64,0.27)] border border-gray-300/20 overflow-hidden transition-all duration-300 active:bg-cyan-400/5 active:border-cyan-500 lg:hover:bg-cyan-400/5 lg:hover:shadow-[1px_0px_5.300000190734863px_1px_rgba(0,242,217,0.06)] lg:hover:border-2 lg:hover:border-cyan-500"
+                className="group w-full lg:w-[calc(50%-1rem)] min-h-[346px] lg:h-[346px] relative bg-[rgba(200,217,215,0.08)] rounded-[26px] overflow-hidden transition-all duration-300 hover:bg-[rgba(0,242,217,0.06)] hover:shadow-[1px_0px_5.3px_1px_rgba(0,242,217,0.06)] hover:outline hover:outline-2 hover:outline-[#00BFD2] hover:-outline-offset-2"
               >
                 {/* Step Number */}
-                <div className="absolute left-4 lg:left-[22px] top-0 text-gray-300/20 text-7xl lg:text-9xl font-extrabold font-['Inter'] transition-colors duration-300">
+                <div className="absolute left-[22px] top-[-1px] text-[rgba(200,217,215,0.21)] group-hover:text-[rgba(148,227,219,0.21)] text-[133px] font-extrabold font-['Inter'] leading-none select-none transition-colors duration-300">
                   {step.number}
                 </div>
 
                 {/* Title Card */}
-                <div className="mx-4 lg:mx-[46px] mt-20 lg:mt-[95px] bg-white rounded-xl shadow-[0px_4px_2.799999952316284px_0px_rgba(0,191,210,0.12)] overflow-hidden p-4 lg:p-6">
-                  <div className="text-stone-950 text-xl lg:text-2xl font-semibold font-['Inter'] leading-tight lg:leading-9">
+                <div className="absolute left-[46px] top-[95px] w-[calc(100%-92px)] h-[87px] bg-white rounded-[11px] shadow-[0px_4px_2.8px_rgba(0,191,210,0.12)] overflow-hidden flex items-center px-6">
+                  <div className="text-[#0F0F10] text-2xl font-semibold font-['Inter'] leading-9">
                     {step.title}
                   </div>
                 </div>
 
                 {/* Description */}
-                <div className="mx-4 lg:mx-[46px] mt-4 lg:mt-6 text-stone-950 text-base lg:text-xl font-normal font-['Inter'] leading-relaxed lg:leading-7 pr-4 pb-4">
+                <div className="absolute left-[46px] top-[202px] w-[calc(100%-92px)] text-[#0F0F10] text-xl font-normal font-['Inter'] leading-[30px]">
                   {step.description}
                 </div>
               </div>

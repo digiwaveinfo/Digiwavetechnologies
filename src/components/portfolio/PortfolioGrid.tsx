@@ -16,7 +16,7 @@ const fallbackPortfolios = [
 
 export default async function PortfolioGrid() {
   let portfolioItems = await getPortfolios();
-  
+
   // Use fallback if no items from API
   if (portfolioItems.length === 0) {
     portfolioItems = fallbackPortfolios as any;
@@ -24,8 +24,8 @@ export default async function PortfolioGrid() {
 
   return (
     <section className="py-10 sm:py-20 px-4 sm:px-6 lg:px-8 2xl:px-12 bg-white">
-      <div className="max-w-[1200px] mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="mx-auto w-[94%] xl:w-[90%] 2xl:w-[85%]">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
           {portfolioItems.map((item) => (
             <PortfolioCard
               key={item.id}

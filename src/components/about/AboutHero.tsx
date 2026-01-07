@@ -15,7 +15,7 @@ export default function AboutHero() {
             </div>
 
             {/* Content */}
-            <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 w-full max-w-[1800px] mx-auto">
+            <div className="relative z-10 text-center mx-auto w-[94%] xl:w-[90%] 2xl:w-[85%]">
                 <h2 className="text-cyan-500 text-xl font-medium font-['Poppins'] mb-4">
                     About Us
                 </h2>

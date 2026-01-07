@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function BetterTogether() {
     return (
-        <section className="w-full bg-white py-20">
+        <section className="w-full bg-white py-10">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 2xl:px-12 overflow-hidden max-w-[1800px]">
                 <div className="flex flex-col items-start gap-9">
                     {/* Header Section */}
