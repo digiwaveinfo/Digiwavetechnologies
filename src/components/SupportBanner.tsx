@@ -15,7 +15,7 @@ export default function SupportBanner() {
       <div className="absolute left-0 top-0 w-full h-full mix-blend-hue bg-cyan-300" />
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 flex flex-col justify-start items-center gap-2.5">
+      <div className="relative z-10 mx-auto w-[94%] xl:w-[90%] 2xl:w-[85%] flex flex-col justify-start items-center gap-2.5">
         <div className="px-4 py-1.5 bg-white/25 rounded-[10px] outline outline-1 outline-offset-[-1px] outline-indigo-50 inline-flex justify-center items-center gap-2.5 overflow-hidden backdrop-blur-sm">
           <div className="text-neutral-50 text-base font-medium font-['Inter'] leading-6">
             Support System

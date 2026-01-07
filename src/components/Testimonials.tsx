@@ -42,10 +42,10 @@ export default function Testimonials() {
 
   return (
     <section className="w-full py-16 md:py-24 bg-white">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 2xl:px-12 max-w-[1800px]">
-        <div className="flex flex-col lg:flex-row justify-start items-stretch gap-5">
+      <div className="mx-auto w-[94%] xl:w-[90%] 2xl:w-[85%]">
+        <div className="grid grid-cols-1 lg:grid-cols-[380px_1fr] gap-5 justify-center">
           {/* Stats Card */}
-          <div className="w-full lg:w-96 p-6 sm:p-8 md:p-[50px] bg-white rounded-[10px] shadow-[0px_4px_23px_0px_rgba(174,191,210,0.30)] flex flex-col justify-between">
+          <div className="w-full p-6 sm:p-8 md:p-[50px] bg-white rounded-[10px] shadow-[0px_4px_23px_0px_rgba(174,191,210,0.30)] flex flex-col justify-between">
             <div>
               <div className="text-[#00BFD2] text-3xl sm:text-4xl md:text-5xl font-bold font-['Inter'] leading-tight md:leading-[66px]">3,900+</div>
               <div className="text-sky-950 text-2xl sm:text-3xl md:text-5xl font-bold font-['Inter'] leading-tight md:leading-[54px] mt-2">
@@ -83,7 +83,7 @@ export default function Testimonials() {
           </div>
 
           {/* Testimonial Card */}
-          <div className="flex-1 p-6 sm:p-8 md:p-[50px] bg-white rounded-[10px] shadow-[0px_4px_23px_0px_rgba(174,191,210,0.30)] flex flex-col justify-between">
+          <div className="w-full p-6 sm:p-8 md:p-[50px] bg-white rounded-[10px] shadow-[0px_4px_23px_0px_rgba(174,191,210,0.30)] flex flex-col justify-between">
             <div>
               <h3 className="text-sky-700 text-xl sm:text-2xl md:text-3xl font-bold font-['Inter'] leading-tight sm:leading-9 mb-4 sm:mb-6">
                 "{reviews[currentSlide].quote}"

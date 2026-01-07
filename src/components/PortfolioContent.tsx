@@ -92,7 +92,7 @@ const StickyCard = ({ i, card, cardType, progress, range, targetScale }: StickyC
       {/* Desktop Card Layout */}
       <motion.div
         style={{ scale }}
-        className={`hidden md:block relative w-full max-w-[1600px] h-[450px] rounded-2xl origin-top overflow-hidden shadow-[0px_4px_23px_rgba(0,0,0,0.16)] ${getCardBg(cardType)}`}
+        className={`hidden md:block relative w-full h-[450px] mx-auto rounded-2xl origin-top overflow-hidden shadow-[0px_4px_23px_rgba(0,0,0,0.16)] ${getCardBg(cardType)}`}
       >
         {cardType === "teal" && (
           <div className="absolute left-0 top-0 w-[64%] h-full z-[1] bg-[#00BFD2]/10 pointer-events-none" />
@@ -190,7 +190,7 @@ export default function PortfolioContent() {
   return (
     <section className="w-full bg-white relative">
       <div className="pt-12 pb-8 bg-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center gap-4 text-center">
+        <div className="mx-auto w-[94%] xl:w-[90%] 2xl:w-[85%] flex flex-col items-center gap-4 text-center">
           <div className="text-[#00BFD2] text-xl font-medium font-['Poppins']">Work We're Proud Of</div>
           <div className="text-[#082f49] text-3xl md:text-4xl lg:text-5xl font-bold font-['Poppins'] leading-tight">
             Transforming Ideas Into <br /> Digital Success

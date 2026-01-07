@@ -11,8 +11,8 @@ export default function Services() {
       title: "AI & ML Solutions",
       description:
         "Intelligent systems that automate, analyze, and optimize business processes.",
-      image: "/Home-technologies/Ai-Ml.jpg",
-      // OLD: "https://api.builder.io/api/v1/image/assets/TEMP/7309ec19426c194dd2e948fe4906e3ab122a4585?width=970",
+      // image: "/Home-technologies/Ai-Ml.jpg",
+      image: "https://api.builder.io/api/v1/image/assets/TEMP/7309ec19426c194dd2e948fe4906e3ab122a4585?width=970",
       titleColor: "text-[#0064AC]",
     },
     {
@@ -20,8 +20,8 @@ export default function Services() {
       title: "Web App development",
       description:
         "Custom high-performance web solutions tailored for scale and performance.",
-      image: "/Home-technologies/webdevelopment.jpg",
-      // OLD: "https://api.builder.io/api/v1/image/assets/TEMP/3f5c6b3d663ecc01e18ae177e232243b61d97576?width=806",
+      // image: "/Home-technologies/webdevelopment.jpg",
+      image: "https://api.builder.io/api/v1/image/assets/TEMP/3f5c6b3d663ecc01e18ae177e232243b61d97576?width=806",
       titleColor: "text-[#0064AC]",
     },
     {
@@ -29,8 +29,8 @@ export default function Services() {
       title: "Mobile App development",
       description:
         "Android, iOS, and cross-platform apps built for engagement and user experience.",
-      image: "/Home-technologies/App-development.jpg",
-      // OLD: "https://api.builder.io/api/v1/image/assets/TEMP/917d50598d6a8f171dd1a7d201159fde9ed14c99?width=970",
+      // image: "/Home-technologies/App-development.jpg",
+      image: "https://api.builder.io/api/v1/image/assets/TEMP/917d50598d6a8f171dd1a7d201159fde9ed14c99?width=970",
       titleColor: "text-[#0064AC]",
     },
     {
@@ -38,8 +38,8 @@ export default function Services() {
       title: "Cloud & DevOps",
       description:
         "Scalable cloud infrastructure and automated deployment solutions.",
-      image: "/Home-technologies/cloud.jpg",
-      // OLD: "https://api.builder.io/api/v1/image/assets/TEMP/3f5c6b3d663ecc01e18ae177e232243b61d97576?width=806",
+      // image: "/Home-technologies/cloud.jpg",
+      image: "https://api.builder.io/api/v1/image/assets/TEMP/3f5c6b3d663ecc01e18ae177e232243b61d97576?width=806",
       titleColor: "text-[#0064AC]",
     },
     {
@@ -47,8 +47,8 @@ export default function Services() {
       title: "Data Intelligence",
       description:
         "Smart automation and data-driven insights for business optimization.",
-      image: "/Home-technologies/data-inteligence.jpg",
-      // OLD: "https://api.builder.io/api/v1/image/assets/TEMP/7309ec19426c194dd2e948fe4906e3ab122a4585?width=970",
+      // image: "/Home-technologies/data-inteligence.jpg",
+      image: "https://api.builder.io/api/v1/image/assets/TEMP/7309ec19426c194dd2e948fe4906e3ab122a4585?width=970",
       titleColor: "text-[#0064AC]",
     },
     {
@@ -56,8 +56,8 @@ export default function Services() {
       title: "IoT Solutions",
       description:
         "Connected device ecosystems enabling smart monitoring, control, and data collection for industrial and consumer applications.",
-      image: "/Home-technologies/Iot.jpg",
-      // OLD: "https://api.builder.io/api/v1/image/assets/TEMP/917d50598d6a8f171dd1a7d201159fde9ed14c99?width=970",
+      // image: "/Home-technologies/Iot.jpg",
+      image: "https://api.builder.io/api/v1/image/assets/TEMP/917d50598d6a8f171dd1a7d201159fde9ed14c99?width=970",
       titleColor: "text-[#0064AC]",
     },
   ];
@@ -73,8 +73,12 @@ export default function Services() {
         setVisibleCards(1);
       } else if (window.innerWidth < 1024) {
         setVisibleCards(2);
-      } else {
+      } else if (window.innerWidth < 1536) {
         setVisibleCards(4);
+      } else if (window.innerWidth < 2000) {
+        setVisibleCards(5);
+      } else {
+        setVisibleCards(6);
       }
     };
 
@@ -229,7 +233,7 @@ export default function Services() {
         </svg>
       </div>
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 2xl:px-12 flex flex-col items-center max-w-[1800px] relative z-10">
+      <div className="mx-auto w-[94%] xl:w-[90%] 2xl:w-[85%] flex flex-col items-center relative z-10">
         {/* Section Header */}
         <div className="w-full flex flex-col items-center gap-4 mb-12">
           <h2 className="text-center text-[#00BFD2] text-xl font-medium font-[\'Poppins\']">
@@ -274,12 +278,12 @@ export default function Services() {
               {services.map((service, index) => (
                 <div
                   key={index}
-                  className="flex-shrink-0 px-2 md:px-3"
+                  className="flex-shrink-0 px-2 md:px-3 flex justify-center"
                   style={{ width: `${100 / visibleCards}%` }}
                 >
                   <Link
                     href={`/services/${service.id}`}
-                    className="flex flex-col items-center relative h-[400px] w-full group cursor-pointer"
+                    className="flex flex-col items-center relative h-[400px] w-full max-w-[350px] group cursor-pointer"
                   >
                     {/* Image Container */}
                     <div className="w-full h-64 absolute top-0 left-0 bg-neutral-200 rounded-3xl overflow-hidden shadow-sm z-0">
@@ -346,11 +350,10 @@ export default function Services() {
               <button
                 key={index}
                 onClick={() => setCurrentIndex(index)}
-                className={`w-3 h-3 rounded-full transition-colors ${
-                  currentIndex === index
-                    ? "bg-[#00BFD2]"
-                    : "bg-gray-300 hover:bg-gray-400"
-                }`}
+                className={`w-3 h-3 rounded-full transition-colors ${currentIndex === index
+                  ? "bg-[#00BFD2]"
+                  : "bg-gray-300 hover:bg-gray-400"
+                  }`}
                 aria-label={`Go to slide ${index + 1}`}
               />
             ))}
