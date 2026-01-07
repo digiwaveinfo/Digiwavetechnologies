@@ -21,47 +21,42 @@ export default function TechIntegration({
     return null;
   }
 
-  // Filter to only show technologies that have uploaded icons
-  const technologiesWithIcons = technologies.filter(tech => tech.icon_url);
-
-  // Don't render if no technologies have icons
-  if (technologiesWithIcons.length === 0) {
-    return null;
-  }
-
   return (
     <section className="w-full py-8 sm:py-12">
-      <div className="mx-auto w-[94%] xl:w-[90%] 2xl:w-[85%] flex flex-col gap-4 sm:gap-6">
+      <div className="mx-auto w-[94%] xl:w-[90%] 2xl:w-[85%] flex flex-col gap-3">
         {/* Title */}
-        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold leading-tight lg:leading-[60px] text-[#0A2540]">
+        <h2 className="text-[#00114C] text-2xl sm:text-3xl lg:text-[40px] font-bold leading-tight lg:leading-[60px]">
           {title}
         </h2>
 
-        {/* Tech Icons Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 sm:gap-8 lg:gap-[70px]">
-          {technologiesWithIcons.map((tech) => (
+        {/* Tech Icons Row - Horizontal scroll on mobile, wrap on larger screens */}
+        <div className="flex flex-wrap gap-8 sm:gap-12 lg:gap-[70px]">
+          {technologies.map((tech) => (
             <div
               key={tech.id}
-              className="tech-card flex flex-col items-center gap-3 sm:gap-4"
+              className="flex flex-col items-center"
+              style={{ width: '150px' }}
             >
               {/* Circular Background with Icon */}
-              <div className="relative w-[80px] h-[80px] sm:w-[100px] sm:h-[100px]">
-                {/* Background Circle */}
-                <div
-                  className="absolute inset-0 rounded-full bg-gradient-to-br from-[#a8b5e0] via-[#8F9ED1] to-[#7889c4]"
-                />
-                {/* Icon Container */}
-                <div className="absolute inset-0 flex items-center justify-center p-4">
+              <div className="relative w-[100px] h-[100px] rounded-full bg-gradient-to-br from-[#a8b5e0] via-[#8F9ED1] to-[#7889c4] flex items-center justify-center">
+                {tech.icon_url ? (
                   <img
                     src={tech.icon_url}
                     alt={tech.name}
-                    className="w-full h-full object-contain"
+                    className="w-10 h-10 object-contain"
                   />
-                </div>
+                ) : (
+                  <span className="text-white text-2xl font-bold">
+                    {tech.name.charAt(0).toUpperCase()}
+                  </span>
+                )}
               </div>
 
               {/* Tech Name */}
-              <div className="text-base sm:text-xl font-normal leading-5 text-center text-[#1a1a1a] whitespace-nowrap overflow-hidden text-ellipsis max-w-full px-2">
+              <div
+                className="mt-4 text-[#0F0F10] text-lg sm:text-xl font-normal leading-5 text-center"
+                style={{ fontFamily: 'Inter, sans-serif' }}
+              >
                 {tech.name}
               </div>
             </div>
@@ -71,3 +66,4 @@ export default function TechIntegration({
     </section>
   );
 }
+

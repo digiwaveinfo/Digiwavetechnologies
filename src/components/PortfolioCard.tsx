@@ -17,7 +17,7 @@ interface PortfolioCardProps {
   subtitle?: string;
 }
 
-export default function PortfolioCard({ id, title, description, imageUrl, technologies, tag = "Mobile App", subtitle = "All Services One Solution" }: PortfolioCardProps) {
+export default function PortfolioCard({ id, title, description, imageUrl, technologies, tag = "", subtitle = "All Services One Solution" }: PortfolioCardProps) {
   // Split title into two parts for the styled display on the right
   const titleParts = title.split(' ');
   const firstWord = titleParts[0] || '';
@@ -52,10 +52,12 @@ export default function PortfolioCard({ id, title, description, imageUrl, techno
           {/* Top Row - Tag and Styled Title */}
           <div className="flex items-start justify-between mb-4">
             {/* Tag Label */}
-            <div className="flex items-center gap-2">
-              <MobileIcon />
-              <span className="text-[#00BFD2] font-medium text-sm">{tag}</span>
-            </div>
+            {tag && (
+              <div className="flex items-center gap-2">
+                <MobileIcon />
+                <span className="text-[#00BFD2] font-medium text-sm">{tag}</span>
+              </div>
+            )}
 
             {/* Project Name - Styled on Right */}
             <div className="text-right hidden md:block flex-shrink-0">

@@ -41,6 +41,7 @@ export interface PortfolioItem {
   technologies: Technology[];
   problem_statement: string;
   solution_description: string;
+  impact_description?: string;
   features: { title: string; description: string }[];
   gallery_images: string[];
   live_url?: string;
@@ -57,12 +58,12 @@ export async function getPortfolios(): Promise<PortfolioItem[]> {
       headers: { 'Content-Type': 'application/json' },
       next: { revalidate: 60 }, // Revalidate every 60 seconds
     });
-    
+
     if (!response.ok) {
       console.error('Failed to fetch portfolios');
       return [];
     }
-    
+
     return response.json();
   } catch (error) {
     console.error('Error fetching portfolios:', error);
@@ -78,12 +79,12 @@ export async function getFeaturedPortfolios(): Promise<PortfolioItem[]> {
       headers: { 'Content-Type': 'application/json' },
       next: { revalidate: 60 },
     });
-    
+
     if (!response.ok) {
       console.error('Failed to fetch featured portfolios');
       return [];
     }
-    
+
     return response.json();
   } catch (error) {
     console.error('Error fetching featured portfolios:', error);
@@ -99,12 +100,12 @@ export async function getHomeFeaturedPortfolios(): Promise<PortfolioItem[]> {
       headers: { 'Content-Type': 'application/json' },
       next: { revalidate: 60 },
     });
-    
+
     if (!response.ok) {
       console.error('Failed to fetch home featured portfolios');
       return [];
     }
-    
+
     return response.json();
   } catch (error) {
     console.error('Error fetching home featured portfolios:', error);
@@ -120,12 +121,12 @@ export async function getPortfolioBySlug(slug: string): Promise<PortfolioItem | 
       headers: { 'Content-Type': 'application/json' },
       next: { revalidate: 10 }, // Revalidate every 10 seconds for faster updates
     });
-    
+
     if (!response.ok) {
       console.error('Failed to fetch portfolio');
       return null;
     }
-    
+
     return response.json();
   } catch (error) {
     console.error('Error fetching portfolio:', error);
@@ -144,7 +145,7 @@ export async function submitContactForm(data: ContactFormData): Promise<ApiRespo
     });
 
     const result = await response.json();
-    
+
     if (!response.ok) {
       return {
         success: false,

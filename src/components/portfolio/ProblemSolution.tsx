@@ -21,7 +21,7 @@ export default function ProblemSolution({ problem, solution }: ProblemSolutionPr
                   Problem Statement
                 </h3>
                 <div
-                  className="text-stone-950 text-base font-normal font-['Inter'] leading-8 prose prose-sm max-w-none"
+                  className="text-stone-950 text-base font-normal font-['Inter'] rich-text-content"
                   dangerouslySetInnerHTML={{ __html: problem }}
                 />
               </div>
@@ -36,7 +36,7 @@ export default function ProblemSolution({ problem, solution }: ProblemSolutionPr
                   Solution
                 </h3>
                 <div
-                  className="text-stone-950 text-base font-normal font-['Inter'] leading-8 prose prose-sm max-w-none"
+                  className="text-stone-950 text-base font-normal font-['Inter'] rich-text-content"
                   dangerouslySetInnerHTML={{ __html: solution }}
                 />
               </div>

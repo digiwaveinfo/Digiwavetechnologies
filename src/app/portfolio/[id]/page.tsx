@@ -7,6 +7,7 @@ import TechIntegration from "@/components/portfolio/TechIntegration";
 import PortfolioFeatures from "@/components/portfolio/PortfolioFeatures";
 import ProblemSolution from "@/components/portfolio/ProblemSolution";
 import DesignSection from "@/components/portfolio/DesignSection";
+import PortfolioImpact from "@/components/portfolio/PortfolioImpact";
 import { getPortfolioBySlug } from "@/lib/api";
 
 interface PortfolioDetailPageProps {
@@ -16,7 +17,7 @@ interface PortfolioDetailPageProps {
 export default async function PortfolioDetailPage({ params }: PortfolioDetailPageProps) {
   const { id } = await params;
   const portfolio = await getPortfolioBySlug(id);
-  
+
   // If portfolio not found, show default content
   if (!portfolio) {
     return (
@@ -33,35 +34,37 @@ export default async function PortfolioDetailPage({ params }: PortfolioDetailPag
       </div>
     );
   }
-  
+
   return (
     <div className="min-h-screen w-full">
       <Header />
-      
-      <PortfolioDetailHero 
+
+      <PortfolioDetailHero
         title={portfolio.title}
         description={portfolio.full_description}
       />
-      
-      <PortfolioImageSection 
-        heroImage={portfolio.hero_image_url} 
+
+      <PortfolioImageSection
+        heroImage={portfolio.hero_image_url}
         title={portfolio.title}
       />
-      
+
       <TechIntegration technologies={portfolio.technologies} />
-      
+
       <PortfolioFeatures features={portfolio.features} />
-      
-      <ProblemSolution 
+
+      <ProblemSolution
         problem={portfolio.problem_statement}
         solution={portfolio.solution_description}
       />
-      
-      <DesignSection 
-        galleryImages={portfolio.gallery_images} 
+
+      <DesignSection
+        galleryImages={portfolio.gallery_images}
         showcaseImageUrl={portfolio.showcase_image_url}
       />
-      
+
+      <PortfolioImpact impact={portfolio.impact_description} />
+
       <Contact />
       <Footer />
     </div>

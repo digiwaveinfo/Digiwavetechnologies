@@ -33,24 +33,25 @@ export default function Features({
         {/* Two Column Layout */}
         <div className="flex flex-col lg:flex-row items-start gap-6 lg:gap-16">
           {/* Left Column */}
-          <div className="flex-1 space-y-4">
+          <ul className="flex-1 space-y-4 list-disc list-outside pl-5">
             {leftFeatures.map((feature, index) => (
-              <div key={index} className="text-sm sm:text-base font-normal leading-relaxed lg:leading-[30px] text-[#1a1a1a]">
+              <li key={index} className="text-sm sm:text-base font-normal leading-relaxed lg:leading-[30px] text-[#1a1a1a] marker:text-[#00BFD2]">
                 <span className="font-semibold">{feature.title}:</span> {feature.description}
-              </div>
+              </li>
             ))}
-          </div>
+          </ul>
 
           {/* Right Column */}
-          <div className="flex-1 space-y-4">
+          <ul className="flex-1 space-y-4 list-disc list-outside pl-5">
             {rightFeatures.map((feature, index) => (
-              <div key={index} className="text-sm sm:text-base font-normal leading-relaxed lg:leading-[30px] text-[#1a1a1a]">
+              <li key={index} className="text-sm sm:text-base font-normal leading-relaxed lg:leading-[30px] text-[#1a1a1a] marker:text-[#00BFD2]">
                 <span className="font-semibold">{feature.title}:</span> {feature.description}
-              </div>
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
       </div>
     </section>
   );
 }
+
