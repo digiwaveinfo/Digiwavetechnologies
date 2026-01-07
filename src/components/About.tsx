@@ -2,14 +2,14 @@ import Link from "next/link";
 
 export default function About() {
   return (
-    <section className="w-full bg-neutral-100 overflow-hidden py-16 xl:py-0">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 2xl:px-12 relative max-w-[1800px]">
-        <div className="flex flex-col xl:flex-row items-center xl:items-start xl:h-[750px]">
+    <section className="w-full bg-neutral-100 overflow-hidden py-16 xl:py-24">
+      <div className="mx-auto w-[94%] xl:w-[90%] 2xl:w-[85%]">
+        <div className="grid grid-cols-1 xl:grid-cols-2 gap-12 xl:gap-20 items-center">
 
           {/* Images Section */}
-          <div className="relative w-full xl:w-[800px] h-[350px] sm:h-[400px] md:h-[420px] xl:h-full mb-8 md:mb-12 xl:mb-0">
+          <div className="relative w-full aspect-square xl:aspect-auto xl:h-[600px] row-start-1">
             {/* Main large image */}
-            <div className="absolute left-0 sm:left-[50px] md:left-[100px] lg:left-[150px] xl:left-[125px] top-0 xl:top-[100px] w-[85%] sm:w-[70%] md:w-[55%] lg:w-[45%] xl:w-[496px] max-w-[496px] h-[250px] sm:h-[300px] md:h-[320px] xl:h-[505px] bg-neutral-200 rounded-3xl overflow-hidden z-0">
+            <div className="absolute left-1/2 -translate-x-1/2 xl:left-auto xl:translate-x-0 xl:right-[15%] top-0 xl:top-[50px] w-[85%] sm:w-[70%] md:w-[60%] lg:w-[50%] xl:w-[70%] h-[80%] xl:h-[85%] bg-neutral-200 rounded-3xl overflow-hidden z-0">
               <img
                 src="https://api.builder.io/api/v1/image/assets/TEMP/0d055e637fa1859b9df6024ee3e324c96d4be4b3?width=1512"
                 alt="Low angle view skyscrapers"
@@ -17,7 +17,7 @@ export default function About() {
               />
             </div>
             {/* Overlapping smaller image */}
-            <div className="absolute left-[55%] sm:left-[50%] md:left-[45%] lg:left-[42%] xl:left-[319px] top-[120px] sm:top-[150px] md:top-[140px] xl:top-[183px] transform -translate-x-1/2 xl:translate-x-0 w-[180px] sm:w-[200px] md:w-[220px] lg:w-[240px] xl:w-[320px] h-[180px] sm:h-[200px] md:h-[220px] lg:h-[240px] xl:h-[320px] bg-[#00BFD2] rounded-3xl outline outline-[8px] sm:outline-[10px] md:outline-[12px] xl:outline-[15px] outline-white overflow-hidden z-10 shadow-lg">
+            <div className="absolute left-1/2 -translate-x-1/2 xl:left-auto xl:translate-x-0 xl:-right-4 bottom-4 sm:bottom-[10%] xl:bottom-[80px] w-[45%] sm:w-[40%] xl:w-[45%] aspect-square bg-[#00BFD2] rounded-3xl outline outline-[8px] sm:outline-[10px] md:outline-[12px] xl:outline-[15px] outline-white overflow-hidden z-10 shadow-lg">
               <img
                 src="https://api.builder.io/api/v1/image/assets/TEMP/9187a0bf41ca57190f4989c00a12f025167ca388?width=952"
                 alt="About as service contact information concept"
@@ -27,7 +27,7 @@ export default function About() {
           </div>
 
           {/* Content Section */}
-          <div className="w-full xl:w-[600px] xl:mt-[100px] flex flex-col justify-start items-center xl:items-start gap-6 z-20 px-2 sm:px-4 md:px-8 lg:px-16 xl:px-0">
+          <div className="w-full flex flex-col justify-start items-center xl:items-start gap-8 z-20 row-start-2 xl:row-start-1">
 
             {/* Who We Are */}
             <div className="w-full flex flex-col justify-start items-center xl:items-start gap-2.5">

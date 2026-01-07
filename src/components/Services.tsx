@@ -67,8 +67,12 @@ export default function Services() {
         setVisibleCards(1);
       } else if (window.innerWidth < 1024) {
         setVisibleCards(2);
-      } else {
+      } else if (window.innerWidth < 1536) {
         setVisibleCards(4);
+      } else if (window.innerWidth < 2000) {
+        setVisibleCards(5);
+      } else {
+        setVisibleCards(6);
       }
     };
 
@@ -223,7 +227,7 @@ export default function Services() {
         </svg>
       </div>
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 2xl:px-12 flex flex-col items-center max-w-[1800px] relative z-10">
+      <div className="mx-auto w-[94%] xl:w-[90%] 2xl:w-[85%] flex flex-col items-center relative z-10">
         {/* Section Header */}
         <div className="w-full flex flex-col items-center gap-4 mb-12">
           <h2 className="text-center text-[#00BFD2] text-xl font-medium font-[\'Poppins\']">
@@ -268,12 +272,12 @@ export default function Services() {
               {services.map((service, index) => (
                 <div
                   key={index}
-                  className="flex-shrink-0 px-2 md:px-3"
+                  className="flex-shrink-0 px-2 md:px-3 flex justify-center"
                   style={{ width: `${100 / visibleCards}%` }}
                 >
                   <Link
                     href={`/services/${service.id}`}
-                    className="flex flex-col items-center relative h-[400px] w-full group cursor-pointer"
+                    className="flex flex-col items-center relative h-[400px] w-full max-w-[350px] group cursor-pointer"
                   >
                     {/* Image Container */}
                     <div className="w-full h-64 absolute top-0 left-0 bg-neutral-200 rounded-3xl overflow-hidden shadow-sm z-0">

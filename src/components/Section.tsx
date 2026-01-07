@@ -24,7 +24,7 @@ export default function Section({
 
   return (
     <section className={`w-full ${bgClasses[bgColor]} ${spacingClasses[spacing]} ${className}`}>
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 2xl:px-12 max-w-[1800px]">
+      <div className="mx-auto w-[94%] xl:w-[90%] 2xl:w-[85%]">
         {children}
       </div>
     </section>

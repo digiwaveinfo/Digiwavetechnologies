@@ -14,7 +14,7 @@ export default function Footer() {
           backgroundPosition: "center",
         }}
       >
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 2xl:px-12 max-w-[1800px]">
+        <div className="mx-auto w-[94%] xl:w-[90%] 2xl:w-[85%]">
           <div className="flex flex-col lg:flex-row justify-between items-center gap-8">
             {/* Title */}
             <div className="flex flex-col gap-5 max-w-[536px] text-center lg:text-left">
@@ -52,13 +52,13 @@ export default function Footer() {
           backgroundColor: "#fff",
         }}
       >
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 2xl:px-12 max-w-[1800px] relative z-10">
+        <div className="mx-auto w-[94%] xl:w-[90%] 2xl:w-[85%] relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8 px-2 sm:px-0">
             {/* Company Info */}
             <div className="flex flex-col gap-7">
               <div className="flex items-center">
                 <img
-                  src="/full-logo.svg"
+                  src="/Logo-transparent.png"
                   // OLD: Two separate images - Logo.svg and named-logo.png
                   // OLD: "https://api.builder.io/api/v1/image/assets/TEMP/53464a68dade6f8a9a2888ca2325aca87ab049c8?width=191"
                   // OLD: "https://api.builder.io/api/v1/image/assets/TEMP/c4036386951a1d6ca44a4c518adf6a756d6a4c54?width=437"
@@ -161,7 +161,7 @@ export default function Footer() {
 
       {/* Copyright Bar */}
       <div className="w-full py-6 bg-[#000B2E]">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 2xl:px-12 max-w-[1800px] text-center">
+        <div className="mx-auto w-[94%] xl:w-[90%] 2xl:w-[85%] text-center">
           <p className="text-white text-sm font-semibold font-['Inter']">
             Copyright © 2025 Digiwave technology
           </p>

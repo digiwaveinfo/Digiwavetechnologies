@@ -74,7 +74,7 @@ export default function Technologies() {
 
   return (
     <section className="w-full py-16 md:py-24 bg-white flex flex-col justify-start items-center">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 2xl:px-12 flex flex-col items-center gap-12 w-full max-w-[1800px]">
+      <div className="mx-auto w-[94%] xl:w-[90%] 2xl:w-[85%] flex flex-col items-center gap-12">
         {/* Header */}
         <div className="text-center text-[#00BFD2] text-xl font-medium font-['Poppins']">
           Technologies we used
@@ -86,7 +86,7 @@ export default function Technologies() {
         {/* Tabs & Content */}
         <div className="w-full flex flex-col justify-start items-center gap-11">
           {/* Tablist */}
-          <div className="w-full max-w-[1075px] h-auto md:h-14 relative bg-[#00BFD2] rounded-[10px] flex flex-wrap md:flex-nowrap justify-center items-center p-2 gap-2">
+          <div className="w-full md:w-[80%] lg:w-[70%] h-auto md:h-14 relative bg-[#00BFD2] rounded-[10px] flex flex-wrap md:flex-nowrap justify-center items-center p-2 gap-2">
             {tabs.map((tab, index) => (
               <button
                 key={index}

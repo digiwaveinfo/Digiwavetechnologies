@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 function HeroVideo() {
   return (
     <video
@@ -22,7 +24,7 @@ export default function HomeHero() {
       <HeroVideo />
 
       {/* Content Container */}
-      <div className="relative z-10 h-full flex items-center justify-center lg:justify-start px-4 sm:px-6 lg:px-8 2xl:px-12">
+      <div className="relative z-10 h-full flex items-center justify-center lg:justify-start mx-auto w-[94%] xl:w-[90%] 2xl:w-[85%]">
         <div className="w-full max-w-[619px] xl:max-w-[750px] inline-flex flex-col justify-start items-center lg:items-start gap-5 sm:gap-7 text-center lg:text-left">
           {/* Main Content */}
           <div className="self-stretch flex flex-col justify-start items-center lg:items-start gap-4 sm:gap-5">
@@ -49,11 +51,14 @@ export default function HomeHero() {
           {/* Buttons */}
           <div className="inline-flex justify-center lg:justify-start items-center gap-3 mt-2 sm:mt-0">
             {/* Book Demo Button */}
-            <div className="h-12 sm:h-16 px-4 sm:px-5 py-3 sm:py-4 bg-[#00BFD2] rounded-[247px] inline-flex justify-center items-center gap-2.5 overflow-hidden hover:opacity-90 transition-opacity cursor-pointer">
-              <div className="text-white text-base sm:text-lg font-bold font-['Inter'] uppercase leading-7 tracking-wide">
+            <Link
+              href="/book-demo"
+              className="h-12 sm:h-16 px-4 sm:px-5 py-3 sm:py-4 bg-[#00BFD2] rounded-[247px] inline-flex justify-center items-center gap-2.5 overflow-hidden hover:opacity-90 transition-opacity cursor-pointer"
+            >
+              <span className="text-white text-base sm:text-lg font-bold font-['Inter'] uppercase leading-7 tracking-wide">
                 BOOK DEMO
-              </div>
-            </div>
+              </span>
+            </Link>
 
             {/* Arrow Button */}
             <div className="w-12 h-12 sm:w-16 sm:h-16 px-3 sm:px-5 py-3 sm:py-4 bg-white/20 rounded-[247px] inline-flex flex-col justify-center items-center gap-2.5 overflow-hidden hover:bg-white/30 transition-colors cursor-pointer">

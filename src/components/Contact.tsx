@@ -46,10 +46,10 @@ export default function Contact() {
 
   return (
     <section id="contact" className="w-full py-12 md:py-16 bg-neutral-100 overflow-hidden">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 2xl:px-12 max-w-[1800px]">
-        <div className="flex flex-col lg:flex-row justify-start items-stretch gap-7">
+      <div className="mx-auto w-[94%] xl:w-[90%] 2xl:w-[85%]">
+        <div className="grid grid-cols-1 lg:grid-cols-[380px_1fr] gap-7">
           {/* Left Card - Info */}
-          <div className="w-full lg:w-96 p-6 md:p-8 bg-white rounded-[10px] shadow-[0px_4px_23px_0px_rgba(174,191,210,0.30)] flex flex-col">
+          <div className="w-full p-6 md:p-8 bg-white rounded-[10px] shadow-[0px_4px_23px_0px_rgba(174,191,210,0.30)] flex flex-col">
             <div>
               <h2 className="text-sky-950 text-4xl md:text-5xl font-bold font-['Inter'] leading-[60px]">
                 Let's Start
@@ -102,7 +102,7 @@ export default function Contact() {
           </div>
 
           {/* Right Card - Form */}
-          <div className="flex-1 p-6 md:p-8 bg-white rounded-[10px] shadow-[0px_4px_23px_0px_rgba(174,191,210,0.30)]">
+          <div className="w-full p-6 md:p-8 bg-white rounded-[10px] shadow-[0px_4px_23px_0px_rgba(174,191,210,0.30)]">
             <div className="text-[#00BFD2] text-xl font-medium font-['Poppins'] mb-4">
               Contact Us
             </div>
