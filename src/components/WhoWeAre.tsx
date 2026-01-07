@@ -1,6 +1,6 @@
 export default function WhoWeAre() {
   return (
-    <section className="pt-12 lg:pt-16 w-full bg-white">
+    <section className="pt-12 lg:pt-16 w-full">
       <div className="mx-auto w-[94%] xl:w-[90%] 2xl:w-[85%]">
         {/* Who We Are Section */}
         <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-16">

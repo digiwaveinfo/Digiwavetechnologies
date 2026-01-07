@@ -9,7 +9,29 @@ export default function Header() {
   const pathname = usePathname();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  const isActive = (path: string) => pathname === path;
+  // Enhanced isActive function that highlights parent section for inner pages
+  const isActive = (path: string) => {
+    // Exact match
+    if (pathname === path) return true;
+
+    // For inner pages, highlight the parent section
+    // Home is only active on exact "/" match
+    if (path === "/") return pathname === "/";
+
+    // For Portfolio - highlight when on /portfolio/* pages
+    if (path === "/portfolio" && pathname.startsWith("/portfolio/")) return true;
+
+    // For Services - highlight when on /services/* pages
+    if (path === "/services" && pathname.startsWith("/services/")) return true;
+
+    // For About - highlight when on /about/* pages
+    if (path === "/about" && pathname.startsWith("/about/")) return true;
+
+    // For Product - highlight when on /product/* pages
+    if (path === "/product" && pathname.startsWith("/product/")) return true;
+
+    return false;
+  };
 
   const navLinks = [
     { href: "/", label: "Home" },

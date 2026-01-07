@@ -41,7 +41,7 @@ export default function Testimonials() {
   };
 
   return (
-    <section className="w-full bg-white">
+    <section className="w-full py-16 md:py-24 bg-white">
       <div className="mx-auto w-[94%] xl:w-[90%] 2xl:w-[85%]">
         <div className="grid grid-cols-1 lg:grid-cols-[380px_1fr] gap-5 justify-center">
           {/* Stats Card */}

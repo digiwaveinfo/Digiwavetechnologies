@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function About() {
   return (
-    <section className="w-full bg-neutral-100 overflow-hidden">
+    <section className="w-full bg-neutral-100 overflow-hidden py-20">
       <div className="mx-auto w-[94%] xl:w-[90%] 2xl:w-[85%]">
         <div className="grid grid-cols-1 xl:grid-cols-2 gap-12 xl:gap-20 items-center">
 

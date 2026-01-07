@@ -187,7 +187,7 @@ export default function ServiceCards() {
   }, [isAutoPlaying, nextSlide]);
 
   return (
-    <section className="py-8 w-full bg-white">
+    <section className="py-8 w-full">
       <div className="mx-auto w-[94%] xl:w-[90%] 2xl:w-[85%]">
         {/* Carousel Container */}
         <div

@@ -86,12 +86,12 @@ export default function Technologies() {
         {/* Tabs & Content */}
         <div className="w-full flex flex-col justify-start items-center gap-11">
           {/* Tablist */}
-          <div className="w-full md:w-[80%] lg:w-[70%] h-auto md:h-14 relative bg-[#00BFD2] rounded-[10px] flex flex-wrap md:flex-nowrap justify-center items-center p-2 gap-2">
+          <div className="w-full lg:w-[85%] xl:w-[75%] 2xl:w-[70%] h-auto relative bg-[#00BFD2] rounded-[10px] flex flex-wrap justify-center items-center p-2 gap-1.5 md:gap-2">
             {tabs.map((tab, index) => (
               <button
                 key={index}
                 onClick={() => setActiveTab(index)}
-                className={`px-4 md:px-6 py-2.5 rounded-[5px] text-center text-sky-950 text-sm md:text-lg font-medium font-['Inter'] leading-4 transition-all whitespace-nowrap ${activeTab === index
+                className={`px-3 sm:px-4 lg:px-6 py-2 md:py-2.5 rounded-[5px] text-center text-sky-950 text-xs sm:text-sm lg:text-base font-medium font-['Inter'] leading-4 transition-all whitespace-nowrap ${activeTab === index
                   ? "bg-white shadow-[0px_4px_4px_0px_rgba(174,191,210,0.30)]"
                   : "hover:bg-white/30"
                   }`}
