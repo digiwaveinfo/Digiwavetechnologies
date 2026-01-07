@@ -12,7 +12,7 @@ const TooltipTrigger = React.forwardRef<HTMLElement, React.HTMLAttributes<HTMLEl
 })
 TooltipTrigger.displayName = "TooltipTrigger"
 
-const TooltipContent = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement> & { sideOffset?: number }>(({ className, sideOffset = 4, ...props }, ref) => null)
+const TooltipContent = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement> & { sideOffset?: number; side?: "top" | "right" | "bottom" | "left"; align?: "start" | "center" | "end" }>(({ className, sideOffset = 4, ...props }, ref) => null)
 TooltipContent.displayName = "TooltipContent"
 
 export { Tooltip, TooltipTrigger, TooltipContent, TooltipProvider }
