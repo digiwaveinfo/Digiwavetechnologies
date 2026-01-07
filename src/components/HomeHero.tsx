@@ -10,7 +10,7 @@ function HeroVideo() {
       loop
       playsInline
       suppressHydrationWarning
-      className="absolute inset-0 w-full h-full object-cover object-[center_70%] md:object-center"
+      className="absolute inset-0 w-full h-full object-fill object-[center_70%] md:object-center"
     >
       <source src="/Hero-background.mp4" type="video/mp4" />
     </video>

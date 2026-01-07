@@ -110,7 +110,7 @@ export default function Testimonials() {
                   <img
                     src={reviews[currentSlide].image}
                     alt={reviews[currentSlide].name}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-fill"
                   />
                 </div>
                 <div>

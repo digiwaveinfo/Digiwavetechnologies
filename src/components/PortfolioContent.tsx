@@ -67,7 +67,7 @@ const StickyCard = ({ i, card, cardType, progress, range, targetScale }: StickyC
       >
         <div className="w-full h-48 bg-stone-100 overflow-hidden relative z-[2]">
           {cardImage && (
-            <img src={cardImage} alt={card.title} className="w-full h-full object-cover object-top" />
+            <img src={cardImage} alt={card.title} className="w-full h-full object-fill object-top" />
           )}
         </div>
         <div className="p-6 flex flex-col gap-5 relative">
@@ -120,7 +120,7 @@ const StickyCard = ({ i, card, cardType, progress, range, targetScale }: StickyC
           </Link>
         </div>
         <div className="absolute right-0 top-0 w-[36%] h-full bg-stone-100 overflow-hidden">
-          {cardImage && <img src={cardImage} alt={card.title} className="w-full h-full object-cover" />}
+          {cardImage && <img src={cardImage} alt={card.title} className="w-full h-full object-fill" />}
         </div>
       </motion.div>
     </div>

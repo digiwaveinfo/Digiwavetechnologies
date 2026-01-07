@@ -126,7 +126,7 @@ export default function WhyUsBetter() {
                             src="/about/business-man-holding-paper-with-why-choose-us-question .webp"
                             alt="Why Choose Us"
                             fill
-                            className="object-cover object-center"
+                            className="object-fill object-center"
                             style={{ objectPosition: 'center left' }}
                         />
                     </div>

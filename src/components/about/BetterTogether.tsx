@@ -33,7 +33,7 @@ export default function BetterTogether() {
                     </div>
 
                     {/* Image Section */}
-                    <div className="w-full h-[465px] relative bg-neutral-200 rounded-3xl overflow-hidden shadow-sm">
+                    <div className="w-full h-[465px] md:h-[600px] relative bg-neutral-200 rounded-3xl overflow-hidden shadow-sm">
                         {/* Placeholder for potential background layer if needed */}
                         <div className="absolute w-[880px] h-[588px] left-[-62px] top-0 pointer-events-none" />
 
@@ -41,7 +41,7 @@ export default function BetterTogether() {
                             src="/about/bettertogether.webp"
                             alt="Group of people working out business plan in office"
                             fill
-                            className="object-fill object-top"
+                            className="object-fill object-center"
                         />
                     </div>
                 </div>

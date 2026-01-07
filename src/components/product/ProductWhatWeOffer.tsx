@@ -27,7 +27,7 @@ export default function ProductWhatWeOffer() {
           <img
             src="https://api.builder.io/api/v1/image/assets/TEMP/b136b83f82601fc5126fbdf7556921a346fcf0cf?width=1760"
             alt="AI and Machine Learning Technology"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-fill"
           />
         </div>
         <div className="w-full lg:w-1/2 flex flex-col gap-7 items-center lg:items-start">
@@ -40,7 +40,7 @@ export default function ProductWhatWeOffer() {
                 What We Offer
               </div>
             </div>
-            
+
             {/* AI Offerings List */}
             <div className="space-y-6">
               {offerings.map((offering, index) => (

@@ -16,7 +16,7 @@ export default function WhoWeAre() {
                             src="/about/hero-over-image1.webp"
                             alt="Low angle view skyscrapers"
                             fill
-                            className="object-cover"
+                            className="object-fill"
                         />
                     </div>
 
@@ -26,7 +26,7 @@ export default function WhoWeAre() {
                             src="/about/hero-over0image2.webp"
                             alt="Skyscrapers"
                             fill
-                            className="object-cover"
+                            className="object-fill"
                         />
                         {/* Play Button Overlay */}
                         <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 lg:w-48 lg:h-48 bg-white/30 backdrop-blur-sm rounded-full flex items-center justify-center">

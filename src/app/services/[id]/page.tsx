@@ -251,7 +251,7 @@ export default async function ServiceDetailPage({ params }: ServiceDetailPagePro
                 <img
                   src={service.heroImage}
                   alt={service.title}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-fill"
                 />
               </div>
               {/* Floating Elements */}

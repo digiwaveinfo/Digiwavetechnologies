@@ -12,7 +12,7 @@ export default function PortfolioImageSection({ heroImage, title = "Portfolio" }
           <img
             src={heroImage || "/portfolio-view-image.webp"}
             alt={`${title} Screenshots`}
-            className="w-full h-full object-cover object-center"
+            className="w-full h-full object-fill object-center"
           />
         </div>
       </div>

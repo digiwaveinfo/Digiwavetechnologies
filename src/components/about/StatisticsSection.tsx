@@ -34,9 +34,9 @@ export default function StatisticsSection() {
             {stats.map((stat, index) => (
               <div
                 key={index}
-                className="flex p-[30px] items-center gap-2.5 rounded-[26px] bg-white shadow-[2px_3px_6.3px_1px_rgba(64,64,64,0.27)]"
+                className="flex flex-col lg:flex-row p-[30px] items-center lg:items-start gap-2.5 rounded-[26px] bg-white shadow-[2px_3px_6.3px_1px_rgba(64,64,64,0.27)]"
               >
-                <div className="flex flex-col justify-between h-full w-full">
+                <div className="flex flex-col items-center lg:items-start justify-between h-full w-full">
                   <div className="w-20 h-20 relative mb-auto">
                     <Image
                       src={stat.icon}
@@ -46,7 +46,7 @@ export default function StatisticsSection() {
                       className="object-contain"
                     />
                   </div>
-                  <div className="flex flex-col gap-[5px] mt-6">
+                  <div className="flex flex-col gap-[5px] mt-6 text-center lg:text-left w-full">
                     <div className="font-['Poppins'] font-bold text-[40px] leading-[60px] text-[#00114C]">
                       {stat.value}
                     </div>
@@ -65,7 +65,7 @@ export default function StatisticsSection() {
               src="/Group.webp"
               alt="Modern skyscraper buildings"
               fill
-              className="object-cover rounded-2xl"
+              className="object-fill rounded-2xl"
             />
           </div>
         </div>

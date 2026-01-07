@@ -56,17 +56,17 @@ export default function CoreValues() {
                     {values.map((val, index) => (
                         <div
                             key={index}
-                            className="w-full md:w-72 p-4 bg-white rounded-2xl shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] flex flex-col justify-start items-start gap-5 hover:scale-105 transition-transform duration-300"
+                            className="w-full md:w-72 p-4 bg-white rounded-2xl shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] flex flex-col justify-start items-center lg:items-start gap-5 hover:scale-105 transition-transform duration-300 text-center lg:text-left"
                         >
                             <div className="w-16 h-16 relative">
                                 <div className="absolute left-0 top-0 overflow-hidden">
                                     {val.icon}
                                 </div>
                             </div>
-                            <h3 className="self-stretch justify-center text-sky-700 text-3xl font-semibold font-['Inter'] leading-8">
+                            <h3 className="self-stretch text-sky-700 text-3xl font-semibold font-['Inter'] leading-8">
                                 {val.title}
                             </h3>
-                            <p className="self-stretch justify-center text-black text-base font-normal font-['Inter'] leading-6">
+                            <p className="self-stretch text-black text-base font-normal font-['Inter'] leading-6">
                                 {val.description}
                             </p>
                         </div>

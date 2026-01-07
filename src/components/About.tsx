@@ -13,7 +13,7 @@ export default function About() {
               <img
                 src="https://api.builder.io/api/v1/image/assets/TEMP/0d055e637fa1859b9df6024ee3e324c96d4be4b3?width=1512"
                 alt="Low angle view skyscrapers"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-fill"
               />
             </div>
             {/* Overlapping smaller image */}
@@ -21,7 +21,7 @@ export default function About() {
               <img
                 src="https://api.builder.io/api/v1/image/assets/TEMP/9187a0bf41ca57190f4989c00a12f025167ca388?width=952"
                 alt="About as service contact information concept"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-fill"
               />
             </div>
           </div>

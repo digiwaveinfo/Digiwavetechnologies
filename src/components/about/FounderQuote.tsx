@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function FounderQuote() {
     return (
-        <section className="w-full bg-white pb-20 pt-10">
+        <section className="w-full bg-white pt-10">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 2xl:px-12 flex flex-col items-center gap-11 max-w-[1800px]">
                 <div className="text-center">
                     <h3 className="text-cyan-500 text-xl font-medium font-['Poppins'] mb-2">Work We're Proud Of</h3>
@@ -18,7 +18,7 @@ export default function FounderQuote() {
                             src="/founder.webp"
                             alt="Background"
                             fill
-                            className="object-cover"
+                            className="object-fill"
                         />
                         {/* Dark overlay for better text readability */}
                         <div className="absolute inset-0 bg-black/40"></div>

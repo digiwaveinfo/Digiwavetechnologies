@@ -6,7 +6,7 @@ interface DesignSectionProps {
 export default function DesignSection({ galleryImages, showcaseImageUrl }: DesignSectionProps) {
   // Use showcase image first, then first gallery image, then default
   const mainImage = showcaseImageUrl || galleryImages?.[0] || "/design-portfolio-image.webp";
-  
+
   return (
     <section className="py-8 sm:py-12 lg:py-16 bg-white">
       <div className="max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-8 2xl:px-12">
@@ -21,7 +21,7 @@ export default function DesignSection({ galleryImages, showcaseImageUrl }: Desig
         <img
           src={mainImage}
           alt="Design Mockups - Mobile App Interface Screens"
-          className="w-full h-auto object-cover"
+          className="w-full h-auto object-fill"
         />
       </div>
 
@@ -34,7 +34,7 @@ export default function DesignSection({ galleryImages, showcaseImageUrl }: Desig
                 <img
                   src={image}
                   alt={`Design Screenshot ${index + 2}`}
-                  className="w-full h-auto object-cover"
+                  className="w-full h-auto object-fill"
                 />
               </div>
             ))}

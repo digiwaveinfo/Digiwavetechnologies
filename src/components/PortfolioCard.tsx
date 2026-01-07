@@ -26,13 +26,13 @@ export default function PortfolioCard({ id, title, description, imageUrl, techno
   // Filter to show only main technologies (language, platform) on card
   // Other categories (framework, library, database, tool) will be shown on detail page
   const mainCategories = ['language', 'platform'];
-  const mainTechnologies = technologies.filter(tech => 
+  const mainTechnologies = technologies.filter(tech =>
     tech.category && mainCategories.includes(tech.category)
   );
-  
+
   // If no main technologies found, fall back to first 3 of any category
-  const displayTechnologies = mainTechnologies.length > 0 
-    ? mainTechnologies.slice(0, 3) 
+  const displayTechnologies = mainTechnologies.length > 0
+    ? mainTechnologies.slice(0, 3)
     : technologies.slice(0, 3);
 
   return (
@@ -43,7 +43,7 @@ export default function PortfolioCard({ id, title, description, imageUrl, techno
           <img
             src={imageUrl || "/portfolio-card-image.webp"}
             alt={title}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-fill"
           />
         </div>
 
@@ -100,7 +100,7 @@ export default function PortfolioCard({ id, title, description, imageUrl, techno
 // Tech Icon Wrapper with dynamic icon based on tech name or uploaded icon
 function TechIcon({ tech }: { tech: Technology }) {
   const name = tech.name || '';
-  
+
   // If technology has an uploaded icon, use it
   if (tech.icon_url) {
     return (
@@ -109,7 +109,7 @@ function TechIcon({ tech }: { tech: Technology }) {
       </div>
     );
   }
-  
+
   const getIcon = () => {
     const lowerName = name.toLowerCase();
     if (lowerName.includes('php')) return <PHPIconSmall />;
@@ -234,10 +234,10 @@ function PythonIcon() {
 function ReactIcon() {
   return (
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="12" cy="12" r="2.5" fill="#61DAFB"/>
-      <ellipse cx="12" cy="12" rx="10" ry="4" stroke="#61DAFB" strokeWidth="1.5" fill="none"/>
-      <ellipse cx="12" cy="12" rx="10" ry="4" stroke="#61DAFB" strokeWidth="1.5" fill="none" transform="rotate(60 12 12)"/>
-      <ellipse cx="12" cy="12" rx="10" ry="4" stroke="#61DAFB" strokeWidth="1.5" fill="none" transform="rotate(120 12 12)"/>
+      <circle cx="12" cy="12" r="2.5" fill="#61DAFB" />
+      <ellipse cx="12" cy="12" rx="10" ry="4" stroke="#61DAFB" strokeWidth="1.5" fill="none" />
+      <ellipse cx="12" cy="12" rx="10" ry="4" stroke="#61DAFB" strokeWidth="1.5" fill="none" transform="rotate(60 12 12)" />
+      <ellipse cx="12" cy="12" rx="10" ry="4" stroke="#61DAFB" strokeWidth="1.5" fill="none" transform="rotate(120 12 12)" />
     </svg>
   );
 }
@@ -245,8 +245,8 @@ function ReactIcon() {
 function NodeIcon() {
   return (
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M12 2L3 7V17L12 22L21 17V7L12 2Z" fill="#339933"/>
-      <path d="M12 6L7 9V15L12 18L17 15V9L12 6Z" fill="#fff"/>
+      <path d="M12 2L3 7V17L12 22L21 17V7L12 2Z" fill="#339933" />
+      <path d="M12 6L7 9V15L12 18L17 15V9L12 6Z" fill="#fff" />
     </svg>
   );
 }
@@ -254,8 +254,8 @@ function NodeIcon() {
 function JavaIcon() {
   return (
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M8.851 18.56s-.917.534.653.714c1.902.218 2.874.187 4.969-.211 0 0 .552.346 1.321.646-4.699 2.013-10.633-.118-6.943-1.149M8.276 15.933s-1.028.762.542.924c2.032.209 3.636.227 6.413-.308 0 0 .384.389.987.602-5.679 1.661-12.007.13-7.942-1.218" fill="#5382A1"/>
-      <path d="M13.116 11.475c1.158 1.333-.304 2.533-.304 2.533s2.939-1.518 1.589-3.418c-1.261-1.772-2.228-2.652 3.007-5.688 0 0-8.216 2.051-4.292 6.573" fill="#E76F00"/>
+      <path d="M8.851 18.56s-.917.534.653.714c1.902.218 2.874.187 4.969-.211 0 0 .552.346 1.321.646-4.699 2.013-10.633-.118-6.943-1.149M8.276 15.933s-1.028.762.542.924c2.032.209 3.636.227 6.413-.308 0 0 .384.389.987.602-5.679 1.661-12.007.13-7.942-1.218" fill="#5382A1" />
+      <path d="M13.116 11.475c1.158 1.333-.304 2.533-.304 2.533s2.939-1.518 1.589-3.418c-1.261-1.772-2.228-2.652 3.007-5.688 0 0-8.216 2.051-4.292 6.573" fill="#E76F00" />
     </svg>
   );
 }
