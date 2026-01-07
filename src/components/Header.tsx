@@ -22,23 +22,23 @@ export default function Header() {
   return (
     <header className="w-full bg-white shadow-[0px_4px_4px_0px_rgba(181,181,181,0.25)] sticky top-0 z-50 flex flex-col">
       {/* Top Bar - Email & Social Icons */}
-      <div className="w-full bg-[#00BFD2] h-9 flex justify-center">
+      <div className="w-full bg-[#00BFD2] h-11 flex justify-center">
         <div className="w-[94%] xl:w-[90%] 2xl:w-[85%] h-full flex items-center justify-between">
           {/* Email */}
           <a href="mailto:info@digiwavetechnologies.in" className="flex items-center gap-2 text-white hover:opacity-80 transition-opacity">
-            <span className="text-sm font-medium hidden sm:inline">info@digiwavetechnologies.in</span>
+            <span className="text-base font-medium hidden sm:inline">info@digiwavetechnologies.in</span>
           </a>
 
-          <div className="flex justify-start items-center gap-3">
+          <div className="flex justify-start items-center gap-4">
             {/* Facebook */}
-            <a href="#" className="relative w-6 h-6 hover:opacity-80 transition-opacity">
+            <a href="#" className="relative w-7 h-7 hover:opacity-80 transition-opacity">
               <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
                 <rect width="25.2727" height="25.2727" rx="4.21212" fill="#00BFD2" />
                 <path d="M9.08754 13.131H10.7328V19.9739C10.7328 20.109 10.8411 20.2185 10.9749 20.2185H13.7645C13.8982 20.2185 14.0065 20.109 14.0065 19.9739V13.1633H15.8979C16.0209 13.1633 16.1243 13.07 16.1384 12.9466L16.4256 10.4274C16.4335 10.3581 16.4118 10.2887 16.3659 10.2367C16.3199 10.1846 16.2542 10.1548 16.1852 10.1548H14.0066V8.57567C14.0066 8.09963 14.2603 7.85824 14.7608 7.85824C14.8321 7.85824 16.1852 7.85824 16.1852 7.85824C16.3189 7.85824 16.4273 7.74871 16.4273 7.61366V5.30126C16.4273 5.16615 16.3189 5.05668 16.1852 5.05668H14.2221C14.2083 5.056 14.1775 5.05487 14.1322 5.05487C13.7916 5.05487 12.6077 5.12242 11.6725 5.99164C10.6362 6.95487 10.7803 8.10819 10.8147 8.30816V10.1548H9.08754C8.95382 10.1548 8.84546 10.2643 8.84546 10.3994V12.8864C8.84546 13.0215 8.95382 13.131 9.08754 13.131Z" fill="#FEFFFF" />
               </svg>
             </a>
             {/* Instagram */}
-            <a href="#" className="relative w-6 h-6 hover:opacity-80 transition-opacity">
+            <a href="#" className="relative w-7 h-7 hover:opacity-80 transition-opacity">
               <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
                 <rect width="25.2727" height="25.2727" rx="4.21212" fill="#00BFD2" />
                 <path d="M5.05444 8.84584C5.05444 7.84043 5.45384 6.8762 6.16477 6.16526C6.87571 5.45433 7.83994 5.05493 8.84535 5.05493H16.4272C17.4326 5.05493 18.3968 5.45433 19.1077 6.16526C19.8187 6.8762 20.2181 7.84043 20.2181 8.84584V16.4277C20.2181 17.4331 19.8187 18.3973 19.1077 19.1082C18.3968 19.8192 17.4326 20.2186 16.4272 20.2186H8.84535C7.83994 20.2186 6.87571 19.8192 6.16477 19.1082C5.45384 18.3973 5.05444 17.4331 5.05444 16.4277V8.84584Z" stroke="#FEFFFF" strokeWidth="1.26364" strokeLinecap="round" strokeLinejoin="round" />
@@ -47,7 +47,7 @@ export default function Header() {
               </svg>
             </a>
             {/* Twitter/X */}
-            <a href="#" className="relative w-6 h-6 hover:opacity-80 transition-opacity">
+            <a href="#" className="relative w-7 h-7 hover:opacity-80 transition-opacity">
               <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
                 <rect width="25.2727" height="25.2727" rx="4.21212" fill="#00BFD2" />
                 <g transform="translate(5, 5)">
@@ -56,7 +56,7 @@ export default function Header() {
               </svg>
             </a>
             {/* LinkedIn */}
-            <a href="#" className="relative w-6 h-6 hover:opacity-80 transition-opacity">
+            <a href="#" className="relative w-7 h-7 hover:opacity-80 transition-opacity">
               <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
                 <rect width="25.2727" height="25.2727" rx="4.21212" fill="#00BFD2" />
                 <path d="M8.29587 9.3606H5.58544C5.46515 9.3606 5.36768 9.4764 5.36768 9.61921V19.96C5.36768 20.1028 5.46515 20.2186 5.58544 20.2186H8.29587C8.41617 20.2186 8.51364 20.1028 8.51364 19.96V9.61921C8.51364 9.4764 8.41617 9.3606 8.29587 9.3606Z" fill="#FEFFFF" />
@@ -69,7 +69,7 @@ export default function Header() {
       </div>
 
       {/* Main Navigation */}
-      <div className="w-full py-1 lg:py-2 flex justify-center">
+      <div className="w-full py-3 lg:py-4 flex justify-center">
         <div className="w-[94%] xl:w-[90%] 2xl:w-[85%] flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center">
@@ -79,19 +79,19 @@ export default function Header() {
               // OLD: "https://api.builder.io/api/v1/image/assets/TEMP/53464a68dade6f8a9a2888ca2325aca87ab049c8?width=191"
               // OLD: "https://api.builder.io/api/v1/image/assets/TEMP/c4036386951a1d6ca44a4c518adf6a756d6a4c54?width=437"
               alt="Digiwave Technologies"
-              className="h-8 lg:h-10 w-auto object-contain"
+              className="h-10 lg:h-12 w-auto object-contain"
             />
           </Link>
 
           {/* Desktop Menu */}
-          <div className="hidden xl:flex items-center gap-2.5">
+          <div className="hidden xl:flex items-center gap-4">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className={`px-5 py-2 rounded-[90px] flex justify-center items-center gap-2 transition-colors ${isActive(link.href) ? 'bg-[#00BFD2]/10' : 'hover:bg-gray-50 rounded-full'}`}
+                className={`px-6 py-2.5 rounded-[90px] flex justify-center items-center gap-2 transition-colors ${isActive(link.href) ? 'bg-[#00BFD2]/10' : 'hover:bg-gray-50 rounded-full'}`}
               >
-                <span className={`text-base font-medium font-['Inter'] leading-tight ${isActive(link.href) ? 'text-[#00BFD2]' : 'text-stone-950'}`}>
+                <span className={`text-lg font-medium font-['Inter'] leading-tight ${isActive(link.href) ? 'text-[#00BFD2]' : 'text-stone-950'}`}>
                   {link.label}
                 </span>
               </Link>
@@ -107,10 +107,10 @@ export default function Header() {
                   contactSection.scrollIntoView({ behavior: 'smooth' });
                 }
               }}
-              className="w-44 px-5 py-2.5 bg-[#00BFD2] rounded-[247px] flex justify-center items-center gap-2 hover:opacity-90 transition-opacity"
+              className="w-52 px-7 py-3.5 bg-[#00BFD2] rounded-[247px] flex justify-center items-center gap-2 hover:opacity-90 transition-opacity"
             >
-              <span className="text-white text-sm font-bold font-['Inter'] uppercase leading-4 tracking-wide">Contact Us</span>
-              <svg width="13" height="16" viewBox="0 0 13 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <span className="text-white text-base font-bold font-['Inter'] uppercase leading-4 tracking-wide">Contact Us</span>
+              <svg width="15" height="18" viewBox="0 0 13 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M11.5 4C11.5 3.70833 11.4062 3.46875 11.2188 3.28125C11.0312 3.09375 10.7917 3 10.5 3H3.5C3.20833 3 2.96875 3.09375 2.78125 3.28125C2.59375 3.46875 2.5 3.70833 2.5 4C2.5 4.29167 2.59375 4.53125 2.78125 4.71875C2.96875 4.90625 3.20833 5 3.5 5H8.09375L1.78125 11.2812C1.59375 11.4896 1.5 11.7292 1.5 12C1.5 12.2708 1.59375 12.5104 1.78125 12.7188C1.98958 12.9062 2.22917 13 2.5 13C2.77083 13 3.01042 12.9062 3.21875 12.7188L9.5 6.40625V11C9.5 11.2917 9.59375 11.5312 9.78125 11.7188C9.96875 11.9062 10.2083 12 10.5 12C10.7917 12 11.0312 11.9062 11.2188 11.7188C11.4062 11.5312 11.5 11.2917 11.5 11V4Z" fill="white" />
               </svg>
             </button>

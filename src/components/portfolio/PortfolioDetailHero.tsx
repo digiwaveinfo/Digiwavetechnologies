@@ -5,7 +5,7 @@ interface PortfolioDetailHeroProps {
 
 export default function PortfolioDetailHero({ title, description }: PortfolioDetailHeroProps) {
   return (
-    <section className="pt-8 sm:pt-16 lg:pt-20 bg-white">
+    <section className="pt-6 sm:pt-12 lg:pt-16">
       <div className="mx-auto w-[94%] xl:w-[90%] 2xl:w-[85%]">
         <div className="w-full flex flex-col gap-4">
           <h1 className="text-sky-950 text-2xl sm:text-3xl lg:text-4xl font-bold font-['Inter'] leading-tight lg:leading-[60px]">
