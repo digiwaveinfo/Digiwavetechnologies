@@ -8,8 +8,8 @@ export default function DesignSection({ galleryImages, showcaseImageUrl }: Desig
   const mainImage = showcaseImageUrl || galleryImages?.[0] || "/design-portfolio-image.webp";
 
   return (
-    <section className="py-8 sm:py-12 lg:py-16 bg-white">
-      <div className="max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-8 2xl:px-12">
+    <section className="bg-white">
+      <div className="mx-auto w-[94%] xl:w-[90%] 2xl:w-[85%]">
         {/* Title - aligned with other sections */}
         <h2 className="text-sky-950 font-bold text-2xl sm:text-3xl md:text-4xl leading-tight mb-6 sm:mb-8">
           Design
@@ -27,7 +27,7 @@ export default function DesignSection({ galleryImages, showcaseImageUrl }: Desig
 
       {/* Additional Gallery Images */}
       {galleryImages && galleryImages.length > 1 && (
-        <div className="max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-8 2xl:px-12 mt-8">
+        <div className="mx-auto w-[94%] xl:w-[90%] 2xl:w-[85%] mt-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {galleryImages.slice(1).map((image, index) => (
               <div key={index} className="rounded-lg overflow-hidden shadow-md">

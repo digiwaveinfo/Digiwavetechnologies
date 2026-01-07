@@ -257,8 +257,8 @@ export default function ThirdPartyIntegrations() {
   }, [api, isAutoPlaying]);
 
   return (
-    <section className="py-16 sm:py-20 px-5 sm:px-10 lg:px-20 bg-gradient-to-b from-gray-50 to-white">
-      <div className="max-w-[1280px] mx-auto">
+    <section className="py-10 sm:py-12 w-full bg-gradient-to-b from-gray-50 to-white">
+      <div className="mx-auto w-[94%] xl:w-[90%] 2xl:w-[85%]">
         {/* Section Header */}
         <div className="text-center mb-16">
           <div className="inline-block px-4 py-2 bg-[#00BFD2]/10 rounded-full border border-[#00BFD2]/20 mb-4">

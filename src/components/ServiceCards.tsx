@@ -8,90 +8,90 @@ import Link from "next/link";
 // Colorful SVG Icons for each service
 const AIIcon = () => (
   <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <rect x="8" y="8" width="34" height="34" rx="4" fill="#E8F4FC"/>
-    <circle cx="25" cy="20" r="6" fill="#4A90D9"/>
-    <path d="M15 35C15 29.4772 19.4772 25 25 25C30.5228 25 35 29.4772 35 35" stroke="#4A90D9" strokeWidth="3" strokeLinecap="round"/>
-    <circle cx="37" cy="13" r="4" fill="#FFD93D"/>
-    <path d="M37 8V10M37 16V18M32 13H34M40 13H42" stroke="#FFD93D" strokeWidth="1.5" strokeLinecap="round"/>
-    <circle cx="13" cy="37" r="3" fill="#FF6B6B"/>
-    <circle cx="37" cy="37" r="3" fill="#4ECDC4"/>
+    <rect x="8" y="8" width="34" height="34" rx="4" fill="#E8F4FC" />
+    <circle cx="25" cy="20" r="6" fill="#4A90D9" />
+    <path d="M15 35C15 29.4772 19.4772 25 25 25C30.5228 25 35 29.4772 35 35" stroke="#4A90D9" strokeWidth="3" strokeLinecap="round" />
+    <circle cx="37" cy="13" r="4" fill="#FFD93D" />
+    <path d="M37 8V10M37 16V18M32 13H34M40 13H42" stroke="#FFD93D" strokeWidth="1.5" strokeLinecap="round" />
+    <circle cx="13" cy="37" r="3" fill="#FF6B6B" />
+    <circle cx="37" cy="37" r="3" fill="#4ECDC4" />
   </svg>
 );
 
 const WebIcon = () => (
   <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <rect x="5" y="8" width="40" height="30" rx="3" fill="#4A90D9"/>
-    <rect x="5" y="8" width="40" height="8" fill="#2E5C8A"/>
-    <circle cx="11" cy="12" r="2" fill="#FF6B6B"/>
-    <circle cx="17" cy="12" r="2" fill="#FFD93D"/>
-    <circle cx="23" cy="12" r="2" fill="#4ECDC4"/>
-    <rect x="9" y="20" width="14" height="3" rx="1" fill="#E8F4FC"/>
-    <rect x="9" y="26" width="20" height="2" rx="1" fill="#E8F4FC" fillOpacity="0.6"/>
-    <rect x="9" y="31" width="16" height="2" rx="1" fill="#E8F4FC" fillOpacity="0.6"/>
-    <rect x="32" y="20" width="9" height="13" rx="2" fill="#FFD93D"/>
-    <rect x="8" y="38" width="34" height="6" rx="2" fill="#E0E0E0"/>
-    <rect x="20" y="41" width="10" height="2" rx="1" fill="#BDBDBD"/>
+    <rect x="5" y="8" width="40" height="30" rx="3" fill="#4A90D9" />
+    <rect x="5" y="8" width="40" height="8" fill="#2E5C8A" />
+    <circle cx="11" cy="12" r="2" fill="#FF6B6B" />
+    <circle cx="17" cy="12" r="2" fill="#FFD93D" />
+    <circle cx="23" cy="12" r="2" fill="#4ECDC4" />
+    <rect x="9" y="20" width="14" height="3" rx="1" fill="#E8F4FC" />
+    <rect x="9" y="26" width="20" height="2" rx="1" fill="#E8F4FC" fillOpacity="0.6" />
+    <rect x="9" y="31" width="16" height="2" rx="1" fill="#E8F4FC" fillOpacity="0.6" />
+    <rect x="32" y="20" width="9" height="13" rx="2" fill="#FFD93D" />
+    <rect x="8" y="38" width="34" height="6" rx="2" fill="#E0E0E0" />
+    <rect x="20" y="41" width="10" height="2" rx="1" fill="#BDBDBD" />
   </svg>
 );
 
 const MobileIcon = () => (
   <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <rect x="14" y="4" width="22" height="42" rx="4" fill="#2E5C8A"/>
-    <rect x="16" y="10" width="18" height="28" rx="2" fill="#E8F4FC"/>
-    <rect x="20" y="6" width="10" height="2" rx="1" fill="#4A90D9"/>
-    <circle cx="25" cy="43" r="2" fill="#4A90D9"/>
-    <rect x="19" y="14" width="12" height="8" rx="2" fill="#FF6B6B"/>
-    <rect x="19" y="25" width="8" height="3" rx="1" fill="#4ECDC4"/>
-    <rect x="19" y="30" width="12" height="2" rx="1" fill="#BDBDBD"/>
-    <rect x="19" y="34" width="10" height="2" rx="1" fill="#BDBDBD"/>
+    <rect x="14" y="4" width="22" height="42" rx="4" fill="#2E5C8A" />
+    <rect x="16" y="10" width="18" height="28" rx="2" fill="#E8F4FC" />
+    <rect x="20" y="6" width="10" height="2" rx="1" fill="#4A90D9" />
+    <circle cx="25" cy="43" r="2" fill="#4A90D9" />
+    <rect x="19" y="14" width="12" height="8" rx="2" fill="#FF6B6B" />
+    <rect x="19" y="25" width="8" height="3" rx="1" fill="#4ECDC4" />
+    <rect x="19" y="30" width="12" height="2" rx="1" fill="#BDBDBD" />
+    <rect x="19" y="34" width="10" height="2" rx="1" fill="#BDBDBD" />
   </svg>
 );
 
 const CloudIcon = () => (
   <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <ellipse cx="25" cy="28" rx="16" ry="10" fill="#4A90D9"/>
-    <circle cx="18" cy="24" r="8" fill="#4A90D9"/>
-    <circle cx="32" cy="24" r="6" fill="#4A90D9"/>
-    <circle cx="25" cy="20" r="9" fill="#6BA5E7"/>
-    <path d="M20 35L20 44" stroke="#4ECDC4" strokeWidth="3" strokeLinecap="round"/>
-    <path d="M25 35L25 46" stroke="#FFD93D" strokeWidth="3" strokeLinecap="round"/>
-    <path d="M30 35L30 42" stroke="#FF6B6B" strokeWidth="3" strokeLinecap="round"/>
-    <circle cx="20" cy="46" r="2" fill="#4ECDC4"/>
-    <circle cx="25" cy="48" r="2" fill="#FFD93D"/>
-    <circle cx="30" cy="44" r="2" fill="#FF6B6B"/>
+    <ellipse cx="25" cy="28" rx="16" ry="10" fill="#4A90D9" />
+    <circle cx="18" cy="24" r="8" fill="#4A90D9" />
+    <circle cx="32" cy="24" r="6" fill="#4A90D9" />
+    <circle cx="25" cy="20" r="9" fill="#6BA5E7" />
+    <path d="M20 35L20 44" stroke="#4ECDC4" strokeWidth="3" strokeLinecap="round" />
+    <path d="M25 35L25 46" stroke="#FFD93D" strokeWidth="3" strokeLinecap="round" />
+    <path d="M30 35L30 42" stroke="#FF6B6B" strokeWidth="3" strokeLinecap="round" />
+    <circle cx="20" cy="46" r="2" fill="#4ECDC4" />
+    <circle cx="25" cy="48" r="2" fill="#FFD93D" />
+    <circle cx="30" cy="44" r="2" fill="#FF6B6B" />
   </svg>
 );
 
 const DataIcon = () => (
   <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <rect x="5" y="38" width="8" height="8" rx="2" fill="#FF6B6B"/>
-    <rect x="16" y="28" width="8" height="18" rx="2" fill="#FFD93D"/>
-    <rect x="27" y="18" width="8" height="28" rx="2" fill="#4ECDC4"/>
-    <rect x="38" y="8" width="8" height="38" rx="2" fill="#4A90D9"/>
-    <path d="M8 32L20 22L31 26L42 10" stroke="#2E5C8A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-    <circle cx="8" cy="32" r="3" fill="#2E5C8A"/>
-    <circle cx="20" cy="22" r="3" fill="#2E5C8A"/>
-    <circle cx="31" cy="26" r="3" fill="#2E5C8A"/>
-    <circle cx="42" cy="10" r="3" fill="#2E5C8A"/>
+    <rect x="5" y="38" width="8" height="8" rx="2" fill="#FF6B6B" />
+    <rect x="16" y="28" width="8" height="18" rx="2" fill="#FFD93D" />
+    <rect x="27" y="18" width="8" height="28" rx="2" fill="#4ECDC4" />
+    <rect x="38" y="8" width="8" height="38" rx="2" fill="#4A90D9" />
+    <path d="M8 32L20 22L31 26L42 10" stroke="#2E5C8A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+    <circle cx="8" cy="32" r="3" fill="#2E5C8A" />
+    <circle cx="20" cy="22" r="3" fill="#2E5C8A" />
+    <circle cx="31" cy="26" r="3" fill="#2E5C8A" />
+    <circle cx="42" cy="10" r="3" fill="#2E5C8A" />
   </svg>
 );
 
 const IoTIcon = () => (
   <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="25" cy="25" r="8" fill="#4A90D9"/>
-    <circle cx="25" cy="25" r="4" fill="#E8F4FC"/>
-    <circle cx="10" cy="10" r="5" fill="#FF6B6B"/>
-    <circle cx="40" cy="10" r="5" fill="#FFD93D"/>
-    <circle cx="10" cy="40" r="5" fill="#4ECDC4"/>
-    <circle cx="40" cy="40" r="5" fill="#9B59B6"/>
-    <path d="M14 14L21 21" stroke="#FF6B6B" strokeWidth="2" strokeLinecap="round" strokeDasharray="2 2"/>
-    <path d="M36 14L29 21" stroke="#FFD93D" strokeWidth="2" strokeLinecap="round" strokeDasharray="2 2"/>
-    <path d="M14 36L21 29" stroke="#4ECDC4" strokeWidth="2" strokeLinecap="round" strokeDasharray="2 2"/>
-    <path d="M36 36L29 29" stroke="#9B59B6" strokeWidth="2" strokeLinecap="round" strokeDasharray="2 2"/>
-    <circle cx="25" cy="6" r="3" fill="#E74C3C"/>
-    <circle cx="25" cy="44" r="3" fill="#27AE60"/>
-    <path d="M25 9V17" stroke="#E74C3C" strokeWidth="2" strokeLinecap="round" strokeDasharray="2 2"/>
-    <path d="M25 33V41" stroke="#27AE60" strokeWidth="2" strokeLinecap="round" strokeDasharray="2 2"/>
+    <circle cx="25" cy="25" r="8" fill="#4A90D9" />
+    <circle cx="25" cy="25" r="4" fill="#E8F4FC" />
+    <circle cx="10" cy="10" r="5" fill="#FF6B6B" />
+    <circle cx="40" cy="10" r="5" fill="#FFD93D" />
+    <circle cx="10" cy="40" r="5" fill="#4ECDC4" />
+    <circle cx="40" cy="40" r="5" fill="#9B59B6" />
+    <path d="M14 14L21 21" stroke="#FF6B6B" strokeWidth="2" strokeLinecap="round" strokeDasharray="2 2" />
+    <path d="M36 14L29 21" stroke="#FFD93D" strokeWidth="2" strokeLinecap="round" strokeDasharray="2 2" />
+    <path d="M14 36L21 29" stroke="#4ECDC4" strokeWidth="2" strokeLinecap="round" strokeDasharray="2 2" />
+    <path d="M36 36L29 29" stroke="#9B59B6" strokeWidth="2" strokeLinecap="round" strokeDasharray="2 2" />
+    <circle cx="25" cy="6" r="3" fill="#E74C3C" />
+    <circle cx="25" cy="44" r="3" fill="#27AE60" />
+    <path d="M25 9V17" stroke="#E74C3C" strokeWidth="2" strokeLinecap="round" strokeDasharray="2 2" />
+    <path d="M25 33V41" stroke="#27AE60" strokeWidth="2" strokeLinecap="round" strokeDasharray="2 2" />
   </svg>
 );
 
@@ -187,8 +187,8 @@ export default function ServiceCards() {
   }, [isAutoPlaying, nextSlide]);
 
   return (
-    <section className="py-8 px-4 sm:px-6 lg:px-8 2xl:px-12">
-      <div className="max-w-[1800px] mx-auto">
+    <section className="py-8 w-full bg-white">
+      <div className="mx-auto w-[94%] xl:w-[90%] 2xl:w-[85%]">
         {/* Carousel Container */}
         <div
           className="relative w-full"
@@ -291,11 +291,10 @@ export default function ServiceCards() {
               <button
                 key={index}
                 onClick={() => setCurrentIndex(index)}
-                className={`w-3 h-3 rounded-full transition-colors ${
-                  currentIndex === index
-                    ? "bg-[#00BFD2]"
-                    : "bg-gray-300 hover:bg-gray-400"
-                }`}
+                className={`w-3 h-3 rounded-full transition-colors ${currentIndex === index
+                  ? "bg-[#00BFD2]"
+                  : "bg-gray-300 hover:bg-gray-400"
+                  }`}
                 aria-label={`Go to slide ${index + 1}`}
               />
             ))}

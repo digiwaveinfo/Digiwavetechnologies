@@ -30,8 +30,8 @@ export default function TechIntegration({
   }
 
   return (
-    <section className="w-full px-4 sm:px-6 lg:px-20 py-8 sm:py-12">
-      <div className="max-w-[1280px] mx-auto flex flex-col gap-4 sm:gap-6">
+    <section className="w-full py-8 sm:py-12">
+      <div className="mx-auto w-[94%] xl:w-[90%] 2xl:w-[85%] flex flex-col gap-4 sm:gap-6">
         {/* Title */}
         <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold leading-tight lg:leading-[60px] text-[#0A2540]">
           {title}
@@ -47,13 +47,13 @@ export default function TechIntegration({
               {/* Circular Background with Icon */}
               <div className="relative w-[80px] h-[80px] sm:w-[100px] sm:h-[100px]">
                 {/* Background Circle */}
-                <div 
+                <div
                   className="absolute inset-0 rounded-full bg-gradient-to-br from-[#a8b5e0] via-[#8F9ED1] to-[#7889c4]"
                 />
                 {/* Icon Container */}
                 <div className="absolute inset-0 flex items-center justify-center p-4">
-                  <img 
-                    src={tech.icon_url} 
+                  <img
+                    src={tech.icon_url}
                     alt={tech.name}
                     className="w-full h-full object-contain"
                   />

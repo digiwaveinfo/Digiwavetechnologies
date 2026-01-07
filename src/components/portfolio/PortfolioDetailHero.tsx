@@ -5,13 +5,13 @@ interface PortfolioDetailHeroProps {
 
 export default function PortfolioDetailHero({ title, description }: PortfolioDetailHeroProps) {
   return (
-    <section className="py-8 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 2xl:px-12 bg-white">
-      <div className="max-w-[1800px] mx-auto">
+    <section className="pt-8 sm:pt-16 lg:pt-20 bg-white">
+      <div className="mx-auto w-[94%] xl:w-[90%] 2xl:w-[85%]">
         <div className="w-full flex flex-col gap-4">
           <h1 className="text-sky-950 text-2xl sm:text-3xl lg:text-4xl font-bold font-['Inter'] leading-tight lg:leading-[60px]">
             {title}
           </h1>
-          <div 
+          <div
             className="text-stone-950 text-sm sm:text-base font-normal font-['Inter'] leading-relaxed lg:leading-6 prose prose-sm max-w-none"
             dangerouslySetInnerHTML={{ __html: description }}
           />

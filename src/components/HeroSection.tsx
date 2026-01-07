@@ -21,7 +21,7 @@ export default function HeroSection({
 }: HeroSectionProps) {
   return (
     <section
-      className={`relative bg-[#022030] px-5 md:px-20 ${heightClasses[height]} overflow-hidden`}
+      className={`relative bg-[#022030] ${heightClasses[height]} overflow-hidden`}
       style={
         backgroundImage
           ? { backgroundImage: `url(${backgroundImage})`, backgroundSize: "cover", backgroundPosition: "center" }
@@ -32,8 +32,8 @@ export default function HeroSection({
       <div className="absolute w-6 h-[925px] rotate-[43deg] bg-[#62F4F3] blur-[68px] opacity-80 -left-52 -top-36" />
       <div className="absolute w-6 h-[925px] rotate-[43deg] bg-[#62F4F3] blur-[68px] opacity-80 left-[436px] -top-14" />
       <div className="absolute w-6 h-[925px] rotate-[43deg] bg-[#62F4F3] blur-[68px] opacity-80 left-[861px] top-28" />
-      
-      <div className="relative z-10 max-w-7xl mx-auto text-center">
+
+      <div className="relative z-10 mx-auto w-[94%] xl:w-[90%] 2xl:w-[85%] text-center">
         {label && (
           <p className="text-[#00BFD2] font-poppins font-medium text-xl mb-6">
             {label}

@@ -23,8 +23,8 @@ export default function Features({
   const rightFeatures = features.slice(midpoint);
 
   return (
-    <section className="w-full px-4 sm:px-6 lg:px-8 2xl:px-12 py-10 sm:py-12 lg:py-16">
-      <div className="max-w-[1800px] mx-auto flex flex-col gap-4">
+    <section className="w-full">
+      <div className="mx-auto w-[94%] xl:w-[90%] 2xl:w-[85%] flex flex-col gap-4">
         {/* Title */}
         <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold leading-tight lg:leading-[60px] text-[#0A2540]">
           {title}

@@ -1,19 +1,19 @@
 import { MetadataRoute } from 'next'
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://quantumverse.com'
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://digiwavetechnologies.in'
 
 async function getPortfolioSlugs() {
   try {
-    const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000/api/v1'
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL
     const response = await fetch(`${apiUrl}/portfolio/portfolios/?is_active=true`, {
       next: { revalidate: 3600 } // Revalidate every hour
     })
-    
+
     if (!response.ok) {
       console.error('Failed to fetch portfolios for sitemap')
       return []
     }
-    
+
     const data = await response.json()
     const portfolios = data.results || data || []
     return portfolios.map((p: any) => p.slug).filter(Boolean)
@@ -39,9 +39,9 @@ async function getServiceIds() {
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const portfolioSlugs = await getPortfolioSlugs()
   const serviceIds = await getServiceIds()
-  
+
   const currentDate = new Date()
-  
+
   // Static pages
   const staticPages: MetadataRoute.Sitemap = [
     {
@@ -75,7 +75,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.7,
     },
   ]
-  
+
   // Dynamic portfolio pages
   const portfolioPages: MetadataRoute.Sitemap = portfolioSlugs.map((slug: string) => ({
     url: `${BASE_URL}/portfolio/${slug}`,
@@ -83,7 +83,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     changeFrequency: 'monthly' as const,
     priority: 0.7,
   }))
-  
+
   // Dynamic service pages
   const servicePages: MetadataRoute.Sitemap = serviceIds.map((id: string) => ({
     url: `${BASE_URL}/services/${id}`,
@@ -91,6 +91,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     changeFrequency: 'monthly' as const,
     priority: 0.7,
   }))
-  
+
   return [...staticPages, ...portfolioPages, ...servicePages]
 }

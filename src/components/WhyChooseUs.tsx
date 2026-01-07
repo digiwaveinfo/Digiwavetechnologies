@@ -19,8 +19,8 @@ export default function WhyChooseUs() {
   ];
 
   return (
-    <section className="py-12 lg:py-16 px-4 sm:px-6 lg:px-8 2xl:px-12 bg-gray-50">
-      <div className="max-w-[1280px] mx-auto">
+    <section className="py-12 lg:py-16 w-full bg-gray-50">
+      <div className="mx-auto w-[94%] xl:w-[90%] 2xl:w-[85%]">
         {/* Centered Header */}
         <div className="text-center mb-10">
           <h3 className="text-[#00BFD2] font-poppins font-medium text-xl mb-3">
@@ -48,7 +48,7 @@ export default function WhyChooseUs() {
               <h4 className="text-[#00114C] font-poppins font-bold text-lg lg:text-xl mb-4 text-center lg:text-left">
                 The Digiwave Edge:
               </h4>
-              
+
               <ul className="flex flex-col gap-3">
                 {advantages.map((advantage, index) => (
                   <li key={index} className="flex items-start gap-3">

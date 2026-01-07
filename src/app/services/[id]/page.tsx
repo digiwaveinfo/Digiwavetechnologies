@@ -191,8 +191,8 @@ export default async function ServiceDetailPage({ params }: ServiceDetailPagePro
     return (
       <div className="min-h-screen w-full">
         <Header />
-        <section className="py-20 px-5 md:px-20 bg-white">
-          <div className="max-w-7xl mx-auto">
+        <section className="py-20 w-full bg-white">
+          <div className="mx-auto w-[94%] xl:w-[90%] 2xl:w-[85%]">
             <h1 className="text-4xl font-bold text-[#022030] mb-4">Service Not Found</h1>
             <p className="text-gray-600">The requested service could not be found.</p>
           </div>
@@ -208,16 +208,16 @@ export default async function ServiceDetailPage({ params }: ServiceDetailPagePro
       <Header />
 
       {/* Modern Hero Section with Background Effects */}
-      <section className="relative bg-[#022030] h-[600px] sm:h-[700px] overflow-hidden">
+      <section className="relative bg-[#022030] min-h-[600px] sm:min-h-[700px] h-auto overflow-hidden flex items-center">
         {/* Animated Background Elements */}
         <div className="absolute w-6 h-[925px] rotate-[43deg] bg-[#62F4F3] blur-[68px] opacity-80 -left-52 -top-36 animate-pulse" />
         <div className="absolute w-6 h-[925px] rotate-[43deg] bg-[#62F4F3] blur-[68px] opacity-80 left-[436px] -top-14 animate-pulse delay-1000" />
         <div className="absolute w-6 h-[925px] rotate-[43deg] bg-[#62F4F3] blur-[68px] opacity-80 left-[861px] top-28 animate-pulse delay-2000" />
 
-        <div className="relative z-10 h-full flex items-center">
-          <div className="max-w-7xl mx-auto px-5 sm:px-10 lg:px-20 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="relative z-10 w-full py-28 lg:py-32">
+          <div className="mx-auto w-[94%] xl:w-[90%] 2xl:w-[85%] grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Content */}
-            <div className="space-y-8">
+            <div className="space-y-8 order-2 lg:order-1">
               <div className="space-y-6">
                 <div className="inline-block px-4 py-2 bg-[#00BFD2]/20 rounded-full border border-[#00BFD2]/30">
                   <span className="text-[#62F4F3] text-sm font-medium">Premium Service</span>
@@ -240,14 +240,14 @@ export default async function ServiceDetailPage({ params }: ServiceDetailPagePro
                 ))}
               </div>
 
-              <Link href="/#contact" className="inline-block bg-[#00BFD2] text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-[#00BFD2]/90 transition-all duration-300 hover:scale-105 shadow-lg">
+              <Link href="/book-demo" className="inline-block bg-[#00BFD2] text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-[#00BFD2]/90 transition-all duration-300 hover:scale-105 shadow-lg">
                 BOOK DEMO
               </Link>
             </div>
 
             {/* Hero Image */}
-            <div className="relative">
-              <div className="w-full h-[400px] rounded-3xl overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-500">
+            <div className="relative order-1 lg:order-2">
+              <div className="w-full h-[250px] sm:h-[400px] rounded-3xl overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-500">
                 <img
                   src={service.heroImage}
                   alt={service.title}
@@ -263,8 +263,8 @@ export default async function ServiceDetailPage({ params }: ServiceDetailPagePro
       </section>
 
       {/* Technologies Section */}
-      <section className="py-16 sm:py-20 px-5 sm:px-10 lg:px-20 bg-white">
-        <div className="max-w-[1280px] mx-auto">
+      <section className="py-16 sm:py-20 w-full bg-white">
+        <div className="mx-auto w-[94%] xl:w-[90%] 2xl:w-[85%]">
           <div className="text-center mb-12">
             <h2 className="text-sky-950 text-3xl sm:text-4xl font-bold font-['Inter'] leading-tight mb-4">
               Technologies We Use
@@ -286,8 +286,8 @@ export default async function ServiceDetailPage({ params }: ServiceDetailPagePro
       </section>
 
       {/* Features Section with Cards */}
-      <section className="py-16 sm:py-20 px-5 sm:px-10 lg:px-20 bg-gray-50">
-        <div className="max-w-[1280px] mx-auto">
+      <section className="py-16 sm:py-20 w-full bg-gray-50">
+        <div className="mx-auto w-[94%] xl:w-[90%] 2xl:w-[85%]">
           <div className="text-center mb-12">
             <h2 className="text-sky-950 text-3xl sm:text-4xl font-bold font-['Inter'] leading-tight mb-4">
               Key Features
@@ -348,8 +348,8 @@ export default async function ServiceDetailPage({ params }: ServiceDetailPagePro
       </section>
 
       {/* Benefits Section with Modern Cards */}
-      <section className="py-16 sm:py-20 px-5 sm:px-10 lg:px-20 bg-white">
-        <div className="max-w-[1280px] mx-auto">
+      <section className="py-16 sm:py-20 w-full bg-white">
+        <div className="mx-auto w-[94%] xl:w-[90%] 2xl:w-[85%]">
           <div className="text-center mb-12">
             <h2 className="text-sky-950 text-3xl sm:text-4xl font-bold font-['Inter'] leading-tight mb-4">
               Why Choose Our Solution
@@ -404,13 +404,13 @@ export default async function ServiceDetailPage({ params }: ServiceDetailPagePro
       </section>
 
       {/* Modern CTA Section - Same style as Hero */}
-      <section className="relative bg-[#022030] py-20 px-5 sm:px-10 lg:px-20 overflow-hidden">
+      <section className="relative bg-[#022030] py-20 w-full overflow-hidden">
         {/* Animated Background Elements - Same as Hero */}
         <div className="absolute w-6 h-[925px] rotate-[43deg] bg-[#62F4F3] blur-[68px] opacity-80 -left-52 -top-36 animate-pulse" />
         <div className="absolute w-6 h-[925px] rotate-[43deg] bg-[#62F4F3] blur-[68px] opacity-80 left-[436px] -top-14 animate-pulse delay-1000" />
         <div className="absolute w-6 h-[925px] rotate-[43deg] bg-[#62F4F3] blur-[68px] opacity-80 right-0 top-28 animate-pulse delay-2000" />
 
-        <div className="relative z-10 max-w-[1280px] mx-auto text-center">
+        <div className="relative z-10 mx-auto w-[94%] xl:w-[90%] 2xl:w-[85%] text-center">
           <h2 className="text-white text-4xl sm:text-5xl font-bold font-['Inter'] leading-tight mb-6">
             Ready to Transform Your Business?
           </h2>
@@ -419,7 +419,7 @@ export default async function ServiceDetailPage({ params }: ServiceDetailPagePro
           </p>
 
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-            <Link href="/#contact" className="bg-white text-[#022030] px-10 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition-all duration-300 hover:scale-105 shadow-xl">
+            <Link href="/book-demo" className="bg-white text-[#022030] px-10 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition-all duration-300 hover:scale-105 shadow-xl">
               BOOK DEMO
             </Link>
             <Link href="/portfolio" className="border-2 border-white text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-[#022030] transition-all duration-300 hover:scale-105">

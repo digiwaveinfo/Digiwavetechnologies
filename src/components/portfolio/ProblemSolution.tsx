@@ -10,8 +10,8 @@ export default function ProblemSolution({ problem, solution }: ProblemSolutionPr
   }
 
   return (
-    <section className="py-10 sm:py-16 px-4 sm:px-6 lg:px-8 2xl:px-12 bg-white">
-      <div className="max-w-[1800px] mx-auto">
+    <section className="py-10 sm:py-16 bg-white">
+      <div className="mx-auto w-[94%] xl:w-[90%] 2xl:w-[85%]">
         <div className="w-full flex flex-col gap-8">
           {/* Problem Statements Card */}
           {problem && (
@@ -20,7 +20,7 @@ export default function ProblemSolution({ problem, solution }: ProblemSolutionPr
                 <h3 className="text-sky-950 text-2xl lg:text-3xl font-bold font-['Inter'] leading-tight lg:leading-10">
                   Problem Statement
                 </h3>
-                <div 
+                <div
                   className="text-stone-950 text-base font-normal font-['Inter'] leading-8 prose prose-sm max-w-none"
                   dangerouslySetInnerHTML={{ __html: problem }}
                 />
@@ -35,7 +35,7 @@ export default function ProblemSolution({ problem, solution }: ProblemSolutionPr
                 <h3 className="text-sky-950 text-2xl lg:text-3xl font-bold font-['Inter'] leading-tight lg:leading-10">
                   Solution
                 </h3>
-                <div 
+                <div
                   className="text-stone-950 text-base font-normal font-['Inter'] leading-8 prose prose-sm max-w-none"
                   dangerouslySetInnerHTML={{ __html: solution }}
                 />
