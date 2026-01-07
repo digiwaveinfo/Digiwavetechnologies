@@ -10,7 +10,7 @@ export default function PortfolioImageSection({ heroImage, title = "Portfolio" }
         {/* Image Container with rounded corners and responsive design */}
         <div className="w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] rounded-[20px] sm:rounded-[30px] overflow-hidden shadow-lg">
           <img
-            src={heroImage || "/portfolio-view-image.png"}
+            src={heroImage || "/portfolio-view-image.webp"}
             alt={`${title} Screenshots`}
             className="w-full h-full object-cover object-center"
           />

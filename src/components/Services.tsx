@@ -11,8 +11,7 @@ export default function Services() {
       title: "AI & ML Solutions",
       description:
         "Intelligent systems that automate, analyze, and optimize business processes.",
-      // image: "/Home-technologies/Ai-Ml.jpg",
-      image: "https://api.builder.io/api/v1/image/assets/TEMP/7309ec19426c194dd2e948fe4906e3ab122a4585?width=970",
+      image: "/Home-technologies/Ai-Ml.webp",
       titleColor: "text-[#0064AC]",
     },
     {
@@ -20,8 +19,7 @@ export default function Services() {
       title: "Web App development",
       description:
         "Custom high-performance web solutions tailored for scale and performance.",
-      // image: "/Home-technologies/webdevelopment.jpg",
-      image: "https://api.builder.io/api/v1/image/assets/TEMP/3f5c6b3d663ecc01e18ae177e232243b61d97576?width=806",
+      image: "/Home-technologies/webdevelopment.webp",
       titleColor: "text-[#0064AC]",
     },
     {
@@ -29,8 +27,7 @@ export default function Services() {
       title: "Mobile App development",
       description:
         "Android, iOS, and cross-platform apps built for engagement and user experience.",
-      // image: "/Home-technologies/App-development.jpg",
-      image: "https://api.builder.io/api/v1/image/assets/TEMP/917d50598d6a8f171dd1a7d201159fde9ed14c99?width=970",
+      image: "/Home-technologies/App-development.webp",
       titleColor: "text-[#0064AC]",
     },
     {
@@ -38,8 +35,7 @@ export default function Services() {
       title: "Cloud & DevOps",
       description:
         "Scalable cloud infrastructure and automated deployment solutions.",
-      // image: "/Home-technologies/cloud.jpg",
-      image: "https://api.builder.io/api/v1/image/assets/TEMP/3f5c6b3d663ecc01e18ae177e232243b61d97576?width=806",
+      image: "/Home-technologies/cloud.webp",
       titleColor: "text-[#0064AC]",
     },
     {
@@ -47,8 +43,7 @@ export default function Services() {
       title: "Data Intelligence",
       description:
         "Smart automation and data-driven insights for business optimization.",
-      // image: "/Home-technologies/data-inteligence.jpg",
-      image: "https://api.builder.io/api/v1/image/assets/TEMP/7309ec19426c194dd2e948fe4906e3ab122a4585?width=970",
+      image: "/Home-technologies/data-inteligence.webp",
       titleColor: "text-[#0064AC]",
     },
     {
@@ -56,8 +51,7 @@ export default function Services() {
       title: "IoT Solutions",
       description:
         "Connected device ecosystems enabling smart monitoring, control, and data collection for industrial and consumer applications.",
-      // image: "/Home-technologies/Iot.jpg",
-      image: "https://api.builder.io/api/v1/image/assets/TEMP/917d50598d6a8f171dd1a7d201159fde9ed14c99?width=970",
+      image: "/Home-technologies/Iot.webp",
       titleColor: "text-[#0064AC]",
     },
   ];

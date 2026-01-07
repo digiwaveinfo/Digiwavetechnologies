@@ -3,6 +3,7 @@ import { Inter, Poppins, Rubik } from "next/font/google";
 import "./globals.css";
 import { Providers } from "./providers";
 import ChatBot from "@/components/ChatBot";
+import Script from "next/script";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const poppins = Poppins({ subsets: ["latin"], weight: ["400", "500", "700", "800"], variable: "--font-poppins" });
@@ -79,6 +80,21 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        {/* Google Analytics */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-GF4HP8KX4E"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-GF4HP8KX4E');
+          `}
+        </Script>
+      </head>
       <body
         className={`${inter.variable} ${poppins.variable} ${rubik.variable} font-sans antialiased`}
         style={{ fontFamily: 'var(--font-inter)' }}

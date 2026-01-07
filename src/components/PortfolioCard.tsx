@@ -41,7 +41,7 @@ export default function PortfolioCard({ id, title, description, imageUrl, techno
         {/* Top Section - Simple Image */}
         <div className="relative w-full h-[220px] flex-shrink-0 overflow-hidden">
           <img
-            src={imageUrl || "/portfolio-card-image.png"}
+            src={imageUrl || "/portfolio-card-image.webp"}
             alt={title}
             className="w-full h-full object-cover"
           />
