@@ -1,3 +1,5 @@
+import Container from "./Container";
+
 export default function WhyChooseUs() {
   const advantages = [
     {
@@ -20,7 +22,7 @@ export default function WhyChooseUs() {
 
   return (
     <section className="py-12 lg:py-16 w-full bg-gray-50">
-      <div className="mx-auto w-[94%] xl:w-[90%] 2xl:w-[85%]">
+      <Container>
         {/* Centered Header */}
         <div className="text-center mb-10">
           <h3 className="text-[#00BFD2] font-poppins font-medium text-xl mb-3">
@@ -62,7 +64,7 @@ export default function WhyChooseUs() {
             </div>
           </div>
         </div>
-      </div>
+      </Container>
     </section>
   );
 }

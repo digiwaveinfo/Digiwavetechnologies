@@ -1,7 +1,9 @@
+import Container from "./Container";
+
 export default function WhoWeAre() {
   return (
     <section className="pt-12 lg:pt-16 w-full">
-      <div className="mx-auto w-[94%] xl:w-[90%] 2xl:w-[85%]">
+      <Container>
         {/* Who We Are Section */}
         <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
           <div className="w-full lg:flex-[0_0_400px]">
@@ -15,7 +17,7 @@ export default function WhoWeAre() {
             </p>
           </div>
         </div>
-      </div>
+      </Container>
     </section>
   );
 }

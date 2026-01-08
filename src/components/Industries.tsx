@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Container from "./Container";
 
 export default function Industries() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
@@ -35,7 +36,7 @@ export default function Industries() {
 
   return (
     <section className="relative bg-[#00114C] py-12 lg:py-20 shadow-[0_4px_23px_rgba(0,0,0,0.16)] overflow-hidden">
-      <div className="mx-auto w-[94%] xl:w-[90%] 2xl:w-[85%] flex flex-col lg:flex-row items-center lg:items-start gap-8 lg:gap-16">
+      <Container className="flex flex-col lg:flex-row items-center lg:items-start gap-8 lg:gap-16">
         <div className="w-full lg:flex-[0_0_551px] text-center lg:text-left">
           <h3 className="text-[#00BFD2] font-poppins font-medium text-xl mb-4">Services</h3>
           <h2 className="text-white font-poppins font-bold text-3xl lg:text-[40px] leading-tight">
@@ -87,7 +88,7 @@ export default function Industries() {
             ))}
           </div>
         </div>
-      </div>
+      </Container>
     </section>
   );
 }

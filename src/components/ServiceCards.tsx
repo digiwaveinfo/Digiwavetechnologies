@@ -4,6 +4,7 @@ import { useState, useEffect, useCallback } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 import Link from "next/link";
+import Container from "./Container";
 
 // Colorful SVG Icons for each service
 const AIIcon = () => (
@@ -190,7 +191,7 @@ export default function ServiceCards() {
 
   return (
     <section className="py-8 w-full">
-      <div className="mx-auto w-[94%] xl:w-[90%] 2xl:w-[85%]">
+      <Container>
         {/* Carousel Container */}
         <div
           className="relative w-full"
@@ -200,7 +201,7 @@ export default function ServiceCards() {
           {/* Navigation Arrows */}
           <button
             onClick={prevSlide}
-            className="absolute left-2 top-1/2 -translate-y-1/2 z-20 w-10 h-10 bg-white/70 backdrop-blur-md rounded-full flex items-center justify-center hover:bg-white/90 transition-all border border-white/50 shadow-lg"
+            className="absolute -left-10 lg:-left-16 top-1/2 -translate-y-1/2 z-20 w-10 h-10 bg-white/70 backdrop-blur-md rounded-full flex items-center justify-center hover:bg-white/90 transition-all border border-white/50 shadow-lg"
             aria-label="Previous slide"
           >
             <ChevronLeft className="w-6 h-6 text-[#00BFD2]" />
@@ -208,14 +209,14 @@ export default function ServiceCards() {
 
           <button
             onClick={nextSlide}
-            className="absolute right-2 top-1/2 -translate-y-1/2 z-20 w-10 h-10 bg-white/70 backdrop-blur-md rounded-full flex items-center justify-center hover:bg-white/90 transition-all border border-white/50 shadow-lg"
+            className="absolute -right-10 lg:-right-16 top-1/2 -translate-y-1/2 z-20 w-10 h-10 bg-white/70 backdrop-blur-md rounded-full flex items-center justify-center hover:bg-white/90 transition-all border border-white/50 shadow-lg"
             aria-label="Next slide"
           >
             <ChevronRight className="w-6 h-6 text-[#00BFD2]" />
           </button>
 
           {/* Cards Container */}
-          <div className="mx-6 py-6">
+          <div className="py-6 -mx-3">
             <div className="overflow-hidden">
               <div
                 className="flex transition-transform duration-500 ease-in-out"
@@ -302,7 +303,7 @@ export default function ServiceCards() {
             ))}
           </div>
         </div>
-      </div>
+      </Container>
     </section>
   );
 }

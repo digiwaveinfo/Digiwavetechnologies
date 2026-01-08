@@ -1,4 +1,5 @@
 import React from "react";
+import Container from "../Container";
 
 // Icons
 const PassionateIcon = () => (
@@ -51,7 +52,7 @@ export default function CoreValues() {
 
     return (
         <section className="w-full bg-white py-10">
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8 2xl:px-12 max-w-[1800px]">
+            <Container className="max-w-[1800px]">
                 <div className="flex flex-wrap justify-center gap-11">
                     {values.map((val, index) => (
                         <div
@@ -72,7 +73,7 @@ export default function CoreValues() {
                         </div>
                     ))}
                 </div>
-            </div>
+            </Container>
         </section>
     );
 }

@@ -8,6 +8,7 @@ import {
   CarouselItem,
   type CarouselApi,
 } from "@/components/ui/carousel";
+import Container from "../Container";
 
 // Colorful SVG Icons for each integration
 const AadhaarIcon = () => (
@@ -258,7 +259,7 @@ export default function ThirdPartyIntegrations() {
 
   return (
     <section className="py-10 sm:py-12 w-full bg-gradient-to-b from-gray-50 to-white">
-      <div className="mx-auto w-[94%] xl:w-[90%] 2xl:w-[85%]">
+      <Container>
         {/* Section Header */}
         <div className="text-center mb-16">
           <div className="inline-block px-4 py-2 bg-[#00BFD2]/10 rounded-full border border-[#00BFD2]/20 mb-4">
@@ -275,7 +276,7 @@ export default function ThirdPartyIntegrations() {
 
         {/* Integration Cards Carousel */}
         <div
-          className="px-12"
+          className="relative"
           onMouseEnter={() => setIsAutoPlaying(false)}
           onMouseLeave={() => setIsAutoPlaying(true)}
         >
@@ -287,7 +288,7 @@ export default function ThirdPartyIntegrations() {
             }}
             className="w-full"
           >
-            <CarouselContent className="-ml-2">
+            <CarouselContent className="-ml-2 py-4">
               {integrations.map((integration) => (
                 <CarouselItem key={integration.id} className="pl-2 basis-full sm:basis-1/2 lg:basis-1/3 xl:basis-1/4">
                   <div className="group bg-white rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border border-gray-100 hover:border-[#00BFD2]/30 h-full min-h-[280px]">
@@ -319,14 +320,14 @@ export default function ThirdPartyIntegrations() {
             {/* Navigation Arrows */}
             <button
               onClick={() => api?.scrollPrev()}
-              className="absolute -left-12 top-1/2 -translate-y-1/2 z-20 w-10 h-10 bg-white/70 backdrop-blur-md rounded-full flex items-center justify-center hover:bg-white/90 transition-all border border-white/50 shadow-lg"
+              className="absolute -left-12 lg:-left-16 top-1/2 -translate-y-1/2 z-20 w-10 h-10 bg-white/70 backdrop-blur-md rounded-full flex items-center justify-center hover:bg-white/90 transition-all border border-white/50 shadow-lg"
               aria-label="Previous slide"
             >
               <ChevronLeft className="w-6 h-6 text-[#00BFD2]" />
             </button>
             <button
               onClick={() => api?.scrollNext()}
-              className="absolute -right-12 top-1/2 -translate-y-1/2 z-20 w-10 h-10 bg-white/70 backdrop-blur-md rounded-full flex items-center justify-center hover:bg-white/90 transition-all border border-white/50 shadow-lg"
+              className="absolute -right-12 lg:-right-16 top-1/2 -translate-y-1/2 z-20 w-10 h-10 bg-white/70 backdrop-blur-md rounded-full flex items-center justify-center hover:bg-white/90 transition-all border border-white/50 shadow-lg"
               aria-label="Next slide"
             >
               <ChevronRight className="w-6 h-6 text-[#00BFD2]" />
@@ -357,7 +358,7 @@ export default function ThirdPartyIntegrations() {
             </button>
           </div>
         </div>
-      </div>
+      </Container>
     </section>
   );
 }

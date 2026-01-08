@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { submitContactForm } from "@/lib/api";
+import Container from "./Container";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -46,7 +47,7 @@ export default function Contact() {
 
   return (
     <section id="contact" className="w-full py-12 md:py-16 bg-neutral-100 overflow-hidden">
-      <div className="mx-auto w-[94%] xl:w-[90%] 2xl:w-[85%]">
+      <Container>
         <div className="grid grid-cols-1 lg:grid-cols-[380px_1fr] gap-7">
           {/* Left Card - Info */}
           <div className="w-full p-6 md:p-8 bg-white rounded-[10px] shadow-[0px_4px_23px_0px_rgba(174,191,210,0.30)] flex flex-col">
@@ -113,8 +114,8 @@ export default function Contact() {
             {/* Status Messages */}
             {submitStatus.type && (
               <div className={`mb-4 p-4 rounded-lg ${submitStatus.type === 'success'
-                  ? 'bg-green-50 text-green-800 border border-green-200'
-                  : 'bg-red-50 text-red-800 border border-red-200'
+                ? 'bg-green-50 text-green-800 border border-green-200'
+                : 'bg-red-50 text-red-800 border border-red-200'
                 }`}>
                 {submitStatus.message}
               </div>
@@ -216,7 +217,7 @@ export default function Contact() {
             </form>
           </div>
         </div>
-      </div>
+      </Container>
     </section>
   );
 }

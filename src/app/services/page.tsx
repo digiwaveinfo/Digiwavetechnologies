@@ -6,6 +6,7 @@ import WhoWeAre from '@/components/WhoWeAre';
 import ServiceCards from '@/components/ServiceCards';
 import WhyChooseUs from '@/components/WhyChooseUs';
 import Industries from '@/components/Industries';
+import CoreValues from '@/components/about/CoreValues';
 import ThirdPartyIntegrations from '@/components/services/ThirdPartyIntegrations';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
@@ -20,6 +21,7 @@ export default function ServicesPage() {
       <ThirdPartyIntegrations />
       <WhyChooseUs />
       <Industries />
+      <CoreValues />
       <Contact />
       <Footer />
     </div>
