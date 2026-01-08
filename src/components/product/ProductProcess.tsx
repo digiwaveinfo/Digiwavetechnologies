@@ -57,7 +57,7 @@ export default function ProductProcess() {
           </div>
 
           {/* Process Cards Grid */}
-          <div className="w-full grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8">
+          <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
             {PROCESS_STEPS.map((step, index) => (
               <div
                 key={index}
