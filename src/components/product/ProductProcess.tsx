@@ -61,7 +61,7 @@ export default function ProductProcess() {
             {PROCESS_STEPS.map((step, index) => (
               <div
                 key={index}
-                className="group w-full min-h-[346px] lg:h-[346px] relative bg-[rgba(200,217,215,0.08)] rounded-[26px] overflow-hidden transition-all duration-300 hover:bg-[rgba(0,242,217,0.06)] hover:shadow-[1px_0px_5.3px_1px_rgba(0,242,217,0.06)] hover:outline hover:outline-2 hover:outline-[#00BFD2] hover:-outline-offset-2"
+                className="group w-full min-h-[346px] lg:h-[346px] relative bg-[rgba(200,217,215,0.08)] rounded-[26px] overflow-hidden transition-all duration-300 outline-none border-2 border-transparent hover:bg-[rgba(0,242,217,0.06)] hover:shadow-[1px_0px_5.3px_1px_rgba(0,242,217,0.06)] hover:border-[#00BFD2]"
               >
                 {/* Step Number */}
                 <div className="absolute left-[22px] top-[-1px] text-[rgba(200,217,215,0.21)] group-hover:text-[rgba(148,227,219,0.21)] text-[133px] font-extrabold font-['Inter'] leading-none select-none transition-colors duration-300">

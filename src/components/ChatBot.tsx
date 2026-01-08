@@ -116,7 +116,7 @@ export default function ChatBot() {
     setIsTyping(true);
 
     try {
-      const apiUrl = process.env.NEXT_PUBLIC_CHATBOT_API_URL || "http://localhost:5000";
+      const apiUrl = process.env.NEXT_PUBLIC_CHATBOT_API_URL;
       const response = await fetch(`${apiUrl}/api/chat`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
