@@ -9,6 +9,7 @@ import { toast } from "sonner";
 import { Clock, CheckCircle2, Video, Users, Zap } from "lucide-react";
 import { DateTimePicker } from "@/components/ui/datetime-picker";
 import { CustomSelect } from "@/components/ui/custom-select";
+import { submitDemoBooking } from "@/lib/api";
 
 const services = [
   { id: "ai-machine-learning", label: "AI & ML Solutions" },
@@ -61,25 +62,51 @@ export default function BookDemoPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    // Validate required fields
+    if (!formData.fullName || !formData.email || !formData.phone || !formData.selectedService || !formData.preferredDate || !formData.preferredTime) {
+      toast.error("Please fill in all required fields.");
+      return;
+    }
+
     setIsSubmitting(true);
 
     try {
-      // Simulate API call
-      await new Promise((resolve) => setTimeout(resolve, 1500));
+      // Format the date for the API
+      const formattedDate = formData.preferredDate
+        ? formData.preferredDate.toISOString().split('T')[0]
+        : '';
 
-      toast.success("Demo request submitted! Check your email for confirmation.");
-
-      setFormData({
-        fullName: "",
-        email: "",
-        phone: "",
-        company: "",
-        selectedService: "",
-        preferredDate: undefined,
-        preferredTime: "",
-        requirements: "",
+      const result = await submitDemoBooking({
+        full_name: formData.fullName,
+        email: formData.email,
+        phone: formData.phone,
+        company: formData.company || undefined,
+        selected_service: formData.selectedService,
+        preferred_date: formattedDate,
+        preferred_time: formData.preferredTime,
+        requirements: formData.requirements || undefined,
       });
+
+      if (result.success) {
+        toast.success(result.message || "Demo booking submitted! Check your email for confirmation.");
+
+        // Reset form
+        setFormData({
+          fullName: "",
+          email: "",
+          phone: "",
+          company: "",
+          selectedService: "",
+          preferredDate: undefined,
+          preferredTime: "",
+          requirements: "",
+        });
+      } else {
+        toast.error(result.message || "Something went wrong. Please try again.");
+      }
     } catch (error) {
+      console.error('Demo booking error:', error);
       toast.error("Something went wrong. Please try again.");
     } finally {
       setIsSubmitting(false);
@@ -158,7 +185,7 @@ export default function BookDemoPage() {
                     {/* Personal Details Row */}
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div>
-                        <label className="block text-sm font-bold text-gray-700 mb-2">Full Name</label>
+                        <label className="block text-sm font-bold text-gray-700 mb-2">Full Name <span className="text-red-500">*</span></label>
                         <input
                           type="text"
                           name="fullName"
@@ -170,7 +197,7 @@ export default function BookDemoPage() {
                         />
                       </div>
                       <div>
-                        <label className="block text-sm font-bold text-gray-700 mb-2">Work Email</label>
+                        <label className="block text-sm font-bold text-gray-700 mb-2">Work Email <span className="text-red-500">*</span></label>
                         <input
                           type="email"
                           name="email"
@@ -186,7 +213,7 @@ export default function BookDemoPage() {
                     {/* Company & Phone Row */}
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div>
-                        <label className="block text-sm font-semibold text-gray-700 mb-2">Phone Number</label>
+                        <label className="block text-sm font-semibold text-gray-700 mb-2">Phone Number <span className="text-red-500">*</span></label>
                         <input
                           type="tel"
                           name="phone"
@@ -214,7 +241,7 @@ export default function BookDemoPage() {
 
                     {/* Service Selection */}
                     <div>
-                      <label className="block text-sm font-bold text-gray-700 mb-2">What would you like to see?</label>
+                      <label className="block text-sm font-bold text-gray-700 mb-2">What would you like to see? <span className="text-red-500">*</span></label>
                       <CustomSelect
                         value={formData.selectedService}
                         onChange={(value) => setFormData((prev) => ({ ...prev, selectedService: value }))}
@@ -225,7 +252,7 @@ export default function BookDemoPage() {
 
                     {/* Booking Details - Combined Date & Time Picker */}
                     <div>
-                      <label className="block text-sm font-bold text-gray-700 mb-4">Preferred Availability</label>
+                      <label className="block text-sm font-bold text-gray-700 mb-4">Preferred Availability <span className="text-red-500">*</span></label>
                       <DateTimePicker
                         selectedDate={formData.preferredDate}
                         selectedTime={formData.preferredTime}

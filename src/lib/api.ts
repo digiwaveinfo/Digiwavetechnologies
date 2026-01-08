@@ -11,6 +11,17 @@ interface ContactFormData {
   source_page?: string;
 }
 
+interface DemoBookingFormData {
+  full_name: string;
+  email: string;
+  phone: string;
+  company?: string;
+  selected_service: string;
+  preferred_date: string;
+  preferred_time: string;
+  requirements?: string;
+}
+
 interface ApiResponse<T = unknown> {
   success: boolean;
   message?: string;
@@ -160,6 +171,39 @@ export async function submitContactForm(data: ContactFormData): Promise<ApiRespo
     };
   } catch (error) {
     console.error('Contact form submission error:', error);
+    return {
+      success: false,
+      message: 'Network error. Please check your connection and try again.',
+    };
+  }
+}
+
+export async function submitDemoBooking(data: DemoBookingFormData): Promise<ApiResponse> {
+  try {
+    const response = await fetch(`${API_BASE_URL}/contact/demo-booking/submit`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    });
+
+    const result = await response.json();
+
+    if (!response.ok) {
+      return {
+        success: false,
+        message: result.message || 'Failed to submit demo booking. Please try again.',
+        errors: result.errors,
+      };
+    }
+
+    return {
+      success: true,
+      message: result.message || 'Demo booking submitted successfully! Check your email for confirmation.',
+    };
+  } catch (error) {
+    console.error('Demo booking submission error:', error);
     return {
       success: false,
       message: 'Network error. Please check your connection and try again.',
