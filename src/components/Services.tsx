@@ -225,7 +225,7 @@ export default function Services() {
         </svg>
       </div>
 
-      <div className="w-[94%] xl:w-[90%] 2xl:w-[85%] mx-auto flex flex-col items-center relative z-10">
+      <div className="w-[96%] xl:w-[93%] 2xl:w-[89%] mx-auto flex flex-col items-center relative z-10">
         {/* Section Header */}
         <div className="w-full flex flex-col items-center gap-4 mb-12">
           <h2 className="text-center text-[#00BFD2] text-xl font-medium font-[\'Poppins\']">
@@ -242,7 +242,7 @@ export default function Services() {
           onMouseEnter={() => setIsAutoPlaying(false)}
           onMouseLeave={() => setIsAutoPlaying(true)}
         >
-          {/* Navigation Arrows - glass design, close to image border */}
+          {/* Navigation Arrows - positioned at edges */}
           <button
             onClick={prevSlide}
             className="absolute left-2 top-[120px] z-20 w-9 h-9 bg-[#00BFD2] rounded-full flex items-center justify-center hover:bg-[#00a8b8] transition-all group shadow-lg"
