@@ -5,7 +5,7 @@ import Services from "@/components/Services";
 import About from "@/components/About";
 import Portfolio from "@/components/Portfolio";
 import SupportBanner from "@/components/SupportBanner";
-import Technologies from "@/components/Technologies";
+import TechnologySection from "@/components/TechnologySection";
 import Testimonials from "@/components/Testimonials";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen">
       <Header />
       <main>
         <HomeHero />
@@ -45,7 +45,7 @@ export default function Home() {
         <About />
         <Portfolio />
         <SupportBanner />
-        <Technologies />
+        <TechnologySection />
         <Testimonials />
         <Contact />
         {/* SEO-optimized content (hidden visually, visible to search engines) */}

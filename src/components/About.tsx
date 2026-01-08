@@ -1,9 +1,10 @@
 import Link from "next/link";
+import Container from "./Container";
 
 export default function About() {
   return (
     <section className="w-full bg-neutral-100 overflow-hidden py-20">
-      <div className="mx-auto w-[94%] xl:w-[90%] 2xl:w-[85%]">
+      <Container>
         <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-20 items-center">
 
           {/* Images Section - Mobile Layout (hidden on lg and above) */}
@@ -107,7 +108,7 @@ export default function About() {
 
           </div>
         </div>
-      </div>
+      </Container>
     </section>
   );
 }
