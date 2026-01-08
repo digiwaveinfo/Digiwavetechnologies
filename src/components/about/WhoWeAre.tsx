@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Container from "../Container";
 
 export default function WhoWeAre() {
     return (
@@ -7,7 +8,7 @@ export default function WhoWeAre() {
             {/* White Background starting mid-way */}
             {/* <div className="absolute top-[150px] lg:top-[100px] left-0 w-full h-[calc(100%-150px)] lg:h-[calc(100%-100px)] bg-white -z-10" /> */}
 
-            <div className="mx-auto w-[94%] xl:w-[90%] 2xl:w-[85%]">
+            <Container>
                 {/* Images Row - Negative margin to overlap Hero */}
                 <div className="flex flex-col lg:flex-row gap-6 mb-16 -mt-[150px] lg:-mt-[180px]">
                     {/* Large Image */}
@@ -50,7 +51,7 @@ export default function WhoWeAre() {
                         Digiwave Technologies is a global IT services company delivering cutting-edge AI/ML, Cloud, Mobile, and Web solutions. We don't just write code; we build the digital backbone that empowers businesses to innovate at speed and scale in an AI-driven world. Our team of passionate developers, designers, and strategists work collaboratively to transform complex challenges into elegant, scalable solutions. From startups to enterprises, we partner with organizations to accelerate their digital transformation journey and create lasting impact through technology.
                     </div>
                 </div>
-            </div>
+            </Container>
         </section>
     );
 }

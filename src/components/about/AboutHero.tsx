@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Container from "../Container";
 
 export default function AboutHero() {
     return (
@@ -15,14 +16,14 @@ export default function AboutHero() {
             </div>
 
             {/* Content */}
-            <div className="relative z-10 text-center mx-auto w-[94%] xl:w-[90%] 2xl:w-[85%]">
+            <Container className="relative z-10 text-center">
                 <h2 className="text-cyan-500 text-xl font-medium font-['Poppins'] mb-4">
                     About Us
                 </h2>
                 <h1 className="text-white text-4xl lg:text-5xl font-bold font-['Poppins'] max-w-[800px] leading-tight mx-auto">
                     Built Using Future-Ready Technologies
                 </h1>
-            </div>
+            </Container>
 
         </section>
     );

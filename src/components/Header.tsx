@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import Container from "./Container";
 
 export default function Header() {
   const pathname = usePathname();
@@ -45,7 +46,7 @@ export default function Header() {
     <header className="w-full bg-white shadow-[0px_4px_4px_0px_rgba(181,181,181,0.25)] sticky top-0 z-50 flex flex-col">
       {/* Top Bar - Email & Social Icons */}
       <div className="w-full bg-[#00BFD2] h-11 flex justify-center">
-        <div className="w-[94%] xl:w-[90%] 2xl:w-[85%] h-full flex items-center justify-between">
+        <Container className="h-full flex items-center justify-between">
           {/* Email */}
           <a href="mailto:info@digiwavetechnologies.in" className="flex items-center gap-2 text-white hover:opacity-80 transition-opacity">
             <span className="text-base font-medium hidden sm:inline">info@digiwavetechnologies.in</span>
@@ -87,12 +88,12 @@ export default function Header() {
               </svg>
             </a>
           </div>
-        </div>
+        </Container>
       </div>
 
       {/* Main Navigation */}
       <div className="w-full py-3 lg:py-4 flex justify-center">
-        <div className="w-[94%] xl:w-[90%] 2xl:w-[85%] flex items-center justify-between">
+        <Container className="flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center">
             <img
@@ -150,7 +151,7 @@ export default function Header() {
               <Menu className="w-8 h-8" />
             )}
           </button>
-        </div>
+        </Container>
       </div>
 
       {/* Mobile Menu */}

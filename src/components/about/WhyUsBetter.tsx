@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Container from "../Container";
 
 // SVG Icons as components for cleanliness
 const QualityIcon = () => (
@@ -117,8 +118,8 @@ export default function WhyUsBetter() {
                 <Image src="/about/Whay-us-background.webp" alt="Background Office" fill className="object-fill" />
             </div>
 
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8 2xl:px-12 relative z-10 h-full flex items-center max-w-[1800px]">
-                <div className="w-full flex flex-col lg:flex-row items-center justify-center gap-16">
+            <Container className="relative z-10 h-full flex items-center max-w-[1800px]">
+                <div className="w-full flex flex-col lg:flex-row items-center justify-between gap-16">
 
                     {/* Left Image (Business Man) */}
                     <div className="hidden lg:block w-[520px] h-[502px] relative bg-stone-300 rounded-[19px] overflow-hidden shrink-0">
@@ -132,17 +133,17 @@ export default function WhyUsBetter() {
                     </div>
 
                     {/* Right Content */}
-                    <div className="text-white">
+                    <div className="text-white w-full max-w-[800px]">
                         <div className="mb-8">
                             <h3 className="text-cyan-500 text-xl font-medium font-['Poppins'] mb-2">Why Us Better</h3>
-                            <h2 className="text-white text-4xl font-bold font-['Poppins'] leading-tight w-full max-w-[727px]">
+                            <h2 className="text-white text-4xl font-bold font-['Poppins'] leading-tight w-full">
                                 Why our services are better than others
                             </h2>
                         </div>
 
                         <div className="flex flex-col sm:flex-row gap-8 sm:gap-16">
                             {/* Column 1 */}
-                            <div className="flex flex-col gap-6 w-full sm:w-72">
+                            <div className="flex flex-col gap-6 flex-1">
                                 {leftColumnBenefits.map((benefit, index) => (
                                     <div key={index} className="flex items-center gap-5 p-4 bg-white rounded-2xl shadow-lg w-full">
                                         <div className="w-9 h-9 bg-cyan-500/10 rounded-sm flex items-center justify-center shrink-0 overflow-hidden relative">
@@ -158,7 +159,7 @@ export default function WhyUsBetter() {
                             </div>
 
                             {/* Column 2 */}
-                            <div className="flex flex-col gap-6 w-full sm:w-72">
+                            <div className="flex flex-col gap-6 flex-1">
                                 {rightColumnBenefits.map((benefit, index) => (
                                     <div key={index} className="flex items-center gap-5 p-4 bg-white rounded-2xl shadow-lg w-full">
                                         <div className="w-9 h-9 bg-cyan-500/10 rounded-sm flex items-center justify-center shrink-0 overflow-hidden relative">
@@ -175,7 +176,7 @@ export default function WhyUsBetter() {
                         </div>
                     </div>
                 </div>
-            </div>
+            </Container>
         </section>
     );
 }

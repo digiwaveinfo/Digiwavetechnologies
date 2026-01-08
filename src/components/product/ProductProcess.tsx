@@ -1,5 +1,6 @@
 import Section from "@/components/Section";
 
+
 const PROCESS_STEPS = [
   {
     number: "1",
@@ -36,7 +37,7 @@ const PROCESS_STEPS = [
 export default function ProductProcess() {
   return (
     <Section spacing="large" className="relative overflow-hidden">
-      <div className="w-full max-w-[1800px] mx-auto relative">
+      <div className="relative w-full max-w-[1800px] mx-auto">
         {/* Decorative curve - hidden on mobile */}
         <div className="hidden lg:block absolute left-[314.45px] top-[169.13px]">
           <svg width="738" height="958" viewBox="0 0 738 958" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -45,7 +46,7 @@ export default function ProductProcess() {
         </div>
 
         {/* Header and Content */}
-        <div className="w-full max-w-[1800px] relative flex flex-col items-center gap-7 px-4 lg:px-0">
+        <div className="w-full relative flex flex-col items-center gap-7 px-4 lg:px-0">
           <div className="w-full lg:w-[727px] flex flex-col items-center gap-2.5">
             <div className="text-[#00BFD2] text-xl font-medium font-['Inter'] text-center">
               How does it works
@@ -56,11 +57,11 @@ export default function ProductProcess() {
           </div>
 
           {/* Process Cards Grid */}
-          <div className="w-full flex flex-col lg:flex-row justify-center items-stretch gap-6 lg:gap-8 flex-wrap">
+          <div className="w-full grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8">
             {PROCESS_STEPS.map((step, index) => (
               <div
                 key={index}
-                className="group w-full lg:w-[calc(50%-1rem)] min-h-[346px] lg:h-[346px] relative bg-[rgba(200,217,215,0.08)] rounded-[26px] overflow-hidden transition-all duration-300 hover:bg-[rgba(0,242,217,0.06)] hover:shadow-[1px_0px_5.3px_1px_rgba(0,242,217,0.06)] hover:outline hover:outline-2 hover:outline-[#00BFD2] hover:-outline-offset-2"
+                className="group w-full min-h-[346px] lg:h-[346px] relative bg-[rgba(200,217,215,0.08)] rounded-[26px] overflow-hidden transition-all duration-300 hover:bg-[rgba(0,242,217,0.06)] hover:shadow-[1px_0px_5.3px_1px_rgba(0,242,217,0.06)] hover:outline hover:outline-2 hover:outline-[#00BFD2] hover:-outline-offset-2"
               >
                 {/* Step Number */}
                 <div className="absolute left-[22px] top-[-1px] text-[rgba(200,217,215,0.21)] group-hover:text-[rgba(148,227,219,0.21)] text-[133px] font-extrabold font-['Inter'] leading-none select-none transition-colors duration-300">

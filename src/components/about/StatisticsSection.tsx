@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Container from "../Container";
 
 export default function StatisticsSection() {
   const stats = [
@@ -27,7 +28,7 @@ export default function StatisticsSection() {
 
   return (
     <section className="w-full bg-[#F5F5F5] py-12 md:py-16 lg:py-20">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 2xl:px-12 max-w-[1800px]">
+      <Container className="max-w-[1800px]">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
           {/* Left side - Stats Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8">
@@ -69,7 +70,7 @@ export default function StatisticsSection() {
             />
           </div>
         </div>
-      </div>
+      </Container>
     </section>
   );
 }

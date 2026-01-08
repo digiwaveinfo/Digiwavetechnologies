@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Container from "../Container";
 
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number>(0);
@@ -50,7 +51,7 @@ export default function FAQ() {
         />
       </div>
 
-      <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 2xl:px-12 max-w-[1800px]">
+      <Container className="relative max-w-[1800px]">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
           {/* Left side - Title */}
           <div className="flex flex-col gap-5 lg:gap-5 justify-start lg:pt-8">
@@ -135,7 +136,7 @@ export default function FAQ() {
             ))}
           </div>
         </div>
-      </div>
+      </Container>
     </section>
   );
 }

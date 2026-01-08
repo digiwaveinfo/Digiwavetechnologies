@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Container from "../Container";
 
 export default function ProudWork() {
     return (
@@ -28,7 +29,7 @@ export default function ProudWork() {
                 </div>
             </div>
 
-            <div className="mx-auto w-[94%] xl:w-[90%] 2xl:w-[85%] relative z-10 flex flex-col items-center">
+            <Container className="relative z-10 flex flex-col items-center">
                 {/* Header */}
                 <div className="text-center mb-16">
                     <h3 className="text-cyan-500 text-xl font-medium font-['Inter'] mb-2">
@@ -40,7 +41,7 @@ export default function ProudWork() {
                 </div>
 
                 {/* Logos Grid */}
-                <div className="flex flex-wrap justify-center items-center gap-10 lg:gap-16">
+                <div className="w-full flex flex-wrap justify-between items-center gap-10 lg:gap-16">
                     <div className="w-32 h-28 relative transition-all">
                         <Image src="/1Figure.webp" alt="Figure 1" fill className="object-contain" />
                     </div>
@@ -57,7 +58,7 @@ export default function ProudWork() {
                         <Image src="/5Figure.webp" alt="Figure 5" fill className="object-contain" />
                     </div>
                 </div>
-            </div>
+            </Container>
         </section>
     );
 }
