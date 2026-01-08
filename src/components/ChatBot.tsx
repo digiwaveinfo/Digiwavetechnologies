@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import { X, Send } from "lucide-react";
+import ReactMarkdown from "react-markdown";
 
 // Animated Robot Icon matching theme color
 const AnimatedRobot = ({ size = 80 }: { size?: number }) => (
@@ -216,7 +217,22 @@ export default function ChatBot() {
                     : "bg-[#00BFD2] text-white"
                     }`}
                 >
-                  {message.text}
+                  {message.isBot ? (
+                    <ReactMarkdown
+                      components={{
+                        p: ({ children }) => <p className="mb-2 last:mb-0">{children}</p>,
+                        strong: ({ children }) => <strong className="font-semibold">{children}</strong>,
+                        ol: ({ children }) => <ol className="list-decimal list-inside space-y-1 my-2">{children}</ol>,
+                        ul: ({ children }) => <ul className="list-disc list-inside space-y-1 my-2">{children}</ul>,
+                        li: ({ children }) => <li className="leading-relaxed">{children}</li>,
+                        a: ({ href, children }) => <a href={href} className="text-[#00BFD2] underline hover:text-[#00a5b5]" target="_blank" rel="noopener noreferrer">{children}</a>,
+                      }}
+                    >
+                      {message.text}
+                    </ReactMarkdown>
+                  ) : (
+                    message.text
+                  )}
                 </div>
               </div>
             ))}
