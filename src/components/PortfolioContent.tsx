@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useRef, useEffect, useState } from "react";
 import { motion, useScroll, useTransform, MotionValue } from "framer-motion";
 import { getHomeFeaturedPortfolios, PortfolioItem } from "@/lib/api";
+import Container from "./Container";
 
 const cardTypes = ["blue", "dark", "teal", "white"];
 
@@ -135,22 +136,24 @@ const PortfolioMain = ({ portfolios }: { portfolios: PortfolioItem[] }) => {
   });
 
   return (
-    <main ref={container} className="relative px-4 sm:px-6 lg:px-8 pb-40">
-      {portfolios.map((card, i) => {
-        const targetScale = 1 - (portfolios.length - i) * 0.05;
-        const cardType = cardTypes[i % cardTypes.length];
-        return (
-          <StickyCard
-            key={card.id}
-            i={i}
-            card={card}
-            cardType={cardType}
-            progress={scrollYProgress}
-            range={[i * 0.2, 1]}
-            targetScale={targetScale}
-          />
-        );
-      })}
+    <main ref={container} className="relative pb-40">
+      <Container>
+        {portfolios.map((card, i) => {
+          const targetScale = 1 - (portfolios.length - i) * 0.05;
+          const cardType = cardTypes[i % cardTypes.length];
+          return (
+            <StickyCard
+              key={card.id}
+              i={i}
+              card={card}
+              cardType={cardType}
+              progress={scrollYProgress}
+              range={[i * 0.2, 1]}
+              targetScale={targetScale}
+            />
+          );
+        })}
+      </Container>
     </main>
   );
 };
@@ -190,12 +193,12 @@ export default function PortfolioContent() {
   return (
     <section className="w-full bg-white relative">
       <div className="pt-12 pb-8 bg-white">
-        <div className="mx-auto w-[94%] xl:w-[90%] 2xl:w-[85%] flex flex-col items-center gap-4 text-center">
+        <Container className="flex flex-col items-center gap-4 text-center">
           <div className="text-[#00BFD2] text-xl font-medium font-['Poppins']">Work We're Proud Of</div>
           <div className="text-[#082f49] text-3xl md:text-4xl lg:text-5xl font-bold font-['Poppins'] leading-tight">
             Transforming Ideas Into <br /> Digital Success
           </div>
-        </div>
+        </Container>
       </div>
       <PortfolioMain portfolios={portfolios} />
     </section>
