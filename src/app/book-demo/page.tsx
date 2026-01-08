@@ -6,15 +6,9 @@ import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { toast } from "sonner";
-import { Clock, CheckCircle2, Video, Users, Zap, Calendar as CalendarIcon } from "lucide-react";
-import { format } from "date-fns";
-import { cn } from "@/lib/utils";
-import { Calendar } from "@/components/ui/calendar";
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover";
+import { Clock, CheckCircle2, Video, Users, Zap } from "lucide-react";
+import { DateTimePicker } from "@/components/ui/datetime-picker";
+import { CustomSelect } from "@/components/ui/custom-select";
 
 const services = [
   { id: "ai-machine-learning", label: "AI & ML Solutions" },
@@ -59,6 +53,10 @@ export default function BookDemoPage() {
 
   const handleDateSelect = (date: Date | undefined) => {
     setFormData((prev) => ({ ...prev, preferredDate: date }));
+  };
+
+  const handleTimeSelect = (time: string) => {
+    setFormData((prev) => ({ ...prev, preferredTime: time }));
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -217,79 +215,24 @@ export default function BookDemoPage() {
                     {/* Service Selection */}
                     <div>
                       <label className="block text-sm font-bold text-gray-700 mb-2">What would you like to see?</label>
-                      <select
-                        name="selectedService"
+                      <CustomSelect
                         value={formData.selectedService}
-                        onChange={handleInputChange}
-                        className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#00BFD2] focus:border-transparent outline-none transition-all"
-                      >
-                        <option value="">Select a topic for the demo...</option>
-                        {services.map((service) => (
-                          <option key={service.id} value={service.id}>
-                            {service.label}
-                          </option>
-                        ))}
-                      </select>
+                        onChange={(value) => setFormData((prev) => ({ ...prev, selectedService: value }))}
+                        options={services.map((s) => ({ value: s.id, label: s.label }))}
+                        placeholder="Select a topic for the demo..."
+                      />
                     </div>
 
-                    {/* Booking Details Row */}
+                    {/* Booking Details - Combined Date & Time Picker */}
                     <div>
                       <label className="block text-sm font-bold text-gray-700 mb-4">Preferred Availability</label>
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        {/* Custom Date Picker */}
-                        <div className="relative">
-                          <label className="text-xs text-gray-500 mb-1 block">Date</label>
-                          <Popover>
-                            <PopoverTrigger asChild>
-                              <button
-                                type="button"
-                                className={cn(
-                                  "w-full pl-10 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-lg text-left focus:ring-2 focus:ring-[#00BFD2] focus:border-transparent outline-none transition-all flex items-center",
-                                  !formData.preferredDate && "text-gray-500"
-                                )}
-                              >
-                                <CalendarIcon className="w-4 h-4 text-gray-400 absolute left-3" />
-                                {formData.preferredDate ? (
-                                  format(formData.preferredDate, "dd/MM/yyyy")
-                                ) : (
-                                  <span>Pick a date</span>
-                                )}
-                              </button>
-                            </PopoverTrigger>
-                            <PopoverContent className="w-auto p-0" align="start">
-                              <Calendar
-                                mode="single"
-                                selected={formData.preferredDate}
-                                onSelect={handleDateSelect}
-                                disabled={(date) => date < new Date() || date < new Date("1900-01-01")}
-                                initialFocus
-                              />
-                            </PopoverContent>
-                          </Popover>
-                        </div>
-
-                        <div className="relative">
-                          <label className="text-xs text-gray-500 mb-1 block">Time Slot</label>
-                          <div className="relative">
-                            <select
-                              name="preferredTime"
-                              value={formData.preferredTime}
-                              onChange={handleInputChange}
-                              className="w-full pl-10 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#00BFD2] focus:border-transparent outline-none transition-all appearance-none"
-                              required
-                            >
-                              <option value="">Select time...</option>
-                              <option value="09:00">09:00 AM - 10:00 AM</option>
-                              <option value="10:00">10:00 AM - 11:00 AM</option>
-                              <option value="11:00">11:00 AM - 12:00 PM</option>
-                              <option value="14:00">02:00 PM - 03:00 PM</option>
-                              <option value="15:00">03:00 PM - 04:00 PM</option>
-                              <option value="16:00">04:00 PM - 05:00 PM</option>
-                            </select>
-                            <Clock className="w-4 h-4 text-gray-400 absolute left-3 top-1/2 -translate-y-1/2" />
-                          </div>
-                        </div>
-                      </div>
+                      <DateTimePicker
+                        selectedDate={formData.preferredDate}
+                        selectedTime={formData.preferredTime}
+                        onDateChange={handleDateSelect}
+                        onTimeChange={handleTimeSelect}
+                        minDate={new Date()}
+                      />
                     </div>
 
                     <div>

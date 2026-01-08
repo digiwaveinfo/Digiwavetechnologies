@@ -44,9 +44,9 @@ export default function Footer() {
 
       {/* Main Footer - Bottom */}
       <div
-        className="w-full py-14 relative overflow-hidden bg-white"
+        className="w-full py-14 relative overflow-hidden"
         style={{
-          backgroundImage: "url('/Footer-bottom.webp')",
+          backgroundImage: "url('/Footer-bottom.png')",
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
