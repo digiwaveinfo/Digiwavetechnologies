@@ -2,6 +2,7 @@ import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Contact from "@/components/Contact";
+import Container from "@/components/Container";
 
 interface ServiceDetailPageProps {
   params: Promise<{ id: string }>;
@@ -22,7 +23,7 @@ const serviceData: Record<string, {
     title: "AI & Machine Learning Solutions",
     description: "Intelligent systems that automate, analyze, and optimize business processes.",
     fullDescription: "Transform your business with cutting-edge AI and Machine Learning solutions. Our expert team develops intelligent systems that can automate complex processes, analyze vast amounts of data, and provide actionable insights to drive your business forward.",
-    heroImage: "/Home-technologies/Ai-Ml.webp",
+    heroImage: "https://api.builder.io/api/v1/image/assets/TEMP/7309ec19426c194dd2e948fe4906e3ab122a4585?width=970",
     features: [
       "Predictive Analytics & Forecasting",
       "Natural Language Processing (NLP)",
@@ -49,7 +50,7 @@ const serviceData: Record<string, {
     title: "Web Application Development",
     description: "Custom high-performance web solutions tailored for scale and performance.",
     fullDescription: "Build powerful, scalable web applications that drive your business growth. Our development team creates custom web solutions using modern frameworks and technologies, ensuring optimal performance, security, and user experience.",
-    heroImage: "/Home-technologies/webdevelopment.webp",
+    heroImage: "https://api.builder.io/api/v1/image/assets/TEMP/3f5c6b3d663ecc01e18ae177e232243b61d97576?width=806",
     features: [
       "Custom Web Application Development",
       "Responsive & Mobile-First Design",
@@ -76,7 +77,7 @@ const serviceData: Record<string, {
     title: "Mobile App Development",
     description: "Android, iOS, and cross-platform apps built for engagement and user experience.",
     fullDescription: "Create engaging mobile experiences that connect with your users. Our mobile development team specializes in building native and cross-platform applications that deliver exceptional performance and user experience.",
-    heroImage: "/Home-technologies/App-development.webp",
+    heroImage: "https://api.builder.io/api/v1/image/assets/TEMP/917d50598d6a8f171dd1a7d201159fde9ed14c99?width=970",
     features: [
       "Native iOS & Android Development",
       "Cross-Platform Solutions (React Native, Flutter)",
@@ -103,7 +104,7 @@ const serviceData: Record<string, {
     title: "Cloud & DevOps Services",
     description: "Scalable cloud infrastructure and automated deployment solutions.",
     fullDescription: "Accelerate your development and deployment processes with our comprehensive Cloud & DevOps services. We help organizations migrate to the cloud, implement CI/CD pipelines, and establish robust infrastructure that scales with your business needs.",
-    heroImage: "/Home-technologies/cloud.webp",
+    heroImage: "https://api.builder.io/api/v1/image/assets/TEMP/3f5c6b3d663ecc01e18ae177e232243b61d97576?width=806",
     features: [
       "Cloud Migration & Architecture",
       "CI/CD Pipeline Implementation",
@@ -130,7 +131,7 @@ const serviceData: Record<string, {
     title: "Automation & Data Intelligence",
     description: "Smart automation and data-driven insights for business optimization.",
     fullDescription: "Unlock the power of your data and automate your business processes with our comprehensive automation and data intelligence solutions. We help organizations streamline operations, gain valuable insights from their data, and make informed decisions.",
-    heroImage: "/Home-technologies/data-inteligence.webp",
+    heroImage: "https://api.builder.io/api/v1/image/assets/TEMP/7309ec19426c194dd2e948fe4906e3ab122a4585?width=970",
     features: [
       "Business Process Automation",
       "Data Analytics & Visualization",
@@ -157,7 +158,7 @@ const serviceData: Record<string, {
     title: "IoT Solutions",
     description: "Connected device ecosystems enabling smart monitoring, control, and data collection.",
     fullDescription: "Build connected ecosystems with our comprehensive IoT solutions. We design and develop smart device networks that enable real-time monitoring, automated control, and intelligent data collection for industrial and consumer applications.",
-    heroImage: "/Home-technologies/Iot.webp",
+    heroImage: "https://api.builder.io/api/v1/image/assets/TEMP/917d50598d6a8f171dd1a7d201159fde9ed14c99?width=970",
     features: [
       "Smart Device Integration",
       "Real-time Monitoring Systems",
@@ -192,10 +193,10 @@ export default async function ServiceDetailPage({ params }: ServiceDetailPagePro
       <div className="min-h-screen w-full">
         <Header />
         <section className="py-20 w-full bg-white">
-          <div className="mx-auto w-[94%] xl:w-[90%] 2xl:w-[85%]">
+          <Container>
             <h1 className="text-4xl font-bold text-[#022030] mb-4">Service Not Found</h1>
             <p className="text-gray-600">The requested service could not be found.</p>
-          </div>
+          </Container>
         </section>
         <Contact />
         <Footer />
@@ -215,7 +216,7 @@ export default async function ServiceDetailPage({ params }: ServiceDetailPagePro
         <div className="absolute w-6 h-[925px] rotate-[43deg] bg-[#62F4F3] blur-[68px] opacity-80 left-[861px] top-28 animate-pulse delay-2000" />
 
         <div className="relative z-10 w-full py-28 lg:py-32">
-          <div className="mx-auto w-[94%] xl:w-[90%] 2xl:w-[85%] grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <Container className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Content */}
             <div className="space-y-8 order-2 lg:order-1">
               <div className="space-y-6">
@@ -258,13 +259,13 @@ export default async function ServiceDetailPage({ params }: ServiceDetailPagePro
               <div className="absolute -top-4 -right-4 w-20 h-20 bg-[#62F4F3]/20 rounded-full animate-bounce delay-500"></div>
               <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-[#00BFD2]/20 rounded-full animate-bounce delay-1000"></div>
             </div>
-          </div>
+          </Container>
         </div>
-      </section>
+      </section >
 
       {/* Technologies Section */}
-      <section className="py-16 sm:py-20 w-full bg-white">
-        <div className="mx-auto w-[94%] xl:w-[90%] 2xl:w-[85%]">
+      < section className="py-16 sm:py-20 w-full bg-white" >
+        <Container>
           <div className="text-center mb-12">
             <h2 className="text-sky-950 text-3xl sm:text-4xl font-bold font-['Inter'] leading-tight mb-4">
               Technologies We Use
@@ -282,12 +283,12 @@ export default async function ServiceDetailPage({ params }: ServiceDetailPagePro
               </div>
             ))}
           </div>
-        </div>
-      </section>
+        </Container>
+      </section >
 
       {/* Features Section with Cards */}
-      <section className="py-16 sm:py-20 w-full bg-gray-50">
-        <div className="mx-auto w-[94%] xl:w-[90%] 2xl:w-[85%]">
+      < section className="py-16 sm:py-20 w-full bg-gray-50" >
+        <Container>
           <div className="text-center mb-12">
             <h2 className="text-sky-950 text-3xl sm:text-4xl font-bold font-['Inter'] leading-tight mb-4">
               Key Features
@@ -344,12 +345,12 @@ export default async function ServiceDetailPage({ params }: ServiceDetailPagePro
               );
             })}
           </div>
-        </div>
-      </section>
+        </Container>
+      </section >
 
       {/* Benefits Section with Modern Cards */}
-      <section className="py-16 sm:py-20 w-full bg-white">
-        <div className="mx-auto w-[94%] xl:w-[90%] 2xl:w-[85%]">
+      < section className="py-16 sm:py-20 w-full bg-white" >
+        <Container>
           <div className="text-center mb-12">
             <h2 className="text-sky-950 text-3xl sm:text-4xl font-bold font-['Inter'] leading-tight mb-4">
               Why Choose Our Solution
@@ -387,7 +388,7 @@ export default async function ServiceDetailPage({ params }: ServiceDetailPagePro
               return (
                 <div
                   key={index}
-                  className="group flex items-start gap-6 p-6 rounded-2xl hover:bg-gradient-to-r hover:from-blue-50 hover:to-cyan-50 transition-all duration-300"
+                  className="group flex items-start gap-4 p-4 rounded-2xl hover:bg-gradient-to-r hover:from-blue-50 hover:to-cyan-50 transition-all duration-300"
                 >
                   <div className={`w-12 h-12 bg-gradient-to-br ${config.gradient} rounded-full flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300`}>
                     {config.icon}
@@ -400,17 +401,17 @@ export default async function ServiceDetailPage({ params }: ServiceDetailPagePro
               );
             })}
           </div>
-        </div>
-      </section>
+        </Container>
+      </section >
 
       {/* Modern CTA Section - Same style as Hero */}
-      <section className="relative bg-[#022030] py-20 w-full overflow-hidden">
+      < section className="relative bg-[#022030] py-20 w-full overflow-hidden" >
         {/* Animated Background Elements - Same as Hero */}
-        <div className="absolute w-6 h-[925px] rotate-[43deg] bg-[#62F4F3] blur-[68px] opacity-80 -left-52 -top-36 animate-pulse" />
+        < div className="absolute w-6 h-[925px] rotate-[43deg] bg-[#62F4F3] blur-[68px] opacity-80 -left-52 -top-36 animate-pulse" />
         <div className="absolute w-6 h-[925px] rotate-[43deg] bg-[#62F4F3] blur-[68px] opacity-80 left-[436px] -top-14 animate-pulse delay-1000" />
         <div className="absolute w-6 h-[925px] rotate-[43deg] bg-[#62F4F3] blur-[68px] opacity-80 right-0 top-28 animate-pulse delay-2000" />
 
-        <div className="relative z-10 mx-auto w-[94%] xl:w-[90%] 2xl:w-[85%] text-center">
+        <Container className="relative z-10 text-center">
           <h2 className="text-white text-4xl sm:text-5xl font-bold font-['Inter'] leading-tight mb-6">
             Ready to Transform Your Business?
           </h2>
@@ -426,11 +427,11 @@ export default async function ServiceDetailPage({ params }: ServiceDetailPagePro
               VIEW PORTFOLIO
             </Link>
           </div>
-        </div>
-      </section>
+        </Container>
+      </section >
 
       <Contact />
       <Footer />
-    </div>
+    </div >
   );
 }

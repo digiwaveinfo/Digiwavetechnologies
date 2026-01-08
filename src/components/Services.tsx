@@ -16,7 +16,7 @@ export default function Services() {
     },
     {
       id: "web-application-development",
-      title: "Web App development",
+      title: "Web App\ndevelopment",
       description:
         "Custom high-performance web solutions tailored for scale and performance.",
       image: "https://api.builder.io/api/v1/image/assets/TEMP/3f5c6b3d663ecc01e18ae177e232243b61d97576?width=806",
@@ -24,7 +24,7 @@ export default function Services() {
     },
     {
       id: "mobile-app-development",
-      title: "Mobile App development",
+      title: "Mobile App\ndevelopment",
       description:
         "Android, iOS, and cross-platform apps built for engagement and user experience.",
       image: "https://api.builder.io/api/v1/image/assets/TEMP/917d50598d6a8f171dd1a7d201159fde9ed14c99?width=970",
@@ -321,7 +321,7 @@ export default function Services() {
                     <div className="w-[85%] h-48 absolute top-[202px] bg-white rounded-3xl shadow-[0px_6px_20px_0px_rgba(0,0,0,0.04)] overflow-hidden z-10 flex flex-col items-center justify-center px-3 transition-all hover:shadow-lg group-hover:shadow-xl">
                       <div className="flex flex-col justify-center items-center gap-3">
                         <div
-                          className={`text-center ${service.titleColor} text-sm sm:text-base lg:text-lg font-bold font-['Inter'] leading-5 sm:leading-6`}
+                          className={`text-center ${service.titleColor} text-sm sm:text-base lg:text-lg font-bold font-['Inter'] leading-5 sm:leading-6 whitespace-pre-line`}
                         >
                           {service.title}
                         </div>

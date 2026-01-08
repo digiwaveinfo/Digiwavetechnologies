@@ -1,129 +1,16 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Container from "./Container";
-
-// Technology icon components
-const PHPIcon = () => (
-    <svg width="40" height="40" viewBox="0 0 57 57" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M57 28.5C57 30.2239 56.8465 31.9119 56.5534 33.5508C54.1698 46.8819 42.5162 57 28.5 57C17.9399 57 8.721 51.2569 3.79807 42.7233C2.59639 40.6422 1.65189 38.396 1.00507 36.0263C0.349014 33.6289 0 31.1045 0 28.5C0 12.7599 12.7599 0 28.5 0C41.4913 0 52.4516 8.69194 55.8844 20.5781C56.6104 23.0931 57 25.7512 57 28.5Z" fill="#8F9ED1" />
-        <path d="M14.4925 19.8428H3.99633L1.00562 36.0261C1.65243 38.3957 2.59694 40.642 3.79862 42.7231H4.77229L5.93088 36.4554H11.6983C18.7209 36.4554 20.6089 30.1506 21.0615 27.0539C21.5152 23.9584 19.2503 19.8428 14.4925 19.8428ZM16.0152 27.5761C15.7582 29.3315 14.4611 32.9061 10.4804 32.9061H6.58694L8.32722 23.4872H12.2905C16.1537 23.4872 16.2723 25.8208 16.0152 27.5761Z" fill="#F2F2F2" />
-        <path d="M55.8849 20.578C54.9927 20.1173 53.9294 19.8428 52.701 19.8428H42.2049L37.9764 42.7232H42.9807L44.1393 36.4555H49.9068C53.0302 36.4555 55.138 35.2085 56.5537 33.5508C56.847 31.9117 57.0005 30.2238 57.0005 28.4999C57.0005 25.7511 56.6109 23.093 55.8849 20.578ZM54.2238 27.5762C53.9667 29.3316 52.6696 32.9062 48.6878 32.9062H44.7955L46.5358 23.4873H50.4991C54.3623 23.4873 54.4808 25.8209 54.2238 27.5762Z" fill="#F2F2F2" />
-        <path d="M34.427 19.9188C32.3903 19.9188 29.6729 19.9188 28.3489 19.9188L29.4898 13.7456H24.506L20.2775 36.6253H25.2612L27.6929 23.4678C28.5913 23.4678 29.7848 23.4678 30.878 23.4678C32.9923 23.4678 34.427 23.921 34.1249 25.8842C33.8229 27.8475 32.0862 36.5312 32.0862 36.5312H37.1453C37.1453 36.5312 39.1086 26.8659 39.4107 24.1474C39.7128 21.429 37.2209 19.9188 34.427 19.9188Z" fill="#F2F2F2" />
-    </svg>
-);
-
-const JavaScriptIcon = () => (
-    <svg width="40" height="40" viewBox="0 0 47 47" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M44.7581 0.321289C44.572 0.117615 44.3095 0 44.0316 0H2.90662C2.62836 0 2.36588 0.117615 2.17978 0.321289C1.99403 0.528908 1.90367 0.801071 1.93307 1.07718L5.84986 40.2436C5.88894 40.6276 6.14748 40.9525 6.51359 41.0759L24.1386 46.9509C24.2404 46.9824 24.3423 47 24.448 47C24.5657 47 24.6811 46.9785 24.7926 46.9372L40.4594 41.0622C40.808 40.9332 41.0529 40.614 41.088 40.2436L45.0048 1.07718C45.0342 0.801071 44.9439 0.528908 44.7581 0.321289Z" fill="#FFC107" />
-        <path d="M26.407 36.2294C25.9975 36.2294 25.6156 35.9688 25.4765 35.5596C25.3062 35.0465 25.5844 34.4921 26.0954 34.32L31.4203 32.5457L33.0673 23.5002H26.407C25.8663 23.5002 25.4277 23.0616 25.4277 22.5209V10.7709C25.4277 10.2305 25.8663 9.79199 26.407 9.79199H36.1984C36.5 9.79199 36.7861 9.93076 36.9719 10.1677C37.158 10.4048 37.2225 10.7142 37.1501 11.0079L36.1712 14.9247C36.0399 15.4493 35.515 15.7627 34.9843 15.6375C34.4575 15.5063 34.1402 14.9735 34.2714 14.4506L34.943 11.7502H27.3859V21.5419H34.2402C34.53 21.5419 34.8061 21.6692 34.9922 21.8944C35.1783 22.1157 35.2564 22.4111 35.2037 22.6973L33.2452 33.468C33.1806 33.8205 32.93 34.1084 32.5911 34.2221L26.7161 36.1803C26.6125 36.2137 26.5106 36.2294 26.407 36.2294Z" fill="#050C12" />
-        <path d="M22.4899 36.2294C22.3999 36.2294 22.3095 36.2176 22.2195 36.19L15.3656 34.2318C15.0128 34.1321 14.7485 33.842 14.6743 33.4816L13.695 28.5859C13.5874 28.0552 13.932 27.5403 14.4645 27.4345C14.9679 27.323 15.5083 27.6694 15.6163 28.204L16.4779 32.5124L21.5106 33.9517V11.7502H10.7399C10.1995 11.7502 9.76062 11.3116 9.76062 10.7709C9.76062 10.2305 10.1995 9.79199 10.7399 9.79199H22.4899C23.0303 9.79199 23.4692 10.2305 23.4692 10.7709V35.2502C23.4692 35.5575 23.3261 35.8476 23.0794 36.0315C22.9069 36.1628 22.6993 36.2294 22.4899 36.2294Z" fill="#050C12" />
-    </svg>
-);
-
-const PostgreSQLIcon = () => (
-    <svg width="37" height="39" viewBox="0 0 37 39" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M27.406 28.4443C27.6515 26.3986 27.5779 26.0985 29.1017 26.4299L29.4885 26.4639C30.6602 26.5172 32.1929 26.2754 33.0933 25.8571C35.0317 24.9577 36.181 23.4561 34.2697 23.8506C29.91 24.75 29.6102 23.2738 29.6102 23.2738C34.2139 16.4431 36.1384 7.77224 34.4773 5.64978C29.9465 -0.139509 22.1038 2.5982 21.9726 2.66928L21.9308 2.67708C21.0694 2.49826 20.1053 2.39147 19.0223 2.37396C17.0494 2.34154 15.5523 2.89118 14.4167 3.75252C14.4167 3.75252 0.425833 -2.01155 1.07671 11.0014C1.21514 13.7696 5.04468 31.9482 9.61213 26.4574C11.2815 24.4496 12.8948 22.752 12.8948 22.752C13.6959 23.2842 14.655 23.5557 15.6609 23.4582L15.7387 23.3918C15.7143 23.6411 15.7251 23.8851 15.7698 24.1737C14.5934 25.4883 14.9391 25.7192 12.5867 26.2033C10.2067 26.6939 11.6049 27.5672 12.5176 27.7954C13.6243 28.0722 16.1846 28.4642 17.915 26.0424L17.8461 26.3187C18.3076 26.688 18.2764 28.9728 18.3419 30.6052C18.4074 32.2378 18.5167 33.7612 18.8495 34.6593C19.1822 35.5574 19.5749 37.8709 22.6665 37.2083C25.2504 36.6545 27.2259 35.8576 27.406 28.4443Z" fill="#050C12" stroke="#050C12" strokeWidth="2" />
-        <path d="M34.2706 23.8502C29.9104 24.7496 29.6107 23.2733 29.6107 23.2733C34.2143 16.4422 36.1388 7.77114 34.478 5.64895C29.9472 -0.140003 22.1042 2.5978 21.9733 2.66888L21.9312 2.67642C21.0698 2.4976 20.1057 2.39107 19.0222 2.37338C17.0493 2.34105 15.5528 2.89061 14.4172 3.75178C14.4172 3.75178 0.425993 -2.01204 1.0767 11.0009C1.21513 13.7693 5.04458 31.9478 9.6122 26.457C11.2817 24.4492 12.8947 22.7516 12.8947 22.7516C13.6959 23.2838 14.655 23.5553 15.6605 23.4578L15.7386 23.3915C15.7143 23.6408 15.7254 23.8847 15.7699 24.1733C14.5932 25.4879 14.939 25.7189 12.5867 26.203C10.2066 26.6936 11.6048 27.5668 12.5177 27.795C13.6245 28.0718 16.1849 28.4638 17.915 26.042L17.846 26.3183C18.307 26.6876 18.6308 28.7203 18.5765 30.5631C18.5223 32.4057 18.486 33.6708 18.8493 34.659C19.2126 35.6471 19.5746 37.8705 22.6669 37.2079C25.2507 36.6542 26.5897 35.2193 26.776 32.8258C26.9081 31.1242 27.2073 31.3757 27.2262 29.8544L27.4661 29.1341C27.7428 26.8276 27.5101 26.0833 29.1019 26.4295L29.4888 26.4634C30.6604 26.5167 32.1939 26.275 33.0939 25.8567C35.0319 24.9573 36.1815 23.4556 34.2706 23.8502Z" fill="#336791" />
-        <path d="M15.662 24.0964C15.5434 23.3234 15.9159 22.4036 16.3152 21.3276C16.9152 19.7131 18.2996 18.0983 17.1921 12.9769C16.3667 9.1604 10.8301 12.1826 10.8267 12.7001C10.8233 13.2174 11.0771 15.3231 10.7342 17.7751C10.2867 20.9747 12.7701 23.6808 15.6298 23.4039" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-        <path d="M14.3444 12.623C14.3194 12.7999 14.668 13.2714 15.1224 13.3344C15.5761 13.3977 15.9645 13.0291 15.9891 12.8526C16.0137 12.6758 15.6656 12.4812 15.2109 12.4179C14.757 12.3546 14.3684 12.4467 14.3444 12.623Z" fill="white" stroke="white" strokeWidth="2" />
-        <path d="M28.1633 12.2623C28.1879 12.4391 27.8398 12.9106 27.3853 12.9737C26.9312 13.0369 26.5429 12.6684 26.518 12.4918C26.494 12.3151 26.8422 12.1204 27.2963 12.0571C27.7504 11.9938 28.1387 12.0859 28.1633 12.2623Z" fill="white" stroke="white" strokeWidth="2" />
-    </svg>
-);
-
-const SwiftIcon = () => (
-    <svg width="40" height="35" viewBox="0 0 50 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M30.8181 0.125488C52.799 14.7939 45.671 30.9124 45.671 30.9124C45.671 30.9124 51.9146 37.8216 49.4053 43.8746C49.4053 43.8746 46.8147 39.6466 42.5148 39.6466C38.3586 39.6466 35.8993 43.8746 27.5088 43.8746C8.8467 43.8746 0 28.5812 0 28.5812C16.8184 39.4559 28.3088 31.7498 28.3088 31.7498C20.7152 27.4437 4.60928 6.82223 4.60928 6.82223C18.6496 18.5439 24.7089 21.6219 24.7089 21.6219C21.0652 18.697 10.9123 4.3629 10.9123 4.3629C19.0371 12.4221 35.1868 23.6594 35.1868 23.6594C39.818 11.2409 30.8181 0.125488 30.8181 0.125488Z" fill="#FF5722" />
-    </svg>
-);
-
-const TypescriptIcon = () => (
-    <svg width="40" height="40" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M50 25C50 27.2612 49.7 29.453 49.1367 31.5367C47.8204 36.4092 45.0684 40.6918 41.3612 43.903C36.9766 47.702 31.2571 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C38.8071 0 50 11.1929 50 25Z" fill="#0078CF" />
-        <path d="M49.1366 31.5365C47.8203 36.409 45.0683 40.6917 41.3611 43.9029C40.9989 43.9224 40.6203 43.9316 40.2274 43.9316C35.0366 43.9316 32.152 40.6877 30.7183 38.254L35.4244 35.4265C35.4244 35.4265 37.0254 38.8285 40.0265 38.8285C43.0285 38.8285 44.2295 37.8276 44.2295 35.5265C44.2295 32.7244 34.5233 31.7243 33.0224 26.9213C31.5214 22.1183 33.5224 15.3132 40.5274 15.8143C44.905 16.1265 47.3673 18.2765 48.5988 19.8448L43.9294 23.2182C42.9284 20.3172 38.8264 20.3172 38.0253 22.7182C37.2253 25.1202 39.9263 26.5203 44.1294 27.9213C46.2887 28.6407 48.0254 29.9682 49.1366 31.5365Z" fill="#F2F2F2" />
-        <path d="M29.3889 16.5806H8.11572V21.6017H15.9115V43.4032H21.5932V21.6017H29.3889V16.5806Z" fill="#F2F2F2" />
-    </svg>
-);
-
-const PythonIcon = () => (
-    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M15.8118 0.000261574C14.5067 0.00632407 13.2604 0.117637 12.1638 0.311699C8.93321 0.882449 8.34665 2.07701 8.34665 4.28007V7.18964H15.9808V8.15945H8.34665H5.48159C3.2629 8.15945 1.32009 9.49301 0.712464 12.0299C0.0115259 14.9378 -0.0195367 16.7524 0.712464 19.7888C1.25515 22.0488 2.55109 23.6592 4.76978 23.6592H7.39459V20.1713C7.39459 17.6514 9.57478 15.4288 12.1638 15.4288H19.7891C21.9117 15.4288 23.6062 13.6811 23.6062 11.5494V4.28007C23.6062 2.2112 21.8608 0.657012 19.7891 0.311699C18.4777 0.0933866 17.1169 -0.00580093 15.8118 0.000261574ZM11.6833 2.34039C12.4718 2.34039 13.1158 2.99489 13.1158 3.79957C13.1158 4.60145 12.4718 5.24989 11.6833 5.24989C10.8919 5.24989 10.2508 4.60145 10.2508 3.79957C10.2508 2.99482 10.8919 2.34039 11.6833 2.34039Z" fill="url(#paint0_linear_python)" />
-        <path d="M24.5585 8.15931V11.5493C24.5585 14.1775 22.3302 16.3896 19.7894 16.3896H12.164C10.0754 16.3896 8.34692 18.1772 8.34692 20.269V27.5384C8.34692 29.6072 10.146 30.8242 12.164 31.4177C14.5806 32.1283 16.898 32.2567 19.7894 31.4177C21.7113 30.8613 23.6064 29.7414 23.6064 27.5384V24.6288H15.9811V23.6589H23.6064H27.4236C29.6422 23.6589 30.4691 22.1114 31.2407 19.7885C32.0377 17.3971 32.0038 15.0974 31.2407 12.0297C30.6924 9.82093 29.6451 8.15918 27.4236 8.15918L24.5585 8.15931ZM20.2699 26.5685C21.0612 26.5685 21.7024 27.217 21.7024 28.0189C21.7024 28.8236 21.0612 29.4781 20.2699 29.4781C19.4813 29.4781 18.8374 28.8236 18.8374 28.0189C18.8373 27.217 19.4812 26.5685 20.2699 26.5685Z" fill="url(#paint1_linear_python)" />
-        <defs>
-            <linearGradient id="paint0_linear_python" x1="-0.573166" y1="0.910037" x2="17.0344" y2="15.9256" gradientUnits="userSpaceOnUse">
-                <stop stopColor="#5A9FD4" />
-                <stop offset="1" stopColor="#306998" />
-            </linearGradient>
-            <linearGradient id="paint1_linear_python" x1="23.6596" y1="25.2593" x2="17.3453" y2="16.4044" gradientUnits="userSpaceOnUse">
-                <stop stopColor="#FFD43B" />
-                <stop offset="1" stopColor="#FFE873" />
-            </linearGradient>
-        </defs>
-    </svg>
-);
-
-const G318Icon = () => (
-    <svg width="38" height="38" viewBox="0 0 39 39" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M23.3335 28.503C19.971 28.503 17.2452 25.7772 17.2452 22.4146C17.2452 19.0521 19.971 16.3262 23.3335 16.3262C26.6961 16.3262 29.4219 19.0521 29.4219 22.4146C29.4219 25.7772 26.6961 28.503 23.3335 28.503Z" stroke="#050C12" strokeWidth="1.7" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round" />
-        <path d="M34.2365 6.65688C32.7852 6.65688 31.6086 5.48036 31.6086 4.02909C31.6086 2.57783 32.7852 1.40137 34.2365 1.40137C35.6877 1.40137 36.8643 2.57783 36.8643 4.02909C36.8643 5.48036 35.6877 6.65688 34.2365 6.65688Z" stroke="#050C12" strokeWidth="1.7" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round" />
-        <path d="M13.2165 8.05661C11.3771 8.05661 9.88599 6.56545 9.88599 4.72605C9.88599 2.88666 11.3771 1.39551 13.2165 1.39551C15.056 1.39551 16.5471 2.88666 16.5471 4.72605C16.5471 6.56545 15.056 8.05661 13.2165 8.05661Z" stroke="#050C12" strokeWidth="1.7" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round" />
-        <path d="M33.5743 37.1373C31.7678 37.1373 30.3032 35.6729 30.3032 33.8663C30.3032 32.0598 31.7678 30.5952 33.5743 30.5952C35.3808 30.5952 36.8453 32.0598 36.8453 33.8663C36.8453 35.6729 35.3808 37.1373 33.5743 37.1373Z" stroke="#050C12" strokeWidth="1.7" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round" />
-        <path d="M14.1956 37.1373C12.938 37.1373 11.9186 36.1178 11.9186 34.8602C11.9186 33.6026 12.938 32.583 14.1956 32.583C15.4533 32.583 16.4728 33.6026 16.4728 34.8602C16.4728 36.1178 15.4533 37.1373 14.1956 37.1373Z" stroke="#050C12" strokeWidth="1.7" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round" />
-        <path d="M3.8288 21.4165C2.32333 21.4165 1.10291 20.1961 1.10291 18.6906C1.10291 17.1852 2.32333 15.9648 3.8288 15.9648C5.3342 15.9648 6.55463 17.1852 6.55463 18.6906C6.55463 20.1961 5.3342 21.4165 3.8288 21.4165Z" stroke="#050C12" strokeWidth="1.7" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round" />
-        <path d="M21.0816 28.0698L15.9639 33.3994" stroke="#050C12" strokeWidth="1.7" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round" />
-        <path d="M6.55432 18.8389L17.2781 21.5624" stroke="#050C12" strokeWidth="1.7" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round" />
-        <path d="M27.6411 26.7217L31.3579 31.46" stroke="#050C12" strokeWidth="1.7" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round" />
-        <path d="M33.0551 6.35596L27.2245 17.7278" stroke="#050C12" strokeWidth="1.7" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round" />
-        <path d="M14.7057 7.72852L20.9275 16.819" stroke="#050C12" strokeWidth="1.7" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-);
-
-const JavaIcon = () => (
-    <svg width="40" height="40" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M24.753 9.26462C22.4427 10.8895 19.8242 12.7312 18.4212 15.7782C15.9843 21.0942 23.4077 26.8927 23.725 27.137C23.7987 27.1937 23.887 27.222 23.975 27.222C24.0685 27.222 24.162 27.1901 24.238 27.1264C24.3854 27.0032 24.4272 26.7938 24.3387 26.6233C24.3118 26.5715 21.6472 21.3957 21.7462 17.6826C21.7813 16.3894 23.5911 14.9223 25.5072 13.369C27.262 11.9464 29.2513 10.334 30.4152 8.44772C32.9703 4.29575 30.1304 0.213122 30.1014 0.172301C29.9886 0.0139022 29.7804 -0.0434223 29.6024 0.0346054C29.4246 0.113121 29.326 0.305407 29.3666 0.495545C29.3724 0.522596 29.9247 3.22241 28.3879 6.00396C27.7549 7.15338 26.3639 8.13171 24.753 9.26462Z" fill="#DB380E" />
-        <path d="M10.4896 29.1247C10.3316 29.5979 10.4062 30.0672 10.7052 30.4824C11.7045 31.8698 15.2442 32.6337 20.6728 32.6337C20.6726 32.6337 20.6731 32.6337 20.6728 32.6337C21.4083 32.6337 22.1856 32.6193 22.981 32.5907C31.6602 32.2801 34.8794 29.5762 35.0122 29.4612C35.1569 29.3359 35.1956 29.1274 35.1057 28.9586C35.0156 28.7899 34.8216 28.7052 34.6361 28.7563C31.5794 29.5908 25.8716 29.8871 21.9126 29.8871C17.4826 29.8871 15.2266 29.568 14.6742 29.3323C14.9576 28.9432 16.7057 28.2482 18.8718 27.8222C19.0788 27.7815 19.2211 27.5903 19.2006 27.3804C19.1801 27.1704 19.0037 27.0103 18.7927 27.0103C17.523 27.0103 11.1553 27.1122 10.4896 29.1247Z" fill="#73A1FB" />
-    </svg>
-);
-
-const RubyIcon = () => (
-    <svg width="40" height="40" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M50 25C50 38.8071 38.8071 50 25 50C16.5725 50 9.11836 45.8296 4.58984 39.4398C3.43886 37.8153 2.47559 36.048 1.73477 34.1685C1.36025 33.2185 1.04189 32.2409 0.784766 31.2379C0.272461 29.2439 0 27.153 0 25C0 11.1929 11.1929 0 25 0C32.7326 0 39.6449 3.51016 44.2296 9.02451C45.8857 11.0144 47.2378 13.2653 48.2153 15.7062C49.3663 18.5796 50 21.7163 50 25Z" fill="#F2F2F2" />
-        <path d="M48.2152 15.7062C48.2132 15.7257 48.2111 15.7461 48.2091 15.7664C48.0713 17.0021 47.6815 18.3317 47.0591 19.7113L47.0581 19.7123L36.2948 47.1001L7.46621 40.3388C7.11211 40.2694 6.76826 40.1888 6.43564 40.097C5.77344 39.9175 5.15703 39.698 4.58975 39.4399C2.85713 36.994 1.55098 34.2236 0.784668 31.2379C0.87041 30.8797 1.00811 30.3266 1.18975 29.647C1.88975 27.0257 3.2499 22.5328 4.88467 20.1705L5.04385 25.6358L15.8152 26.3542L30.4162 19.4124L36.7192 10.1573L33.9274 5.68896C38.5846 6.81855 41.5356 7.83896 43.3937 8.64404C43.702 8.77666 43.9795 8.90421 44.2295 9.02462C46.0958 9.92559 46.454 10.4736 46.454 10.4736C47.0693 10.992 47.5306 11.6002 47.8111 12.2961C48.2193 13.3062 48.3469 14.4583 48.2152 15.7062Z" fill="#9B0A0E" />
-        <path d="M15.815 26.3537L6.43521 40.0972L5.0437 25.6357L15.815 26.3537Z" fill="#F5655E" />
-    </svg>
-);
-
-const CppIcon = () => (
-    <svg width="40" height="40" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M52.2487 42C52.6391 41.3236 52.8818 40.5615 52.8818 39.8772V16.1226C52.8818 15.4383 52.6395 14.6764 52.2489 14L36.125 15.4527L25.033 27.9999L33.8476 40.5711L52.2487 42Z" fill="#00599C" />
-        <path d="M30.1549 55.4867L50.7271 43.6095C51.3197 43.2673 51.8583 42.6765 52.2488 41.9999L28.0001 28L12.0417 28.564L3.75146 42.0001C4.14187 42.6765 4.68072 43.2675 5.27317 43.6095L25.8453 55.4867C27.0304 56.171 28.9699 56.171 30.1549 55.4867Z" fill="#004482" />
-        <path d="M52.2489 13.9999C51.8583 13.3233 51.3195 12.7325 50.7271 12.3904L30.1549 0.513253C28.9698 -0.171084 27.0304 -0.171084 25.8453 0.513253L5.27315 12.3905C4.08792 13.0746 3.11841 14.7543 3.11841 16.1227V39.8773C3.11841 40.5616 3.36092 41.3237 3.75155 42.0001L28.0002 28.0001L52.2489 13.9999Z" fill="#659AD2" />
-        <path d="M27.9997 44.5878C18.8532 44.5878 11.4119 37.1465 11.4119 28C11.4119 18.8534 18.8532 11.4121 27.9997 11.4121C33.9017 11.4121 39.4061 14.5882 42.3647 19.7009L35.1859 23.855C33.7052 21.296 30.9515 19.7061 27.9998 19.7061C23.4265 19.7061 19.7058 23.4266 19.7058 28C19.7058 32.5732 23.4264 36.2938 27.9998 36.2938C30.9518 36.2938 33.7055 34.704 35.1864 32.1445L42.3652 36.2984C39.4066 41.4116 33.902 44.5878 27.9997 44.5878Z" fill="white" />
-        <path d="M44.5884 27.0788H42.7452V25.2358H40.9023V27.0788H39.0591V28.9219H40.9023V30.7651H42.7452V28.9219H44.5884V27.0788Z" fill="white" />
-        <path d="M51.4995 27.0784H49.6563V25.2354H47.8134V27.0784H45.9702V28.9214H47.8134V30.7647H49.6563V28.9214H51.4995V27.0784Z" fill="white" />
-    </svg>
-);
-
-const ReactIcon = () => (
-    <svg width="40" height="40" viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M47.7509 28.5262C47.2653 27.8967 46.7384 27.2669 46.1753 26.6396C46.5623 26.1904 46.9312 25.7404 47.2783 25.2905C50.8659 20.6387 51.8845 16.4187 50.1464 13.4083C48.4084 10.3978 44.245 9.17009 38.4221 9.95119C37.8082 10.0336 37.1816 10.138 36.545 10.262C36.3284 9.62866 36.099 9.01515 35.8562 8.42495C33.6213 2.99204 30.4761 0 27 0C23.5239 0 20.3787 2.99204 18.1439 8.42495C17.9011 9.01515 17.6717 9.62866 17.4551 10.262C16.8185 10.1381 16.1918 10.0336 15.5781 9.95119C9.75575 9.17019 5.59185 10.3978 3.85372 13.4083C2.1156 16.4188 3.13421 20.6387 6.72184 25.2905C7.06883 25.7404 7.43766 26.1904 7.82483 26.6396C7.26163 27.2669 6.73481 27.8966 6.24923 28.5262C2.66161 33.178 1.64299 37.398 3.38112 40.4083C4.77763 42.8272 7.73919 44.095 11.8697 44.095C12.8799 44.095 13.961 44.0191 15.1053 43.8655C15.8424 43.7666 16.5977 43.6362 17.3672 43.4775C17.6093 44.2035 17.868 44.9044 18.1439 45.5752C20.3787 51.008 23.5239 54 27 54C30.4761 54 33.6213 51.008 35.8561 45.5751C36.132 44.9043 36.3907 44.2034 36.6328 43.4774C37.4023 43.6361 38.1576 43.7666 38.8947 43.8654C40.0393 44.019 41.1197 44.0949 42.1303 44.0949C46.2604 44.0949 49.2226 42.827 50.6189 40.4082C52.3571 37.3979 51.3385 33.178 47.7509 28.5262Z" fill="#00D8FF" />
-        <path d="M27 31.8887C29.6999 31.8887 31.8885 29.7001 31.8885 27.0002C31.8885 24.3004 29.6999 22.1118 27 22.1118C24.3002 22.1118 22.1116 24.3004 22.1116 27.0002C22.1116 29.7001 24.3002 31.8887 27 31.8887Z" fill="#00D8FF" />
-    </svg>
-);
-
-const LaravelIcon = () => (
-    <svg width="40" height="42" viewBox="0 0 50 52" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M49.8829 11.8641C49.9014 11.933 49.9109 12.004 49.9111 12.0754V23.1691C49.9111 23.3115 49.8737 23.4514 49.8028 23.5746C49.7318 23.6978 49.6298 23.8 49.507 23.8708L40.2503 29.2317V39.8573C40.2503 40.1464 40.0975 40.4134 39.8483 40.559L20.5257 51.7477C20.4815 51.773 20.4332 51.7892 20.385 51.8064C20.3669 51.8125 20.3498 51.8236 20.3307 51.8286C20.1956 51.8644 20.0537 51.8644 19.9186 51.8286C19.8965 51.8226 19.8764 51.8104 19.8553 51.8023C19.811 51.7862 19.7648 51.772 19.7226 51.7477L0.404081 40.559C0.281357 40.488 0.179385 40.3858 0.108443 40.2626C0.0375016 40.1395 9.72403e-05 39.9996 0 39.8573V6.57603C0 6.50323 0.0100518 6.43245 0.028145 6.3637C0.034176 6.34044 0.0482485 6.31921 0.0562899 6.29595C0.0713676 6.25349 0.0854401 6.21001 0.107554 6.17058C0.122632 6.14429 0.144746 6.12306 0.162839 6.09879C0.185958 6.06643 0.207067 6.03307 0.234206 6.00476C0.257325 5.9815 0.287481 5.96431 0.313615 5.94409C0.342766 5.91983 0.3689 5.89354 0.402071 5.87433L10.0628 0.279932C10.1851 0.209136 10.3238 0.171875 10.4649 0.171875C10.606 0.171875 10.7447 0.209136 10.867 0.279932L20.5267 5.87433H20.5287C20.5609 5.89455 20.588 5.91983 20.6172 5.94308C20.6433 5.9633 20.6725 5.9815 20.6956 6.00375C20.7237 6.03307 20.7438 6.06643 20.768 6.09879C20.7851 6.12306 20.8082 6.14429 20.8223 6.17058C20.8454 6.21102 20.8584 6.25349 20.8745 6.29595C20.8826 6.31921 20.8966 6.34044 20.9027 6.36471C20.9212 6.43361 20.9306 6.50465 20.9308 6.57603V27.3631L28.9803 22.701V12.0744C28.9803 12.0036 28.9903 11.9318 29.0084 11.8641C29.0155 11.8398 29.0285 11.8186 29.0366 11.7953C29.0526 11.7528 29.0667 11.7094 29.0888 11.6699C29.1039 11.6436 29.126 11.6224 29.1431 11.5981C29.1672 11.5658 29.1873 11.5324 29.2155 11.5041C29.2386 11.4809 29.2678 11.4637 29.2939 11.4434C29.324 11.4192 29.3502 11.3929 29.3823 11.3737L39.0441 5.77928C39.1664 5.70839 39.305 5.67107 39.4462 5.67107C39.5873 5.67107 39.726 5.70839 39.8483 5.77928L49.508 11.3737C49.5422 11.3939 49.5683 11.4192 49.5985 11.4424C49.6236 11.4627 49.6528 11.4809 49.6759 11.5031C49.704 11.5324 49.7241 11.5658 49.7482 11.5981C49.7663 11.6224 49.7885 11.6436 49.8025 11.6699C49.8256 11.7094 49.8387 11.7528 49.8548 11.7953C49.8638 11.8186 49.8769 11.8398 49.8829 11.8641Z" fill="#FF2D20" />
-    </svg>
-);
+import Image from "next/image";
 
 interface TechnologyCardProps {
-    icon: React.ReactNode;
+    icon: string;
     name: string;
 }
 
 const TechnologyCard = ({ icon, name }: TechnologyCardProps) => (
     <div className="flex flex-col items-center gap-4">
-        <div className="flex h-[100px] w-[100px] items-center justify-center rounded-full bg-gradient-to-br from-gray-50 to-gray-100 shadow-sm">
-            {icon}
+        <div className="w-[100px] h-[100px] flex items-center justify-center">
+            <Image src={icon} alt={name} width={100} height={100} />
         </div>
         <h3 className="font-['Inter'] text-base font-normal leading-5 text-[#0F0F10] text-center">{name}</h3>
     </div>
@@ -131,54 +18,54 @@ const TechnologyCard = ({ icon, name }: TechnologyCardProps) => (
 
 export default function TechnologySection() {
     const webPlatformTechs = [
-        { icon: <PHPIcon />, name: "PHP" },
-        { icon: <JavaScriptIcon />, name: "JavaScript" },
-        { icon: <PostgreSQLIcon />, name: "PostgreSQL" },
-        { icon: <SwiftIcon />, name: "Swift" },
-        { icon: <TypescriptIcon />, name: "Typescript" },
-        { icon: <PythonIcon />, name: "Python" },
-        { icon: <G318Icon />, name: "GraphQL" },
-        { icon: <JavaIcon />, name: "Java" },
-        { icon: <RubyIcon />, name: "Ruby" },
-        { icon: <CppIcon />, name: "C++" },
-        { icon: <ReactIcon />, name: "React Js" },
-        { icon: <LaravelIcon />, name: "Laravel" },
+        { icon: "/technologies/php.svg", name: "PHP" },
+        { icon: "/technologies/javascript.svg", name: "JavaScript" },
+        { icon: "/technologies/PostgreSQL.svg", name: "PostgreSQL" },
+        { icon: "/technologies/swift.svg", name: "Swift" },
+        { icon: "/technologies/typescript.svg", name: "TypeScript" },
+        { icon: "/technologies/Python.svg", name: "Python" },
+        { icon: "/technologies/g318.svg", name: "GraphQL" },
+        { icon: "/technologies/java.svg", name: "Java" },
+        { icon: "/technologies/ruby.svg", name: "Ruby" },
+        { icon: "/technologies/c.svg", name: "C++" },
+        { icon: "/technologies/reactjs.svg", name: "React Js" },
+        { icon: "/technologies/laravel.svg", name: "Laravel" },
     ];
 
     const databasesTechs = [
-        { icon: <PostgreSQLIcon />, name: "PostgreSQL" },
-        { icon: <JavaIcon />, name: "MongoDB" },
-        { icon: <RubyIcon />, name: "MySQL" },
-        { icon: <CppIcon />, name: "Oracle" },
-        { icon: <ReactIcon />, name: "Redis" },
-        { icon: <LaravelIcon />, name: "Firebase" },
+        { icon: "/technologies/PostgreSQL.svg", name: "PostgreSQL" },
+        { icon: "/technologies/java.svg", name: "MongoDB" },
+        { icon: "/technologies/ruby.svg", name: "MySQL" },
+        { icon: "/technologies/c.svg", name: "Oracle" },
+        { icon: "/technologies/reactjs.svg", name: "Redis" },
+        { icon: "/technologies/laravel.svg", name: "Firebase" },
     ];
 
     const cloudDevOpsTechs = [
-        { icon: <PHPIcon />, name: "Docker" },
-        { icon: <JavaScriptIcon />, name: "Kubernetes" },
-        { icon: <PostgreSQLIcon />, name: "AWS" },
-        { icon: <SwiftIcon />, name: "Azure" },
-        { icon: <TypescriptIcon />, name: "GCP" },
-        { icon: <PythonIcon />, name: "Jenkins" },
+        { icon: "/technologies/php.svg", name: "Docker" },
+        { icon: "/technologies/javascript.svg", name: "Kubernetes" },
+        { icon: "/technologies/PostgreSQL.svg", name: "AWS" },
+        { icon: "/technologies/swift.svg", name: "Azure" },
+        { icon: "/technologies/typescript.svg", name: "GCP" },
+        { icon: "/technologies/Python.svg", name: "Jenkins" },
     ];
 
     const mobileAppsTechs = [
-        { icon: <SwiftIcon />, name: "Swift" },
-        { icon: <JavaIcon />, name: "Kotlin" },
-        { icon: <ReactIcon />, name: "React Native" },
-        { icon: <LaravelIcon />, name: "Flutter" },
-        { icon: <PHPIcon />, name: "Xamarin" },
-        { icon: <JavaScriptIcon />, name: "NativeScript" },
+        { icon: "/technologies/swift.svg", name: "Swift" },
+        { icon: "/technologies/java.svg", name: "Kotlin" },
+        { icon: "/technologies/reactjs.svg", name: "React Native" },
+        { icon: "/technologies/laravel.svg", name: "Flutter" },
+        { icon: "/technologies/php.svg", name: "Xamarin" },
+        { icon: "/technologies/javascript.svg", name: "NativeScript" },
     ];
 
     const otherFrameworksTechs = [
-        { icon: <ReactIcon />, name: "React Js" },
-        { icon: <LaravelIcon />, name: "Laravel" },
-        { icon: <TypescriptIcon />, name: "Vue.js" },
-        { icon: <PythonIcon />, name: "Angular" },
-        { icon: <G318Icon />, name: "Svelte" },
-        { icon: <JavaIcon />, name: "Next.js" },
+        { icon: "/technologies/reactjs.svg", name: "React Js" },
+        { icon: "/technologies/laravel.svg", name: "Laravel" },
+        { icon: "/technologies/typescript.svg", name: "Vue.js" },
+        { icon: "/technologies/Python.svg", name: "Angular" },
+        { icon: "/technologies/g318.svg", name: "Svelte" },
+        { icon: "/technologies/java.svg", name: "Next.js" },
     ];
 
     const allTechs = [
@@ -192,7 +79,6 @@ export default function TechnologySection() {
     return (
         <section className="w-full py-20 bg-white">
             <Container>
-                {/* Title Section */}
                 <div className="flex flex-col items-center gap-3 mb-12">
                     <h2 className="font-['Poppins'] text-xl font-medium text-[#00BFD2]">
                         Technologies we used
@@ -202,47 +88,16 @@ export default function TechnologySection() {
                     </h1>
                 </div>
 
-                {/* Tabs Section */}
                 <div className="w-full">
                     <Tabs defaultValue="all" className="w-full">
                         <div className="flex justify-center mb-10">
                             <TabsList className="inline-flex flex-wrap h-auto gap-1 rounded-[10px] bg-[#00BFD2] p-1 lg:h-[50px] lg:flex-nowrap">
-                                <TabsTrigger
-                                    value="all"
-                                    className="h-8 lg:h-10 rounded-[5px] px-3 md:px-4 lg:px-6 py-1.5 font-['Inter'] text-xs md:text-sm lg:text-base font-medium text-[#00114C] whitespace-nowrap data-[state=active]:bg-white data-[state=active]:shadow-md data-[state=inactive]:bg-transparent hover:bg-white/20 transition-all"
-                                >
-                                    All
-                                </TabsTrigger>
-                                <TabsTrigger
-                                    value="web-platform"
-                                    className="h-8 lg:h-10 rounded-[5px] px-3 md:px-4 lg:px-6 py-1.5 font-['Inter'] text-xs md:text-sm lg:text-base font-medium text-[#00114C] whitespace-nowrap data-[state=active]:bg-white data-[state=active]:shadow-md data-[state=inactive]:bg-transparent hover:bg-white/20 transition-all"
-                                >
-                                    Web Platform
-                                </TabsTrigger>
-                                <TabsTrigger
-                                    value="databases"
-                                    className="h-8 lg:h-10 rounded-[5px] px-3 md:px-4 lg:px-6 py-1.5 font-['Inter'] text-xs md:text-sm lg:text-base font-medium text-[#00114C] whitespace-nowrap data-[state=active]:bg-white data-[state=active]:shadow-md data-[state=inactive]:bg-transparent hover:bg-white/20 transition-all"
-                                >
-                                    Databases
-                                </TabsTrigger>
-                                <TabsTrigger
-                                    value="cloud-devops"
-                                    className="h-8 lg:h-10 rounded-[5px] px-3 md:px-4 lg:px-6 py-1.5 font-['Inter'] text-xs md:text-sm lg:text-base font-medium text-[#00114C] whitespace-nowrap data-[state=active]:bg-white data-[state=active]:shadow-md data-[state=inactive]:bg-transparent hover:bg-white/20 transition-all"
-                                >
-                                    Cloud & DevOps
-                                </TabsTrigger>
-                                <TabsTrigger
-                                    value="mobile-apps"
-                                    className="h-8 lg:h-10 rounded-[5px] px-3 md:px-4 lg:px-6 py-1.5 font-['Inter'] text-xs md:text-sm lg:text-base font-medium text-[#00114C] whitespace-nowrap data-[state=active]:bg-white data-[state=active]:shadow-md data-[state=inactive]:bg-transparent hover:bg-white/20 transition-all"
-                                >
-                                    Mobile Apps
-                                </TabsTrigger>
-                                <TabsTrigger
-                                    value="other-frameworks"
-                                    className="h-8 lg:h-10 rounded-[5px] px-3 md:px-4 lg:px-6 py-1.5 font-['Inter'] text-xs md:text-sm lg:text-base font-medium text-[#00114C] whitespace-nowrap data-[state=active]:bg-white data-[state=active]:shadow-md data-[state=inactive]:bg-transparent hover:bg-white/20 transition-all"
-                                >
-                                    Other Frameworks
-                                </TabsTrigger>
+                                <TabsTrigger value="all" className="h-8 lg:h-10 rounded-[5px] px-3 md:px-4 lg:px-6 py-1.5 font-['Inter'] text-xs md:text-sm lg:text-base font-medium text-[#00114C] whitespace-nowrap data-[state=active]:bg-white data-[state=active]:shadow-md data-[state=inactive]:bg-transparent hover:bg-white/20 transition-all">All</TabsTrigger>
+                                <TabsTrigger value="web-platform" className="h-8 lg:h-10 rounded-[5px] px-3 md:px-4 lg:px-6 py-1.5 font-['Inter'] text-xs md:text-sm lg:text-base font-medium text-[#00114C] whitespace-nowrap data-[state=active]:bg-white data-[state=active]:shadow-md data-[state=inactive]:bg-transparent hover:bg-white/20 transition-all">Web Platform</TabsTrigger>
+                                <TabsTrigger value="databases" className="h-8 lg:h-10 rounded-[5px] px-3 md:px-4 lg:px-6 py-1.5 font-['Inter'] text-xs md:text-sm lg:text-base font-medium text-[#00114C] whitespace-nowrap data-[state=active]:bg-white data-[state=active]:shadow-md data-[state=inactive]:bg-transparent hover:bg-white/20 transition-all">Databases</TabsTrigger>
+                                <TabsTrigger value="cloud-devops" className="h-8 lg:h-10 rounded-[5px] px-3 md:px-4 lg:px-6 py-1.5 font-['Inter'] text-xs md:text-sm lg:text-base font-medium text-[#00114C] whitespace-nowrap data-[state=active]:bg-white data-[state=active]:shadow-md data-[state=inactive]:bg-transparent hover:bg-white/20 transition-all">Cloud & DevOps</TabsTrigger>
+                                <TabsTrigger value="mobile-apps" className="h-8 lg:h-10 rounded-[5px] px-3 md:px-4 lg:px-6 py-1.5 font-['Inter'] text-xs md:text-sm lg:text-base font-medium text-[#00114C] whitespace-nowrap data-[state=active]:bg-white data-[state=active]:shadow-md data-[state=inactive]:bg-transparent hover:bg-white/20 transition-all">Mobile Apps</TabsTrigger>
+                                <TabsTrigger value="other-frameworks" className="h-8 lg:h-10 rounded-[5px] px-3 md:px-4 lg:px-6 py-1.5 font-['Inter'] text-xs md:text-sm lg:text-base font-medium text-[#00114C] whitespace-nowrap data-[state=active]:bg-white data-[state=active]:shadow-md data-[state=inactive]:bg-transparent hover:bg-white/20 transition-all">Other Frameworks</TabsTrigger>
                             </TabsList>
                         </div>
 

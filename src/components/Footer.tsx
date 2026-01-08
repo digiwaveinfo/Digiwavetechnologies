@@ -106,12 +106,19 @@ export default function Footer() {
             <div className="flex flex-col gap-[30px] lg:w-[20%]">
               <h3 className="text-[#00BFD2] text-2xl font-bold font-['Inter']">Contact details</h3>
               <div className="flex flex-col gap-[13px] whitespace-nowrap">
-                <div className="flex items-center gap-3">
-                  <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                <div className="flex items-start gap-3">
+                  <svg width="22" height="22" viewBox="0 0 22 22" fill="none" className="flex-shrink-0 mt-1">
                     <path d="M19.25 9.167C19.25 15.584 11 21.084 11 21.084S2.75 15.584 2.75 9.167c0-2.188.869-4.287 2.416-5.834A8.25 8.25 0 0111 .917a8.25 8.25 0 015.834 2.416A8.25 8.25 0 0119.25 9.167z" stroke="#00114C" strokeWidth="1.833" strokeLinecap="round" strokeLinejoin="round" />
                     <path d="M11 11.917a2.75 2.75 0 100-5.5 2.75 2.75 0 000 5.5z" stroke="#00114C" strokeWidth="1.833" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
-                  <span className="text-[#00114C] text-base font-normal font-['Inter'] leading-[26px]">Ahmedabad</span>
+                  <a
+                    href="https://maps.google.com/?q=Harekrishna+Complex,+B/h.+City+Gold+Cinema,+009,+Ashram+Rd,+Ahmedabad,+Gujarat+380009"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[#00114C] text-sm font-normal font-['Inter'] leading-5 hover:text-[#00BFD2] transition-colors whitespace-normal"
+                  >
+                    Harekrishna Complex, B/h. City Gold Cinema, 009, Ashram Rd, Ahmedabad, Gujarat 380009
+                  </a>
                 </div>
                 <div className="flex items-center gap-3">
                   <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
