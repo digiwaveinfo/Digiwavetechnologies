@@ -152,8 +152,10 @@ export default function ServiceCards() {
         setVisibleCards(1);
       } else if (window.innerWidth < 1024) {
         setVisibleCards(2);
-      } else {
+      } else if (window.innerWidth < 1600) {
         setVisibleCards(4);
+      } else {
+        setVisibleCards(5);
       }
     };
 

@@ -67,12 +67,10 @@ export default function Services() {
         setVisibleCards(1);
       } else if (window.innerWidth < 1024) {
         setVisibleCards(2);
-      } else if (window.innerWidth < 1536) {
+      } else if (window.innerWidth < 1600) {
         setVisibleCards(4);
-      } else if (window.innerWidth < 2000) {
-        setVisibleCards(5);
       } else {
-        setVisibleCards(6);
+        setVisibleCards(5);
       }
     };
 
@@ -227,7 +225,7 @@ export default function Services() {
         </svg>
       </div>
 
-      <div className="mx-auto w-[94%] xl:w-[90%] 2xl:w-[85%] flex flex-col items-center relative z-10">
+      <div className="w-[94%] xl:w-[90%] 2xl:w-[85%] mx-auto flex flex-col items-center relative z-10">
         {/* Section Header */}
         <div className="w-full flex flex-col items-center gap-4 mb-12">
           <h2 className="text-center text-[#00BFD2] text-xl font-medium font-[\'Poppins\']">
@@ -247,18 +245,18 @@ export default function Services() {
           {/* Navigation Arrows - glass design, close to image border */}
           <button
             onClick={prevSlide}
-            className="absolute left-2 top-[120px] z-20 w-9 h-9 bg-white/70 backdrop-blur-md rounded-full flex items-center justify-center hover:bg-white/90 transition-all group border border-white/50 shadow-lg"
+            className="absolute left-2 top-[120px] z-20 w-9 h-9 bg-[#00BFD2] rounded-full flex items-center justify-center hover:bg-[#00a8b8] transition-all group shadow-lg"
             aria-label="Previous slide"
           >
-            <ChevronLeft className="w-5 h-5 text-[#00BFD2]" />
+            <ChevronLeft className="w-5 h-5 text-white" />
           </button>
 
           <button
             onClick={nextSlide}
-            className="absolute right-2 top-[120px] z-20 w-9 h-9 bg-white/70 backdrop-blur-md rounded-full flex items-center justify-center hover:bg-white/90 transition-all group border border-white/50 shadow-lg"
+            className="absolute right-2 top-[120px] z-20 w-9 h-9 bg-[#00BFD2] rounded-full flex items-center justify-center hover:bg-[#00a8b8] transition-all group shadow-lg"
             aria-label="Next slide"
           >
-            <ChevronRight className="w-5 h-5 text-[#00BFD2]" />
+            <ChevronRight className="w-5 h-5 text-white" />
           </button>
 
           {/* Cards Container */}
@@ -272,19 +270,19 @@ export default function Services() {
               {services.map((service, index) => (
                 <div
                   key={index}
-                  className="flex-shrink-0 px-2 md:px-3 flex justify-center"
+                  className="flex-shrink-0 px-2 md:px-3"
                   style={{ width: `${100 / visibleCards}%` }}
                 >
                   <Link
                     href={`/services/${service.id}`}
-                    className="flex flex-col items-center relative h-[400px] w-full max-w-[350px] group cursor-pointer"
+                    className="flex flex-col items-center relative h-[400px] w-full group cursor-pointer"
                   >
                     {/* Image Container */}
                     <div className="w-full h-64 absolute top-0 left-0 bg-neutral-200 rounded-3xl overflow-hidden shadow-sm z-0">
                       <img
                         src={service.image}
                         alt={service.title}
-                        className="w-full h-full object-fill group-hover:scale-105 transition-transform duration-500"
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                       />
                       {/* Hover Overlay - Black smokey gradient */}
                       <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
