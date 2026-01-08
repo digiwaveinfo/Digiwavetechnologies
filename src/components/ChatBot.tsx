@@ -116,8 +116,8 @@ export default function ChatBot() {
     setIsTyping(true);
 
     try {
-      const apiUrl = process.env.NEXT_PUBLIC_CHATBOT_API_URL || "http://31.97.230.251";
-      const response = await fetch(`${apiUrl}/api/chat`, {
+      // Use local API proxy to avoid HTTPS/HTTP mixed content issues
+      const response = await fetch("/api/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
