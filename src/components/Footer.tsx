@@ -80,9 +80,9 @@ export default function Footer() {
                 <Link href="/services" className="text-[#00114C] text-base font-normal font-['Inter'] leading-[26px] hover:text-[#00BFD2] transition-colors">
                   Services
                 </Link>
-                <Link href="/portfolio" className="text-[#00114C] text-base font-normal font-['Inter'] leading-[26px] hover:text-[#00BFD2] transition-colors">
+                {/* <Link href="/portfolio" className="text-[#00114C] text-base font-normal font-['Inter'] leading-[26px] hover:text-[#00BFD2] transition-colors">
                   Portfolio
-                </Link>
+                </Link> */}
                 <Link href="/contact" className="text-[#00114C] text-base font-normal font-['Inter'] leading-[26px] hover:text-[#00BFD2] transition-colors">
                   Contact us
                 </Link>

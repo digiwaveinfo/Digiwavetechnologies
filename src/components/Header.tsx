@@ -20,7 +20,7 @@ export default function Header() {
     if (path === "/") return pathname === "/";
 
     // For Portfolio - highlight when on /portfolio/* pages
-    if (path === "/portfolio" && pathname.startsWith("/portfolio/")) return true;
+    // if (path === "/portfolio" && pathname.startsWith("/portfolio/")) return true;
 
     // For Services - highlight when on /services/* pages
     if (path === "/services" && pathname.startsWith("/services/")) return true;
@@ -39,7 +39,7 @@ export default function Header() {
     { href: "/about", label: "About Us" },
     { href: "/services", label: "Services" },
     // { href: "/product", label: "Product" }, // Temporarily hidden
-    { href: "/portfolio", label: "Portfolio" },
+    // { href: "/portfolio", label: "Portfolio" },
   ];
 
   return (

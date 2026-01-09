@@ -84,9 +84,9 @@ const StickyCard = ({ i, card, cardType, progress, range, targetScale }: StickyC
           <p className={`${getDescColor(cardType)} text-sm font-normal font-['Inter'] leading-6 relative z-[1]`}>
             {card.short_description}
           </p>
-          <Link href={`/portfolio/${card.slug}`} className="px-5 py-3 bg-[#00BFD2] rounded-full inline-flex self-start hover:opacity-90 transition-opacity relative z-[1]">
+          <div className="px-5 py-3 bg-[#00BFD2] rounded-full inline-flex self-start relative z-[1] cursor-default">
             <span className="text-white text-base font-bold font-['Inter'] uppercase tracking-wide">View details</span>
-          </Link>
+          </div>
         </div>
       </motion.div>
 
@@ -116,9 +116,9 @@ const StickyCard = ({ i, card, cardType, progress, range, targetScale }: StickyC
               {card.short_description}
             </p>
           </div>
-          <Link href={`/portfolio/${card.slug}`} className="px-6 py-4 bg-[#00BFD2] rounded-full inline-flex hover:opacity-90 transition-opacity">
+          <div className="px-6 py-4 bg-[#00BFD2] rounded-full inline-flex cursor-default">
             <span className="text-white text-lg font-bold font-['Inter'] uppercase tracking-wide">View details</span>
-          </Link>
+          </div>
         </div>
         <div className="absolute right-0 top-0 w-[36%] h-full bg-stone-100 overflow-hidden">
           {cardImage && <img src={cardImage} alt={card.title} className="w-full h-full object-fill" />}
@@ -166,7 +166,8 @@ export default function PortfolioContent() {
     async function fetchPortfolios() {
       try {
         const data = await getHomeFeaturedPortfolios();
-        setPortfolios(data.slice(0, 4));
+        const sortedData = data.sort((a, b) => a.display_order - b.display_order);
+        setPortfolios(sortedData.slice(0, 4));
       } catch (error) {
         console.error('Error fetching portfolios:', error);
       } finally {
