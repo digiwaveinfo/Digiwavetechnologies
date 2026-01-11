@@ -139,7 +139,13 @@ const PortfolioMain = ({ portfolios }: { portfolios: PortfolioItem[] }) => {
     <main ref={container} className="relative pb-40">
       <Container>
         {portfolios.map((card, i) => {
-          const targetScale = 1 - (portfolios.length - i) * 0.05;
+          const totalScaleRange = 0.2; // Max scale reduction (e.g. down to 0.8)
+          // Ensure we don't divide by zero, though length=0 is handled upstream
+          const count = portfolios.length || 1;
+          const scaleStep = totalScaleRange / count;
+          const targetScale = 1 - (count - i) * scaleStep;
+
+          const rangeStep = 1 / count;
           const cardType = cardTypes[i % cardTypes.length];
           return (
             <StickyCard
@@ -148,7 +154,7 @@ const PortfolioMain = ({ portfolios }: { portfolios: PortfolioItem[] }) => {
               card={card}
               cardType={cardType}
               progress={scrollYProgress}
-              range={[i * 0.2, 1]}
+              range={[i * rangeStep, 1]}
               targetScale={targetScale}
             />
           );
@@ -167,7 +173,7 @@ export default function PortfolioContent() {
       try {
         const data = await getHomeFeaturedPortfolios();
         const sortedData = data.sort((a, b) => a.display_order - b.display_order);
-        setPortfolios(sortedData.slice(0, 4));
+        setPortfolios(sortedData);
       } catch (error) {
         console.error('Error fetching portfolios:', error);
       } finally {
