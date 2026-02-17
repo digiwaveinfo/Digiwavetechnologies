@@ -1,21 +1,13 @@
 import { MetadataRoute } from 'next'
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://quantumverse.com'
+const BASE_URL = 'https://digiwavetechnologies.in'
 
 export default function robots(): MetadataRoute.Robots {
   return {
-    rules: [
-      {
-        userAgent: '*',
-        allow: '/',
-        disallow: ['/api/', '/admin/', '/_next/'],
-      },
-      {
-        userAgent: 'Googlebot',
-        allow: '/',
-        disallow: ['/api/', '/admin/'],
-      },
-    ],
+    rules: {
+      userAgent: '*',
+      allow: '/',
+    },
     sitemap: `${BASE_URL}/sitemap.xml`,
   }
 }

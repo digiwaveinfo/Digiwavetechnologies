@@ -24,21 +24,33 @@ async function getPortfolioSlugs() {
 }
 
 async function getServiceIds() {
-  // If you have a services API endpoint, fetch from there
-  // For now, returning static service IDs based on common services
+  // Static service IDs matching your actual service pages
   return [
-    'web-development',
+    'ai-machine-learning',
+    'web-application-development',
     'mobile-app-development',
-    'ai-ml-solutions',
-    'cloud-services',
-    'ui-ux-design',
-    'digital-marketing'
+    'cloud-devops-services',
+    'automation-data-intelligence',
+    'iot-solutions'
+  ]
+}
+
+async function getBlogSlugs() {
+  // Static blog slugs
+  return [
+    'impact-of-technology-on-workplace-1',
+    'impact-of-technology-on-workplace-2',
+    'impact-of-technology-on-workplace-3',
+    'impact-of-technology-on-workplace-4',
+    'impact-of-technology-on-workplace-5',
+    'impact-of-technology-on-workplace-6'
   ]
 }
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const portfolioSlugs = await getPortfolioSlugs()
   const serviceIds = await getServiceIds()
+  const blogSlugs = await getBlogSlugs()
 
   const currentDate = new Date()
 
@@ -60,37 +72,57 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       url: `${BASE_URL}/services`,
       lastModified: currentDate,
       changeFrequency: 'weekly',
-      priority: 0.9,
+      priority: 0.8,
+    },
+    {
+      url: `${BASE_URL}/book-demo`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${BASE_URL}/contact`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${BASE_URL}/blog`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly',
+      priority: 0.7,
     },
     {
       url: `${BASE_URL}/portfolio`,
       lastModified: currentDate,
       changeFrequency: 'weekly',
-      priority: 0.9,
-    },
-    {
-      url: `${BASE_URL}/product`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly',
-      priority: 0.7,
+      priority: 0.64,
     },
   ]
-
-  // Dynamic portfolio pages
-  const portfolioPages: MetadataRoute.Sitemap = portfolioSlugs.map((slug: string) => ({
-    url: `${BASE_URL}/portfolio/${slug}`,
-    lastModified: currentDate,
-    changeFrequency: 'monthly' as const,
-    priority: 0.7,
-  }))
 
   // Dynamic service pages
   const servicePages: MetadataRoute.Sitemap = serviceIds.map((id: string) => ({
     url: `${BASE_URL}/services/${id}`,
     lastModified: currentDate,
     changeFrequency: 'monthly' as const,
-    priority: 0.7,
+    priority: 0.8,
   }))
 
-  return [...staticPages, ...portfolioPages, ...servicePages]
+  // Dynamic portfolio pages
+  const portfolioPages: MetadataRoute.Sitemap = portfolioSlugs.map((slug: string) => ({
+    url: `${BASE_URL}/portfolio/${slug}`,
+    lastModified: currentDate,
+    changeFrequency: 'monthly' as const,
+    priority: 0.51,
+  }))
+
+  // Dynamic blog pages
+  const blogPages: MetadataRoute.Sitemap = blogSlugs.map((slug: string) => ({
+    url: `${BASE_URL}/blog/${slug}`,
+    lastModified: currentDate,
+    changeFrequency: 'monthly' as const,
+    priority: 0.6,
+  }))
+
+  return [...staticPages, ...servicePages, ...portfolioPages, ...blogPages]
 }
