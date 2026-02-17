@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Contact from "@/components/Contact";
@@ -13,38 +14,57 @@ const serviceData: Record<string, {
   title: string;
   description: string;
   fullDescription: string;
-  features: string[];
-  benefits: string[];
+  features: { title: string; description: string }[];
+  benefits: { title: string; description: string }[];
   heroImage: string;
   technologies: string[];
   stats: { number: string; label: string }[];
+  ctaTitle: string;
+  ctaDescription: string;
+  whyChooseSlogan: string;
+  metadata: {
+    title: string;
+    description: string;
+    keywords: string;
+    url: string;
+  };
 }> = {
   "ai-machine-learning": {
-    title: "AI & Machine Learning Solutions",
+    title: "Al & Machine Learning Solutions Provider",
     description: "Intelligent systems that automate, analyze, and optimize business processes.",
-    fullDescription: "Transform your business with cutting-edge AI and Machine Learning solutions. Our expert team develops intelligent systems that can automate complex processes, analyze vast amounts of data, and provide actionable insights to drive your business forward.",
+    fullDescription: "Transform your business with a leading AI Development Company With advanced AI and machine learning solutions. Our expert team develops intelligent, scalable systems that automate complex processes, analyze large volumes of data, and generate actionable insights to drive your business forward.",
     heroImage: "https://api.builder.io/api/v1/image/assets/TEMP/7309ec19426c194dd2e948fe4906e3ab122a4585?width=970",
     features: [
-      "Predictive Analytics & Forecasting",
-      "Natural Language Processing (NLP)",
-      "Computer Vision & Image Recognition",
-      "Automated Decision Making Systems",
-      "Machine Learning Model Development",
-      "AI-Powered Chatbots & Virtual Assistants"
+      { title: "Predictive Analytics & Forecasting", description: "Identify trends and make data-driven decisions" },
+      { title: "Natural Language Processing (NLP)", description: "Enable systems to understand human language" },
+      { title: "Computer Vision & Image Recognition", description: "Meaningful insights from images and visual data" },
+      { title: "Automated Decision-Making Systems", description: "Streamline operations with intelligent, real-time automation" },
+      { title: "Machine Learning Model Development", description: "Models designed for accuracy, performance, and scalability" },
+      { title: "AI-Powered Chatbots & Virtual Assistants", description: "Support and personalized customer experiences" }
     ],
     benefits: [
-      "Increased operational efficiency by 40%",
-      "Data-driven decision making",
-      "Automated routine tasks",
-      "Enhanced customer experience",
-      "Competitive advantage through innovation"
+      { title: "Experienced AI & ML Team", description: "Skilled experts delivering reliable, high-quality solutions" },
+      { title: "Custom AI Solutions", description: "Tailored systems built for unique business needs" },
+      { title: "End-to-End Development", description: "Complete support from planning to deployment" },
+      { title: "Scalable Architecture", description: "Solutions designed to grow with your business" },
+      { title: "Data Security & Compliance", description: "Strong protection for sensitive business data" },
+      { title: "Ongoing Support & Optimization", description: "Continuous improvement after project deployment" }
     ],
     technologies: ["Python", "TensorFlow", "PyTorch", "AWS SageMaker", "OpenAI", "Hugging Face"],
     stats: [
       { number: "40%", label: "Efficiency Increase" },
       { number: "24/7", label: "Automated Operations" },
       { number: "99.9%", label: "Accuracy Rate" }
-    ]
+    ],
+    ctaTitle: "Ready to Transform Your Business with AI?",
+    ctaDescription: "Work with a trusted AI Development Company in India delivering smart and scalable AI and Machine Learning Solutions. As an expert AI Software Development Company, we build result-driven AI Solutions for Business that accelerate growth and innovation. Let's explore how our customized AI Solutions for Business can transform your ideas into powerful digital systems.",
+    whyChooseSlogan: "AI Solutions Designed to Drive Business Growth",
+    metadata: {
+      title: "Best AI Development Company In India | Digiwave Technologies",
+      description: "AI development company in India with industry experience, specializing in custom artificial intelligence solutions for startups, enterprises, and businesses.",
+      keywords: "AI development company in india, artificial intelligence solutions, machine learning services, custom AI solutions, AI software development, enterprise AI services, AI ML development company",
+      url: "https://digiwavetechnologies.in/services/ai-machine-learning"
+    }
   },
   "web-application-development": {
     title: "Web Application Development",
@@ -52,26 +72,36 @@ const serviceData: Record<string, {
     fullDescription: "Build powerful, scalable web applications that drive your business growth. Our development team creates custom web solutions using modern frameworks and technologies, ensuring optimal performance, security, and user experience.",
     heroImage: "https://api.builder.io/api/v1/image/assets/TEMP/3f5c6b3d663ecc01e18ae177e232243b61d97576?width=806",
     features: [
-      "Custom Web Application Development",
-      "Responsive & Mobile-First Design",
-      "Progressive Web Apps (PWA)",
-      "E-commerce Solutions",
-      "Content Management Systems",
-      "API Development & Integration"
+      { title: "Custom Web Application Development", description: "Tailored solutions built to your exact specifications" },
+      { title: "Responsive & Mobile-First Design", description: "Seamless experience across all devices and screen sizes" },
+      { title: "Progressive Web Apps (PWA)", description: "App-like experiences with offline capabilities" },
+      { title: "E-commerce Solutions", description: "Secure, scalable online stores with payment integration" },
+      { title: "Content Management Systems", description: "Easy-to-use platforms for managing your content" },
+      { title: "API Development & Integration", description: "Connect and extend your web applications" }
     ],
     benefits: [
-      "Scalable and maintainable code",
-      "Enhanced user experience",
-      "Cross-platform compatibility",
-      "SEO-optimized solutions",
-      "Fast loading and performance"
+      { title: "Modern Tech Stack", description: "Built with latest frameworks and technologies" },
+      { title: "Performance Optimized", description: "Lightning-fast loading and smooth user experience" },
+      { title: "SEO & Accessibility", description: "Search engine friendly and accessible to all users" },
+      { title: "Responsive Design", description: "Perfect experience on desktop, tablet, and mobile" },
+      { title: "Secure & Reliable", description: "Industry-standard security practices and 99% uptime" },
+      { title: "Maintenance & Updates", description: "Regular updates and technical support included" }
     ],
     technologies: ["React", "Next.js", "Node.js", "TypeScript", "PostgreSQL", "AWS"],
     stats: [
       { number: "3x", label: "Faster Loading" },
       { number: "100%", label: "Mobile Responsive" },
       { number: "99%", label: "Uptime Guarantee" }
-    ]
+    ],
+    ctaTitle: "Ready to Build Your Next Web Application?",
+    ctaDescription: "Partner with a leading Web Application Development Company delivering high-performance, scalable web solutions. Our expert developers create custom web applications using modern technologies like React, Next.js, and Node.js. Let's discuss how our web development expertise can bring your vision to life and drive your business growth.",
+    whyChooseSlogan: "Modern Web Solutions Built for Performance and Scale",
+    metadata: {
+      title: "Website Development Company in India | Digiwave Technologies",
+      description: "Digiwave Technologies is a leading website development company in India delivering responsive, SEO-friendly, and scalable web solutions for businesses.",
+      keywords: "Website Development Company in India, Web Application Development India, Custom Website Development Company, Web Development Services India, Professional Web Developers India, Business Website Development",
+      url: "https://digiwavetechnologies.in/services/web-application-development"
+    }
   },
   "mobile-app-development": {
     title: "Mobile App Development",
@@ -79,109 +109,172 @@ const serviceData: Record<string, {
     fullDescription: "Create engaging mobile experiences that connect with your users. Our mobile development team specializes in building native and cross-platform applications that deliver exceptional performance and user experience.",
     heroImage: "https://api.builder.io/api/v1/image/assets/TEMP/917d50598d6a8f171dd1a7d201159fde9ed14c99?width=970",
     features: [
-      "Native iOS & Android Development",
-      "Cross-Platform Solutions (React Native, Flutter)",
-      "UI/UX Design & Prototyping",
-      "App Store Optimization",
-      "Push Notifications & Analytics",
-      "Offline Functionality & Sync"
+      { title: "Native iOS & Android Development", description: "Platform-specific apps for optimal performance" },
+      { title: "Cross-Platform Solutions", description: "Build once, deploy everywhere with React Native & Flutter" },
+      { title: "UI/UX Design & Prototyping", description: "Beautiful, intuitive interfaces that users love" },
+      { title: "App Store Optimization", description: "Maximize visibility and downloads on app stores" },
+      { title: "Push Notifications & Analytics", description: "Engage users and track app performance" },
+      { title: "Offline Functionality & Sync", description: "Work seamlessly even without internet connection" }
     ],
     benefits: [
-      "Reach wider audience across platforms",
-      "Enhanced user engagement",
-      "Seamless performance",
-      "Regular updates and maintenance",
-      "App store compliance"
+      { title: "Native & Cross-Platform Expertise", description: "Build for iOS, Android, or both platforms efficiently" },
+      { title: "User-Centric Design", description: "Intuitive interfaces that drive engagement and retention" },
+      { title: "App Store Success", description: "Guidance through submission and optimization process" },
+      { title: "Performance & Speed", description: "Smooth, responsive apps that users love" },
+      { title: "Analytics & Insights", description: "Track user behavior and app performance metrics" },
+      { title: "Post-Launch Support", description: "Updates, bug fixes, and feature enhancements" }
     ],
     technologies: ["React Native", "Flutter", "Swift", "Kotlin", "Firebase", "App Store Connect"],
     stats: [
       { number: "5M+", label: "App Downloads" },
       { number: "4.8★", label: "Average Rating" },
       { number: "50%", label: "User Retention" }
-    ]
+    ],
+    ctaTitle: "Ready to Launch Your Mobile App?",
+    ctaDescription: "Work with a trusted Mobile App Development Company specializing in iOS, Android, and cross-platform solutions. Our experienced team builds engaging mobile applications using React Native, Flutter, and native technologies. Let's create a mobile experience that delights your users and drives business results.",
+    whyChooseSlogan: "Mobile Apps That Users Love and Businesses Trust",
+    metadata: {
+      title: "Mobile App Development Company in India",
+      description: "Leading mobile app development company in India delivering scalable Android and iOS apps tailored to business goals and user-centric experiences globally now.",
+      keywords: "mobile app development company in india, top app development companies, mobile app developers, mobile application development, mobile app development companies, AI development company in india, artificial intelligence solutions, machine learning services, custom AI solutions, AI software development, enterprise AI services, AI ML development company",
+      url: "https://digiwavetechnologies.in/services/mobile-app-development"
+    }
   },
   "cloud-devops-services": {
-    title: "Cloud & DevOps Services",
+    title: "Cloud & DevOps Consulting Services",
     description: "Scalable cloud infrastructure and automated deployment solutions.",
-    fullDescription: "Accelerate your development and deployment processes with our comprehensive Cloud & DevOps services. We help organizations migrate to the cloud, implement CI/CD pipelines, and establish robust infrastructure that scales with your business needs.",
+    fullDescription: "Accelerate your development and deployment processes with our comprehensive Cloud & DevOps services in India. We help organizations migrate to the cloud, implement CI/CD pipelines, and establish robust infrastructure that scales with your business needs.",
     heroImage: "https://api.builder.io/api/v1/image/assets/TEMP/3f5c6b3d663ecc01e18ae177e232243b61d97576?width=806",
     features: [
-      "Cloud Migration & Architecture",
-      "CI/CD Pipeline Implementation",
-      "Infrastructure as Code (IaC)",
-      "Container Orchestration (Docker, Kubernetes)",
-      "Monitoring & Logging Solutions",
-      "Security & Compliance Management"
+      { title: "Cloud Migration & Architecture", description: "Secure cloud migration with minimal downtime and scalability" },
+      { title: "CI/CD Pipeline Implementation", description: "Automated CI/CD pipelines for faster, reliable deployments" },
+      { title: "Infrastructure as Code (IaC)", description: "Infrastructure automation using Terraform for consistent scaling" },
+      { title: "Container Orchestration (Docker, Kubernetes)", description: "Scalable container solutions ensuring reliable application deployments" },
+      { title: "Monitoring & Logging Solutions", description: "Proactive monitoring and logging ensuring high availability" },
+      { title: "Security & Compliance Management", description: "Secure cloud infrastructure with access controls and compliance" }
     ],
     benefits: [
-      "Reduced deployment time by 80%",
-      "Improved system reliability",
-      "Cost-effective scaling",
-      "Enhanced security posture",
-      "Faster time to market"
+      { title: "Reduced Deployment Time by Up to 80%", description: "Streamlined CI/CD workflows for frequent and reliable releases" },
+      { title: "Improved System Reliability", description: "High-availability cloud architectures with proactive monitoring" },
+      { title: "Cost-Effective Infrastructure Scaling", description: "Scalable cloud environments balancing cost and performance" },
+      { title: "Enhanced Security & Compliance", description: "Security-first DevOps ensuring compliance and data protection" },
+      { title: "Faster Time to Market", description: "Automation-driven cloud operations for faster product launches" },
     ],
-    technologies: ["AWS", "Azure", "Docker", "Kubernetes", "Terraform", "Jenkins"],
+    technologies: ["AWS", "Microsoft Azure", "Docker", "Kubernetes", "Terraform", "Jenkins"],
     stats: [
       { number: "80%", label: "Faster Deployment" },
       { number: "99.99%", label: "System Uptime" },
       { number: "60%", label: "Cost Reduction" }
-    ]
+    ],
+    ctaTitle: "Ready to Transform Your Business with Best DevOps Consulting Services?",
+    ctaDescription: "Partner with Digiwave Technologies, a trusted Cloud & DevOps services provider, delivering secure, scalable, and efficient cloud solutions. We focus on simplifying infrastructure, automating deployments, and improving system reliability to support long-term business growth. Let's discuss how our Cloud & DevOps services can help you build a stable, high-performing cloud environment with confidence.",
+    whyChooseSlogan: "Cloud and DevOps solutions supporting long-term growth",
+    metadata: {
+      title: "Cloud & DevOps Consulting Services in India",
+      description: "Digiwave Technologies provides Cloud DevOps consulting services India, helping businesses improve scalability, automation, security, and deployment efficiency.",
+      keywords: "cloud devops consulting services in india, Devops Development Company in India, Devops Solution Providers in India",
+      url: "https://digiwavetechnologies.in/services/cloud-devops-services"
+    }
   },
   "automation-data-intelligence": {
-    title: "Automation & Data Intelligence",
-    description: "Smart automation and data-driven insights for business optimization.",
+    title: "Data Intelligence & Automation Services",
+    description: "Unlock the power of your data and automate your business processes with our comprehensive automation and data intelligence solutions in India. We help organizations streamline operations, gain valuable insights from their data, and make informed decisions.",
     fullDescription: "Unlock the power of your data and automate your business processes with our comprehensive automation and data intelligence solutions. We help organizations streamline operations, gain valuable insights from their data, and make informed decisions.",
     heroImage: "https://api.builder.io/api/v1/image/assets/TEMP/7309ec19426c194dd2e948fe4906e3ab122a4585?width=970",
     features: [
-      "Business Process Automation",
-      "Data Analytics & Visualization",
-      "Robotic Process Automation (RPA)",
-      "ETL & Data Pipeline Development",
-      "Business Intelligence Dashboards",
-      "Workflow Optimization"
+      { title: "Business Process Automation", description: "Automating manual processes to improve efficiency and accuracy" },
+      { title: "Data Analytics & Visualization", description: "Data insights delivered through analytics and dashboards" },
+      { title: "Robotic Process Automation (RPA)", description: "RPA automation improving accuracy, speed, and consistency" },
+      { title: "ETL & Data Pipeline Development", description: "Scalable ETL pipelines for secure, real-time data flow" },
+      { title: "Business Intelligence Dashboards", description: "Custom BI dashboards delivering real-time business insights" },
+      { title: "Workflow Optimization", description: "End-to-end workflow optimization for better efficiency" }
     ],
     benefits: [
-      "Reduced manual effort by 70%",
-      "Improved data accuracy",
-      "Real-time insights",
-      "Cost savings through automation",
-      "Better decision making"
+      { title: "Reduced Manual Effort by 70%", description: "Automating workflows to improve speed, consistency, and productivity" },
+      { title: "Improved Data Accuracy", description: "Error-free data through automated processing and validation" },
+      { title: "Real-Time Insights", description: "Real-time analytics providing instant business visibility" },
+      { title: "Cost Savings Through Automation", description: "Automation solutions lowering operational costs efficiently" },
+      { title: "Better Decision Making", description: "Intelligent reporting for confident, data-backed decisions" }
     ],
-    technologies: ["Power BI", "Tableau", "Apache Spark", "Airflow", "UiPath", "Snowflake"],
+    technologies: ["Power BI", "Tableau", "Apache Spark", "Apache Airflow", "UiPath", "Snowflake"],
     stats: [
       { number: "70%", label: "Manual Work Reduced" },
       { number: "10x", label: "Faster Processing" },
       { number: "95%", label: "Data Accuracy" }
-    ]
+    ],
+    ctaTitle: "Ready to Transform Your Business with Data Intelligence & Automation Services?",
+    ctaDescription: "Digiwave Technologies delivers advanced Data Intelligence & Automation Services that turn data into clarity and processes into performance. From workflow automation to actionable insights, we help businesses operate faster, smarter, and with greater confidence. Let's explore how data-driven automation can accelerate your growth and strengthen operational excellence.",
+    whyChooseSlogan: "Scalable data intelligence and automation solutions",
+    metadata: {
+      title: "Data Intelligence & Automation Services in India",
+      description: "Technologies offers Data Intelligence & Automation Services in India to streamline operations, reduce manual work, and enable smarter, data-driven business decisions.",
+      keywords: "Data Intelligence & Automation Services, data intelligence services india, automation services india, data automation solutions, intelligent automation services, business automation services india",
+      url: "https://digiwavetechnologies.in/services/automation-data-intelligence"
+    }
   },
   "iot-solutions": {
-    title: "IoT Solutions",
+    title: "IoT Solution Providers",
     description: "Connected device ecosystems enabling smart monitoring, control, and data collection.",
-    fullDescription: "Build connected ecosystems with our comprehensive IoT solutions. We design and develop smart device networks that enable real-time monitoring, automated control, and intelligent data collection for industrial and consumer applications.",
+    fullDescription: "As a Trusted IoT Solution Company, Build connected ecosystems with our comprehensive IoT solutions. We design and develop smart device networks that enable real-time monitoring, automated control, and intelligent data collection for industrial and consumer applications. .",
     heroImage: "https://api.builder.io/api/v1/image/assets/TEMP/917d50598d6a8f171dd1a7d201159fde9ed14c99?width=970",
     features: [
-      "Smart Device Integration",
-      "Real-time Monitoring Systems",
-      "Industrial IoT (IIoT) Solutions",
-      "Sensor Networks & Data Collection",
-      "Edge Computing Implementation",
-      "IoT Security & Management"
+      { title: "Smart Device Integration", description: "Connect and manage IoT devices seamlessly" },
+      { title: "Real-time Monitoring Systems", description: "Track operations and metrics as they happen" },
+      { title: "Industrial IoT (IIoT) Solutions", description: "Optimize manufacturing and industrial processes" },
+      { title: "Sensor Networks & Data Collection", description: "Gather and analyze data from multiple sources" },
+      { title: "Edge Computing Implementation", description: "Process data closer to the source for faster response" },
+      { title: "IoT Security & Management", description: "Secure your connected devices and networks" }
     ],
     benefits: [
-      "Real-time visibility into operations",
-      "Predictive maintenance capabilities",
-      "Reduced operational costs",
-      "Enhanced automation",
-      "Data-driven optimization"
+      { title: "IoT Architecture Experts", description: "End-to-end IoT solutions from sensors to cloud" },
+      { title: "Real-Time Monitoring", description: "24/7 visibility into your connected devices" },
+      { title: "Predictive Maintenance", description: "Reduce downtime with proactive monitoring" },
+      { title: "Cost Reduction", description: "Save up to 50% on operational costs" },
+      { title: "Secure & Reliable", description: "Enterprise-grade security for IoT networks" },
+      { title: "Scalable Solutions", description: "Grow from hundreds to millions of devices" }
     ],
     technologies: ["Arduino", "Raspberry Pi", "AWS IoT", "Azure IoT Hub", "MQTT", "LoRaWAN"],
     stats: [
       { number: "50%", label: "Cost Reduction" },
       { number: "Real-time", label: "Monitoring" },
       { number: "99%", label: "Device Uptime" }
-    ]
+    ],
+    ctaTitle: "Ready to Connect Your Devices?",
+    ctaDescription: "Build smart, connected ecosystems with a trusted IoT Solution Company. We design and develop Industrial IoT (IIoT) solutions, sensor networks, and real-time monitoring systems using AWS IoT, Azure IoT Hub, and edge computing. Let's discuss how our IoT expertise can reduce your operational costs by 50% and enable predictive maintenance.",
+    whyChooseSlogan: "Connected IoT Solutions for Smart Operations",
+    metadata: {
+      title: "IoT Solution Providers | Custom IoT Services",
+      description: "As leading IoT solution providers, Digiwave Technologies offers smart device ecosystems, industrial monitoring, and automated data collection for global growth.",
+      keywords: "IoT Solution Company, IoT Solution Providers, Custom IoT Solutions, Custom IoT Development Services, Industrial IoT Solutions, Enterprise IoT Development, IoT Connectivity Services, IoT Smart Device Development, IoT Cloud Integration, IoT Data Analytics, IoT Security Solutions, IoT Platform Development, IIoT Solutions, Smart Monitoring Systems, IoT Software Development",
+      url: "https://digiwavetechnologies.in/services/iot-solutions"
+    }
   }
 };
+
+// Generate metadata for each service page
+export async function generateMetadata({ params }: ServiceDetailPageProps): Promise<Metadata> {
+  const { id } = await params;
+  const service = serviceData[id];
+
+  if (!service || !service.metadata) {
+    return {
+      title: "Service | Digiwave Technologies",
+      description: "Explore our comprehensive technology services and solutions.",
+    };
+  }
+
+  return {
+    title: service.metadata.title,
+    description: service.metadata.description,
+    keywords: service.metadata.keywords,
+    openGraph: {
+      title: service.metadata.title,
+      description: service.metadata.description,
+      type: "website",
+      url: service.metadata.url,
+    },
+  };
+}
 
 export default async function ServiceDetailPage({ params }: ServiceDetailPageProps) {
   const { id } = await params;
@@ -270,7 +363,7 @@ export default async function ServiceDetailPage({ params }: ServiceDetailPagePro
             <h2 className="text-sky-950 text-3xl sm:text-4xl font-bold font-['Inter'] leading-tight mb-4">
               Technologies We Use
             </h2>
-            <p className="text-gray-600 text-lg">Cutting-edge tools and frameworks for optimal results</p>
+            <p className="text-gray-600 text-lg">Crafting scalable AI solutions with advanced AI Technologies</p>
           </div>
 
           <div className="flex flex-wrap justify-center gap-4">
@@ -293,7 +386,7 @@ export default async function ServiceDetailPage({ params }: ServiceDetailPagePro
             <h2 className="text-sky-950 text-3xl sm:text-4xl font-bold font-['Inter'] leading-tight mb-4">
               Key Features
             </h2>
-            <p className="text-gray-600 text-lg">Comprehensive solutions tailored to your needs</p>
+            <p className="text-gray-600 text-lg">AI Solutions Designed to Drive Business Growth</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -337,8 +430,8 @@ export default async function ServiceDetailPage({ params }: ServiceDetailPagePro
                       {config.icon}
                     </div>
                     <div>
-                      <h3 className="text-[#022030] font-bold text-lg mb-2">{feature}</h3>
-                      <p className="text-gray-600 text-sm">Advanced implementation with modern best practices</p>
+                      <h3 className="text-[#022030] font-bold text-lg mb-2">{feature.title}</h3>
+                      <p className="text-gray-600 text-sm">{feature.description}</p>
                     </div>
                   </div>
                 </div>
@@ -355,7 +448,7 @@ export default async function ServiceDetailPage({ params }: ServiceDetailPagePro
             <h2 className="text-sky-950 text-3xl sm:text-4xl font-bold font-['Inter'] leading-tight mb-4">
               Why Choose Our Solution
             </h2>
-            <p className="text-gray-600 text-lg">Measurable benefits that drive your business forward</p>
+            <p className="text-gray-600 text-lg">{service.whyChooseSlogan}</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -382,6 +475,10 @@ export default async function ServiceDetailPage({ params }: ServiceDetailPagePro
                   gradient: 'from-[#4facfe] to-[#00f2fe]',
                   icon: <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
                 },
+                {
+                  gradient: 'from-[#43e97b] to-[#38f9d7]',
+                  icon: <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+                },
               ];
               const config = iconConfigs[index % iconConfigs.length];
 
@@ -394,8 +491,8 @@ export default async function ServiceDetailPage({ params }: ServiceDetailPagePro
                     {config.icon}
                   </div>
                   <div>
-                    <h3 className="text-[#022030] font-bold text-lg mb-2">{benefit}</h3>
-                    <p className="text-gray-600">Proven results that make a real difference to your business operations</p>
+                    <h3 className="text-[#022030] font-bold text-lg mb-2">{benefit.title}</h3>
+                    <p className="text-gray-600">{benefit.description}</p>
                   </div>
                 </div>
               );
@@ -413,10 +510,10 @@ export default async function ServiceDetailPage({ params }: ServiceDetailPagePro
 
         <Container className="relative z-10 text-center">
           <h2 className="text-white text-4xl sm:text-5xl font-bold font-['Inter'] leading-tight mb-6">
-            Ready to Transform Your Business?
+            {service.ctaTitle}
           </h2>
-          <p className="text-white/90 text-xl mb-12 max-w-3xl mx-auto">
-            Let's discuss how our {service.title.toLowerCase()} can revolutionize your operations and accelerate your growth journey.
+          <p className="text-white/90 text-lg sm:text-xl mb-12 max-w-4xl mx-auto leading-relaxed">
+            {service.ctaDescription}
           </p>
 
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">

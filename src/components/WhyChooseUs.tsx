@@ -42,7 +42,7 @@ export default function WhyChooseUs() {
           {/* Right Side - Content */}
           <div className="flex-1">
             <p className="text-[#0c0c0c] font-inter text-base lg:text-lg leading-7 mb-6 text-center lg:text-left">
-              Most companies offer generic development. At Digiwave, we offer <span className="font-semibold text-[#00BFD2]">AI-Infused Engineering</span>. Whether it's a mobile app or a cloud migration, we look for ways to automate, optimize, and add intelligence to your product.
+              As a leading IT company in India, We provide specialized <span className="font-semibold text-[#00BFD2]">AI-Infused Engineering</span>.Whether it's a mobile app or a cloud migration, we look for ways to automate, optimize, and add intelligence to your product..
             </p>
 
             {/* The Digiwave Edge - Bullet Points */}

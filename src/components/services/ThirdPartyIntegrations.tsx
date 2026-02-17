@@ -269,8 +269,7 @@ export default function ThirdPartyIntegrations() {
             Third-Party Service Integrations
           </h2>
           <p className="text-gray-600 text-lg max-w-3xl mx-auto">
-            Seamlessly integrate government and private APIs for identity verification, KYC compliance,
-            and secure document management in your applications.
+            Integrate government and private APIs for secure identity verification, KYC compliance, and automated document management in your applications.
           </p>
         </div>
 

@@ -13,7 +13,7 @@ export default function WhoWeAre() {
           </div>
           <div className="flex-1">
             <p className="text-stone-950 font-inter text-base lg:text-lg leading-7 text-center lg:text-left">
-              Digiwave Technologies is a global IT services company delivering cutting-edge AI/ML, Cloud, Mobile, and Web solutions. We don't just write code; we build the digital backbone that empowers businesses to innovate at speed and scale in an AI-driven world.
+              Digiwave Technologies is recognized as a AI and Machine Learning Solutions, providing global enterprises with cutting-edge AI/ML, Cloud, and Mobile solutions. We don't just write code, we build the digital backbone that empowers businesses to innovate at speed and scale in an AI-driven world.
             </p>
           </div>
         </div>

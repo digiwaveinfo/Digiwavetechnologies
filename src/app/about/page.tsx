@@ -17,13 +17,14 @@ import AboutSEOContent from "@/components/about/AboutSEOContent";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "About Digiwave Technologies | Digital Transformation & AI Solutions Company",
-    description: "Digiwave Technologies is a leading digital transformation company specializing in AI solutions, web development, mobile app development, cloud services, and custom software development. Partner with us to build scalable, future-ready digital products.",
-    keywords: "digital transformation company, AI solutions, machine learning services, web development company, mobile app development, cloud services, DevOps, custom software development, technology partner, digital innovation, IT services, enterprise software, startup technology solutions",
+    title: "Best Software Development Company in India",
+    description: "Digiwave Technologies is the best software development company in India delivering AI solutions, web and mobile app development, cloud services, and solutions.",
+    keywords: "Digital Transformation Company, Ai Solutions, Machine Learning Services, Web Development Company, Mobile App Development, Cloud Services, Devops, Custom Software Development, Technology Partner, Digital Innovation, It Services, Enterprise Software, Startup Technology Solutions, Ai Development Company in India, Website Development Company in India, Web Development Services India, Mobile App Development Company in India, App Development Company in India, Iot Solution Providers",
     openGraph: {
-        title: "About Digiwave Technologies | Digital Transformation & AI Solutions",
-        description: "Empowering businesses with AI-driven solutions, web and mobile applications, and digital transformation services. Build scalable, secure, and future-ready products with Digiwave Technologies.",
+        title: "Best Software Development Company in India",
+        description: "Digiwave Technologies is the best software development company in India delivering AI solutions, web and mobile app development, cloud services, and solutions.",
         type: "website",
+        url: "/aboutus",
     },
 };
 
@@ -33,7 +34,7 @@ export default function AboutPage() {
             <Header />
             <main>
                 <AboutHero />
-                <WhoWeAre />
+                <WhoWeAre image="/about/about-hero.png" />
                 <HistoryVision />
                 <ProudWork />
                 <StatisticsSection />

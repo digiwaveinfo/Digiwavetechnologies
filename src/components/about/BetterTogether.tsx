@@ -1,4 +1,3 @@
-import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Container from "../Container";
@@ -33,17 +32,16 @@ export default function BetterTogether() {
                         </div>
                     </div>
 
-                    {/* Image Section */}
-                    <div className="w-full h-[465px] md:h-[600px] relative bg-neutral-200 rounded-3xl overflow-hidden shadow-sm">
-                        {/* Placeholder for potential background layer if needed */}
-                        <div className="absolute w-[880px] h-[588px] left-[-62px] top-0 pointer-events-none" />
-
-                        <Image
-                            src="/about/bettertogether.webp"
-                            alt="Group of people working out business plan in office"
-                            fill
-                            className="object-fill object-center"
-                        />
+                    {/* Image Section - Aspect ratio 1280:465 (approx 2.75:1) */}
+                    <div className="w-full relative bg-neutral-200 rounded-3xl overflow-hidden shadow-sm">
+                        <div className="w-full" style={{ aspectRatio: '1280/465' }}>
+                            <Image
+                                src="/about/bettertogether.webp"
+                                alt="Group of people working out business plan in office"
+                                fill
+                                className="object-cover object-center"
+                            />
+                        </div>
                     </div>
                 </div>
             </Container>

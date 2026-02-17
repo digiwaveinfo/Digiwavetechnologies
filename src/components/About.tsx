@@ -63,7 +63,7 @@ export default function About() {
                 </div>
               </div>
               <div className="text-[#0c0c0c] text-sm sm:text-base font-normal font-['Inter'] leading-7 mt-1 text-center lg:text-left">
-                Digiwave Technologies is a global IT services company delivering cutting-edge AI/ML, Cloud, Mobile & Web solutions that empower businesses to innovate and scale.
+                Digiwave Technologies is a global IT services and AI Development Company in India delivering cutting-edge AI/ML, cloud, mobile, and web solutions that empower businesses to innovate and scale.
               </div>
             </div>
 

@@ -21,7 +21,7 @@ export default function AboutHero() {
                     About Us
                 </h2>
                 <h1 className="text-white text-4xl lg:text-5xl font-bold font-['Poppins'] max-w-[800px] leading-tight mx-auto">
-                    Built Using Future-Ready Technologies
+                    Developed with Cutting-Edge Technologies
                 </h1>
             </Container>
 

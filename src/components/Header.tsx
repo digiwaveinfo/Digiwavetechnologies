@@ -25,6 +25,9 @@ export default function Header() {
     // For Services - highlight when on /services/* pages
     if (path === "/services" && pathname.startsWith("/services/")) return true;
 
+    // For Blog - highlight when on /blog/* pages
+    if (path === "/blog" && pathname.startsWith("/blog/")) return true;
+
     // For About - highlight when on /about/* pages
     if (path === "/about" && pathname.startsWith("/about/")) return true;
 
@@ -38,6 +41,7 @@ export default function Header() {
     { href: "/", label: "Home" },
     { href: "/about", label: "About Us" },
     { href: "/services", label: "Services" },
+    { href: "/blog", label: "Blog" },
     // { href: "/product", label: "Product" }, // Temporarily hidden
     // { href: "/portfolio", label: "Portfolio" },
   ];

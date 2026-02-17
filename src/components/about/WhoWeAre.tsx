@@ -1,43 +1,24 @@
-import React from "react";
 import Image from "next/image";
 import Container from "../Container";
 
-export default function WhoWeAre() {
+interface WhoWeAreProps {
+    image?: string;
+}
+
+export default function WhoWeAre({ 
+    image = "/about/who-we-are.webp"
+}: WhoWeAreProps) {
     return (
         <section className="w-full relative z-20 pb-14">
-            {/* White Background starting mid-way */}
-            {/* <div className="absolute top-[150px] lg:top-[100px] left-0 w-full h-[calc(100%-150px)] lg:h-[calc(100%-100px)] bg-white -z-10" /> */}
-
             <Container>
-                {/* Images Row - Negative margin to overlap Hero */}
-                <div className="flex flex-col lg:flex-row gap-6 mb-16 -mt-[150px] lg:-mt-[180px]">
-                    {/* Large Image */}
-                    <div className="relative w-full lg:w-[60%] h-[300px] lg:h-[573px] bg-neutral-200 rounded-3xl overflow-hidden">
-                        <Image
-                            src="/about/hero-over-image1.webp"
-                            alt="Low angle view skyscrapers"
-                            fill
-                            className="object-fill"
-                        />
-                    </div>
-
-                    {/* Small Image with Play Button */}
-                    <div className="relative w-full lg:w-[40%] h-[300px] lg:h-[573px] bg-neutral-200 rounded-3xl overflow-hidden">
-                        <Image
-                            src="/about/hero-over0image2.webp"
-                            alt="Skyscrapers"
-                            fill
-                            className="object-fill"
-                        />
-                        {/* Play Button Overlay */}
-                        <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 lg:w-48 lg:h-48 bg-white/30 backdrop-blur-sm rounded-full flex items-center justify-center">
-                            <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center pl-1">
-                                <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M8.04565 4.59937V22.9897L22.9878 13.7945L8.04565 4.59937Z" stroke="#00BFD2" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
-                                </svg>
-                            </div>
-                        </div>
-                    </div>
+                {/* Single Image - Negative margin to overlap Hero */}
+                <div className="w-full h-[465px] md:h-[600px] relative bg-neutral-200 rounded-3xl overflow-hidden shadow-sm mb-16 -mt-[150px] lg:-mt-[180px]">
+                    <Image
+                        src={image}
+                        alt="Who we are"
+                        fill
+                        className="object-cover object-center"
+                    />
                 </div>
 
                 {/* Text Section */}
@@ -48,7 +29,7 @@ export default function WhoWeAre() {
                         </div>
                     </div>
                     <div className="flex-1 text-stone-950 text-base font-normal font-['Inter'] leading-6 text-center lg:text-left">
-                        Digiwave Technologies is a global IT services company delivering cutting-edge AI/ML, Cloud, Mobile, and Web solutions. We don't just write code; we build the digital backbone that empowers businesses to innovate at speed and scale in an AI-driven world. Our team of passionate developers, designers, and strategists work collaboratively to transform complex challenges into elegant, scalable solutions. From startups to enterprises, we partner with organizations to accelerate their digital transformation journey and create lasting impact through technology.
+                        Digiwave Technologies is the Ai Software Development Company and global IT services company delivering cutting-edge AI/ML, Cloud, Mobile, and Web solutions. We don't just write code, we build the digital backbone that empowers businesses to innovate at speed and scale in an AI-driven world. Our team of passionate developers, designers, and strategists work collaboratively to transform complex challenges into elegant, scalable solutions. From startups to enterprises, we partner with organizations to accelerate their digital transformation journey and create lasting impact through technology.
                     </div>
                 </div>
             </Container>

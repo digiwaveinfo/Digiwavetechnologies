@@ -12,25 +12,26 @@ import Footer from "@/components/Footer";
 import SEOContent from "@/components/SEOContent";
 
 export const metadata: Metadata = {
-  title: "Digiwave Technologies - Custom Software Development Company | Web & Mobile App Development",
-  description: "Leading software development company specializing in custom web applications, mobile app development (Android & iOS), and AI/ML solutions. Transform your ideas into scalable digital products.",
+  title: "AI Development Company in India | Mobile App Development",
+  description: "Leading AI Development Company in India offering smart AI solutions and mobile app development services to help businesses grow, scale, and innovate digitally.",
   keywords: [
-    "software development company",
-    "custom software development",
-    "web development services",
-    "mobile app development company",
-    "AI solutions company",
-    "machine learning solutions",
-    "digital transformation",
-    "IT services company",
-    "Android app development",
-    "iOS app development",
-    "enterprise software",
-    "scalable web applications"
+    "AI Development Company In India",
+    "Website Development Company in India",
+    "Web Development Services India",
+    "Mobile App Development Company in India",
+    "App Development Company in India",
+    "Iot Solution Providers",
+    "AI Development Company India",
+    "Custom Website Development Company in India",
+    "AI/ML Development Company in India",
+    "Ai Software Development Company",
+    "Devops Solution Providers in India",
+    "Data Intelligence Solutions",
+    "Intelligent Automation Consulting"
   ],
   openGraph: {
-    title: "Digiwave Technologies - Transform Ideas into Scalable Digital Solutions",
-    description: "Partner with a leading software development company for custom web apps, mobile development, and AI-powered solutions that drive business growth.",
+    title: "AI Development Company in India | Mobile App Development",
+    description: "Leading AI Development Company in India offering smart AI solutions and mobile app development services to help businesses grow, scale, and innovate digitally.",
     type: "website",
   },
 };
