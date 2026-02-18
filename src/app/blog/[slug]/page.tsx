@@ -124,62 +124,69 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
               </div>
             </div>
 
-            {/* Blog Content - Full width */}
-            <div className="w-full flex flex-col gap-12">
-              {/* Section 1 */}
-              <h2 className="text-[#232536] text-3xl sm:text-4xl font-bold leading-tight">
+            {/* Blog Content - Full width like original */}
+            <div className="w-full flex flex-col gap-8">
+              {/* Heading 1 */}
+              <h2 className="text-[#232536] text-3xl sm:text-4xl font-bold font-['Sen'] leading-[48px]">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.
               </h2>
 
-              <h2 className="text-[#232536] text-3xl sm:text-4xl font-bold leading-tight">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.
-              </h2>
-
-              <h2 className="text-[#232536] text-3xl sm:text-4xl font-bold leading-tight">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.
-              </h2>
-
-              <p className="text-[#6D6E76] text-base leading-7">
+              {/* Paragraph 1 */}
+              <p className="text-[#6D6E76] text-base font-['Inter'] leading-7">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Non blandit massa enim nec. Scelerisque viverra mauris in aliquam sem. At risus viverra adipiscing at in tellus. Sociis natoque penatibus et magnis dis parturient montes. Ridiculus mus mauris vitae ultricies leo. Neque egestas congue quisque egestas diam. Risus in hendrerit gravida rutrum quisque non.
               </p>
 
-              <p className="text-[#6D6E76] text-base leading-7">
+              {/* Heading 2 */}
+              <h2 className="text-[#232536] text-3xl sm:text-4xl font-bold font-['Sen'] leading-[48px]">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.
+              </h2>
+
+              {/* Paragraph 2 */}
+              <p className="text-[#6D6E76] text-base font-['Inter'] leading-7">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Non blandit massa enim nec. Scelerisque viverra mauris in aliquam sem. At risus viverra adipiscing at in tellus. Sociis natoque penatibus et magnis dis parturient montes. Ridiculus mus mauris vitae ultricies leo. Neque egestas congue quisque egestas diam. Risus in hendrerit gravida rutrum quisque non.
               </p>
 
-              <p className="text-[#6D6E76] text-base leading-7">
+              {/* Paragraph 3 */}
+              <p className="text-[#6D6E76] text-base font-['Inter'] leading-7">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Non blandit massa enim nec. Scelerisque viverra mauris in aliquam sem. At risus viverra adipiscing at in tellus. Sociis natoque penatibus et magnis dis parturient montes. Ridiculus mus mauris vitae ultricies leo. Neque egestas congue quisque egestas diam. Risus in hendrerit gravida rutrum quisque non.
               </p>
 
               {/* Bullet Points */}
-              <div className="flex flex-col gap-6">
-                <div className="flex items-center gap-4">
-                  <div className="w-1.5 h-1.5 bg-[#494A53] rounded-full flex-shrink-0" />
-                  <p className="text-[#161722] text-xl sm:text-2xl font-bold leading-8 opacity-80">
+              <div className="flex flex-col gap-4">
+                <div className="flex items-start gap-4">
+                  <div className="w-[5px] h-[5px] bg-[#494A53] rounded-full flex-shrink-0 mt-3.5" />
+                  <p className="text-[#161722] text-xl sm:text-2xl font-bold font-['Sen'] leading-8 opacity-80">
                     Lorem ipsum dolor sit amet
                   </p>
                 </div>
 
-                <div className="flex items-center gap-4">
-                  <div className="w-1.5 h-1.5 bg-[#494A53] rounded-full flex-shrink-0" />
-                  <p className="text-[#161722] text-xl sm:text-2xl font-bold leading-8 opacity-80">
+                <div className="flex items-start gap-4">
+                  <div className="w-[5px] h-[5px] bg-[#494A53] rounded-full flex-shrink-0 mt-3.5" />
+                  <p className="text-[#161722] text-xl sm:text-2xl font-bold font-['Sen'] leading-8 opacity-80">
                     Non blandit massa enim nec scelerisque
                   </p>
                 </div>
 
-                <div className="flex items-center gap-4">
-                  <div className="w-1.5 h-1.5 bg-[#494A53] rounded-full flex-shrink-0" />
-                  <p className="text-[#161722] text-xl sm:text-2xl font-bold leading-8 opacity-80">
+                <div className="flex items-start gap-4">
+                  <div className="w-[5px] h-[5px] bg-[#494A53] rounded-full flex-shrink-0 mt-3.5" />
+                  <p className="text-[#161722] text-xl sm:text-2xl font-bold font-['Sen'] leading-8 opacity-80">
                     Neque egestas congue quisque egestas
                   </p>
                 </div>
               </div>
 
-              <p className="text-[#6D6E76] text-base leading-7">
+              {/* Paragraph 4 */}
+              <p className="text-[#6D6E76] text-base font-['Inter'] leading-7">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Non blandit massa enim nec. Scelerisque viverra mauris in aliquam sem. At risus viverra adipiscing at in tellus. Sociis natoque penatibus et magnis dis parturient montes. Ridiculus mus mauris vitae ultricies leo. Neque egestas congue quisque egestas diam. Risus in hendrerit gravida rutrum quisque non.
               </p>
 
-              <p className="text-[#6D6E76] text-base leading-7">
+              {/* Heading 3 */}
+              <h2 className="text-[#232536] text-3xl sm:text-4xl font-bold font-['Sen'] leading-[48px]">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.
+              </h2>
+
+              {/* Paragraph 5 */}
+              <p className="text-[#6D6E76] text-base font-['Inter'] leading-7">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Non blandit massa enim nec. Scelerisque viverra mauris in aliquam sem. At risus viverra adipiscing at in tellus. Sociis natoque penatibus et magnis dis parturient montes. Ridiculus mus mauris vitae ultricies leo. Neque egestas congue quisque egestas diam. Risus in hendrerit gravida rutrum quisque non.
               </p>
             </div>
