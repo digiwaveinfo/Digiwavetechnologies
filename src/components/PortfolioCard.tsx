@@ -13,111 +13,126 @@ interface PortfolioCardProps {
   id: string;
   title: string;
   description: string;
-  imageUrl: string;
   images?: { id: string; image_url: string }[];
   technologies: Technology[];
   tag?: string;
   subtitle?: string;
 }
 
-export default function PortfolioCard({ id, title, description, imageUrl, images = [], technologies, tag = "", subtitle = "All Services One Solution" }: PortfolioCardProps) {
-  // Build slides: prefer card_images array, fall back to single imageUrl
-  const slides = images.length > 0
-    ? images.map(img => img.image_url)
-    : [imageUrl || "/portfolio-card-image.webp"];
+export default function PortfolioCard({ id, title, description, images = [], technologies, tag = "" }: PortfolioCardProps) {
+  const slides = images.map(img => img.image_url);
+  const hasImages = slides.length > 0;
 
   const [current, setCurrent] = useState(0);
+  const [paused, setPaused] = useState(false);
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
+  const prev = () => setCurrent(c => (c - 1 + slides.length) % slides.length);
+  const next = () => setCurrent(c => (c + 1) % slides.length);
+
   useEffect(() => {
-    if (slides.length <= 1) return;
+    if (!hasImages || slides.length <= 1 || paused) return;
     timerRef.current = setInterval(() => {
-      setCurrent(prev => (prev + 1) % slides.length);
-    }, 3000);
+      setCurrent(c => (c + 1) % slides.length);
+    }, 4000);
     return () => { if (timerRef.current) clearInterval(timerRef.current); };
-  }, [slides.length]);
+  }, [slides.length, paused, hasImages]);
+
   // Filter to show only main technologies (language, platform) on card
   const mainCategories = ['language', 'platform'];
   const mainTechnologies = technologies.filter(tech =>
     tech.category && mainCategories.includes(tech.category)
   );
-
-  // If no main technologies found, fall back to first 3 of any category
   const displayTechnologies = mainTechnologies.length > 0
     ? mainTechnologies.slice(0, 3)
     : technologies.slice(0, 3);
 
   return (
-    <div
-      className="group bg-white rounded-xl border border-[#E8E8EA] overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2 h-[520px] flex flex-col"
-    >
-      {/* Image Carousel */}
-      <div className="relative w-full h-60 flex-shrink-0 rounded-t-xl overflow-hidden m-4 mb-0" style={{ width: 'calc(100% - 2rem)' }}>
-        {/* Slides */}
+    <div className="group bg-white rounded-xl border border-[#E8E8EA] overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2 h-[520px] flex flex-col">
+        {/* Image Carousel */}
         <div
-          className="flex h-full transition-transform duration-700 ease-in-out"
-          style={{ transform: `translateX(-${current * 100}%)`, width: `${slides.length * 100}%` }}
+          className="relative w-full h-60 flex-shrink-0 rounded-t-xl overflow-hidden m-4 mb-0"
+          style={{ width: 'calc(100% - 2rem)' }}
+          onMouseEnter={() => setPaused(true)}
+          onMouseLeave={() => setPaused(false)}
         >
-          {slides.map((src, i) => (
-            <img
-              key={i}
-              src={src}
-              alt={title}
-              className="h-full object-fill rounded-lg flex-shrink-0"
-              style={{ width: `${100 / slides.length}%` }}
-            />
-          ))}
-        </div>
-        {/* Dot indicators — only if multiple slides */}
-        {slides.length > 1 && (
-          <div className="absolute bottom-2 left-0 right-0 flex justify-center gap-1.5">
-            {slides.map((_, i) => (
-              <button
-                key={i}
-                onClick={() => setCurrent(i)}
-                className={`w-1.5 h-1.5 rounded-full transition-colors ${
-                  i === current ? 'bg-white' : 'bg-white/50'
-                }`}
-              />
-            ))}
-          </div>
-        )}
-      </div>
+          {hasImages ? (
+            <>
+              {/* Slides — absolute stacked, fade via opacity */}
+              {slides.map((src, i) => (
+                <img
+                  key={i}
+                  src={src}
+                  alt={title}
+                  className="absolute inset-0 w-full h-full object-cover rounded-lg transition-opacity duration-700"
+                  style={{ opacity: i === current ? 1 : 0 }}
+                />
+              ))}
 
-      {/* Content */}
-      <div className="p-4 pt-4 pb-4 flex flex-col flex-1">
-        {/* Tag Badge - fixed height area */}
-        <div className="h-8 mb-2">
-          {tag && (
-            <div className="inline-flex px-2.5 py-1 bg-[#00BFD2]/10 rounded-md">
-              <span className="text-[#00BFD2] text-sm font-medium">{tag}</span>
+              {/* Arrows — only if multiple slides */}
+              {slides.length > 1 && (
+                <>
+                  <button
+                    onClick={e => { e.preventDefault(); prev(); }}
+                    className="absolute left-2 top-1/2 -translate-y-1/2 z-10 w-7 h-7 rounded-full bg-black/40 hover:bg-black/60 flex items-center justify-center text-white transition-colors"
+                    aria-label="Previous"
+                  >
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>
+                  </button>
+                  <button
+                    onClick={e => { e.preventDefault(); next(); }}
+                    className="absolute right-2 top-1/2 -translate-y-1/2 z-10 w-7 h-7 rounded-full bg-black/40 hover:bg-black/60 flex items-center justify-center text-white transition-colors"
+                    aria-label="Next"
+                  >
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
+                  </button>
+                  {/* Dots */}
+                  <div className="absolute bottom-2 left-0 right-0 flex justify-center gap-1.5 z-10">
+                    {slides.map((_, i) => (
+                      <button
+                        key={i}
+                        onClick={e => { e.preventDefault(); setCurrent(i); }}
+                        className={`w-1.5 h-1.5 rounded-full transition-colors ${
+                          i === current ? 'bg-white' : 'bg-white/50'
+                        }`}
+                      />
+                    ))}
+                  </div>
+                </>
+              )}
+            </>
+          ) : (
+            <div className="w-full h-full rounded-lg bg-gray-100 flex items-center justify-center">
+              <span className="text-gray-400 text-sm">No Image</span>
             </div>
           )}
         </div>
 
-        {/* Title - fixed height for 2 lines */}
-        <h3 className="text-[#181A2A] text-xl font-semibold leading-7 group-hover:text-[#00BFD2] transition-colors line-clamp-2 mb-2 min-h-[56px]">
-          {title}
-        </h3>
-
-        {/* Description - fixed height for 3 lines */}
-        <p className="text-[#97989F] text-sm leading-relaxed line-clamp-3 min-h-[63px]">
-          {description}
-        </p>
-
-        {/* Spacer to push bottom section down */}
-        <div className="flex-1"></div>
-
-        {/* Bottom Section - Tech Icons */}
-        <div className="flex items-center pt-3 mt-3 border-t border-[#E8E8EA]">
-          <div className="flex items-center gap-2">
-            {displayTechnologies.map((tech, index) => (
-              <TechIcon key={index} tech={tech} />
-            ))}
+        {/* Content */}
+        <div className="p-4 pt-4 pb-4 flex flex-col flex-1">
+          <div className="h-8 mb-2">
+            {tag && (
+              <div className="inline-flex px-2.5 py-1 bg-[#00BFD2]/10 rounded-md">
+                <span className="text-[#00BFD2] text-sm font-medium">{tag}</span>
+              </div>
+            )}
+          </div>
+          <h3 className="text-[#181A2A] text-xl font-semibold leading-7 group-hover:text-[#00BFD2] transition-colors line-clamp-2 mb-2 min-h-[56px]">
+            {title}
+          </h3>
+          <p className="text-[#97989F] text-sm leading-relaxed line-clamp-3 min-h-[63px]">
+            {description}
+          </p>
+          <div className="flex-1" />
+          <div className="flex items-center pt-3 mt-3 border-t border-[#E8E8EA]">
+            <div className="flex items-center gap-2">
+              {displayTechnologies.map((tech, index) => (
+                <TechIcon key={index} tech={tech} />
+              ))}
+            </div>
           </div>
         </div>
       </div>
-    </div>
   );
 }
 

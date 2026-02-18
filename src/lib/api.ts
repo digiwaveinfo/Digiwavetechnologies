@@ -68,7 +68,7 @@ export async function getPortfolios(): Promise<PortfolioItem[]> {
     const response = await fetch(`${API_BASE_URL}/portfolio/public/`, {
       method: 'GET',
       headers: { 'Content-Type': 'application/json' },
-      next: { revalidate: 60 }, // Revalidate every 60 seconds
+      cache: 'no-store',
     });
 
     if (!response.ok) {
@@ -89,7 +89,7 @@ export async function getFeaturedPortfolios(): Promise<PortfolioItem[]> {
     const response = await fetch(`${API_BASE_URL}/portfolio/featured/`, {
       method: 'GET',
       headers: { 'Content-Type': 'application/json' },
-      next: { revalidate: 60 },
+      cache: 'no-store',
     });
 
     if (!response.ok) {
@@ -110,7 +110,7 @@ export async function getHomeFeaturedPortfolios(): Promise<PortfolioItem[]> {
     const response = await fetch(`${API_BASE_URL}/portfolio/home-featured/`, {
       method: 'GET',
       headers: { 'Content-Type': 'application/json' },
-      next: { revalidate: 60 },
+      cache: 'no-store',
     });
 
     if (!response.ok) {
@@ -131,7 +131,7 @@ export async function getPortfolioBySlug(slug: string): Promise<PortfolioItem | 
     const response = await fetch(`${API_BASE_URL}/portfolio/${slug}/`, {
       method: 'GET',
       headers: { 'Content-Type': 'application/json' },
-      next: { revalidate: 10 }, // Revalidate every 10 seconds for faster updates
+      cache: 'no-store',
     });
 
     if (!response.ok) {
