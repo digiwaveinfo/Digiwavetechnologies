@@ -3,7 +3,7 @@ import Container from "./Container";
 
 export default function About() {
   return (
-    <section className="w-full bg-neutral-100 overflow-hidden py-20">
+    <section className="w-full bg-neutral-100 overflow-hidden py-12 md:py-16">
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-20 items-center">
 

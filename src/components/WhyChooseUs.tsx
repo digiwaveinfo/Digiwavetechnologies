@@ -15,7 +15,7 @@ export default function WhyChooseUs() {
       description: "Built for 1,000 users today and 1,000,000 tomorrow."
     },
     {
-      title: "100% Transparency",
+      title: "99.99% Transparency",
       description: "Real-time updates and dedicated engineer access."
     }
   ];

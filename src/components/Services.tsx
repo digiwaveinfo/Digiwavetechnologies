@@ -104,7 +104,7 @@ export default function Services() {
   }, [isAutoPlaying, nextSlide]);
 
   return (
-    <section className="w-full py-16 md:py-24 flex flex-col justify-start items-center bg-white relative overflow-hidden">
+    <section className="w-full pt-12 md:pt-16 pb-6 md:pb-8 flex flex-col justify-start items-center bg-white relative overflow-hidden">
       {/* Left side background */}
       <div className="absolute left-0 top-0 w-[1164px] h-[919px] opacity-10 pointer-events-none z-0">
         <svg
@@ -228,10 +228,10 @@ export default function Services() {
       <div className="w-[96%] xl:w-[93%] 2xl:w-[89%] mx-auto flex flex-col items-center relative z-10">
         {/* Section Header */}
         <div className="w-full flex flex-col items-center gap-4 mb-12">
-          <h2 className="text-center text-[#00BFD2] text-xl font-medium font-[\'Poppins\']">
+          <h2 className="text-center text-[#00BFD2] text-xl font-medium font-['Inter']">
             Services
           </h2>
-          <h3 className="text-center text-[#00114C] text-3xl md:text-4xl font-bold font-[\'Poppins\'] leading-tight">
+          <h3 className="text-center text-[#00114C] text-3xl md:text-4xl font-bold font-['Inter'] leading-tight">
             Built Using Future-Ready Technologies
           </h3>
         </div>
@@ -337,7 +337,7 @@ export default function Services() {
           </div>
 
           {/* Dots Indicator */}
-          <div className="flex justify-center gap-2 mt-8">
+          <div className="flex justify-center gap-2 mt-8 mb-4">
             {Array.from({ length: maxIndex + 1 }).map((_, index) => (
               <button
                 key={index}
@@ -351,18 +351,6 @@ export default function Services() {
             ))}
           </div>
         </div>
-
-        {/* View All services Button */}
-        <Link
-          href="/services"
-          className="px-5 py-4 bg-[#00BFD2] rounded-[247px] flex flex-col justify-start items-start gap-2.5 overflow-hidden hover:opacity-90 transition-opacity"
-        >
-          <div className="self-stretch flex justify-start items-center gap-2.5">
-            <div className="text-center text-white text-lg font-bold font-['Inter'] uppercase leading-7 tracking-wide">
-              View All services
-            </div>
-          </div>
-        </Link>
       </div>
     </section>
   );

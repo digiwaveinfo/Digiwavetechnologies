@@ -1,72 +1,137 @@
-import React from "react";
 import Image from "next/image";
 import Container from "../Container";
 
 export default function StatisticsSection() {
   const stats = [
     {
-      icon: "/calender.webp",
+      icon: "/about/icon-1.svg",
       value: "3+",
       label: "Years of Experience",
     },
     {
-      icon: "/client.webp",
+      icon: "/about/icon2.svg",
       value: "10+",
       label: "Active Clients",
     },
     {
-      icon: "/done-icon.webp",
+      icon: "/about/icon-3.svg",
       value: "10+",
       label: "Successful Project",
     },
     {
-      icon: "/active-work.webp",
+      icon: "/about/icon-4.svg",
       value: "99.99%",
       label: "Accurate work",
     },
   ];
 
   return (
-    <section className="w-full bg-[#F5F5F5] py-12 md:py-16 lg:py-20">
-      <Container className="max-w-[1800px]">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
-          {/* Left side - Stats Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8">
-            {stats.map((stat, index) => (
-              <div
-                key={index}
-                className="flex flex-col lg:flex-row p-[30px] items-center lg:items-start gap-2.5 rounded-[26px] bg-white shadow-[2px_3px_6.3px_1px_rgba(64,64,64,0.27)]"
-              >
-                <div className="flex flex-col items-center lg:items-start justify-between h-full w-full">
-                  <div className="w-20 h-20 relative mb-auto">
-                    <Image
-                      src={stat.icon}
-                      alt={stat.label}
-                      width={80}
-                      height={80}
-                      className="object-contain"
-                    />
+    <section className="w-full bg-[#F5F5F5] py-16 overflow-hidden">
+      <Container className="max-w-[1440px]">
+        <div className="relative w-full min-h-[600px] lg:h-[737px]">
+          {/* Stats Cards - Positioned absolutely on desktop, stacked on mobile */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-0 lg:block">
+            {/* Card 1 - Top Left */}
+            <div className="lg:absolute lg:left-0 lg:top-0 w-full sm:w-auto lg:w-[341px] h-[273px] p-[30px] bg-white shadow-[2px_3px_6.3px_1px_rgba(64,64,64,0.27)] rounded-[26px] flex">
+              <div className="flex flex-col justify-between items-start w-full">
+                <div className="w-[81px] h-[81px] relative">
+                  <Image
+                    src={stats[0].icon}
+                    alt={stats[0].label}
+                    width={81}
+                    height={81}
+                    className="object-contain"
+                  />
+                </div>
+                <div className="flex flex-col gap-[5px]">
+                  <div className="text-[#00114C] text-[40px] font-bold font-['Poppins'] leading-[60px]">
+                    {stats[0].value}
                   </div>
-                  <div className="flex flex-col gap-[5px] mt-6 text-center lg:text-left w-full">
-                    <div className="font-['Poppins'] font-bold text-[40px] leading-[60px] text-[#00114C]">
-                      {stat.value}
-                    </div>
-                    <div className="font-['Inter'] font-normal text-base leading-6 text-[#0F0F10]">
-                      {stat.label}
-                    </div>
+                  <div className="text-[#0F0F10] text-base font-normal font-['Inter'] leading-6">
+                    {stats[0].label}
                   </div>
                 </div>
               </div>
-            ))}
+            </div>
+
+            {/* Card 2 - Top Right */}
+            <div className="lg:absolute lg:left-[392px] lg:top-0 w-full sm:w-auto lg:w-[341px] h-[273px] p-[30px] bg-white shadow-[2px_3px_6.3px_1px_rgba(64,64,64,0.27)] rounded-[26px] flex">
+              <div className="flex flex-col justify-between items-start w-full">
+                <div className="w-[81px] h-[81px] relative">
+                  <Image
+                    src={stats[1].icon}
+                    alt={stats[1].label}
+                    width={81}
+                    height={81}
+                    className="object-contain"
+                  />
+                </div>
+                <div className="flex flex-col gap-[5px]">
+                  <div className="text-[#00114C] text-[40px] font-bold font-['Poppins'] leading-[60px]">
+                    {stats[1].value}
+                  </div>
+                  <div className="text-[#0F0F10] text-base font-normal font-['Inter'] leading-6">
+                    {stats[1].label}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Card 3 - Bottom Left */}
+            <div className="lg:absolute lg:left-0 lg:top-[300px] w-full sm:w-auto lg:w-[341px] h-[273px] p-[30px] bg-white shadow-[2px_3px_6.3px_1px_rgba(64,64,64,0.27)] rounded-[26px] flex">
+              <div className="flex flex-col justify-between items-start w-full">
+                <div className="w-[81px] h-[81px] relative">
+                  <Image
+                    src={stats[2].icon}
+                    alt={stats[2].label}
+                    width={81}
+                    height={81}
+                    className="object-contain"
+                  />
+                </div>
+                <div className="flex flex-col gap-[5px]">
+                  <div className="text-[#00114C] text-[40px] font-bold font-['Poppins'] leading-[60px]">
+                    {stats[2].value}
+                  </div>
+                  <div className="text-[#0F0F10] text-base font-normal font-['Inter'] leading-6">
+                    {stats[2].label}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Card 4 - Bottom Right */}
+            <div className="lg:absolute lg:left-[392px] lg:top-[300px] w-full sm:w-auto lg:w-[341px] h-[273px] p-[30px] bg-white shadow-[2px_3px_6.3px_1px_rgba(64,64,64,0.27)] rounded-[26px] flex">
+              <div className="flex flex-col justify-between items-start w-full">
+                <div className="w-[81px] h-[81px] relative">
+                  <Image
+                    src={stats[3].icon}
+                    alt={stats[3].label}
+                    width={81}
+                    height={81}
+                    className="object-contain"
+                  />
+                </div>
+                <div className="flex flex-col gap-[5px]">
+                  <div className="text-[#00114C] text-[40px] font-bold font-['Poppins'] leading-[60px]">
+                    {stats[3].value}
+                  </div>
+                  <div className="text-[#0F0F10] text-base font-normal font-['Inter'] leading-6">
+                    {stats[3].label}
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* Right side - Image */}
-          <div className="relative w-full h-full min-h-[400px]">
+          <div className="hidden lg:block absolute right-0 top-0 w-[497px] h-[573px] bg-[#E2E2E2] rounded-[26px] overflow-hidden">
             <Image
-              src="/Group.webp"
+              src="/about/statics-right-image.png"
               alt="Modern skyscraper buildings"
-              fill
-              className="object-fill rounded-2xl"
+              width={908}
+              height={606}
+              className="object-fill "
             />
           </div>
         </div>

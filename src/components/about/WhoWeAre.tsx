@@ -22,8 +22,8 @@ export default function WhoWeAre({
                 </div>
 
                 {/* Text Section */}
-                <div className="flex flex-col lg:flex-row justify-center items-center gap-10 lg:gap-2.5 w-full mt-10 lg:mt-0">
-                    <div className="w-full lg:w-[501px] flex flex-col justify-start items-center lg:items-start gap-3.5">
+                <div className="flex flex-col lg:flex-row justify-center items-center gap-10 lg:gap-20 w-full mt-10 lg:mt-0">
+                    <div className="w-full lg:w-auto flex flex-col justify-start items-center lg:items-start gap-3.5">
                         <div className="self-stretch text-sky-950 text-4xl font-bold font-['Inter'] leading-[60px] text-center lg:text-left">
                             Who We Are
                         </div>

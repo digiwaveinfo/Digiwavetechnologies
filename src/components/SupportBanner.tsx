@@ -16,8 +16,8 @@ export default function SupportBanner() {
 
       {/* Content */}
       <div className="relative z-10 mx-auto w-[94%] xl:w-[90%] 2xl:w-[85%] flex flex-col justify-start items-center gap-2.5">
-        <div className="px-4 py-1.5 bg-white/25 rounded-[10px] outline outline-1 outline-offset-[-1px] outline-indigo-50 inline-flex justify-center items-center gap-2.5 overflow-hidden backdrop-blur-sm">
-          <div className="text-neutral-50 text-base font-medium font-['Inter'] leading-6">
+        <div className="px-[17px] py-[7px] bg-white/[0.26] rounded-[10px] outline outline-1 outline-offset-[-1px] outline-[#EAF0FC] inline-flex justify-center items-center gap-2.5 overflow-hidden">
+          <div className="text-[#FCFCFC] text-base font-medium font-['Inter'] italic leading-6">
             Support System
           </div>
         </div>

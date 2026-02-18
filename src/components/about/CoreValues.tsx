@@ -51,7 +51,7 @@ export default function CoreValues() {
     ];
 
     return (
-        <section className="w-full bg-white py-10">
+        <section className="w-full bg-white pt-20 lg:pt-28 pb-12 relative z-10">
             <Container className="max-w-[1800px]">
                 <div className="grid grid-cols-4 gap-6 lg:gap-11">
                     {values.map((val, index) => (

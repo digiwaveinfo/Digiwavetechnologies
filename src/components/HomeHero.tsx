@@ -29,8 +29,8 @@ export default function HomeHero() {
           {/* Main Content */}
           <div className="self-stretch flex flex-col justify-start items-center lg:items-start gap-4 sm:gap-5">
             {/* Free Consultation Badge */}
-            <div className="w-40 h-9 relative bg-white/25 rounded-[10px] outline outline-1 outline-offset-[-1px] outline-indigo-50 overflow-hidden flex items-center justify-center">
-              <div className="text-neutral-50 text-base font-medium font-['Inter'] leading-6">
+            <div className="w-[168px] h-[38px] relative bg-white/[0.26] rounded-[10px] outline outline-1 outline-offset-[-1px] outline-[#EAF0FC] overflow-hidden flex items-center justify-center">
+              <div className="text-[#FCFCFC] text-base font-['Inter'] italic leading-6">
                 Free Consultation
               </div>
             </div>

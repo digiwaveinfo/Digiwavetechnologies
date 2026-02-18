@@ -31,7 +31,7 @@ export default function FAQ() {
     {
       question: "What makes Digiwave different from other IT companies?",
       answer:
-        "Digiwave stands out with our dedicated team of expert engineers, tailored solutions with transparent communication, 100% quality focus, and reliable ongoing support. We combine deep technical expertise with a client-first approach, ensuring every project is delivered on time and exceeds expectations.",
+        "Digiwave stands out with our dedicated team of expert engineers, tailored solutions with transparent communication, 99.99% quality focus, and reliable ongoing support. We combine deep technical expertise with a client-first approach, ensuring every project is delivered on time and exceeds expectations.",
     },
   ];
 

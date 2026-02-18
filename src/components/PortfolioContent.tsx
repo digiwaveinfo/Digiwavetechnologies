@@ -76,7 +76,7 @@ const StickyCard = ({ i, card, cardType, progress, range, targetScale }: StickyC
             <div className="absolute inset-0 z-0 bg-[#00BFD2]/10 pointer-events-none" />
           )}
           <div className="px-6 py-1.5 bg-sky-700/90 rounded-full inline-flex self-start relative z-[1]">
-            <span className="text-white text-sm font-medium font-['Inter']">{card.tag}</span>
+            <span className="text-white text-sm font-normal font-['Inter'] italic">{card.tag}</span>
           </div>
           <h3 className={`${getTextColor(cardType)} text-2xl font-semibold font-['Inter'] leading-tight relative z-[1]`}>
             {card.title}
@@ -106,7 +106,7 @@ const StickyCard = ({ i, card, cardType, progress, range, targetScale }: StickyC
         )}
         <div className="absolute left-0 top-0 w-[64%] h-full p-8 lg:p-[40px] xl:p-[60px] flex flex-col justify-center items-start gap-6 lg:gap-7 z-10">
           <div className="px-8 py-1.5 bg-sky-700/90 backdrop-blur-sm rounded-full inline-flex">
-            <span className="text-white text-base font-medium font-['Inter']">{card.tag}</span>
+            <span className="text-white text-base font-normal font-['Inter'] italic">{card.tag}</span>
           </div>
           <div className="flex flex-col gap-4">
             <h3 className={`${getTextColor(cardType)} text-3xl lg:text-4xl xl:text-[46px] font-semibold font-['Inter'] leading-tight`}>
@@ -199,10 +199,10 @@ export default function PortfolioContent() {
 
   return (
     <section className="w-full bg-white relative">
-      <div className="pt-12 pb-8 bg-white">
+      <div className="pt-12 md:pt-16 pb-8 bg-white">
         <Container className="flex flex-col items-center gap-4 text-center">
-          <div className="text-[#00BFD2] text-xl font-medium font-['Poppins']">Work We're Proud Of</div>
-          <div className="text-[#082f49] text-3xl md:text-4xl lg:text-5xl font-bold font-['Poppins'] leading-tight">
+          <div className="text-[#00BFD2] text-xl font-medium font-['Inter']">Work We're Proud Of</div>
+          <div className="text-[#082f49] text-3xl md:text-4xl lg:text-5xl font-bold font-['Inter'] leading-tight">
             Transforming Ideas Into <br /> Digital Success
           </div>
         </Container>

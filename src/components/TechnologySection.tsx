@@ -18,66 +18,78 @@ const TechnologyCard = ({ icon, name }: TechnologyCardProps) => (
 
 export default function TechnologySection() {
     const webPlatformTechs = [
-        { icon: "/technologies/php.svg", name: "PHP" },
-        { icon: "/technologies/javascript.svg", name: "JavaScript" },
-        { icon: "/technologies/PostgreSQL.svg", name: "PostgreSQL" },
-        { icon: "/technologies/swift.svg", name: "Swift" },
-        { icon: "/technologies/typescript.svg", name: "TypeScript" },
         { icon: "/technologies/Python.svg", name: "Python" },
-        { icon: "/technologies/g318.svg", name: "GraphQL" },
-        { icon: "/technologies/java.svg", name: "Java" },
-        { icon: "/technologies/ruby.svg", name: "Ruby" },
-        { icon: "/technologies/c.svg", name: "C++" },
-        { icon: "/technologies/reactjs.svg", name: "React Js" },
+        { icon: "/technologies/nodejs.svg", name: "Node.js" },
+        { icon: "/technologies/php.svg", name: "PHP" },
+        { icon: "/technologies/django.svg", name: "Django" },
+        { icon: "/technologies/flask.svg", name: "Flask" },
         { icon: "/technologies/laravel.svg", name: "Laravel" },
+        { icon: "/technologies/reactjs.svg", name: "React.js" },
+        { icon: "/technologies/nextjs.svg", name: "Next.js" },
+        { icon: "/technologies/html.svg", name: "HTML" },
+        { icon: "/technologies/css.svg", name: "CSS" },
+        { icon: "/technologies/javascript.svg", name: "JavaScript" },
+        { icon: "/technologies/jquery.svg", name: "jQuery" },
+        { icon: "/technologies/typescript.svg", name: "TypeScript" },
+        // Commented out - not in the list
+        // { icon: "/technologies/swift.svg", name: "Swift" },
+        // { icon: "/technologies/g318.svg", name: "GraphQL" },
+        // { icon: "/technologies/java.svg", name: "Java" },
+        // { icon: "/technologies/ruby.svg", name: "Ruby" },
+        // { icon: "/technologies/c.svg", name: "C++" },
+    ];
+
+    const mobileAppsTechs = [
+        { icon: "/technologies/react-native.svg", name: "React Native" },
+        { icon: "/technologies/flutter.svg", name: "Flutter" },
+        // Commented out - not in the list
+        // { icon: "/technologies/swift.svg", name: "Swift" },
+        // { icon: "/technologies/kotlin.svg", name: "Kotlin" },
+        // { icon: "/technologies/xamarin.svg", name: "Xamarin" },
+        // { icon: "/technologies/nativescript.svg", name: "NativeScript" },
     ];
 
     const databasesTechs = [
         { icon: "/technologies/PostgreSQL.svg", name: "PostgreSQL" },
-        { icon: "/technologies/java.svg", name: "MongoDB" },
-        { icon: "/technologies/ruby.svg", name: "MySQL" },
-        { icon: "/technologies/c.svg", name: "Oracle" },
-        { icon: "/technologies/reactjs.svg", name: "Redis" },
-        { icon: "/technologies/laravel.svg", name: "Firebase" },
+        { icon: "/technologies/mysql.svg", name: "MySQL" },
+        { icon: "/technologies/sqlite.svg", name: "SQLite" },
+        { icon: "/technologies/mongodb.svg", name: "MongoDB" },
+        { icon: "/technologies/oracle.svg", name: "Oracle" },
+        { icon: "/technologies/redis.svg", name: "Redis" },
+        { icon: "/technologies/firebase.svg", name: "Firebase" },
     ];
 
     const cloudDevOpsTechs = [
-        { icon: "/technologies/php.svg", name: "Docker" },
-        { icon: "/technologies/javascript.svg", name: "Kubernetes" },
-        { icon: "/technologies/PostgreSQL.svg", name: "AWS" },
-        { icon: "/technologies/swift.svg", name: "Azure" },
-        { icon: "/technologies/typescript.svg", name: "GCP" },
-        { icon: "/technologies/Python.svg", name: "Jenkins" },
+        { icon: "/technologies/aws.svg", name: "AWS" },
+        { icon: "/technologies/azure.svg", name: "Microsoft Azure" },
+        { icon: "/technologies/digitalocean.svg", name: "DigitalOcean" },
+        { icon: "/technologies/hostinger.svg", name: "Hostinger" },
+        // Commented out - not in the list
+        // { icon: "/technologies/docker.svg", name: "Docker" },
+        // { icon: "/technologies/kubernetes.svg", name: "Kubernetes" },
+        // { icon: "/technologies/gcp.svg", name: "GCP" },
+        // { icon: "/technologies/jenkins.svg", name: "Jenkins" },
     ];
 
-    const mobileAppsTechs = [
-        { icon: "/technologies/swift.svg", name: "Swift" },
-        { icon: "/technologies/java.svg", name: "Kotlin" },
-        { icon: "/technologies/reactjs.svg", name: "React Native" },
-        { icon: "/technologies/laravel.svg", name: "Flutter" },
-        { icon: "/technologies/php.svg", name: "Xamarin" },
-        { icon: "/technologies/javascript.svg", name: "NativeScript" },
-    ];
-
-    const otherFrameworksTechs = [
-        { icon: "/technologies/reactjs.svg", name: "React Js" },
-        { icon: "/technologies/laravel.svg", name: "Laravel" },
-        { icon: "/technologies/typescript.svg", name: "Vue.js" },
-        { icon: "/technologies/Python.svg", name: "Angular" },
-        { icon: "/technologies/g318.svg", name: "Svelte" },
-        { icon: "/technologies/java.svg", name: "Next.js" },
-    ];
+    // Commented out - "Other Frameworks" category removed as items are now in Web Platform
+    // const otherFrameworksTechs = [
+    //     { icon: "/technologies/reactjs.svg", name: "React Js" },
+    //     { icon: "/technologies/laravel.svg", name: "Laravel" },
+    //     { icon: "/technologies/typescript.svg", name: "Vue.js" },
+    //     { icon: "/technologies/Python.svg", name: "Angular" },
+    //     { icon: "/technologies/g318.svg", name: "Svelte" },
+    //     { icon: "/technologies/java.svg", name: "Next.js" },
+    // ];
 
     const allTechs = [
         ...webPlatformTechs,
+        ...mobileAppsTechs,
         ...databasesTechs,
         ...cloudDevOpsTechs,
-        ...mobileAppsTechs,
-        ...otherFrameworksTechs,
     ];
 
     return (
-        <section className="w-full py-20 bg-white">
+        <section className="w-full py-12 md:py-16 bg-white">
             <Container>
                 <div className="flex flex-col items-center gap-3 mb-12">
                     <h2 className="font-['Poppins'] text-xl font-medium text-[#00BFD2]">
@@ -94,10 +106,9 @@ export default function TechnologySection() {
                             <TabsList className="inline-flex flex-wrap h-auto gap-1 rounded-[10px] bg-[#00BFD2] p-1 lg:h-[50px] lg:flex-nowrap">
                                 <TabsTrigger value="all" className="h-8 lg:h-10 rounded-[5px] px-3 md:px-4 lg:px-6 py-1.5 font-['Inter'] text-xs md:text-sm lg:text-base font-medium text-[#00114C] whitespace-nowrap data-[state=active]:bg-white data-[state=active]:shadow-md data-[state=inactive]:bg-transparent hover:bg-white/20 transition-all">All</TabsTrigger>
                                 <TabsTrigger value="web-platform" className="h-8 lg:h-10 rounded-[5px] px-3 md:px-4 lg:px-6 py-1.5 font-['Inter'] text-xs md:text-sm lg:text-base font-medium text-[#00114C] whitespace-nowrap data-[state=active]:bg-white data-[state=active]:shadow-md data-[state=inactive]:bg-transparent hover:bg-white/20 transition-all">Web Platform</TabsTrigger>
+                                <TabsTrigger value="mobile-apps" className="h-8 lg:h-10 rounded-[5px] px-3 md:px-4 lg:px-6 py-1.5 font-['Inter'] text-xs md:text-sm lg:text-base font-medium text-[#00114C] whitespace-nowrap data-[state=active]:bg-white data-[state=active]:shadow-md data-[state=inactive]:bg-transparent hover:bg-white/20 transition-all">Mobile Apps</TabsTrigger>
                                 <TabsTrigger value="databases" className="h-8 lg:h-10 rounded-[5px] px-3 md:px-4 lg:px-6 py-1.5 font-['Inter'] text-xs md:text-sm lg:text-base font-medium text-[#00114C] whitespace-nowrap data-[state=active]:bg-white data-[state=active]:shadow-md data-[state=inactive]:bg-transparent hover:bg-white/20 transition-all">Databases</TabsTrigger>
                                 <TabsTrigger value="cloud-devops" className="h-8 lg:h-10 rounded-[5px] px-3 md:px-4 lg:px-6 py-1.5 font-['Inter'] text-xs md:text-sm lg:text-base font-medium text-[#00114C] whitespace-nowrap data-[state=active]:bg-white data-[state=active]:shadow-md data-[state=inactive]:bg-transparent hover:bg-white/20 transition-all">Cloud & DevOps</TabsTrigger>
-                                <TabsTrigger value="mobile-apps" className="h-8 lg:h-10 rounded-[5px] px-3 md:px-4 lg:px-6 py-1.5 font-['Inter'] text-xs md:text-sm lg:text-base font-medium text-[#00114C] whitespace-nowrap data-[state=active]:bg-white data-[state=active]:shadow-md data-[state=inactive]:bg-transparent hover:bg-white/20 transition-all">Mobile Apps</TabsTrigger>
-                                <TabsTrigger value="other-frameworks" className="h-8 lg:h-10 rounded-[5px] px-3 md:px-4 lg:px-6 py-1.5 font-['Inter'] text-xs md:text-sm lg:text-base font-medium text-[#00114C] whitespace-nowrap data-[state=active]:bg-white data-[state=active]:shadow-md data-[state=inactive]:bg-transparent hover:bg-white/20 transition-all">Other Frameworks</TabsTrigger>
                             </TabsList>
                         </div>
 
@@ -141,13 +152,14 @@ export default function TechnologySection() {
                             </div>
                         </TabsContent>
 
-                        <TabsContent value="other-frameworks" className="mt-0 w-full">
+                        {/* Commented out - Other Frameworks tab removed */}
+                        {/* <TabsContent value="other-frameworks" className="mt-0 w-full">
                             <div className="w-full grid grid-cols-3 gap-y-8 md:grid-cols-4 lg:grid-cols-6">
                                 {otherFrameworksTechs.map((tech, index) => (
                                     <TechnologyCard key={index} icon={tech.icon} name={tech.name} />
                                 ))}
                             </div>
-                        </TabsContent>
+                        </TabsContent> */}
                     </Tabs>
                 </div>
             </Container>

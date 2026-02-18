@@ -1,8 +1,43 @@
-import React from "react";
+"use client";
+import React, { useEffect } from "react";
 import Image from "next/image";
+import useEmblaCarousel from "embla-carousel-react";
 import Container from "../Container";
 
+const LOGO_DATA = [
+    { src: "/1Figure.webp", alt: "Figure 1", width: "w-32", height: "h-28" },
+    { src: "/2Figure.webp", alt: "Figure 2", width: "w-28", height: "h-28" },
+    { src: "/3 Figure.webp", alt: "Figure 3", width: "w-28", height: "h-28" },
+    { src: "/4Figure.webp", alt: "Figure 4", width: "w-32", height: "h-28" },
+    { src: "/5Figure.webp", alt: "Figure 5", width: "w-24", height: "h-28" },
+];
+
 export default function ProudWork() {
+    // Duplicate logos for infinite feel
+    const logos = [...LOGO_DATA, ...LOGO_DATA, ...LOGO_DATA];
+
+    const [emblaRef, emblaApi] = useEmblaCarousel({
+        loop: true,
+        align: "start",
+        skipSnaps: false,
+    });
+
+    useEffect(() => {
+        if (!emblaApi) return;
+
+        const autoplay = () => {
+            if (emblaApi.canScrollNext()) {
+                emblaApi.scrollNext();
+            } else {
+                emblaApi.scrollTo(0);
+            }
+        };
+
+        const interval = setInterval(autoplay, 3000);
+
+        return () => clearInterval(interval);
+    }, [emblaApi]);
+
     return (
         <section className="relative w-full bg-white py-20 overflow-hidden">
             {/* Background Vectors Matches Provided Design - Positioned Right */}
@@ -40,22 +75,16 @@ export default function ProudWork() {
                     </h2>
                 </div>
 
-                {/* Logos Grid */}
-                <div className="w-full flex flex-wrap justify-between items-center gap-10 lg:gap-16">
-                    <div className="w-32 h-28 relative transition-all">
-                        <Image src="/1Figure.webp" alt="Figure 1" fill className="object-contain" />
-                    </div>
-                    <div className="w-28 h-28 relative transition-all">
-                        <Image src="/2Figure.webp" alt="Figure 2" fill className="object-contain" />
-                    </div>
-                    <div className="w-28 h-28 relative transition-all">
-                        <Image src="/3 Figure.webp" alt="Figure 3" fill className="object-contain" />
-                    </div>
-                    <div className="w-32 h-28 relative transition-all">
-                        <Image src="/4Figure.webp" alt="Figure 4" fill className="object-contain" />
-                    </div>
-                    <div className="w-24 h-28 relative transition-all">
-                        <Image src="/5Figure.webp" alt="Figure 5" fill className="object-contain" />
+                {/* Carousel */}
+                <div className="w-full max-w-[1240px] px-4 md:px-10 overflow-hidden" ref={emblaRef}>
+                    <div className="flex items-center">
+                        {logos.map((logo, index) => (
+                            <div key={index} className="flex-[0_0_12rem] sm:flex-[0_0_16rem] min-w-0 flex justify-center items-center mx-4">
+                                <div className="w-32 h-28 relative transition-all hover:scale-110 grayscale hover:grayscale-0">
+                                    <Image src={logo.src} alt={logo.alt} fill className="object-contain" />
+                                </div>
+                            </div>
+                        ))}
                     </div>
                 </div>
             </Container>

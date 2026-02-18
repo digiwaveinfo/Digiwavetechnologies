@@ -55,7 +55,7 @@ export default function PortfolioCard({ id, title, description, imageUrl, techno
             {tag && (
               <div className="flex items-center gap-2">
                 <MobileIcon />
-                <span className="text-[#00BFD2] font-medium text-sm">{tag}</span>
+                <span className="text-[#00BFD2] font-normal font-['Inter'] italic text-sm">{tag}</span>
               </div>
             )}
 

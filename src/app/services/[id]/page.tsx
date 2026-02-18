@@ -90,7 +90,7 @@ const serviceData: Record<string, {
     technologies: ["React", "Next.js", "Node.js", "TypeScript", "PostgreSQL", "AWS"],
     stats: [
       { number: "3x", label: "Faster Loading" },
-      { number: "100%", label: "Mobile Responsive" },
+      { number: "99.99%", label: "Mobile Responsive" },
       { number: "99%", label: "Uptime Guarantee" }
     ],
     ctaTitle: "Ready to Build Your Next Web Application?",
@@ -314,7 +314,7 @@ export default async function ServiceDetailPage({ params }: ServiceDetailPagePro
             <div className="space-y-8 order-2 lg:order-1">
               <div className="space-y-6">
                 <div className="inline-block px-4 py-2 bg-[#00BFD2]/20 rounded-full border border-[#00BFD2]/30">
-                  <span className="text-[#62F4F3] text-sm font-medium">Premium Service</span>
+                  <span className="text-[#62F4F3] text-sm font-medium italic">Premium Service</span>
                 </div>
                 <h1 className="text-white text-4xl sm:text-5xl lg:text-6xl font-bold font-['Inter'] leading-tight">
                   {service.title}

@@ -2,13 +2,23 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { useState } from "react";
 import Container from "./Container";
 
 export default function Header() {
   const pathname = usePathname();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false);
+
+  const services = [
+    { id: "ai-machine-learning", title: "AI & ML Solutions" },
+    { id: "web-application-development", title: "Web App Development" },
+    { id: "mobile-app-development", title: "Mobile App Development" },
+    { id: "cloud-devops-services", title: "Cloud & DevOps" },
+    { id: "automation-data-intelligence", title: "Data Intelligence" },
+    { id: "iot-solutions", title: "IoT Solutions" },
+  ];
 
   // Enhanced isActive function that highlights parent section for inner pages
   const isActive = (path: string) => {
@@ -20,7 +30,7 @@ export default function Header() {
     if (path === "/") return pathname === "/";
 
     // For Portfolio - highlight when on /portfolio/* pages
-    // if (path === "/portfolio" && pathname.startsWith("/portfolio/")) return true;
+    if (path === "/portfolio" && pathname.startsWith("/portfolio/")) return true;
 
     // For Services - highlight when on /services/* pages
     if (path === "/services" && pathname.startsWith("/services/")) return true;
@@ -40,10 +50,9 @@ export default function Header() {
   const navLinks = [
     { href: "/", label: "Home" },
     { href: "/about", label: "About Us" },
-    { href: "/services", label: "Services" },
+    { href: "/services", label: "Services", hasDropdown: true },
+    { href: "/portfolio", label: "Portfolio" },
     { href: "/blog", label: "Blog" },
-    // { href: "/product", label: "Product" }, // Temporarily hidden
-    // { href: "/portfolio", label: "Portfolio" },
   ];
 
   return (
@@ -53,19 +62,21 @@ export default function Header() {
         <Container className="h-full flex items-center justify-between">
           {/* Email */}
           <a href="mailto:info@digiwavetechnologies.in" className="flex items-center gap-2 text-white hover:opacity-80 transition-opacity">
-            <span className="text-base font-medium hidden sm:inline">info@digiwavetechnologies.in</span>
+            <span className="text-base font-normal hidden sm:inline">info@digiwavetechnologies.in</span>
           </a>
 
           <div className="flex justify-start items-center gap-4">
-            {/* Facebook */}
-            <a href="#" className="relative w-7 h-7 hover:opacity-80 transition-opacity">
+            {/* LinkedIn */}
+            <a href="https://www.linkedin.com/company/digiwave-technologies" target="_blank" rel="noopener noreferrer" className="relative w-7 h-7 hover:opacity-80 transition-opacity">
               <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
                 <rect width="25.2727" height="25.2727" rx="4.21212" fill="#00BFD2" />
-                <path d="M9.08754 13.131H10.7328V19.9739C10.7328 20.109 10.8411 20.2185 10.9749 20.2185H13.7645C13.8982 20.2185 14.0065 20.109 14.0065 19.9739V13.1633H15.8979C16.0209 13.1633 16.1243 13.07 16.1384 12.9466L16.4256 10.4274C16.4335 10.3581 16.4118 10.2887 16.3659 10.2367C16.3199 10.1846 16.2542 10.1548 16.1852 10.1548H14.0066V8.57567C14.0066 8.09963 14.2603 7.85824 14.7608 7.85824C14.8321 7.85824 16.1852 7.85824 16.1852 7.85824C16.3189 7.85824 16.4273 7.74871 16.4273 7.61366V5.30126C16.4273 5.16615 16.3189 5.05668 16.1852 5.05668H14.2221C14.2083 5.056 14.1775 5.05487 14.1322 5.05487C13.7916 5.05487 12.6077 5.12242 11.6725 5.99164C10.6362 6.95487 10.7803 8.10819 10.8147 8.30816V10.1548H9.08754C8.95382 10.1548 8.84546 10.2643 8.84546 10.3994V12.8864C8.84546 13.0215 8.95382 13.131 9.08754 13.131Z" fill="#FEFFFF" />
+                <path d="M8.29587 9.3606H5.58544C5.46515 9.3606 5.36768 9.4764 5.36768 9.61921V19.96C5.36768 20.1028 5.46515 20.2186 5.58544 20.2186H8.29587C8.41617 20.2186 8.51364 20.1028 8.51364 19.96V9.61921C8.51364 9.4764 8.41617 9.3606 8.29587 9.3606Z" fill="#FEFFFF" />
+                <path d="M6.90315 5.05493C5.88363 5.05493 5.0542 5.88387 5.0542 6.90276C5.0542 7.9221 5.88363 8.75135 6.90315 8.75135C7.92186 8.75135 8.75062 7.92206 8.75062 6.90276C8.75066 5.88387 7.92186 5.05493 6.90315 5.05493Z" fill="#FEFFFF" />
+                <path d="M16.6492 9.3606C15.4147 9.3606 14.5021 9.9035 13.9486 10.5204V9.86429C13.9486 9.72479 13.838 9.61166 13.7016 9.61166H10.7579C10.6215 9.61166 10.511 9.72479 10.511 9.86429V19.9659C10.511 20.1055 10.6215 20.2186 10.7579 20.2186H13.825C13.9614 20.2186 14.0719 20.1055 14.0719 19.9659V14.968C14.0719 13.2838 14.5191 12.6276 15.6668 12.6276C16.9167 12.6276 17.016 13.6795 17.016 15.0546V19.966C17.016 20.1055 17.1265 20.2186 17.2629 20.2186H19.9714C20.1078 20.2186 20.2183 20.1055 20.2183 19.966V14.4251C20.2183 11.9207 19.5471 9.3606 16.6492 9.3606Z" fill="#FEFFFF" />
               </svg>
             </a>
             {/* Instagram */}
-            <a href="#" className="relative w-7 h-7 hover:opacity-80 transition-opacity">
+            <a href="https://www.instagram.com/digiwave_technologies?igsh=bjlvcjB4YW5oczc4" target="_blank" rel="noopener noreferrer" className="relative w-7 h-7 hover:opacity-80 transition-opacity">
               <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
                 <rect width="25.2727" height="25.2727" rx="4.21212" fill="#00BFD2" />
                 <path d="M5.05444 8.84584C5.05444 7.84043 5.45384 6.8762 6.16477 6.16526C6.87571 5.45433 7.83994 5.05493 8.84535 5.05493H16.4272C17.4326 5.05493 18.3968 5.45433 19.1077 6.16526C19.8187 6.8762 20.2181 7.84043 20.2181 8.84584V16.4277C20.2181 17.4331 19.8187 18.3973 19.1077 19.1082C18.3968 19.8192 17.4326 20.2186 16.4272 20.2186H8.84535C7.83994 20.2186 6.87571 19.8192 6.16477 19.1082C5.45384 18.3973 5.05444 17.4331 5.05444 16.4277V8.84584Z" stroke="#FEFFFF" strokeWidth="1.26364" strokeLinecap="round" strokeLinejoin="round" />
@@ -73,22 +84,11 @@ export default function Header() {
                 <path d="M16.9004 8.37213V8.38266" stroke="#FEFFFF" strokeWidth="1.26364" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </a>
-            {/* Twitter/X */}
-            <a href="#" className="relative w-7 h-7 hover:opacity-80 transition-opacity">
+            {/* Facebook */}
+            <a href="https://www.facebook.com/share/1JJfr1MZXC/" target="_blank" rel="noopener noreferrer" className="relative w-7 h-7 hover:opacity-80 transition-opacity">
               <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
                 <rect width="25.2727" height="25.2727" rx="4.21212" fill="#00BFD2" />
-                <g transform="translate(5, 5)">
-                  <path d="M5.22337 1.89569C5.30987 1.89573 5.39543 1.91352 5.47477 1.94797C5.55411 1.98243 5.62552 2.0328 5.6846 2.09598L5.73262 2.1541L8.43301 5.83634L12.1898 2.08081C12.3035 1.9675 12.4561 1.90171 12.6165 1.89681C12.777 1.89191 12.9333 1.94827 13.0537 2.05443C13.1741 2.1606 13.2496 2.30862 13.2648 2.46842C13.28 2.62822 13.2338 2.78782 13.1356 2.91481L13.0832 2.9742L9.18929 6.86747L13.1457 12.2632C13.2113 12.3526 13.2521 12.4577 13.2642 12.5679C13.2762 12.6781 13.2591 12.7895 13.2145 12.891C13.1698 12.9924 13.0993 13.0804 13.0099 13.146C12.9206 13.2115 12.8155 13.2525 12.7054 13.2646L12.6365 13.2684H9.94053C9.85403 13.2684 9.76847 13.2506 9.68913 13.2161C9.60979 13.1817 9.53837 13.1313 9.4793 13.0681L9.43128 13.01L6.72963 9.32714L2.9741 13.0833C2.8604 13.1966 2.70783 13.2624 2.54738 13.2673C2.38693 13.2722 2.23063 13.2158 2.11023 13.1097C1.98983 13.0035 1.91435 12.8555 1.89912 12.6957C1.8839 12.5359 1.93008 12.3763 2.02827 12.2493L2.08071 12.1899L5.97334 8.29601L2.01816 2.90091C1.95264 2.8115 1.91181 2.70642 1.89975 2.59623C1.88769 2.48605 1.90483 2.37462 1.94945 2.27316C1.99407 2.17169 2.0646 2.08374 2.15396 2.01815C2.24332 1.95256 2.34836 1.91164 2.45854 1.89948L2.5274 1.89569H5.22337Z" fill="#FEFFFF" />
-                </g>
-              </svg>
-            </a>
-            {/* LinkedIn */}
-            <a href="#" className="relative w-7 h-7 hover:opacity-80 transition-opacity">
-              <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
-                <rect width="25.2727" height="25.2727" rx="4.21212" fill="#00BFD2" />
-                <path d="M8.29587 9.3606H5.58544C5.46515 9.3606 5.36768 9.4764 5.36768 9.61921V19.96C5.36768 20.1028 5.46515 20.2186 5.58544 20.2186H8.29587C8.41617 20.2186 8.51364 20.1028 8.51364 19.96V9.61921C8.51364 9.4764 8.41617 9.3606 8.29587 9.3606Z" fill="#FEFFFF" />
-                <path d="M6.90315 5.05493C5.88363 5.05493 5.0542 5.88387 5.0542 6.90276C5.0542 7.9221 5.88363 8.75135 6.90315 8.75135C7.92186 8.75135 8.75062 7.92206 8.75062 6.90276C8.75066 5.88387 7.92186 5.05493 6.90315 5.05493Z" fill="#FEFFFF" />
-                <path d="M16.6492 9.3606C15.4147 9.3606 14.5021 9.9035 13.9486 10.5204V9.86429C13.9486 9.72479 13.838 9.61166 13.7016 9.61166H10.7579C10.6215 9.61166 10.511 9.72479 10.511 9.86429V19.9659C10.511 20.1055 10.6215 20.2186 10.7579 20.2186H13.825C13.9614 20.2186 14.0719 20.1055 14.0719 19.9659V14.968C14.0719 13.2838 14.5191 12.6276 15.6668 12.6276C16.9167 12.6276 17.016 13.6795 17.016 15.0546V19.966C17.016 20.1055 17.1265 20.2186 17.2629 20.2186H19.9714C20.1078 20.2186 20.2183 20.1055 20.2183 19.966V14.4251C20.2183 11.9207 19.5471 9.3606 16.6492 9.3606Z" fill="#FEFFFF" />
+                <path d="M9.08754 13.131H10.7328V19.9739C10.7328 20.109 10.8411 20.2185 10.9749 20.2185H13.7645C13.8982 20.2185 14.0065 20.109 14.0065 19.9739V13.1633H15.8979C16.0209 13.1633 16.1243 13.07 16.1384 12.9466L16.4256 10.4274C16.4335 10.3581 16.4118 10.2887 16.3659 10.2367C16.3199 10.1846 16.2542 10.1548 16.1852 10.1548H14.0066V8.57567C14.0066 8.09963 14.2603 7.85824 14.7608 7.85824C14.8321 7.85824 16.1852 7.85824 16.1852 7.85824C16.3189 7.85824 16.4273 7.74871 16.4273 7.61366V5.30126C16.4273 5.16615 16.3189 5.05668 16.1852 5.05668H14.2221C14.2083 5.056 14.1775 5.05487 14.1322 5.05487C13.7916 5.05487 12.6077 5.12242 11.6725 5.99164C10.6362 6.95487 10.7803 8.10819 10.8147 8.30816V10.1548H9.08754C8.95382 10.1548 8.84546 10.2643 8.84546 10.3994V12.8864C8.84546 13.0215 8.95382 13.131 9.08754 13.131Z" fill="#FEFFFF" />
               </svg>
             </a>
           </div>
@@ -113,15 +113,49 @@ export default function Header() {
           {/* Desktop Menu */}
           <div className="hidden xl:flex items-center gap-4">
             {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className={`px-6 py-2.5 rounded-[90px] flex justify-center items-center gap-2 transition-colors ${isActive(link.href) ? 'bg-[#00BFD2]/10' : 'hover:bg-gray-50 rounded-full'}`}
-              >
-                <span className={`text-lg font-medium font-['Inter'] leading-tight ${isActive(link.href) ? 'text-[#00BFD2]' : 'text-stone-950'}`}>
-                  {link.label}
-                </span>
-              </Link>
+              <div key={link.href} className="relative">
+                {link.hasDropdown ? (
+                  <div
+                    className="relative group"
+                    onMouseEnter={() => setIsServicesDropdownOpen(true)}
+                    onMouseLeave={() => setIsServicesDropdownOpen(false)}
+                  >
+                    <Link
+                      href={link.href}
+                      className={`px-6 py-2.5 rounded-[90px] flex justify-center items-center gap-2 transition-colors ${isActive(link.href) ? 'bg-[#00BFD2]/10' : 'hover:bg-gray-50 rounded-full'}`}
+                    >
+                      <span className={`text-lg font-medium font-['Inter'] leading-tight ${isActive(link.href) ? 'text-[#00BFD2]' : 'text-stone-950'}`}>
+                        {link.label}
+                      </span>
+                      <ChevronDown className={`w-4 h-4 transition-transform ${isServicesDropdownOpen ? 'rotate-180' : ''} ${isActive(link.href) ? 'text-[#00BFD2]' : 'text-stone-950'}`} />
+                    </Link>
+                    
+                    {/* Dropdown Menu with bridge */}
+                    <div className={`absolute top-full left-0 pt-2 ${isServicesDropdownOpen ? 'block' : 'hidden'}`}>
+                      <div className="w-64 bg-white rounded-2xl shadow-lg border border-gray-100 py-2 z-50">
+                        {services.map((service) => (
+                          <Link
+                            key={service.id}
+                            href={`/services/${service.id}`}
+                            className="block px-6 py-3 text-stone-950 text-base font-normal font-['Inter'] hover:bg-[#00BFD2]/10 hover:text-[#00BFD2] transition-colors"
+                          >
+                            {service.title}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                ) : (
+                  <Link
+                    href={link.href}
+                    className={`px-6 py-2.5 rounded-[90px] flex justify-center items-center gap-2 transition-colors ${isActive(link.href) ? 'bg-[#00BFD2]/10' : 'hover:bg-gray-50 rounded-full'}`}
+                  >
+                    <span className={`text-lg font-medium font-['Inter'] leading-tight ${isActive(link.href) ? 'text-[#00BFD2]' : 'text-stone-950'}`}>
+                      {link.label}
+                    </span>
+                  </Link>
+                )}
+              </div>
             ))}
           </div>
 
@@ -163,17 +197,50 @@ export default function Header() {
         <div className="xl:hidden bg-white border-t border-gray-100 shadow-lg">
           <nav className="flex flex-col py-4 px-4 sm:px-6">
             {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                onClick={() => setIsMobileMenuOpen(false)}
-                className={`py-3 px-4 rounded-lg text-lg font-medium font-['Inter'] transition-colors ${isActive(link.href)
-                  ? 'bg-[#00BFD2]/10 text-[#00BFD2]'
-                  : 'text-stone-950 hover:bg-gray-50'
-                  }`}
-              >
-                {link.label}
-              </Link>
+              <div key={link.href}>
+                {link.hasDropdown ? (
+                  <div>
+                    <button
+                      onClick={() => setIsServicesDropdownOpen(!isServicesDropdownOpen)}
+                      className={`w-full py-3 px-4 rounded-lg text-lg font-medium font-['Inter'] transition-colors flex items-center justify-between ${isActive(link.href)
+                        ? 'bg-[#00BFD2]/10 text-[#00BFD2]'
+                        : 'text-stone-950 hover:bg-gray-50'
+                        }`}
+                    >
+                      <span>{link.label}</span>
+                      <ChevronDown className={`w-4 h-4 transition-transform ${isServicesDropdownOpen ? 'rotate-180' : ''}`} />
+                    </button>
+                    {isServicesDropdownOpen && (
+                      <div className="pl-4 mt-1">
+                        {services.map((service) => (
+                          <Link
+                            key={service.id}
+                            href={`/services/${service.id}`}
+                            onClick={() => {
+                              setIsMobileMenuOpen(false);
+                              setIsServicesDropdownOpen(false);
+                            }}
+                            className="block py-2 px-4 text-base font-normal font-['Inter'] text-stone-950 hover:text-[#00BFD2] transition-colors"
+                          >
+                            {service.title}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                ) : (
+                  <Link
+                    href={link.href}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className={`py-3 px-4 rounded-lg text-lg font-medium font-['Inter'] transition-colors ${isActive(link.href)
+                      ? 'bg-[#00BFD2]/10 text-[#00BFD2]'
+                      : 'text-stone-950 hover:bg-gray-50'
+                      }`}
+                  >
+                    {link.label}
+                  </Link>
+                )}
+              </div>
             ))}
             <button
               onClick={() => {

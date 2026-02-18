@@ -5,8 +5,8 @@ export default function WhoWeAre() {
     <section className="pt-12 lg:pt-16 w-full">
       <Container>
         {/* Who We Are Section */}
-        <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
-          <div className="w-full lg:flex-[0_0_400px]">
+        <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-20">
+          <div className="w-full lg:w-auto">
             <h2 className="text-sky-950 font-inter font-bold text-3xl lg:text-[40px] leading-tight lg:leading-[60px] mb-4 text-center lg:text-left">
               Who We Are
             </h2>
