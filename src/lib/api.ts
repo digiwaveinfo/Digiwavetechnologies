@@ -46,6 +46,7 @@ export interface PortfolioItem {
   full_description: string;
   tag: string;
   card_image_url?: string;
+  card_images?: { id: string; image_url: string; display_order: number }[];
   hero_image_url?: string;
   home_featured_image_url?: string;
   showcase_image_url?: string;
@@ -144,6 +145,83 @@ export async function getPortfolioBySlug(slug: string): Promise<PortfolioItem | 
     return null;
   }
 }
+
+// ─── Blog types ──────────────────────────────────────────────────────────────
+
+export interface BlogPost {
+  id: string;
+  slug: string;
+  title: string;
+  excerpt: string;
+  content: string;
+  category: string;
+  author_name: string;
+  author_image_url?: string;
+  cover_image_url?: string;
+  hero_image_url?: string;
+  meta_title?: string;
+  meta_description?: string;
+  meta_keywords?: string;
+  status: 'draft' | 'published';
+  is_featured: boolean;
+  display_order: number;
+  published_at?: string;
+  created_at: string;
+  updated_at: string;
+}
+
+// Fetch all published blog posts
+export async function getBlogs(): Promise<BlogPost[]> {
+  try {
+    const response = await fetch(`${API_BASE_URL}/blog/public/`, {
+      method: 'GET',
+      headers: { 'Content-Type': 'application/json' },
+      next: { revalidate: 60 },
+    });
+    if (!response.ok) {
+      console.error('Failed to fetch blogs');
+      return [];
+    }
+    return response.json();
+  } catch (error) {
+    console.error('Error fetching blogs:', error);
+    return [];
+  }
+}
+
+// Fetch featured blog posts
+export async function getFeaturedBlogs(): Promise<BlogPost[]> {
+  try {
+    const response = await fetch(`${API_BASE_URL}/blog/featured/`, {
+      method: 'GET',
+      headers: { 'Content-Type': 'application/json' },
+      next: { revalidate: 60 },
+    });
+    if (!response.ok) return [];
+    return response.json();
+  } catch (error) {
+    console.error('Error fetching featured blogs:', error);
+    return [];
+  }
+}
+
+// Fetch single blog post by slug
+export async function getBlogBySlug(slug: string): Promise<BlogPost | null> {
+  try {
+    const response = await fetch(`${API_BASE_URL}/blog/${slug}/`, {
+      method: 'GET',
+      headers: { 'Content-Type': 'application/json' },
+      next: { revalidate: 30 },
+    });
+    if (!response.ok) return null;
+    return response.json();
+  } catch (error) {
+    console.error('Error fetching blog post:', error);
+    return null;
+  }
+}
+
+// ─── Contact / Demo booking ──────────────────────────────────────────────────
 
 export async function submitContactForm(data: ContactFormData): Promise<ApiResponse> {
   try {

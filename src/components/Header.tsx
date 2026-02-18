@@ -194,24 +194,24 @@ export default function Header() {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="xl:hidden bg-white border-t border-gray-100 shadow-lg">
-          <nav className="flex flex-col py-4 px-4 sm:px-6">
+        <div className="xl:hidden bg-white border-t border-gray-100 shadow-lg max-h-[calc(100vh-120px)] overflow-y-auto">
+          <nav className="flex flex-col py-4 px-4 sm:px-6 gap-1">
             {navLinks.map((link) => (
-              <div key={link.href}>
+              <div key={link.href} className="w-full">
                 {link.hasDropdown ? (
-                  <div>
+                  <div className="w-full">
                     <button
                       onClick={() => setIsServicesDropdownOpen(!isServicesDropdownOpen)}
-                      className={`w-full py-3 px-4 rounded-lg text-lg font-medium font-['Inter'] transition-colors flex items-center justify-between ${isActive(link.href)
+                      className={`w-full py-3 px-4 rounded-lg text-base sm:text-lg font-medium font-['Inter'] transition-colors flex items-center justify-between ${isActive(link.href)
                         ? 'bg-[#00BFD2]/10 text-[#00BFD2]'
                         : 'text-stone-950 hover:bg-gray-50'
                         }`}
                     >
                       <span>{link.label}</span>
-                      <ChevronDown className={`w-4 h-4 transition-transform ${isServicesDropdownOpen ? 'rotate-180' : ''}`} />
+                      <ChevronDown className={`w-5 h-5 transition-transform ${isServicesDropdownOpen ? 'rotate-180' : ''}`} />
                     </button>
                     {isServicesDropdownOpen && (
-                      <div className="pl-4 mt-1">
+                      <div className="mt-1 ml-2 border-l-2 border-[#00BFD2]/20 pl-2">
                         {services.map((service) => (
                           <Link
                             key={service.id}
@@ -220,7 +220,7 @@ export default function Header() {
                               setIsMobileMenuOpen(false);
                               setIsServicesDropdownOpen(false);
                             }}
-                            className="block py-2 px-4 text-base font-normal font-['Inter'] text-stone-950 hover:text-[#00BFD2] transition-colors"
+                            className="block py-2.5 px-4 text-sm sm:text-base font-normal font-['Inter'] text-stone-950 hover:text-[#00BFD2] hover:bg-[#00BFD2]/5 rounded-lg transition-colors"
                           >
                             {service.title}
                           </Link>
@@ -232,7 +232,7 @@ export default function Header() {
                   <Link
                     href={link.href}
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className={`py-3 px-4 rounded-lg text-lg font-medium font-['Inter'] transition-colors ${isActive(link.href)
+                    className={`block w-full py-3 px-4 rounded-lg text-base sm:text-lg font-medium font-['Inter'] transition-colors ${isActive(link.href)
                       ? 'bg-[#00BFD2]/10 text-[#00BFD2]'
                       : 'text-stone-950 hover:bg-gray-50'
                       }`}
@@ -250,7 +250,7 @@ export default function Header() {
                   contactSection.scrollIntoView({ behavior: 'smooth' });
                 }
               }}
-              className="mt-4 py-3 px-4 bg-[#00BFD2] rounded-full text-center text-white text-sm font-bold font-['Inter'] uppercase tracking-wide hover:opacity-90 transition-opacity"
+              className="mt-4 w-full py-3.5 px-6 bg-[#00BFD2] rounded-full text-center text-white text-sm sm:text-base font-bold font-['Inter'] uppercase tracking-wide hover:opacity-90 transition-opacity"
             >
               Contact Us
             </button>

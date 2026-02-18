@@ -53,21 +53,21 @@ export default function CoreValues() {
     return (
         <section className="w-full bg-white pt-20 lg:pt-28 pb-12 relative z-10">
             <Container className="max-w-[1800px]">
-                <div className="grid grid-cols-4 gap-6 lg:gap-11">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-11">
                     {values.map((val, index) => (
                         <div
                             key={index}
-                            className="w-full p-3 lg:p-4 bg-white rounded-2xl shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] flex flex-col justify-start items-center lg:items-start gap-3 lg:gap-5 hover:scale-105 transition-transform duration-300 text-center lg:text-left"
+                            className="w-full p-6 sm:p-4 lg:p-4 bg-white rounded-2xl shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] flex flex-col justify-start items-center sm:items-start gap-4 sm:gap-3 lg:gap-5 hover:scale-105 transition-transform duration-300 text-center sm:text-left"
                         >
-                            <div className="w-12 h-12 lg:w-16 lg:h-16 relative">
-                                <div className="absolute left-0 top-0 overflow-hidden scale-75 lg:scale-100">
+                            <div className="w-16 h-16 lg:w-16 lg:h-16 relative">
+                                <div className="absolute left-0 top-0 overflow-hidden">
                                     {val.icon}
                                 </div>
                             </div>
-                            <h3 className="self-stretch text-sky-700 text-xl lg:text-3xl font-semibold font-['Inter'] leading-6 lg:leading-8">
+                            <h3 className="self-stretch text-sky-700 text-2xl sm:text-xl lg:text-3xl font-semibold font-['Inter'] leading-7 sm:leading-6 lg:leading-8">
                                 {val.title}
                             </h3>
-                            <p className="self-stretch text-black text-xs lg:text-base font-normal font-['Inter'] leading-4 lg:leading-6">
+                            <p className="self-stretch text-black text-sm sm:text-xs lg:text-base font-normal font-['Inter'] leading-5 sm:leading-4 lg:leading-6">
                                 {val.description}
                             </p>
                         </div>

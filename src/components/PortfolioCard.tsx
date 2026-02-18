@@ -1,4 +1,6 @@
+"use client";
 
+import { useEffect, useRef, useState } from "react";
 
 interface Technology {
   id: number;
@@ -12,12 +14,28 @@ interface PortfolioCardProps {
   title: string;
   description: string;
   imageUrl: string;
+  images?: { id: string; image_url: string }[];
   technologies: Technology[];
   tag?: string;
   subtitle?: string;
 }
 
-export default function PortfolioCard({ id, title, description, imageUrl, technologies, tag = "", subtitle = "All Services One Solution" }: PortfolioCardProps) {
+export default function PortfolioCard({ id, title, description, imageUrl, images = [], technologies, tag = "", subtitle = "All Services One Solution" }: PortfolioCardProps) {
+  // Build slides: prefer card_images array, fall back to single imageUrl
+  const slides = images.length > 0
+    ? images.map(img => img.image_url)
+    : [imageUrl || "/portfolio-card-image.webp"];
+
+  const [current, setCurrent] = useState(0);
+  const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
+
+  useEffect(() => {
+    if (slides.length <= 1) return;
+    timerRef.current = setInterval(() => {
+      setCurrent(prev => (prev + 1) % slides.length);
+    }, 3000);
+    return () => { if (timerRef.current) clearInterval(timerRef.current); };
+  }, [slides.length]);
   // Filter to show only main technologies (language, platform) on card
   const mainCategories = ['language', 'platform'];
   const mainTechnologies = technologies.filter(tech =>
@@ -33,13 +51,37 @@ export default function PortfolioCard({ id, title, description, imageUrl, techno
     <div
       className="group bg-white rounded-xl border border-[#E8E8EA] overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2 h-[520px] flex flex-col"
     >
-      {/* Image */}
+      {/* Image Carousel */}
       <div className="relative w-full h-60 flex-shrink-0 rounded-t-xl overflow-hidden m-4 mb-0" style={{ width: 'calc(100% - 2rem)' }}>
-        <img
-          src={imageUrl || "/portfolio-card-image.webp"}
-          alt={title}
-          className="w-full h-full object-fill rounded-lg group-hover:scale-105 transition-transform duration-500"
-        />
+        {/* Slides */}
+        <div
+          className="flex h-full transition-transform duration-700 ease-in-out"
+          style={{ transform: `translateX(-${current * 100}%)`, width: `${slides.length * 100}%` }}
+        >
+          {slides.map((src, i) => (
+            <img
+              key={i}
+              src={src}
+              alt={title}
+              className="h-full object-fill rounded-lg flex-shrink-0"
+              style={{ width: `${100 / slides.length}%` }}
+            />
+          ))}
+        </div>
+        {/* Dot indicators — only if multiple slides */}
+        {slides.length > 1 && (
+          <div className="absolute bottom-2 left-0 right-0 flex justify-center gap-1.5">
+            {slides.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setCurrent(i)}
+                className={`w-1.5 h-1.5 rounded-full transition-colors ${
+                  i === current ? 'bg-white' : 'bg-white/50'
+                }`}
+              />
+            ))}
+          </div>
+        )}
       </div>
 
       {/* Content */}

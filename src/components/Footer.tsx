@@ -2,8 +2,27 @@
 
 import Link from "next/link";
 import Container from "./Container";
+import { useState } from "react";
 
 export default function Footer() {
+  const [email, setEmail] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [subscribed, setSubscribed] = useState(false);
+
+  const handleSubscribe = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email) return;
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+      setSubscribed(true);
+      setTimeout(() => {
+        setSubscribed(false);
+        setEmail("");
+      }, 4000);
+    }, 900);
+  };
+
   return (
     <footer className="w-full flex flex-col">
       {/* Insights Section - Top */}
@@ -28,16 +47,43 @@ export default function Footer() {
             </div>
 
             {/* Subscribe Form */}
-            <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+            <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
               <input
                 type="email"
-                placeholder="Email address"
-                className="w-full sm:w-[350px] md:w-[464px] px-6 py-4 bg-white rounded-full text-indigo-950 text-lg font-semibold font-['Inter'] placeholder:text-indigo-950/50 focus:outline-none focus:ring-2 focus:ring-[#00BFD2]"
+                placeholder={subscribed ? "Thank you for subscribing!" : "Email address"}
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                disabled={loading || subscribed}
+                required
+                className="w-full sm:w-[350px] md:w-[464px] px-6 py-4 bg-white rounded-full text-indigo-950 text-lg font-semibold font-['Inter'] placeholder:text-indigo-950/50 focus:outline-none focus:ring-2 focus:ring-[#00BFD2] disabled:opacity-60 disabled:cursor-not-allowed transition-all"
               />
-              <button className="px-8 py-4 bg-[#00BFD2] rounded-full text-white text-lg font-bold font-['Inter'] uppercase hover:opacity-90 transition-opacity whitespace-nowrap">
-                Subscribe
+              <button
+                type="submit"
+                disabled={loading || subscribed}
+                className={`px-8 py-4 rounded-full text-white text-lg font-bold font-['Inter'] uppercase whitespace-nowrap transition-all duration-300 disabled:cursor-not-allowed flex items-center justify-center gap-2 min-w-[140px] ${
+                  subscribed ? 'bg-green-500' : 'bg-[#00BFD2] hover:opacity-90'
+                }`}
+              >
+                {loading ? (
+                  <>
+                    <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
+                    </svg>
+                    Sending...
+                  </>
+                ) : subscribed ? (
+                  <>
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                    Subscribed!
+                  </>
+                ) : (
+                  'Subscribe'
+                )}
               </button>
-            </div>
+            </form>
           </div>
         </Container>
       </div>
