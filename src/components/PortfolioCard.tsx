@@ -1,4 +1,4 @@
-import Link from "next/link";
+
 
 interface Technology {
   id: number;
@@ -18,13 +18,7 @@ interface PortfolioCardProps {
 }
 
 export default function PortfolioCard({ id, title, description, imageUrl, technologies, tag = "", subtitle = "All Services One Solution" }: PortfolioCardProps) {
-  // Split title into two parts for the styled display on the right
-  const titleParts = title.split(' ');
-  const firstWord = titleParts[0] || '';
-  const restWords = titleParts.slice(1).join(' ') || '';
-
   // Filter to show only main technologies (language, platform) on card
-  // Other categories (framework, library, database, tool) will be shown on detail page
   const mainCategories = ['language', 'platform'];
   const mainTechnologies = technologies.filter(tech =>
     tech.category && mainCategories.includes(tech.category)
@@ -36,62 +30,48 @@ export default function PortfolioCard({ id, title, description, imageUrl, techno
     : technologies.slice(0, 3);
 
   return (
-    <div className="w-full">
-      <div className="relative w-full h-[520px] rounded-[20px] bg-white shadow-[2px_6px_8.4px_-3px_rgba(64,64,64,0.27)] overflow-hidden flex flex-col">
-        {/* Top Section - Simple Image */}
-        <div className="relative w-full h-[220px] flex-shrink-0 overflow-hidden">
-          <img
-            src={imageUrl || "/portfolio-card-image.webp"}
-            alt={title}
-            className="w-full h-full object-fill"
-          />
+    <div
+      className="group bg-white rounded-xl border border-[#E8E8EA] overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2 h-[520px] flex flex-col"
+    >
+      {/* Image */}
+      <div className="relative w-full h-60 flex-shrink-0 rounded-t-xl overflow-hidden m-4 mb-0" style={{ width: 'calc(100% - 2rem)' }}>
+        <img
+          src={imageUrl || "/portfolio-card-image.webp"}
+          alt={title}
+          className="w-full h-full object-fill rounded-lg group-hover:scale-105 transition-transform duration-500"
+        />
+      </div>
+
+      {/* Content */}
+      <div className="p-4 pt-4 pb-4 flex flex-col flex-1">
+        {/* Tag Badge - fixed height area */}
+        <div className="h-8 mb-2">
+          {tag && (
+            <div className="inline-flex px-2.5 py-1 bg-[#00BFD2]/10 rounded-md">
+              <span className="text-[#00BFD2] text-sm font-medium">{tag}</span>
+            </div>
+          )}
         </div>
 
-        {/* Content Section */}
-        <div className="relative px-5 pt-4 pb-5 flex flex-col flex-1">
-          {/* Top Row - Tag and Styled Title */}
-          <div className="flex items-start justify-between mb-4">
-            {/* Tag Label */}
-            {tag && (
-              <div className="flex items-center gap-2">
-                <MobileIcon />
-                <span className="text-[#00BFD2] font-normal font-['Inter'] italic text-sm">{tag}</span>
-              </div>
-            )}
+        {/* Title - fixed height for 2 lines */}
+        <h3 className="text-[#181A2A] text-xl font-semibold leading-7 group-hover:text-[#00BFD2] transition-colors line-clamp-2 mb-2 min-h-[56px]">
+          {title}
+        </h3>
 
-            {/* Project Name - Styled on Right */}
-            <div className="text-right hidden md:block flex-shrink-0">
-              <h3 className="text-[#37B7FE] font-['Alumni_Sans'] text-[24px] font-extrabold leading-[26px] tracking-[0.3px] whitespace-nowrap">{firstWord}</h3>
-              {restWords && (
-                <h3 className="text-[#034175] font-['Alumni_Sans'] text-[24px] font-extrabold leading-[24px] tracking-[0.3px] whitespace-nowrap">{restWords}</h3>
-              )}
-              <p className="text-[#37B7FE] text-[7px] font-semibold leading-[9px] tracking-[0.1px] mt-0.5 whitespace-nowrap">{subtitle}</p>
-            </div>
-          </div>
+        {/* Description - fixed height for 3 lines */}
+        <p className="text-[#97989F] text-sm leading-relaxed line-clamp-3 min-h-[63px]">
+          {description}
+        </p>
 
-          {/* Main Content */}
-          <div className="flex-1">
-            <h1 className="text-black font-bold text-lg leading-tight mb-2 whitespace-nowrap overflow-hidden text-ellipsis">{title}</h1>
-            <p className="text-black text-sm leading-relaxed line-clamp-4">{description}</p>
-          </div>
+        {/* Spacer to push bottom section down */}
+        <div className="flex-1"></div>
 
-          {/* Bottom Section - Tech Icons and Arrow */}
-          <div className="flex items-center justify-between mt-auto pt-3">
-            {/* Tech Icons - Only main technologies (language, platform) */}
-            <div className="flex items-center gap-2">
-              {displayTechnologies.map((tech, index) => (
-                <TechIcon key={index} tech={tech} />
-              ))}
-            </div>
-
-            {/* Arrow Button */}
-            <Link
-              href={`/portfolio/${id}`}
-              className="flex items-center justify-center w-[80px] h-[48px] rounded-[5px] bg-[rgba(129,188,255,0.14)] hover:bg-[rgba(129,188,255,0.24)] transition-colors"
-              aria-label="Learn more"
-            >
-              <ArrowIcon />
-            </Link>
+        {/* Bottom Section - Tech Icons */}
+        <div className="flex items-center pt-3 mt-3 border-t border-[#E8E8EA]">
+          <div className="flex items-center gap-2">
+            {displayTechnologies.map((tech, index) => (
+              <TechIcon key={index} tech={tech} />
+            ))}
           </div>
         </div>
       </div>
@@ -106,8 +86,8 @@ function TechIcon({ tech }: { tech: Technology }) {
   // If technology has an uploaded icon, use it
   if (tech.icon_url) {
     return (
-      <div className="w-[40px] h-[40px] rounded-full bg-gradient-to-br from-[#a8b5e0] via-[#8F9ED1] to-[#7889c4] flex items-center justify-center shadow-sm overflow-hidden" title={name}>
-        <img src={tech.icon_url} alt={name} className="w-6 h-6 object-contain" />
+      <div className="w-[36px] h-[36px] rounded-full bg-gradient-to-br from-[#a8b5e0] via-[#8F9ED1] to-[#7889c4] flex items-center justify-center shadow-sm overflow-hidden" title={name}>
+        <img src={tech.icon_url} alt={name} className="w-5 h-5 object-contain" />
       </div>
     );
   }
@@ -121,53 +101,21 @@ function TechIcon({ tech }: { tech: Technology }) {
     if (lowerName.includes('node')) return <NodeIcon />;
     if (lowerName.includes('java')) return <JavaIcon />;
     // Default icon with first letter
-    return <span className="text-white font-bold text-sm">{name.charAt(0).toUpperCase()}</span>;
+    return <span className="text-white font-bold text-xs">{name.charAt(0).toUpperCase()}</span>;
   };
 
   return (
-    <div className="w-[40px] h-[40px] rounded-full bg-gradient-to-br from-[#a8b5e0] via-[#8F9ED1] to-[#7889c4] flex items-center justify-center shadow-sm" title={name}>
+    <div className="w-[36px] h-[36px] rounded-full bg-gradient-to-br from-[#a8b5e0] via-[#8F9ED1] to-[#7889c4] flex items-center justify-center shadow-sm" title={name}>
       {getIcon()}
     </div>
   );
 }
 
 // SVG Icons
-function MobileIcon() {
-  return (
-    <svg width="22" height="22" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <g clipPath="url(#clip0_92_2300)">
-        <path d="M7.25 6.04167C7.25 5.40073 7.50461 4.78604 7.95783 4.33283C8.41104 3.87961 9.02573 3.625 9.66667 3.625H19.3333C19.9743 3.625 20.589 3.87961 21.0422 4.33283C21.4954 4.78604 21.75 5.40073 21.75 6.04167V22.9583C21.75 23.5993 21.4954 24.214 21.0422 24.6672C20.589 25.1204 19.9743 25.375 19.3333 25.375H9.66667C9.02573 25.375 8.41104 25.1204 7.95783 24.6672C7.50461 24.214 7.25 23.5993 7.25 22.9583V6.04167Z" stroke="#00BFD2" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-        <path d="M13.2915 4.83325H15.7082" stroke="#00BFD2" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-        <path d="M14.5 20.5417V20.5533" stroke="#00BFD2" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-      </g>
-      <defs>
-        <clipPath id="clip0_92_2300">
-          <rect width="29" height="29" fill="white" />
-        </clipPath>
-      </defs>
-    </svg>
-  );
-}
-
-function ArrowIcon() {
-  return (
-    <svg width="36" height="36" viewBox="0 0 49 49" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <g clipPath="url(#clip0_92_1959)">
-        <path d="M6.125 24.5H42.875" stroke="#034175" strokeWidth="4.08333" strokeLinecap="round" strokeLinejoin="round" />
-        <path d="M36.75 30.625L42.875 24.5L36.75 18.375" stroke="#034175" strokeWidth="4.08333" strokeLinecap="round" strokeLinejoin="round" />
-      </g>
-      <defs>
-        <clipPath id="clip0_92_1959">
-          <rect width="49" height="49" fill="white" transform="matrix(0 -1 1 0 0 49)" />
-        </clipPath>
-      </defs>
-    </svg>
-  );
-}
 
 function PHPIconSmall() {
   return (
-    <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg width="20" height="20" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
       <g clipPath="url(#clip0_92_2318)">
         <mask id="mask0_92_2318" style={{ maskType: 'luminance' }} maskUnits="userSpaceOnUse" x="-6" y="-6" width="36" height="36">
           <path d="M29.4029 -5.15308H-5.15332V29.4032H29.4029V-5.15308Z" fill="white" />
@@ -190,7 +138,7 @@ function PHPIconSmall() {
 
 function SwiftIconSmall() {
   return (
-    <svg width="25" height="22" viewBox="0 0 25 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg width="20" height="18" viewBox="0 0 25 22" fill="none" xmlns="http://www.w3.org/2000/svg">
       <g clipPath="url(#clip0_92_2330)">
         <path d="M15.6522 -2.59448C28.9781 6.29826 24.6568 16.0701 24.6568 16.0701C24.6568 16.0701 28.442 20.2588 26.9207 23.9284C26.9207 23.9284 25.3502 21.3652 22.7433 21.3652C20.2237 21.3652 18.7327 23.9284 13.646 23.9284C2.33206 23.9284 -3.03125 14.6568 -3.03125 14.6568C7.1649 21.2496 14.131 16.5778 14.131 16.5778C9.52734 13.9672 -0.236874 1.46542 -0.236874 1.46542C8.27507 8.57169 11.9485 10.4377 11.9485 10.4377C9.73953 8.66451 3.58433 -0.0255504 3.58433 -0.0255504C8.50999 4.86035 18.3007 11.673 18.3007 11.673C21.1084 4.14425 15.6522 -2.59448 15.6522 -2.59448Z" fill="#FF5722" />
       </g>
@@ -205,7 +153,7 @@ function SwiftIconSmall() {
 
 function PythonIcon() {
   return (
-    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
       <g clipPath="url(#clip0_92_2335)">
         <mask id="mask0_92_2335" style={{ maskType: 'luminance' }} maskUnits="userSpaceOnUse" x="0" y="0" width="20" height="20">
           <path d="M19.4 0H0V19.4H19.4V0Z" fill="white" />
@@ -232,10 +180,9 @@ function PythonIcon() {
   );
 }
 
-
 function ReactIcon() {
   return (
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
       <circle cx="12" cy="12" r="2.5" fill="#61DAFB" />
       <ellipse cx="12" cy="12" rx="10" ry="4" stroke="#61DAFB" strokeWidth="1.5" fill="none" />
       <ellipse cx="12" cy="12" rx="10" ry="4" stroke="#61DAFB" strokeWidth="1.5" fill="none" transform="rotate(60 12 12)" />
@@ -246,7 +193,7 @@ function ReactIcon() {
 
 function NodeIcon() {
   return (
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M12 2L3 7V17L12 22L21 17V7L12 2Z" fill="#339933" />
       <path d="M12 6L7 9V15L12 18L17 15V9L12 6Z" fill="#fff" />
     </svg>
@@ -255,7 +202,7 @@ function NodeIcon() {
 
 function JavaIcon() {
   return (
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M8.851 18.56s-.917.534.653.714c1.902.218 2.874.187 4.969-.211 0 0 .552.346 1.321.646-4.699 2.013-10.633-.118-6.943-1.149M8.276 15.933s-1.028.762.542.924c2.032.209 3.636.227 6.413-.308 0 0 .384.389.987.602-5.679 1.661-12.007.13-7.942-1.218" fill="#5382A1" />
       <path d="M13.116 11.475c1.158 1.333-.304 2.533-.304 2.533s2.939-1.518 1.589-3.418c-1.261-1.772-2.228-2.652 3.007-5.688 0 0-8.216 2.051-4.292 6.573" fill="#E76F00" />
     </svg>
