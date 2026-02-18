@@ -1,6 +1,5 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Container from "./Container";
-import Image from "next/image";
 
 interface TechnologyCardProps {
     icon: string;
@@ -10,7 +9,7 @@ interface TechnologyCardProps {
 const TechnologyCard = ({ icon, name }: TechnologyCardProps) => (
     <div className="flex flex-col items-center gap-4">
         <div className="w-[100px] h-[100px] flex items-center justify-center">
-            <Image src={icon} alt={name} width={100} height={100} />
+            <img src={icon} alt={name} width={100} height={100} className="object-contain" />
         </div>
         <h3 className="font-['Inter'] text-base font-normal leading-5 text-[#0F0F10] text-center">{name}</h3>
     </div>
@@ -21,42 +20,31 @@ export default function TechnologySection() {
         { icon: "/technologies/Python.svg", name: "Python" },
         { icon: "/technologies/nodejs.svg", name: "Node.js" },
         { icon: "/technologies/php.svg", name: "PHP" },
-        { icon: "/technologies/django.svg", name: "Django" },
+        { icon: "/technologies/g318.svg", name: "Django" },
         { icon: "/technologies/flask.svg", name: "Flask" },
         { icon: "/technologies/laravel.svg", name: "Laravel" },
         { icon: "/technologies/reactjs.svg", name: "React.js" },
         { icon: "/technologies/nextjs.svg", name: "Next.js" },
         { icon: "/technologies/html.svg", name: "HTML" },
-        { icon: "/technologies/css.svg", name: "CSS" },
+        { icon: "/technologies/CSS.svg", name: "CSS" },
         { icon: "/technologies/javascript.svg", name: "JavaScript" },
         { icon: "/technologies/jquery.svg", name: "jQuery" },
         { icon: "/technologies/typescript.svg", name: "TypeScript" },
-        // Commented out - not in the list
-        // { icon: "/technologies/swift.svg", name: "Swift" },
-        // { icon: "/technologies/g318.svg", name: "GraphQL" },
-        // { icon: "/technologies/java.svg", name: "Java" },
-        // { icon: "/technologies/ruby.svg", name: "Ruby" },
-        // { icon: "/technologies/c.svg", name: "C++" },
     ];
 
     const mobileAppsTechs = [
-        { icon: "/technologies/react-native.svg", name: "React Native" },
+        { icon: "/technologies/reactjs.svg", name: "React Native" },
         { icon: "/technologies/flutter.svg", name: "Flutter" },
-        // Commented out - not in the list
-        // { icon: "/technologies/swift.svg", name: "Swift" },
-        // { icon: "/technologies/kotlin.svg", name: "Kotlin" },
-        // { icon: "/technologies/xamarin.svg", name: "Xamarin" },
-        // { icon: "/technologies/nativescript.svg", name: "NativeScript" },
     ];
 
     const databasesTechs = [
         { icon: "/technologies/PostgreSQL.svg", name: "PostgreSQL" },
-        { icon: "/technologies/mysql.svg", name: "MySQL" },
-        { icon: "/technologies/sqlite.svg", name: "SQLite" },
-        { icon: "/technologies/mongodb.svg", name: "MongoDB" },
+        { icon: "/technologies/postgresSQL.svg", name: "MySQL" },
+        { icon: "/technologies/c.svg", name: "SQLite" },
         { icon: "/technologies/oracle.svg", name: "Oracle" },
-        { icon: "/technologies/redis.svg", name: "Redis" },
+        { icon: "/technologies/Redis.svg", name: "Redis" },
         { icon: "/technologies/firebase.svg", name: "Firebase" },
+        { icon: "/technologies/ruby.svg", name: "MongoDB" },
     ];
 
     const cloudDevOpsTechs = [
@@ -64,11 +52,6 @@ export default function TechnologySection() {
         { icon: "/technologies/azure.svg", name: "Microsoft Azure" },
         { icon: "/technologies/digitalocean.svg", name: "DigitalOcean" },
         { icon: "/technologies/hostinger.svg", name: "Hostinger" },
-        // Commented out - not in the list
-        // { icon: "/technologies/docker.svg", name: "Docker" },
-        // { icon: "/technologies/kubernetes.svg", name: "Kubernetes" },
-        // { icon: "/technologies/gcp.svg", name: "GCP" },
-        // { icon: "/technologies/jenkins.svg", name: "Jenkins" },
     ];
 
     // Commented out - "Other Frameworks" category removed as items are now in Web Platform
