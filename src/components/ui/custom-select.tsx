@@ -15,6 +15,7 @@ interface CustomSelectProps {
     options: SelectOption[];
     placeholder?: string;
     className?: string;
+    tabIndex?: number;
 }
 
 export function CustomSelect({
@@ -23,6 +24,7 @@ export function CustomSelect({
     options,
     placeholder = "Select...",
     className,
+    tabIndex,
 }: CustomSelectProps) {
     const [isOpen, setIsOpen] = React.useState(false);
     const [mounted, setMounted] = React.useState(false);
@@ -93,8 +95,8 @@ export function CustomSelect({
                         setIsOpen(false);
                     }}
                     className={`w-full px-4 py-2.5 text-left text-sm transition-colors ${value === option.value
-                            ? "bg-[#00BFD2]/10 text-[#00BFD2] font-medium"
-                            : "text-gray-700 hover:bg-gray-50"
+                        ? "bg-[#00BFD2]/10 text-[#00BFD2] font-medium"
+                        : "text-gray-700 hover:bg-gray-50"
                         }`}
                 >
                     {option.label}
@@ -108,7 +110,11 @@ export function CustomSelect({
             <button
                 ref={triggerRef}
                 type="button"
+                tabIndex={tabIndex}
                 onClick={() => setIsOpen(!isOpen)}
+                onKeyDown={(e) => {
+                    if (e.key === 'Escape') setIsOpen(false);
+                }}
                 className={`w-full flex items-center justify-between px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg text-left focus:ring-2 focus:ring-[#00BFD2] focus:border-transparent outline-none transition-all hover:bg-gray-100 ${className}`}
             >
                 <span className={selectedOption ? "text-gray-800" : "text-gray-500"}>

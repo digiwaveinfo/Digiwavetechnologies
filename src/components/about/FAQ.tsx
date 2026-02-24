@@ -47,7 +47,7 @@ export default function FAQ() {
           src="/faqbackground.webp"
           alt=""
           fill
-          className="object-fill"
+          className="object-cover object-top"
         />
       </div>
 

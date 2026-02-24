@@ -191,6 +191,7 @@ export default function BookDemoPage() {
                           name="fullName"
                           value={formData.fullName}
                           onChange={handleInputChange}
+                          tabIndex={1}
                           className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#00BFD2] focus:border-transparent outline-none transition-all"
                           placeholder="John Doe"
                           required
@@ -203,6 +204,7 @@ export default function BookDemoPage() {
                           name="email"
                           value={formData.email}
                           onChange={handleInputChange}
+                          tabIndex={2}
                           className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#00BFD2] focus:border-transparent outline-none transition-all"
                           placeholder="name@company.com"
                           required
@@ -219,6 +221,7 @@ export default function BookDemoPage() {
                           name="phone"
                           value={formData.phone}
                           onChange={handleInputChange}
+                          tabIndex={3}
                           className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#00BFD2] focus:border-transparent outline-none transition-all"
                           placeholder="+91 9428418099"
                           required
@@ -231,6 +234,7 @@ export default function BookDemoPage() {
                           name="company"
                           value={formData.company}
                           onChange={handleInputChange}
+                          tabIndex={4}
                           className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#00BFD2] focus:border-transparent outline-none transition-all"
                           placeholder="Company Ltd"
                         />
@@ -247,6 +251,7 @@ export default function BookDemoPage() {
                         onChange={(value) => setFormData((prev) => ({ ...prev, selectedService: value }))}
                         options={services.map((s) => ({ value: s.id, label: s.label }))}
                         placeholder="Select a topic for the demo..."
+                        tabIndex={5}
                       />
                     </div>
 
@@ -259,6 +264,8 @@ export default function BookDemoPage() {
                         onDateChange={handleDateSelect}
                         onTimeChange={handleTimeSelect}
                         minDate={new Date()}
+                        dateTabIndex={6}
+                        timeTabIndex={7}
                       />
                     </div>
 
@@ -269,6 +276,7 @@ export default function BookDemoPage() {
                         value={formData.requirements}
                         onChange={handleInputChange}
                         rows={3}
+                        tabIndex={7}
                         className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#00BFD2] focus:border-transparent outline-none transition-all resize-none"
                         placeholder="Any specific features or questions you have in mind?"
                       />
@@ -278,6 +286,7 @@ export default function BookDemoPage() {
                       <button
                         type="submit"
                         disabled={isSubmitting}
+                        tabIndex={8}
                         className="w-full px-8 py-4 bg-[#00BFD2] text-white font-bold text-lg rounded-xl hover:bg-[#00a8b8] transition-all disabled:opacity-50 disabled:cursor-not-allowed shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 flex items-center justify-center gap-2"
                       >
                         {isSubmitting ? "Confirming..." : "Confirm Booking"}

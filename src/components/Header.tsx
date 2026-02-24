@@ -3,13 +3,25 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X, ChevronDown } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import Container from "./Container";
 
 export default function Header() {
   const pathname = usePathname();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setIsServicesDropdownOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
 
   const services = [
     { id: "ai-machine-learning", title: "AI & ML Solutions" },
@@ -116,27 +128,34 @@ export default function Header() {
               <div key={link.href} className="relative">
                 {link.hasDropdown ? (
                   <div
-                    className="relative group"
-                    onMouseEnter={() => setIsServicesDropdownOpen(true)}
-                    onMouseLeave={() => setIsServicesDropdownOpen(false)}
+                    className="relative"
+                    ref={dropdownRef}
                   >
-                    <Link
-                      href={link.href}
-                      className={`px-6 py-2.5 rounded-[90px] flex justify-center items-center gap-2 transition-colors ${isActive(link.href) ? 'bg-[#00BFD2]/10' : 'hover:bg-gray-50 rounded-full'}`}
+                    <button
+                      onClick={() => setIsServicesDropdownOpen(!isServicesDropdownOpen)}
+                      className={`px-6 py-2.5 rounded-[90px] flex justify-center items-center gap-2 transition-colors cursor-pointer ${isActive(link.href) ? 'bg-[#00BFD2]/10' : 'hover:bg-gray-50 rounded-full'}`}
                     >
                       <span className={`text-lg font-medium font-['Inter'] leading-tight ${isActive(link.href) ? 'text-[#00BFD2]' : 'text-stone-950'}`}>
                         {link.label}
                       </span>
                       <ChevronDown className={`w-4 h-4 transition-transform ${isServicesDropdownOpen ? 'rotate-180' : ''} ${isActive(link.href) ? 'text-[#00BFD2]' : 'text-stone-950'}`} />
-                    </Link>
-                    
-                    {/* Dropdown Menu with bridge */}
+                    </button>
+
+                    {/* Dropdown Menu */}
                     <div className={`absolute top-full left-0 pt-2 ${isServicesDropdownOpen ? 'block' : 'hidden'}`}>
                       <div className="w-64 bg-white rounded-2xl shadow-lg border border-gray-100 py-2 z-50">
+                        <Link
+                          href="/services"
+                          onClick={() => setIsServicesDropdownOpen(false)}
+                          className="block px-6 py-3 text-[#00BFD2] text-base font-semibold font-['Inter'] hover:bg-[#00BFD2]/10 transition-colors border-b border-gray-100"
+                        >
+                          Our Services
+                        </Link>
                         {services.map((service) => (
                           <Link
                             key={service.id}
                             href={`/services/${service.id}`}
+                            onClick={() => setIsServicesDropdownOpen(false)}
                             className="block px-6 py-3 text-stone-950 text-base font-normal font-['Inter'] hover:bg-[#00BFD2]/10 hover:text-[#00BFD2] transition-colors"
                           >
                             {service.title}
@@ -212,6 +231,16 @@ export default function Header() {
                     </button>
                     {isServicesDropdownOpen && (
                       <div className="mt-1 ml-2 border-l-2 border-[#00BFD2]/20 pl-2">
+                        <Link
+                          href="/services"
+                          onClick={() => {
+                            setIsMobileMenuOpen(false);
+                            setIsServicesDropdownOpen(false);
+                          }}
+                          className="block py-2.5 px-4 text-sm sm:text-base font-semibold font-['Inter'] text-[#00BFD2] hover:bg-[#00BFD2]/5 rounded-lg transition-colors"
+                        >
+                          Our Services
+                        </Link>
                         {services.map((service) => (
                           <Link
                             key={service.id}

@@ -60,9 +60,8 @@ export default function Footer() {
               <button
                 type="submit"
                 disabled={loading || subscribed}
-                className={`px-8 py-4 rounded-full text-white text-lg font-bold font-['Inter'] uppercase whitespace-nowrap transition-all duration-300 disabled:cursor-not-allowed flex items-center justify-center gap-2 min-w-[140px] ${
-                  subscribed ? 'bg-green-500' : 'bg-[#00BFD2] hover:opacity-90'
-                }`}
+                className={`px-8 py-4 rounded-full text-white text-lg font-bold font-['Inter'] uppercase whitespace-nowrap transition-all duration-300 disabled:cursor-not-allowed flex items-center justify-center gap-2 min-w-[140px] ${subscribed ? 'bg-green-500' : 'bg-[#00BFD2] hover:opacity-90'
+                  }`}
               >
                 {loading ? (
                   <>
@@ -131,6 +130,9 @@ export default function Footer() {
                 </Link>
                 <Link href="/blog" className="text-[#00114C] text-base font-normal font-['Inter'] leading-[26px] hover:text-[#00BFD2] transition-colors">
                   Blog
+                </Link>
+                <Link href="/careers" className="text-[#00114C] text-base font-normal font-['Inter'] leading-[26px] hover:text-[#00BFD2] transition-colors">
+                  Careers
                 </Link>
                 <Link href="/contact" className="text-[#00114C] text-base font-normal font-['Inter'] leading-[26px] hover:text-[#00BFD2] transition-colors">
                   Contact us

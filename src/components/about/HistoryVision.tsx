@@ -17,7 +17,7 @@ export default function HistoryVision() {
                                 Our History
                             </div>
                             <div className="text-stone-950 text-base font-normal font-['Inter'] leading-6">
-                                From a small development team to a global technology partner — we've helped brands worldwide embrace cloud and AI-driven transformation.
+                                Evolved from a dedicated development team into a trusted technology partner delivering scalable web, mobile, and AI-driven solutions for diverse industries.
                             </div>
                         </div>
                     </div>
@@ -32,7 +32,7 @@ export default function HistoryVision() {
                                 Our Vision
                             </div>
                             <div className="text-stone-950 text-base font-normal font-['Inter'] leading-6">
-                                Become the most trusted partner for digital transformation — speed, quality, security, and innovation at our core.
+                                To be recognized as a reliable partner for digital transformation, known for innovation, quality, and performance as a leading AI Development Company in India.
                             </div>
                         </div>
                     </div>
@@ -47,7 +47,7 @@ export default function HistoryVision() {
                                 Our Mission
                             </div>
                             <div className="text-stone-950 text-base font-normal font-['Inter'] leading-6">
-                                To help forward-looking businesses harness the power of technology — from automation with AI to responsive, user-centric applications.
+                                Enable business growth through secure, user-centric digital products, supported by robust Web Development Services in India and advanced mobile and IoT solutions.
                             </div>
                         </div>
                     </div>

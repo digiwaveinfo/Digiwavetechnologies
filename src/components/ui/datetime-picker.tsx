@@ -19,6 +19,8 @@ interface DateTimePickerProps {
     onDateChange: (date: Date | undefined) => void;
     onTimeChange: (time: string) => void;
     minDate?: Date;
+    dateTabIndex?: number;
+    timeTabIndex?: number;
 }
 
 export function DateTimePicker({
@@ -27,6 +29,8 @@ export function DateTimePicker({
     onDateChange,
     onTimeChange,
     minDate = new Date(),
+    dateTabIndex,
+    timeTabIndex,
 }: DateTimePickerProps) {
     const [showCalendar, setShowCalendar] = React.useState(false);
     const [showTimePicker, setShowTimePicker] = React.useState(false);
@@ -133,8 +137,8 @@ export function DateTimePicker({
                             setShowTimePicker(false);
                         }}
                         className={`py-2 px-2 text-xs font-medium border rounded-lg transition-all ${selectedTime === time
-                                ? "bg-[#00BFD2] text-white border-[#00BFD2]"
-                                : "bg-white text-gray-700 border-gray-200 hover:border-[#00BFD2] hover:text-[#00BFD2]"
+                            ? "bg-[#00BFD2] text-white border-[#00BFD2]"
+                            : "bg-white text-gray-700 border-gray-200 hover:border-[#00BFD2] hover:text-[#00BFD2]"
                             }`}
                     >
                         {time}
@@ -152,6 +156,7 @@ export function DateTimePicker({
                 <button
                     ref={dateRef}
                     type="button"
+                    tabIndex={dateTabIndex}
                     onClick={() => {
                         setShowCalendar(!showCalendar);
                         setShowTimePicker(false);
@@ -171,6 +176,7 @@ export function DateTimePicker({
                 <button
                     ref={timeRef}
                     type="button"
+                    tabIndex={timeTabIndex}
                     onClick={() => {
                         setShowTimePicker(!showTimePicker);
                         setShowCalendar(false);
