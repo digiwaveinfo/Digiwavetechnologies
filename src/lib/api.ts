@@ -288,3 +288,69 @@ export async function submitDemoBooking(data: DemoBookingFormData): Promise<ApiR
     };
   }
 }
+
+// ─── Career / Job Openings ───────────────────────────────────────────────────
+
+export interface JobOpening {
+  id: number;
+  title: string;
+  job_type: string;
+  job_type_display: string;
+  location: string;
+  description: string;
+  tags: string[];
+  created_at: string;
+}
+
+// Fetch active job openings
+export async function getJobOpenings(): Promise<JobOpening[]> {
+  try {
+    const response = await fetch(`${API_BASE_URL}/contact/career/openings/`, {
+      method: 'GET',
+      headers: { 'Content-Type': 'application/json' },
+      cache: 'no-store',
+    });
+
+    if (!response.ok) {
+      console.error('Failed to fetch job openings');
+      return [];
+    }
+
+    const data = await response.json();
+    return Array.isArray(data) ? data : (data.results || []);
+  } catch (error) {
+    console.error('Error fetching job openings:', error);
+    return [];
+  }
+}
+
+// Submit career application with resume
+export async function submitCareerApplication(data: FormData): Promise<ApiResponse> {
+  try {
+    const response = await fetch(`${API_BASE_URL}/contact/career/apply/`, {
+      method: 'POST',
+      body: data, // FormData — no Content-Type header (browser sets multipart boundary)
+    });
+
+    const result = await response.json();
+
+    if (!response.ok) {
+      return {
+        success: false,
+        message: result.message || 'Failed to submit application. Please try again.',
+        errors: result.errors,
+      };
+    }
+
+    return {
+      success: true,
+      message: result.message || 'Your application has been submitted successfully!',
+    };
+  } catch (error) {
+    console.error('Career application submission error:', error);
+    return {
+      success: false,
+      message: 'Network error. Please check your connection and try again.',
+    };
+  }
+}

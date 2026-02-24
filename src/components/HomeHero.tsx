@@ -25,7 +25,7 @@ export default function HomeHero() {
 
       {/* Content Container */}
       <div className="relative z-10 h-full flex items-center justify-center lg:justify-start mx-auto w-[94%] xl:w-[90%] 2xl:w-[85%]">
-        <div className="w-full max-w-[619px] xl:max-w-[750px] inline-flex flex-col justify-start items-center lg:items-start gap-5 sm:gap-7 text-center lg:text-left">
+        <div className="w-full max-w-[619px] lg:max-w-[55%] xl:max-w-[50%] inline-flex flex-col justify-start items-center lg:items-start gap-5 sm:gap-7 text-center lg:text-left">
           {/* Main Content */}
           <div className="self-stretch flex flex-col justify-start items-center lg:items-start gap-4 sm:gap-5">
             {/* Free Consultation Badge */}
@@ -37,7 +37,7 @@ export default function HomeHero() {
 
             {/* Main Heading */}
             <h1 className="self-stretch justify-center flex flex-col space-y-1 text-white text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-[42px] font-bold font-['Inter'] leading-tight">
-              <span className="xl:whitespace-nowrap">Digiwave Technologies Empowering Businesses</span>
+              <span>Digiwave Technologies Empowering Businesses</span>
               <span>with Intelligent <span className="text-cyan-300">Tech Solutions</span></span>
             </h1>
 

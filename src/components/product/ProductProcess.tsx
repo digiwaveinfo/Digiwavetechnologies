@@ -57,26 +57,26 @@ export default function ProductProcess() {
           </div>
 
           {/* Process Cards Grid */}
-          <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+          <div className="w-full grid grid-cols-2 gap-3 sm:gap-6 lg:gap-8">
             {PROCESS_STEPS.map((step, index) => (
               <div
                 key={index}
-                className="group w-full min-h-[346px] lg:h-[346px] relative bg-[rgba(200,217,215,0.08)] rounded-[26px] overflow-hidden transition-all duration-300 outline-none border-2 border-transparent hover:bg-[rgba(0,242,217,0.06)] hover:shadow-[1px_0px_5.3px_1px_rgba(0,242,217,0.06)] hover:border-[#00BFD2]"
+                className="group w-full min-h-[200px] sm:min-h-[346px] lg:h-[346px] relative bg-[rgba(200,217,215,0.08)] rounded-[16px] sm:rounded-[26px] overflow-hidden transition-all duration-300 outline-none border-2 border-transparent hover:bg-[rgba(0,242,217,0.06)] hover:shadow-[1px_0px_5.3px_1px_rgba(0,242,217,0.06)] hover:border-[#00BFD2]"
               >
                 {/* Step Number */}
-                <div className="absolute left-[22px] top-[-1px] text-[rgba(200,217,215,0.21)] group-hover:text-[rgba(148,227,219,0.21)] text-[133px] font-extrabold font-['Inter'] leading-none select-none transition-colors duration-300">
+                <div className="absolute left-[12px] sm:left-[22px] top-[-1px] text-[rgba(200,217,215,0.21)] group-hover:text-[rgba(148,227,219,0.21)] text-[70px] sm:text-[133px] font-extrabold font-['Inter'] leading-none select-none transition-colors duration-300">
                   {step.number}
                 </div>
 
                 {/* Title Card */}
-                <div className="absolute left-[46px] top-[95px] w-[calc(100%-92px)] h-[87px] bg-white rounded-[11px] shadow-[0px_4px_2.8px_rgba(0,191,210,0.12)] overflow-hidden flex items-center px-6">
-                  <div className="text-[#0F0F10] text-2xl font-semibold font-['Inter'] leading-9">
+                <div className="absolute left-[16px] sm:left-[46px] top-[55px] sm:top-[95px] w-[calc(100%-32px)] sm:w-[calc(100%-92px)] h-[50px] sm:h-[87px] bg-white rounded-[8px] sm:rounded-[11px] shadow-[0px_4px_2.8px_rgba(0,191,210,0.12)] overflow-hidden flex items-center px-3 sm:px-6">
+                  <div className="text-[#0F0F10] text-sm sm:text-2xl font-semibold font-['Inter'] leading-5 sm:leading-9">
                     {step.title}
                   </div>
                 </div>
 
                 {/* Description */}
-                <div className="absolute left-[46px] top-[202px] w-[calc(100%-92px)] text-[#0F0F10] text-xl font-normal font-['Inter'] leading-[30px]">
+                <div className="absolute left-[16px] sm:left-[46px] top-[118px] sm:top-[202px] w-[calc(100%-32px)] sm:w-[calc(100%-92px)] text-[#0F0F10] text-xs sm:text-xl font-normal font-['Inter'] leading-4 sm:leading-[30px]">
                   {step.description}
                 </div>
               </div>
