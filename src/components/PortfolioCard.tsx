@@ -142,7 +142,7 @@ function TechIcon({ tech }: { tech: Technology }) {
   // If technology has an uploaded icon, use it
   if (tech.icon_url) {
     return (
-      <div className="relative z-10 w-[36px] h-[36px] rounded-full bg-[#E2E8F0] border-2 border-white flex items-center justify-center shadow-sm overflow-hidden transition-transform hover:z-20 hover:scale-110" title={name}>
+      <div className="relative z-10 w-[36px] h-[36px] rounded-full bg-white border border-[#E8E8EA] flex items-center justify-center shadow-sm overflow-hidden transition-transform hover:z-20 hover:scale-110" title={name}>
         <img src={tech.icon_url} alt={name} className="w-5 h-5 object-contain" />
       </div>
     );
@@ -162,7 +162,7 @@ function TechIcon({ tech }: { tech: Technology }) {
   };
 
   return (
-    <div className="relative z-10 w-[36px] h-[36px] rounded-full bg-[#E2E8F0] border-2 border-white flex items-center justify-center shadow-sm transition-transform hover:z-20 hover:scale-110" title={name}>
+    <div className="relative z-10 w-[36px] h-[36px] rounded-full bg-white border border-[#E8E8EA] flex items-center justify-center shadow-sm transition-transform hover:z-20 hover:scale-110" title={name}>
       {getIcon()}
     </div>
   );
