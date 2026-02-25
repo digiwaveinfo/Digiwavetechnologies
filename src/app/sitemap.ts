@@ -36,15 +36,30 @@ async function getServiceIds() {
 }
 
 async function getBlogSlugs() {
-  // Static blog slugs
-  return [
-    'impact-of-technology-on-workplace-1',
-    'impact-of-technology-on-workplace-2',
-    'impact-of-technology-on-workplace-3',
-    'impact-of-technology-on-workplace-4',
-    'impact-of-technology-on-workplace-5',
-    'impact-of-technology-on-workplace-6'
-  ]
+  try {
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL
+    const response = await fetch(`${apiUrl}/blog/public/`, {
+      next: { revalidate: 3600 }
+    })
+    if (!response.ok) {
+      console.error('Failed to fetch blogs for sitemap')
+      return []
+    }
+    const data = await response.json()
+    const blogs = Array.isArray(data) ? data : (data.results || [])
+    return blogs.map((b: any) => b.slug).filter(Boolean)
+  } catch (error) {
+    console.error('Error fetching blogs for sitemap:', error)
+    // Fallback to known slugs if API is unavailable
+    return [
+      'impact-of-technology-on-workplace-1',
+      'impact-of-technology-on-workplace-2',
+      'impact-of-technology-on-workplace-3',
+      'impact-of-technology-on-workplace-4',
+      'impact-of-technology-on-workplace-5',
+      'impact-of-technology-on-workplace-6'
+    ]
+  }
 }
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
@@ -97,6 +112,30 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified: currentDate,
       changeFrequency: 'weekly',
       priority: 0.64,
+    },
+    {
+      url: `${BASE_URL}/careers`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly',
+      priority: 0.75,
+    },
+    {
+      url: `${BASE_URL}/product`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
+      url: `${BASE_URL}/privacy`,
+      lastModified: currentDate,
+      changeFrequency: 'yearly',
+      priority: 0.3,
+    },
+    {
+      url: `${BASE_URL}/terms`,
+      lastModified: currentDate,
+      changeFrequency: 'yearly',
+      priority: 0.3,
     },
   ]
 
