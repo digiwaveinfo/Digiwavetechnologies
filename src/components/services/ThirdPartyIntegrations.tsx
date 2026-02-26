@@ -319,14 +319,14 @@ export default function ThirdPartyIntegrations() {
             {/* Navigation Arrows */}
             <button
               onClick={() => api?.scrollPrev()}
-              className="absolute -left-12 lg:-left-16 top-1/2 -translate-y-1/2 z-20 w-10 h-10 bg-white/70 backdrop-blur-md rounded-full flex items-center justify-center hover:bg-white/90 transition-all border border-white/50 shadow-lg"
+              className="absolute -left-12 lg:-left-16 top-1/2 -translate-y-1/2 z-20 w-10 h-10 bg-white/70 backdrop-blur-md rounded-full hidden sm:flex items-center justify-center hover:bg-white/90 transition-all border border-white/50 shadow-lg"
               aria-label="Previous slide"
             >
               <ChevronLeft className="w-6 h-6 text-[#00BFD2]" />
             </button>
             <button
               onClick={() => api?.scrollNext()}
-              className="absolute -right-12 lg:-right-16 top-1/2 -translate-y-1/2 z-20 w-10 h-10 bg-white/70 backdrop-blur-md rounded-full flex items-center justify-center hover:bg-white/90 transition-all border border-white/50 shadow-lg"
+              className="absolute -right-12 lg:-right-16 top-1/2 -translate-y-1/2 z-20 w-10 h-10 bg-white/70 backdrop-blur-md rounded-full hidden sm:flex items-center justify-center hover:bg-white/90 transition-all border border-white/50 shadow-lg"
               aria-label="Next slide"
             >
               <ChevronRight className="w-6 h-6 text-[#00BFD2]" />
