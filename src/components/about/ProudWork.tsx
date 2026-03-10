@@ -76,11 +76,11 @@ export default function ProudWork() {
                 </div>
 
                 {/* Carousel */}
-                <div className="w-full max-w-[1240px] px-4 md:px-10 overflow-hidden" ref={emblaRef}>
+                <div className="w-full max-w-[1240px] px-4 md:px-10 py-6 overflow-hidden" ref={emblaRef}>
                     <div className="flex items-center">
                         {logos.map((logo, index) => (
                             <div key={index} className="flex-[0_0_12rem] sm:flex-[0_0_16rem] min-w-0 flex justify-center items-center mx-4">
-                                <div className="w-32 h-28 relative transition-all hover:scale-110 grayscale hover:grayscale-0">
+                                <div className="w-36 h-32 relative transition-all hover:scale-110 grayscale hover:grayscale-0">
                                     <Image src={logo.src} alt={logo.alt} fill className="object-contain" />
                                 </div>
                             </div>
