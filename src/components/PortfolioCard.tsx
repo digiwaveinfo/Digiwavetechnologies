@@ -62,13 +62,18 @@ export default function PortfolioCard({ id, title, description, images = [], tec
           <>
             {/* Slides — absolute stacked, fade via opacity */}
             {slides.map((src, i) => (
-              <img
-                key={i}
-                src={src}
-                alt={title}
-                className="absolute inset-0 w-full h-full object-cover rounded-lg transition-opacity duration-700"
-                style={{ opacity: i === current ? 1 : 0 }}
-              />
+              <div key={i} className="absolute inset-0 w-full h-full transition-opacity duration-700" style={{ opacity: i === current ? 1 : 0 }}>
+                <img
+                  src={src}
+                  alt=""
+                  className="absolute inset-0 w-full h-full object-cover blur-md scale-105 opacity-40 rounded-lg"
+                />
+                <img
+                  src={src}
+                  alt={title}
+                  className="absolute inset-0 w-full h-full object-contain rounded-lg z-[1]"
+                />
+              </div>
             ))}
 
             {/* Arrows — only if multiple slides */}

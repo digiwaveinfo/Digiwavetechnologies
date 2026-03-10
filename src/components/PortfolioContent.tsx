@@ -68,7 +68,10 @@ const StickyCard = ({ i, card, cardType, progress, range, targetScale }: StickyC
       >
         <div className="w-full h-48 bg-stone-100 overflow-hidden relative z-[2]">
           {cardImage && (
-            <img src={cardImage} alt={card.title} className="w-full h-full object-fill object-top" />
+            <>
+              <img src={cardImage} alt="" className="absolute inset-0 w-full h-full object-cover blur-md scale-105 opacity-40" />
+              <img src={cardImage} alt={card.title} className="absolute inset-0 w-full h-full object-contain object-center relative z-[1]" />
+            </>
           )}
         </div>
         <div className="p-6 flex flex-col gap-5 relative">
@@ -99,7 +102,7 @@ const StickyCard = ({ i, card, cardType, progress, range, targetScale }: StickyC
           <div className="absolute left-0 top-0 w-[64%] h-full z-[1] bg-[#00BFD2]/10 pointer-events-none" />
         )}
         {backgroundImage && (
-          <img src={backgroundImage} alt="Card Background" className="absolute inset-0 z-0 w-full h-full object-fill pointer-events-none scale-[1.15]" />
+          <img src={backgroundImage} alt="Card Background" className="absolute inset-0 z-0 w-full h-full object-cover pointer-events-none scale-[1.15]" />
         )}
         {!backgroundImage && (
           <div className="absolute inset-0 z-0" style={{ background: getCardBgColor(cardType) }} />
@@ -121,7 +124,12 @@ const StickyCard = ({ i, card, cardType, progress, range, targetScale }: StickyC
           </Link>
         </div>
         <div className="absolute right-0 top-0 w-[36%] h-full bg-stone-100 overflow-hidden">
-          {cardImage && <img src={cardImage} alt={card.title} className="w-full h-full object-fill" />}
+          {cardImage && (
+            <>
+              <img src={cardImage} alt="" className="absolute inset-0 w-full h-full object-cover blur-md scale-105 opacity-40" />
+              <img src={cardImage} alt={card.title} className="absolute inset-0 w-full h-full object-contain object-center z-[1]" />
+            </>
+          )}
         </div>
       </motion.div>
     </div>
