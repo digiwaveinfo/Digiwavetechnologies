@@ -60,6 +60,7 @@ const G2Logo = () => (
 
 export default function Testimonials() {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [expanded, setExpanded] = useState(false);
 
   const reviews = [
     {
@@ -84,9 +85,11 @@ export default function Testimonials() {
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % reviews.length);
+    setExpanded(false);
   };
   const prevSlide = () => {
     setCurrentSlide((prev) => (prev - 1 + reviews.length) % reviews.length);
+    setExpanded(false);
   };
 
   return (
@@ -104,10 +107,10 @@ export default function Testimonials() {
 
             {/* Review Logos */}
             <div className="flex flex-row gap-8 sm:gap-8 lg:gap-10">
-              {/* Clutch */}
+              {/* Google */}
               <div className="flex flex-col gap-2 sm:gap-3">
                 <div className="w-[40px] h-[44px]">
-                  <ClutchLogo />
+                  <img src="/testimonials/google.svg" alt="Google" className="w-full h-full object-contain" />
                 </div>
                 <div className="flex gap-1">
                   {[...Array(5)].map((_, i) => <StarIcon key={i} />)}
@@ -118,10 +121,10 @@ export default function Testimonials() {
                   <span className="text-[#49515B] font-normal"> reviews</span>
                 </div>
               </div>
-              {/* G2 */}
+              {/* Hangouts */}
               <div className="flex flex-col gap-2 sm:gap-3">
                 <div className="w-[44px] h-[44px]">
-                  <G2Logo />
+                  <img src="/testimonials/hangouts.svg" alt="Hangouts" className="w-full h-full object-contain" />
                 </div>
                 <div className="flex gap-1">
                   {[...Array(5)].map((_, i) => <StarIcon key={i} />)}
@@ -137,13 +140,19 @@ export default function Testimonials() {
 
           {/* Testimonial Card */}
           <div className="w-full p-6 sm:p-8 md:p-[50px] bg-white rounded-[10px] shadow-[0px_4px_23px_0px_rgba(174,191,210,0.30)] flex flex-col justify-between relative overflow-hidden min-h-[500px] lg:min-h-[450px]">
-            <div className="mb-6 sm:mb-8 flex-1 lg:flex-initial">
+            <div className="mb-6 sm:mb-8">
               <h3 className="text-[#0064AC] text-base sm:text-2xl md:text-[30px] font-bold font-['Inter'] leading-snug sm:leading-9 mb-3 sm:mb-6 md:mb-8">
                 "{reviews[currentSlide].quote}"
               </h3>
-              <p className="text-[#00114C] text-[13px] leading-[1.6] sm:text-base md:text-lg lg:text-[22px] sm:leading-relaxed md:leading-[28px] lg:leading-[33px] font-normal font-['Inter']">
+              <p className={`text-[#00114C] text-[13px] leading-[1.6] sm:text-base md:text-lg lg:text-[22px] sm:leading-relaxed md:leading-[28px] lg:leading-[33px] font-normal font-['Inter'] ${!expanded ? 'line-clamp-3' : ''}`}>
                 {reviews[currentSlide].text}
               </p>
+              <button
+                onClick={() => setExpanded(!expanded)}
+                className="text-[#00BFD2] text-sm sm:text-base font-semibold font-['Inter'] mt-2 hover:underline cursor-pointer"
+              >
+                {expanded ? 'Read Less' : 'Read More'}
+              </button>
             </div>
 
             {/* Author & Navigation */}
