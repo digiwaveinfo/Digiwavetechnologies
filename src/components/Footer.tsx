@@ -60,7 +60,7 @@ export default function Footer() {
               <button
                 type="submit"
                 disabled={loading || subscribed}
-                className={`px-8 py-4 rounded-full text-white text-lg font-bold font-['Inter'] uppercase whitespace-nowrap transition-all duration-300 disabled:cursor-not-allowed flex items-center justify-center gap-2 min-w-[140px] ${subscribed ? 'bg-green-500' : 'bg-[#00BFD2] hover:opacity-90'
+                className={`px-8 py-4 rounded-full text-white text-lg font-bold font-['Inter'] uppercase whitespace-nowrap transition-all duration-300 cursor-pointer disabled:cursor-not-allowed flex items-center justify-center gap-2 min-w-[140px] ${subscribed ? 'bg-green-500' : 'bg-[#00BFD2] hover:opacity-90'
                   }`}
               >
                 {loading ? (
@@ -101,13 +101,13 @@ export default function Footer() {
           <div className="flex flex-col lg:flex-row gap-10 lg:gap-0">
             {/* Logo and Description - 42% width */}
             <div className="flex flex-col gap-[30px] lg:w-[42%] lg:pr-8">
-              <div className="flex items-center gap-[15px]">
+              <Link href="/" className="flex items-center gap-[15px]">
                 <img
                   src="/Logo-transparent.png"
                   alt="Digiwave Technologies"
                   className="h-14 w-auto object-contain"
                 />
-              </div>
+              </Link>
               <p className="text-[#0F0F10] text-base font-normal font-['Inter'] leading-[26px] max-w-[332px]">
                 Digiwave Technologies develops scalable digital solutions including web apps, mobile apps, AI-driven platforms, and cloud systems.
                 <br />

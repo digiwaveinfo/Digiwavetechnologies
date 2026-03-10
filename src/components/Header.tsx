@@ -187,7 +187,7 @@ export default function Header() {
                   contactSection.scrollIntoView({ behavior: 'smooth' });
                 }
               }}
-              className="w-52 px-7 py-3.5 bg-[#00BFD2] rounded-[247px] flex justify-center items-center gap-2 hover:opacity-90 transition-opacity"
+              className="w-52 px-7 py-3.5 bg-[#00BFD2] rounded-[247px] flex justify-center items-center gap-2 hover:opacity-90 transition-opacity cursor-pointer"
             >
               <span className="text-white text-base font-bold font-['Inter'] uppercase leading-4 tracking-wide">Contact Us</span>
               <svg width="15" height="18" viewBox="0 0 13 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -279,7 +279,7 @@ export default function Header() {
                   contactSection.scrollIntoView({ behavior: 'smooth' });
                 }
               }}
-              className="mt-4 w-full py-3.5 px-6 bg-[#00BFD2] rounded-full text-center text-white text-sm sm:text-base font-bold font-['Inter'] uppercase tracking-wide hover:opacity-90 transition-opacity"
+              className="mt-4 w-full py-3.5 px-6 bg-[#00BFD2] rounded-full text-center text-white text-sm sm:text-base font-bold font-['Inter'] uppercase tracking-wide hover:opacity-90 transition-opacity cursor-pointer"
             >
               Contact Us
             </button>

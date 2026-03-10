@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 
 interface Technology {
   id: number;
@@ -48,6 +49,7 @@ export default function PortfolioCard({ id, title, description, images = [], tec
     : technologies.slice(0, 3);
 
   return (
+    <Link href="#contact" className="block cursor-pointer">
     <div className="group bg-white rounded-xl border border-[#E8E8EA] overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2 h-[520px] flex flex-col">
       {/* Image Carousel */}
       <div
@@ -132,6 +134,7 @@ export default function PortfolioCard({ id, title, description, images = [], tec
         </div>
       </div>
     </div>
+    </Link>
   );
 }
 

@@ -104,7 +104,7 @@ export default function Services() {
   }, [isAutoPlaying, nextSlide]);
 
   return (
-    <section className="w-full pt-12 md:pt-16 pb-6 md:pb-8 flex flex-col justify-start items-center bg-white relative overflow-hidden">
+    <section className="w-full pt-12 md:pt-16 pb-6 md:pb-8 flex flex-col justify-start items-center bg-transparent relative overflow-hidden">
       {/* Left side background */}
       <div className="absolute left-0 top-0 w-[1164px] h-[919px] opacity-10 pointer-events-none z-0">
         <svg

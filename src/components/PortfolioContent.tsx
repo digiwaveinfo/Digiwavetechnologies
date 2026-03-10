@@ -84,9 +84,9 @@ const StickyCard = ({ i, card, cardType, progress, range, targetScale }: StickyC
           <p className={`${getDescColor(cardType)} text-sm font-normal font-['Inter'] leading-6 relative z-[1]`}>
             {card.short_description}
           </p>
-          <div className="px-5 py-3 bg-[#00BFD2] rounded-full inline-flex self-start relative z-[1] cursor-default">
+          <Link href="/portfolio" className="px-5 py-3 bg-[#00BFD2] rounded-full inline-flex self-start relative z-[1] cursor-pointer hover:opacity-90 transition-opacity">
             <span className="text-white text-base font-bold font-['Inter'] uppercase tracking-wide">View details</span>
-          </div>
+          </Link>
         </div>
       </motion.div>
 
@@ -116,9 +116,9 @@ const StickyCard = ({ i, card, cardType, progress, range, targetScale }: StickyC
               {card.short_description}
             </p>
           </div>
-          <div className="px-6 py-4 bg-[#00BFD2] rounded-full inline-flex cursor-default">
+          <Link href="/portfolio" className="px-6 py-4 bg-[#00BFD2] rounded-full inline-flex cursor-pointer hover:opacity-90 transition-opacity">
             <span className="text-white text-lg font-bold font-['Inter'] uppercase tracking-wide">View details</span>
-          </div>
+          </Link>
         </div>
         <div className="absolute right-0 top-0 w-[36%] h-full bg-stone-100 overflow-hidden">
           {cardImage && <img src={cardImage} alt={card.title} className="w-full h-full object-fill" />}

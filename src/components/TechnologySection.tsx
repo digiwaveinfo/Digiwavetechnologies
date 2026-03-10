@@ -20,7 +20,7 @@ export default function TechnologySection() {
         { icon: "/technologies/Python.svg", name: "Python" },
         { icon: "/technologies/nodejs.svg", name: "Node.js" },
         { icon: "/technologies/php.svg", name: "PHP" },
-        { icon: "/technologies/g318.svg", name: "Django" },
+        { icon: "/technologies/django.svg", name: "Django" },
         { icon: "/technologies/flask.svg", name: "Flask" },
         { icon: "/technologies/laravel.svg", name: "Laravel" },
         { icon: "/technologies/reactjs.svg", name: "React.js" },
@@ -39,12 +39,12 @@ export default function TechnologySection() {
 
     const databasesTechs = [
         { icon: "/technologies/PostgreSQL.svg", name: "PostgreSQL" },
-        { icon: "/technologies/postgresSQL.svg", name: "MySQL" },
-        { icon: "/technologies/c.svg", name: "SQLite" },
+        { icon: "/technologies/mysql.svg", name: "MySQL" },
+        { icon: "/technologies/sqlite.svg", name: "SQLite" },
         { icon: "/technologies/oracle.svg", name: "Oracle" },
         { icon: "/technologies/Redis.svg", name: "Redis" },
         { icon: "/technologies/firebase.svg", name: "Firebase" },
-        { icon: "/technologies/ruby.svg", name: "MongoDB" },
+        { icon: "/technologies/mongodb.svg", name: "MongoDB" },
     ];
 
     const cloudDevOpsTechs = [

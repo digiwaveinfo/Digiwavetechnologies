@@ -61,7 +61,9 @@ export default function HomeHero() {
             </Link>
 
             {/* Arrow Button */}
-            <div className="w-12 h-12 sm:w-16 sm:h-16 px-3 sm:px-5 py-3 sm:py-4 bg-white/20 rounded-[247px] inline-flex flex-col justify-center items-center gap-2.5 overflow-hidden hover:bg-white/30 transition-colors cursor-pointer">
+            <Link
+              href="/book-demo"
+              className="w-12 h-12 sm:w-16 sm:h-16 px-3 sm:px-5 py-3 sm:py-4 bg-white/20 rounded-[247px] inline-flex flex-col justify-center items-center gap-2.5 overflow-hidden hover:bg-white/30 transition-colors cursor-pointer">
               <div className="relative">
                 <svg
                   width="20"
@@ -77,7 +79,7 @@ export default function HomeHero() {
                   />
                 </svg>
               </div>
-            </div>
+            </Link>
           </div>
         </div>
       </div>
