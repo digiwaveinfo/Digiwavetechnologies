@@ -97,7 +97,7 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
                     <img
                       src={blog.author_image_url}
                       alt={blog.author_name}
-                      className="w-12 h-12 rounded-full object-cover"
+                      className="w-12 h-12 rounded-full object-fill"
                     />
                   ) : (
                     <div className="w-12 h-12 rounded-full bg-[#00BFD2]/20 flex items-center justify-center text-[#00BFD2] font-bold text-lg">
@@ -120,7 +120,7 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
                     <img
                       src={blog.hero_image_url || blog.cover_image_url}
                       alt={blog.title}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-fill"
                     />
                   ) : (
                     <div className="w-full h-full flex items-center justify-center text-gray-400 text-lg">
@@ -178,7 +178,7 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
                             <img
                               src={post.cover_image_url}
                               alt={post.title}
-                              className="w-full h-full object-cover"
+                              className="w-full h-full object-fill"
                             />
                           ) : (
                             <div className="w-full h-full flex items-center justify-center text-gray-400 text-sm">
@@ -203,7 +203,7 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
                                 <img
                                   src={post.author_image_url}
                                   alt={post.author_name}
-                                  className="w-9 h-9 rounded-full object-cover"
+                                  className="w-9 h-9 rounded-full object-fill"
                                 />
                               ) : (
                                 <div className="w-9 h-9 rounded-full bg-[#00BFD2]/20 flex items-center justify-center text-[#00BFD2] font-semibold text-sm">

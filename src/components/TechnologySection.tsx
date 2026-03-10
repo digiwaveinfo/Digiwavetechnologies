@@ -26,7 +26,7 @@ export default function TechnologySection() {
         { icon: "/technologies/reactjs.svg", name: "React.js" },
         { icon: "/technologies/nextjs.svg", name: "Next.js" },
         { icon: "/technologies/html.svg", name: "HTML" },
-        { icon: "/technologies/CSS.svg", name: "CSS" },
+        { icon: "/technologies/css.svg", name: "CSS" },
         { icon: "/technologies/javascript.svg", name: "JavaScript" },
         { icon: "/technologies/jquery.svg", name: "jQuery" },
         { icon: "/technologies/typescript.svg", name: "TypeScript" },
@@ -43,7 +43,7 @@ export default function TechnologySection() {
         { icon: "/technologies/mysql.svg", name: "MySQL" },
         { icon: "/technologies/sqlite.svg", name: "SQLite" },
         { icon: "/technologies/oracle.svg", name: "Oracle" },
-        { icon: "/technologies/Redis.svg", name: "Redis" },
+        { icon: "/technologies/redis.svg", name: "Redis" },
         { icon: "/technologies/firebase.svg", name: "Firebase" },
         { icon: "/technologies/mongodb.svg", name: "MongoDB" },
     ];

@@ -11,11 +11,14 @@ export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const mobileDropdownRef = useRef<HTMLDivElement>(null);
 
   // Close dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+      const clickedInsideDesktop = dropdownRef.current?.contains(event.target as Node);
+      const clickedInsideMobile = mobileDropdownRef.current?.contains(event.target as Node);
+      if (!clickedInsideDesktop && !clickedInsideMobile) {
         setIsServicesDropdownOpen(false);
       }
     };
@@ -218,7 +221,7 @@ export default function Header() {
             {navLinks.map((link) => (
               <div key={link.href} className="w-full">
                 {link.hasDropdown ? (
-                  <div className="w-full">
+                  <div className="w-full" ref={mobileDropdownRef}>
                     <button
                       onClick={() => setIsServicesDropdownOpen(!isServicesDropdownOpen)}
                       className={`w-full py-3 px-4 rounded-lg text-base sm:text-lg font-medium font-['Inter'] transition-colors flex items-center justify-between ${isActive(link.href)
