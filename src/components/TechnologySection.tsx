@@ -30,6 +30,7 @@ export default function TechnologySection() {
         { icon: "/technologies/javascript.svg", name: "JavaScript" },
         { icon: "/technologies/jquery.svg", name: "jQuery" },
         { icon: "/technologies/typescript.svg", name: "TypeScript" },
+        { icon: "/technologies/wordpress.svg", name: "WordPress" },
     ];
 
     const mobileAppsTechs = [
@@ -87,11 +88,11 @@ export default function TechnologySection() {
                     <Tabs defaultValue="all" className="w-full">
                         <div className="flex justify-center mb-10">
                             <TabsList className="inline-flex flex-wrap h-auto gap-1 rounded-[10px] bg-[#00BFD2] p-1 lg:h-[50px] lg:flex-nowrap">
-                                <TabsTrigger value="all" className="h-8 lg:h-10 rounded-[5px] px-3 md:px-4 lg:px-6 py-1.5 font-['Inter'] text-xs md:text-sm lg:text-base font-medium text-[#00114C] whitespace-nowrap data-[state=active]:bg-white data-[state=active]:shadow-md data-[state=inactive]:bg-transparent hover:bg-white/20 transition-all">All</TabsTrigger>
-                                <TabsTrigger value="web-platform" className="h-8 lg:h-10 rounded-[5px] px-3 md:px-4 lg:px-6 py-1.5 font-['Inter'] text-xs md:text-sm lg:text-base font-medium text-[#00114C] whitespace-nowrap data-[state=active]:bg-white data-[state=active]:shadow-md data-[state=inactive]:bg-transparent hover:bg-white/20 transition-all">Web Platform</TabsTrigger>
-                                <TabsTrigger value="mobile-apps" className="h-8 lg:h-10 rounded-[5px] px-3 md:px-4 lg:px-6 py-1.5 font-['Inter'] text-xs md:text-sm lg:text-base font-medium text-[#00114C] whitespace-nowrap data-[state=active]:bg-white data-[state=active]:shadow-md data-[state=inactive]:bg-transparent hover:bg-white/20 transition-all">Mobile Apps</TabsTrigger>
-                                <TabsTrigger value="databases" className="h-8 lg:h-10 rounded-[5px] px-3 md:px-4 lg:px-6 py-1.5 font-['Inter'] text-xs md:text-sm lg:text-base font-medium text-[#00114C] whitespace-nowrap data-[state=active]:bg-white data-[state=active]:shadow-md data-[state=inactive]:bg-transparent hover:bg-white/20 transition-all">Databases</TabsTrigger>
-                                <TabsTrigger value="cloud-devops" className="h-8 lg:h-10 rounded-[5px] px-3 md:px-4 lg:px-6 py-1.5 font-['Inter'] text-xs md:text-sm lg:text-base font-medium text-[#00114C] whitespace-nowrap data-[state=active]:bg-white data-[state=active]:shadow-md data-[state=inactive]:bg-transparent hover:bg-white/20 transition-all">Cloud & DevOps</TabsTrigger>
+                                <TabsTrigger value="all" className="cursor-pointer h-8 lg:h-10 rounded-[5px] px-3 md:px-4 lg:px-6 py-1.5 font-['Inter'] text-xs md:text-sm lg:text-base font-medium text-[#00114C] whitespace-nowrap data-[state=active]:bg-white data-[state=active]:shadow-md data-[state=inactive]:bg-transparent hover:bg-white/20 transition-all">All</TabsTrigger>
+                                <TabsTrigger value="web-platform" className="cursor-pointer h-8 lg:h-10 rounded-[5px] px-3 md:px-4 lg:px-6 py-1.5 font-['Inter'] text-xs md:text-sm lg:text-base font-medium text-[#00114C] whitespace-nowrap data-[state=active]:bg-white data-[state=active]:shadow-md data-[state=inactive]:bg-transparent hover:bg-white/20 transition-all">Web Platform</TabsTrigger>
+                                <TabsTrigger value="mobile-apps" className="cursor-pointer h-8 lg:h-10 rounded-[5px] px-3 md:px-4 lg:px-6 py-1.5 font-['Inter'] text-xs md:text-sm lg:text-base font-medium text-[#00114C] whitespace-nowrap data-[state=active]:bg-white data-[state=active]:shadow-md data-[state=inactive]:bg-transparent hover:bg-white/20 transition-all">Mobile Apps</TabsTrigger>
+                                <TabsTrigger value="databases" className="cursor-pointer h-8 lg:h-10 rounded-[5px] px-3 md:px-4 lg:px-6 py-1.5 font-['Inter'] text-xs md:text-sm lg:text-base font-medium text-[#00114C] whitespace-nowrap data-[state=active]:bg-white data-[state=active]:shadow-md data-[state=inactive]:bg-transparent hover:bg-white/20 transition-all">Databases</TabsTrigger>
+                                <TabsTrigger value="cloud-devops" className="cursor-pointer h-8 lg:h-10 rounded-[5px] px-3 md:px-4 lg:px-6 py-1.5 font-['Inter'] text-xs md:text-sm lg:text-base font-medium text-[#00114C] whitespace-nowrap data-[state=active]:bg-white data-[state=active]:shadow-md data-[state=inactive]:bg-transparent hover:bg-white/20 transition-all">Cloud & DevOps</TabsTrigger>
                             </TabsList>
                         </div>
 

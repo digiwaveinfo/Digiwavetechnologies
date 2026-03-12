@@ -201,7 +201,7 @@ export default function Testimonials() {
                 <div className="flex gap-2.5">
                   <button
                     onClick={prevSlide}
-                    className="w-10 h-10 bg-[#62F4F3] rounded-full flex items-center justify-center hover:opacity-90 transition-opacity"
+                    className="w-10 h-10 bg-[#62F4F3] rounded-full flex items-center justify-center hover:opacity-90 transition-opacity cursor-pointer"
                     aria-label="Previous testimonial"
                   >
                     <svg width="14" height="16" viewBox="0 0 14 16" fill="none">
@@ -210,7 +210,7 @@ export default function Testimonials() {
                   </button>
                   <button
                     onClick={nextSlide}
-                    className="w-10 h-10 bg-[#62F4F3] rounded-full flex items-center justify-center hover:opacity-90 transition-opacity"
+                    className="w-10 h-10 bg-[#62F4F3] rounded-full flex items-center justify-center hover:opacity-90 transition-opacity cursor-pointer"
                     aria-label="Next testimonial"
                   >
                     <svg width="14" height="16" viewBox="0 0 14 16" fill="none">
