@@ -33,7 +33,7 @@ const serviceData: Record<string, {
     title: "Al & Machine Learning Solutions Provider",
     description: "Intelligent systems that automate, analyze, and optimize business processes.",
     fullDescription: "Transform your business with a leading AI Development Company With advanced AI and machine learning solutions. Our expert team develops intelligent, scalable systems that automate complex processes, analyze large volumes of data, and generate actionable insights to drive your business forward.",
-    heroImage: "https://api.builder.io/api/v1/image/assets/TEMP/7309ec19426c194dd2e948fe4906e3ab122a4585?width=970",
+    heroImage: "/servicies/AI%20ML.png",
     features: [
       { title: "Predictive Analytics & Forecasting", description: "Identify trends and make data-driven decisions" },
       { title: "Natural Language Processing (NLP)", description: "Enable systems to understand human language" },
@@ -70,7 +70,7 @@ const serviceData: Record<string, {
     title: "Web Application Development",
     description: "Custom high-performance web solutions tailored for scale and performance.",
     fullDescription: "Build powerful, scalable web applications that drive your business growth. Our development team creates custom web solutions using modern frameworks and technologies, ensuring optimal performance, security, and user experience.",
-    heroImage: "https://api.builder.io/api/v1/image/assets/TEMP/3f5c6b3d663ecc01e18ae177e232243b61d97576?width=806",
+    heroImage: "/servicies/Website.png",
     features: [
       { title: "Custom Web Application Development", description: "Tailored solutions built to your exact specifications" },
       { title: "Responsive & Mobile-First Design", description: "Seamless experience across all devices and screen sizes" },
@@ -107,7 +107,7 @@ const serviceData: Record<string, {
     title: "Mobile App Development",
     description: "Android, iOS, and cross-platform apps built for engagement and user experience.",
     fullDescription: "Create engaging mobile experiences that connect with your users. Our mobile development team specializes in building native and cross-platform applications that deliver exceptional performance and user experience.",
-    heroImage: "https://api.builder.io/api/v1/image/assets/TEMP/917d50598d6a8f171dd1a7d201159fde9ed14c99?width=970",
+    heroImage: "/servicies/Mobile.png",
     features: [
       { title: "Native iOS & Android Development", description: "Platform-specific apps for optimal performance" },
       { title: "Cross-Platform Solutions", description: "Build once, deploy everywhere with React Native & Flutter" },
@@ -144,7 +144,7 @@ const serviceData: Record<string, {
     title: "Cloud & DevOps Consulting Services",
     description: "Scalable cloud infrastructure and automated deployment solutions.",
     fullDescription: "Accelerate your development and deployment processes with our comprehensive Cloud & DevOps services in India. We help organizations migrate to the cloud, implement CI/CD pipelines, and establish robust infrastructure that scales with your business needs.",
-    heroImage: "https://api.builder.io/api/v1/image/assets/TEMP/3f5c6b3d663ecc01e18ae177e232243b61d97576?width=806",
+    heroImage: "/servicies/Cloud.png",
     features: [
       { title: "Cloud Migration & Architecture", description: "Secure cloud migration with minimal downtime and scalability" },
       { title: "CI/CD Pipeline Implementation", description: "Automated CI/CD pipelines for faster, reliable deployments" },
@@ -180,7 +180,7 @@ const serviceData: Record<string, {
     title: "Data Intelligence & Automation Services",
     description: "Unlock the power of your data and automate your business processes with our comprehensive automation and data intelligence solutions in India. We help organizations streamline operations, gain valuable insights from their data, and make informed decisions.",
     fullDescription: "Unlock the power of your data and automate your business processes with our comprehensive automation and data intelligence solutions. We help organizations streamline operations, gain valuable insights from their data, and make informed decisions.",
-    heroImage: "https://api.builder.io/api/v1/image/assets/TEMP/7309ec19426c194dd2e948fe4906e3ab122a4585?width=970",
+    heroImage: "/servicies/Data%20Intelligence.png",
     features: [
       { title: "Business Process Automation", description: "Automating manual processes to improve efficiency and accuracy" },
       { title: "Data Analytics & Visualization", description: "Data insights delivered through analytics and dashboards" },
@@ -216,7 +216,7 @@ const serviceData: Record<string, {
     title: "IoT Solution Providers",
     description: "Connected device ecosystems enabling smart monitoring, control, and data collection.",
     fullDescription: "As a Trusted IoT Solution Company, Build connected ecosystems with our comprehensive IoT solutions. We design and develop smart device networks that enable real-time monitoring, automated control, and intelligent data collection for industrial and consumer applications. .",
-    heroImage: "https://api.builder.io/api/v1/image/assets/TEMP/917d50598d6a8f171dd1a7d201159fde9ed14c99?width=970",
+    heroImage: "/servicies/Iot.png",
     features: [
       { title: "Smart Device Integration", description: "Connect and manage IoT devices seamlessly" },
       { title: "Real-time Monitoring Systems", description: "Track operations and metrics as they happen" },

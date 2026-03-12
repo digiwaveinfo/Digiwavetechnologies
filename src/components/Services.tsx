@@ -11,7 +11,7 @@ export default function Services() {
       title: "AI & ML Solutions",
       description:
         "Intelligent systems that automate, analyze, and optimize business processes.",
-      image: "https://api.builder.io/api/v1/image/assets/TEMP/7309ec19426c194dd2e948fe4906e3ab122a4585?width=970",
+      image: "/servicies/AI%20ML.png",
       titleColor: "text-[#0064AC]",
     },
     {
@@ -19,7 +19,7 @@ export default function Services() {
       title: "Web App\ndevelopment",
       description:
         "Custom high-performance web solutions tailored for scale and performance.",
-      image: "https://api.builder.io/api/v1/image/assets/TEMP/3f5c6b3d663ecc01e18ae177e232243b61d97576?width=806",
+      image: "/servicies/Website.png",
       titleColor: "text-[#0064AC]",
     },
     {
@@ -27,7 +27,7 @@ export default function Services() {
       title: "Mobile App\ndevelopment",
       description:
         "Android, iOS, and cross-platform apps built for engagement and user experience.",
-      image: "https://api.builder.io/api/v1/image/assets/TEMP/917d50598d6a8f171dd1a7d201159fde9ed14c99?width=970",
+      image: "/servicies/Mobile.png",
       titleColor: "text-[#0064AC]",
     },
     {
@@ -35,7 +35,7 @@ export default function Services() {
       title: "Cloud & DevOps",
       description:
         "Scalable cloud infrastructure and automated deployment solutions.",
-      image: "https://api.builder.io/api/v1/image/assets/TEMP/3f5c6b3d663ecc01e18ae177e232243b61d97576?width=806",
+      image: "/servicies/Cloud.png",
       titleColor: "text-[#0064AC]",
     },
     {
@@ -43,7 +43,7 @@ export default function Services() {
       title: "Data Intelligence",
       description:
         "Smart automation and data-driven insights for business optimization.",
-      image: "https://api.builder.io/api/v1/image/assets/TEMP/7309ec19426c194dd2e948fe4906e3ab122a4585?width=970",
+      image: "/servicies/Data%20Intelligence.png",
       titleColor: "text-[#0064AC]",
     },
     {
@@ -51,7 +51,7 @@ export default function Services() {
       title: "IoT Solutions",
       description:
         "Connected device ecosystems enabling smart monitoring, control, and data collection for industrial and consumer applications.",
-      image: "https://api.builder.io/api/v1/image/assets/TEMP/917d50598d6a8f171dd1a7d201159fde9ed14c99?width=970",
+      image: "/servicies/Iot.png",
       titleColor: "text-[#0064AC]",
     },
   ];
@@ -260,7 +260,7 @@ export default function Services() {
           </button>
 
           {/* Cards Container */}
-          <div className="overflow-hidden mx-6">
+          <div className="overflow-hidden mx-6 pb-4">
             <div
               className="flex transition-transform duration-500 ease-in-out"
               style={{
