@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState, useEffect, useCallback } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
@@ -279,13 +280,14 @@ export default function Services() {
                   >
                     {/* Image Container */}
                     <div className="w-full h-64 absolute top-0 left-0 bg-neutral-200 rounded-3xl overflow-hidden shadow-sm z-0">
-                      <img
+                      <Image
                         src={service.image}
                         alt={service.title}
-                        loading="eager"
-                        fetchPriority="high"
-                        decoding="async"
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        fill
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                        quality={75}
+                        priority
+                        className="object-cover group-hover:scale-105 transition-transform duration-500"
                       />
                       {/* Hover Overlay - Black smokey gradient */}
                       <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">

@@ -81,13 +81,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* Preload service section images for faster rendering */}
-        <link rel="preload" as="image" href="/servicies/AI%20ML.png" />
-        <link rel="preload" as="image" href="/servicies/Website.png" />
-        <link rel="preload" as="image" href="/servicies/Mobile.png" />
-        <link rel="preload" as="image" href="/servicies/Cloud.png" />
-        <link rel="preload" as="image" href="/servicies/Data%20Intelligence.png" />
-        <link rel="preload" as="image" href="/servicies/Iot.png" />
         {/* Google Analytics */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-JB318YS4B8"
