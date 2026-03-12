@@ -282,6 +282,9 @@ export default function Services() {
                       <img
                         src={service.image}
                         alt={service.title}
+                        loading="eager"
+                        fetchPriority="high"
+                        decoding="async"
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                       />
                       {/* Hover Overlay - Black smokey gradient */}
