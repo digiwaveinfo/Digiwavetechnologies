@@ -55,6 +55,10 @@ const StickyCard = ({ i, card, cardType, progress, range, targetScale }: StickyC
   const scale = useTransform(progress, range, [1, targetScale]);
   const backgroundImage = getBackgroundImage(cardType);
   const cardImage = card.home_featured_image_url || card.card_image_url;
+  const normalizedTags = card.tags && card.tags.length > 0
+    ? card.tags
+    : (card.tag || '').split(',').map((tag) => tag.trim()).filter(Boolean);
+  const primaryTag = normalizedTags[0] || 'Portfolio';
 
   return (
     <div
@@ -79,7 +83,7 @@ const StickyCard = ({ i, card, cardType, progress, range, targetScale }: StickyC
             <div className="absolute inset-0 z-0 bg-[#00BFD2]/10 pointer-events-none" />
           )}
           <div className="px-6 py-1.5 bg-sky-700/90 rounded-full inline-flex self-start relative z-[1]">
-            <span className="text-white text-sm font-normal font-['Inter'] italic">{card.tag}</span>
+            <span className="text-white text-sm font-normal font-['Inter'] italic">{primaryTag}</span>
           </div>
           <h3 className={`${getTextColor(cardType)} text-2xl font-semibold font-['Inter'] leading-tight relative z-[1]`}>
             {card.title}
@@ -109,7 +113,7 @@ const StickyCard = ({ i, card, cardType, progress, range, targetScale }: StickyC
         )}
         <div className="absolute left-0 top-0 w-[64%] h-full p-8 lg:p-[40px] xl:p-[60px] flex flex-col justify-center items-start gap-6 lg:gap-7 z-10">
           <div className="px-8 py-1.5 bg-sky-700/90 backdrop-blur-sm rounded-full inline-flex">
-            <span className="text-white text-base font-normal font-['Inter'] italic">{card.tag}</span>
+            <span className="text-white text-base font-normal font-['Inter'] italic">{primaryTag}</span>
           </div>
           <div className="flex flex-col gap-4">
             <h3 className={`${getTextColor(cardType)} text-3xl lg:text-4xl xl:text-[46px] font-semibold font-['Inter'] leading-tight`}>

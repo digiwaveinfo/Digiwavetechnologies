@@ -17,10 +17,11 @@ interface PortfolioCardProps {
   images?: { id: string; image_url: string }[];
   technologies: Technology[];
   tag?: string;
+  tags?: string[];
   subtitle?: string;
 }
 
-export default function PortfolioCard({ id, title, description, images = [], technologies, tag = "" }: PortfolioCardProps) {
+export default function PortfolioCard({ id, title, description, images = [], technologies, tag = "", tags = [] }: PortfolioCardProps) {
   const slides = images.map(img => img.image_url);
   const hasImages = slides.length > 0;
 
@@ -39,18 +40,16 @@ export default function PortfolioCard({ id, title, description, images = [], tec
     return () => { if (timerRef.current) clearInterval(timerRef.current); };
   }, [slides.length, paused, hasImages]);
 
-  // Filter to show only main technologies (language, platform) on card
-  const mainCategories = ['language', 'platform'];
-  const mainTechnologies = technologies.filter(tech =>
-    tech.category && mainCategories.includes(tech.category)
-  );
-  const displayTechnologies = mainTechnologies.length > 0
-    ? mainTechnologies.slice(0, 3)
-    : technologies.slice(0, 3);
+  const normalizedTags = tags.length > 0
+    ? tags.filter(Boolean)
+    : tag.split(',').map((t) => t.trim()).filter(Boolean);
+  const displayTags = normalizedTags.slice(0, 2);
+  const remainingTagCount = Math.max(0, normalizedTags.length - displayTags.length);
+  const displayTechnologies = technologies;
 
   return (
     <Link href="#contact" className="block cursor-pointer">
-    <div className="group bg-white rounded-xl border border-[#E8E8EA] overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2 h-[520px] flex flex-col">
+    <div className="group bg-white rounded-xl border border-[#E8E8EA] overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2 flex flex-col">
       {/* Image Carousel */}
       <div
         className="relative w-full h-60 flex-shrink-0 rounded-t-xl overflow-hidden m-4 mb-0"
@@ -116,21 +115,25 @@ export default function PortfolioCard({ id, title, description, images = [], tec
 
       {/* Content */}
       <div className="p-4 pt-4 pb-4 flex flex-col flex-1">
-        <div className="h-8 mb-2">
-          {tag && (
-            <div className="inline-flex px-2.5 py-1 bg-[#00BFD2]/10 rounded-md">
-              <span className="text-[#00BFD2] text-sm font-medium">{tag}</span>
+        <div className="min-h-8 mb-2 flex flex-wrap items-center gap-2">
+          {displayTags.map((itemTag) => (
+            <div key={itemTag} className="inline-flex px-2.5 py-1 bg-[#00BFD2]/10 rounded-md">
+              <span className="text-[#00BFD2] text-sm font-medium">{itemTag}</span>
+            </div>
+          ))}
+          {remainingTagCount > 0 && (
+            <div className="inline-flex px-2.5 py-1 bg-[#00114C]/10 rounded-md">
+              <span className="text-[#00114C] text-sm font-medium">+{remainingTagCount}</span>
             </div>
           )}
         </div>
-        <h3 className="text-[#181A2A] text-xl font-semibold leading-7 group-hover:text-[#00BFD2] transition-colors line-clamp-2 mb-2 min-h-[56px]">
+        <h3 className="text-[#181A2A] text-xl font-semibold leading-7 group-hover:text-[#00BFD2] transition-colors line-clamp-2 mb-1">
           {title}
         </h3>
-        <p className="text-[#97989F] text-sm leading-relaxed line-clamp-3 min-h-[63px]">
+        <p className="text-[#97989F] text-sm leading-relaxed line-clamp-3">
           {description}
         </p>
-        <div className="flex-1" />
-        <div className="flex items-center pt-3 mt-3 border-t border-[#E8E8EA]">
+        <div className="flex items-center pt-2 mt-2 border-t border-[#E8E8EA]">
           <div className="flex items-center -space-x-2">
             {displayTechnologies.map((tech, index) => (
               <TechIcon key={index} tech={tech} />

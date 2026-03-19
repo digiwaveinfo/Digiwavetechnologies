@@ -10,6 +10,7 @@ const fallbackPortfolios = [
     subtitle: "All Services One Solution",
     short_description: "A comprehensive property management solution with real-time tracking and analytics.",
     tag: "",
+    tags: ["Web Application"],
     technologies: [{ id: 1, name: "React Native" }, { id: 2, name: "Node.js" }, { id: 3, name: "MongoDB" }],
   },
 ];
@@ -35,6 +36,7 @@ export default async function PortfolioGrid() {
               images={item.card_images || []}
               technologies={item.technologies || []}
               tag={item.tag}
+              tags={item.tags || (item.tag ? item.tag.split(',').map((t) => t.trim()).filter(Boolean) : [])}
               subtitle={item.subtitle}
             />
           ))}

@@ -45,6 +45,7 @@ export interface PortfolioItem {
   short_description: string;
   full_description: string;
   tag: string;
+  tags?: string[];
   card_image_url?: string;
   card_images?: { id: string; image_url: string; display_order: number }[];
   hero_image_url?: string;
