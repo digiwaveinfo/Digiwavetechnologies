@@ -52,8 +52,7 @@ export default function PortfolioCard({ id, title, description, images = [], tec
     <div className="group bg-white rounded-xl border border-[#E8E8EA] overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2 flex flex-col">
       {/* Image Carousel */}
       <div
-        className="relative w-full h-60 flex-shrink-0 rounded-t-xl overflow-hidden m-4 mb-0"
-        style={{ width: 'calc(100% - 2rem)' }}
+        className="relative w-full h-60 flex-shrink-0 overflow-hidden"
         onMouseEnter={() => setPaused(true)}
         onMouseLeave={() => setPaused(false)}
       >
@@ -64,13 +63,8 @@ export default function PortfolioCard({ id, title, description, images = [], tec
               <div key={i} className="absolute inset-0 w-full h-full transition-opacity duration-700" style={{ opacity: i === current ? 1 : 0 }}>
                 <img
                   src={src}
-                  alt=""
-                  className="absolute inset-0 w-full h-full object-cover blur-md scale-105 opacity-40 rounded-lg"
-                />
-                <img
-                  src={src}
                   alt={title}
-                  className="absolute inset-0 w-full h-full object-fill rounded-lg z-[1]"
+                  className="absolute inset-0 w-full h-full object-fill z-[1]"
                 />
               </div>
             ))}

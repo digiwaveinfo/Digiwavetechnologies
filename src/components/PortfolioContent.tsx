@@ -73,8 +73,7 @@ const StickyCard = ({ i, card, cardType, progress, range, targetScale }: StickyC
         <div className="w-full h-48 bg-stone-100 overflow-hidden relative z-[2]">
           {cardImage && (
             <>
-              <img src={cardImage} alt="" className="absolute inset-0 w-full h-full object-cover blur-md scale-105 opacity-40" />
-              <img src={cardImage} alt={card.title} className="absolute inset-0 w-full h-full object-contain object-center relative z-[1]" />
+              <img src={cardImage} alt={card.title} className="absolute inset-0 w-full h-full object-fill relative z-[1]" />
             </>
           )}
         </div>
@@ -130,8 +129,7 @@ const StickyCard = ({ i, card, cardType, progress, range, targetScale }: StickyC
         <div className="absolute right-0 top-0 w-[36%] h-full bg-stone-100 overflow-hidden">
           {cardImage && (
             <>
-              <img src={cardImage} alt="" className="absolute inset-0 w-full h-full object-cover blur-md scale-105 opacity-40" />
-              <img src={cardImage} alt={card.title} className="absolute inset-0 w-full h-full object-contain object-center z-[1]" />
+              <img src={cardImage} alt={card.title} className="absolute inset-0 w-full h-full object-fill z-[1]" />
             </>
           )}
         </div>

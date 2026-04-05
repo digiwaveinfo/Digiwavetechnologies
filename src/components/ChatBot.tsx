@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import { X, Send } from "lucide-react";
 import ReactMarkdown from "react-markdown";
+import Link from "next/link";
 
 // Animated Robot Icon matching theme color
 const AnimatedRobot = ({ size = 80 }: { size?: number }) => (
@@ -225,7 +226,14 @@ export default function ChatBot() {
                         ol: ({ children }) => <ol className="list-decimal list-inside space-y-1 my-2">{children}</ol>,
                         ul: ({ children }) => <ul className="list-disc list-inside space-y-1 my-2">{children}</ul>,
                         li: ({ children }) => <li className="leading-relaxed">{children}</li>,
-                        a: ({ href, children }) => <a href={href} className="text-[#00BFD2] underline hover:text-[#00a5b5]" target="_blank" rel="noopener noreferrer">{children}</a>,
+                        a: ({ href, children }) => {
+                          const isInternal = href?.startsWith('/');
+                          if (isInternal) {
+                            return <Link href={href || ''} onClick={() => setIsOpen(false)} className="text-[#00BFD2] underline hover:text-[#00a5b5]">{children}</Link>;
+                          }
+                          const isContactMethod = href?.startsWith('mailto:') || href?.startsWith('tel:');
+                          return <a href={href} className="text-[#00BFD2] underline hover:text-[#00a5b5]" target={isContactMethod ? "_self" : "_blank"} rel="noopener noreferrer">{children}</a>;
+                        },
                       }}
                     >
                       {message.text}
