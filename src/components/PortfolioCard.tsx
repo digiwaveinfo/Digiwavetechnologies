@@ -70,7 +70,7 @@ export default function PortfolioCard({ id, title, description, images = [], tec
                 <img
                   src={src}
                   alt={title}
-                  className="absolute inset-0 w-full h-full object-contain rounded-lg z-[1]"
+                  className="absolute inset-0 w-full h-full object-fill rounded-lg z-[1]"
                 />
               </div>
             ))}
