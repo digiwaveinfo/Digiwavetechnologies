@@ -171,6 +171,29 @@ export interface BlogPost {
   updated_at: string;
 }
 
+export interface TestimonialReview {
+  id: string;
+  quote: string;
+  review_text: string;
+  reviewer_name: string;
+  reviewer_role: string;
+  location?: string;
+  country_code?: string;
+  reviewer_image_url?: string;
+  company_logo_url?: string;
+}
+
+export interface TestimonialStats {
+  customers_count_text: string;
+  headline_line_1: string;
+  headline_line_2: string;
+  headline_line_3: string;
+  google_reviews_count_text: string;
+  hangouts_reviews_count_text: string;
+  google_logo_url?: string;
+  hangouts_logo_url?: string;
+}
+
 // Fetch all published blog posts
 export async function getBlogs(): Promise<BlogPost[]> {
   try {
@@ -218,6 +241,46 @@ export async function getBlogBySlug(slug: string): Promise<BlogPost | null> {
     return response.json();
   } catch (error) {
     console.error('Error fetching blog post:', error);
+    return null;
+  }
+}
+
+export async function getReviews(): Promise<TestimonialReview[]> {
+  try {
+    const response = await fetch(`${API_BASE_URL}/reviews/public/`, {
+      method: 'GET',
+      headers: { 'Content-Type': 'application/json' },
+      cache: 'no-store',
+    });
+
+    if (!response.ok) {
+      console.error('Failed to fetch reviews');
+      return [];
+    }
+
+    return response.json();
+  } catch (error) {
+    console.error('Error fetching reviews:', error);
+    return [];
+  }
+}
+
+export async function getReviewStats(): Promise<TestimonialStats | null> {
+  try {
+    const response = await fetch(`${API_BASE_URL}/reviews/stats/`, {
+      method: 'GET',
+      headers: { 'Content-Type': 'application/json' },
+      cache: 'no-store',
+    });
+
+    if (!response.ok) {
+      console.error('Failed to fetch review stats');
+      return null;
+    }
+
+    return response.json();
+  } catch (error) {
+    console.error('Error fetching review stats:', error);
     return null;
   }
 }

@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { getReviewStats, getReviews, TestimonialReview, TestimonialStats } from "@/lib/api";
 
 const StarIcon = () => (
   <svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -58,30 +59,135 @@ const G2Logo = () => (
   </svg>
 );
 
+const LOCATION_TO_COUNTRY_CODE: Record<string, string> = {
+  india: "IN",
+  usa: "US",
+  "united states": "US",
+  "united kingdom": "GB",
+  uk: "GB",
+  canada: "CA",
+  australia: "AU",
+  germany: "DE",
+  france: "FR",
+  spain: "ES",
+  italy: "IT",
+  netherlands: "NL",
+  sweden: "SE",
+  switzerland: "CH",
+  uae: "AE",
+  "united arab emirates": "AE",
+  singapore: "SG",
+  malaysia: "MY",
+  thailand: "TH",
+  indonesia: "ID",
+  japan: "JP",
+  "south korea": "KR",
+  china: "CN",
+  brazil: "BR",
+  mexico: "MX",
+  turkey: "TR",
+  ukraine: "UA",
+  poland: "PL",
+  russia: "RU",
+  "new zealand": "NZ",
+};
+
 export default function Testimonials() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [expanded, setExpanded] = useState(false);
 
-  const reviews = [
+  const fallbackReviews: TestimonialReview[] = [
     {
+      id: "fallback-1",
       quote: "Amazing software services",
-      text: "The solutions they're providing is helping our business run more smoothly. We've been able to make quick developments with them, meeting our product vision within the timeline we set up. Listen to them because they can give strong advice about how to build good products.",
-      name: "Maverick Phoenix",
-      role: "Board Member, UNIQA",
+      review_text: "The solutions they're providing is helping our business run more smoothly. We've been able to make quick developments with them, meeting our product vision within the timeline we set up. Listen to them because they can give strong advice about how to build good products.",
+      reviewer_name: "Maverick Phoenix",
+      reviewer_role: "Board Member, UNIQA",
       location: "Seattle, Ukraine",
-      image: "/testimonials/Background.png",
-      companyLogo: "/testimonials/company-logo.svg",
+      reviewer_image_url: "/testimonials/Background.png",
+      company_logo_url: "/testimonials/company-logo.svg",
     },
     {
+      id: "fallback-2",
       quote: "Exceptional development team",
-      text: "Working with this team has been a game-changer for our startup. They understood our vision from day one and delivered beyond expectations. Their technical expertise and communication skills are top-notch.",
-      name: "Sarah Johnson",
-      role: "CEO, TechStart",
+      review_text: "Working with this team has been a game-changer for our startup. They understood our vision from day one and delivered beyond expectations. Their technical expertise and communication skills are top-notch.",
+      reviewer_name: "Sarah Johnson",
+      reviewer_role: "CEO, TechStart",
       location: "New York, USA",
-      image: "/testimonials/Background.png",
-      companyLogo: "/testimonials/company-logo.svg",
+      reviewer_image_url: "/testimonials/Background.png",
+      company_logo_url: "/testimonials/company-logo.svg",
     },
   ];
+
+  const fallbackStats: TestimonialStats = {
+    customers_count_text: "3,900+",
+    headline_line_1: "customers",
+    headline_line_2: "win deals",
+    headline_line_3: "with Techco",
+    google_reviews_count_text: "200+",
+    hangouts_reviews_count_text: "300+",
+    google_logo_url: "/testimonials/google.svg",
+    hangouts_logo_url: "/testimonials/hangouts.svg",
+  };
+
+  const [reviews, setReviews] = useState<TestimonialReview[]>(fallbackReviews);
+  const [stats, setStats] = useState<TestimonialStats>(fallbackStats);
+
+  useEffect(() => {
+    const loadReviews = async () => {
+      const dynamicReviews = await getReviews();
+      if (dynamicReviews.length > 0) {
+        setReviews(dynamicReviews);
+      }
+
+      const dynamicStats = await getReviewStats();
+      if (dynamicStats) {
+        setStats(dynamicStats);
+      }
+    };
+
+    loadReviews();
+  }, []);
+
+  useEffect(() => {
+    if (currentSlide >= reviews.length) {
+      setCurrentSlide(0);
+      setExpanded(false);
+    }
+  }, [currentSlide, reviews.length]);
+
+  const activeReview = reviews[currentSlide];
+
+  const resolveCountryCode = (review: TestimonialReview): string | null => {
+    const explicitCode = (review.country_code || "").trim().toUpperCase();
+    if (explicitCode.length === 2) {
+      return explicitCode;
+    }
+
+    const normalizedLocation = (review.location || "").trim().toLowerCase();
+    if (!normalizedLocation) {
+      return null;
+    }
+
+    const directMatch = LOCATION_TO_COUNTRY_CODE[normalizedLocation];
+    if (directMatch) {
+      return directMatch;
+    }
+
+    const parts = normalizedLocation.split(',').map((part) => part.trim()).filter(Boolean);
+    for (const part of parts) {
+      if (LOCATION_TO_COUNTRY_CODE[part]) {
+        return LOCATION_TO_COUNTRY_CODE[part];
+      }
+    }
+
+    return null;
+  };
+
+  const activeCountryCode = resolveCountryCode(activeReview);
+  const activeFlagUrl = activeCountryCode
+    ? `https://flagcdn.com/w40/${activeCountryCode.toLowerCase()}.png`
+    : null;
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % reviews.length);
@@ -99,9 +205,11 @@ export default function Testimonials() {
           {/* Stats Card */}
           <div className="w-full p-6 sm:p-8 md:p-[50px] bg-white rounded-[10px] shadow-[0px_4px_23px_0px_rgba(174,191,210,0.30)] flex flex-col justify-between min-h-[400px] sm:min-h-[450px]">
             <div className="mb-8 sm:mb-0">
-              <div className="text-[#00BFD2] text-3xl sm:text-4xl md:text-[51px] font-bold font-['Inter'] leading-tight md:leading-[66px] mb-3 sm:mb-4">3,900+</div>
+              <div className="text-[#00BFD2] text-3xl sm:text-4xl md:text-[51px] font-bold font-['Inter'] leading-tight md:leading-[66px] mb-3 sm:mb-4">{stats.customers_count_text || fallbackStats.customers_count_text}</div>
               <div className="text-[#00114C] text-2xl sm:text-3xl md:text-[45px] font-bold font-['Inter'] leading-tight md:leading-[54px]">
-                customers<br />win deals<br />with Techco
+                {stats.headline_line_1 || fallbackStats.headline_line_1}<br />
+                {stats.headline_line_2 || fallbackStats.headline_line_2}<br />
+                {stats.headline_line_3 || fallbackStats.headline_line_3}
               </div>
             </div>
 
@@ -110,28 +218,28 @@ export default function Testimonials() {
               {/* Google */}
               <div className="flex flex-col gap-2 sm:gap-3">
                 <div className="w-[40px] h-[44px]">
-                  <img src="/testimonials/google.svg" alt="Google" className="w-full h-full object-contain" />
+                  <img src={stats.google_logo_url || fallbackStats.google_logo_url} alt="Google" className="w-full h-full object-contain" />
                 </div>
                 <div className="flex gap-1">
                   {[...Array(5)].map((_, i) => <StarIcon key={i} />)}
                 </div>
                 <div className="text-xs sm:text-sm font-['Inter'] whitespace-nowrap">
                   <span className="text-[#49515B] font-normal">From </span>
-                  <span className="text-[#020842] font-bold">200+</span>
+                  <span className="text-[#020842] font-bold">{stats.google_reviews_count_text || fallbackStats.google_reviews_count_text}</span>
                   <span className="text-[#49515B] font-normal"> reviews</span>
                 </div>
               </div>
               {/* Hangouts */}
               <div className="flex flex-col gap-2 sm:gap-3">
                 <div className="w-[44px] h-[44px]">
-                  <img src="/testimonials/hangouts.svg" alt="Hangouts" className="w-full h-full object-contain" />
+                  <img src={stats.hangouts_logo_url || fallbackStats.hangouts_logo_url} alt="Hangouts" className="w-full h-full object-contain" />
                 </div>
                 <div className="flex gap-1">
                   {[...Array(5)].map((_, i) => <StarIcon key={i} />)}
                 </div>
                 <div className="text-xs sm:text-sm font-['Inter'] whitespace-nowrap">
                   <span className="text-[#49515B] font-normal">From </span>
-                  <span className="text-[#020842] font-bold">300+</span>
+                  <span className="text-[#020842] font-bold">{stats.hangouts_reviews_count_text || fallbackStats.hangouts_reviews_count_text}</span>
                   <span className="text-[#49515B] font-normal"> reviews</span>
                 </div>
               </div>
@@ -142,10 +250,10 @@ export default function Testimonials() {
           <div className="w-full p-6 sm:p-8 md:p-[50px] bg-white rounded-[10px] shadow-[0px_4px_23px_0px_rgba(174,191,210,0.30)] flex flex-col justify-between relative overflow-hidden min-h-[500px] lg:min-h-[450px]">
             <div className="mb-6 sm:mb-8">
               <h3 className="text-[#0064AC] text-base sm:text-2xl md:text-[30px] font-bold font-['Inter'] leading-snug sm:leading-9 mb-3 sm:mb-6 md:mb-8">
-                "{reviews[currentSlide].quote}"
+                "{activeReview.quote}"
               </h3>
               <p className={`text-[#00114C] text-[13px] leading-[1.6] sm:text-base md:text-lg lg:text-[22px] sm:leading-relaxed md:leading-[28px] lg:leading-[33px] font-normal font-['Inter'] ${!expanded ? 'line-clamp-3' : ''}`}>
-                {reviews[currentSlide].text}
+                {activeReview.review_text}
               </p>
               <button
                 onClick={() => setExpanded(!expanded)}
@@ -160,27 +268,33 @@ export default function Testimonials() {
               <div className="flex items-center gap-3 sm:gap-4 md:gap-5">
                 <div className="w-[70px] h-[83px] sm:w-[90px] sm:h-[107px] md:w-[107px] md:h-[127px] bg-[#E3F0FF] rounded-[10px] overflow-hidden flex-shrink-0">
                   <img
-                    src={reviews[currentSlide].image}
-                    alt={reviews[currentSlide].name}
-                    className="w-full h-full object-cover"
+                    src={activeReview.reviewer_image_url || "/testimonials/Background.png"}
+                    alt={activeReview.reviewer_name}
+                    className="w-full h-full object-fill"
                   />
                 </div>
                 <div className="flex flex-col gap-1 flex-1 min-w-0">
                   <div className="text-[#020842] text-sm sm:text-base md:text-lg lg:text-xl font-semibold font-['Inter'] leading-tight md:leading-6">
-                    {reviews[currentSlide].name}
+                    {activeReview.reviewer_name}
                   </div>
                   <div className="text-[#49515B] text-xs sm:text-sm font-medium font-['Inter'] leading-tight md:leading-[21px]">
-                    {reviews[currentSlide].role}
+                    {activeReview.reviewer_role}
                   </div>
                   <div className="flex items-center gap-1.5 sm:gap-2 mt-1 lg:mt-2">
                     <div className="w-4 h-4 sm:w-5 sm:h-5 rounded-full overflow-hidden flex-shrink-0">
-                      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="10" cy="10" r="10" fill="#0057B8"/>
-                        <rect y="10" width="20" height="10" fill="#FFD700"/>
-                      </svg>
+                      {activeFlagUrl ? (
+                        <img
+                          src={activeFlagUrl}
+                          alt={activeCountryCode || "country"}
+                          className="w-full h-full object-cover"
+                          loading="lazy"
+                        />
+                      ) : (
+                        <div className="w-full h-full rounded-full bg-gray-200" />
+                      )}
                     </div>
                     <span className="text-[#020842] text-[11px] sm:text-xs font-medium font-['Inter'] leading-tight">
-                      {reviews[currentSlide].location}
+                      {activeReview.location || ""}
                     </span>
                   </div>
                 </div>
@@ -188,10 +302,10 @@ export default function Testimonials() {
 
               {/* Company Logo & Navigation - Always Column, Right Aligned */}
               <div className="flex flex-col items-end gap-4 sm:gap-6 flex-shrink-0">
-                {reviews[currentSlide].companyLogo && (
+                {activeReview.company_logo_url && (
                   <div className="w-[120px] sm:w-[152px] h-[23px] sm:h-[29px]">
                     <img
-                      src={reviews[currentSlide].companyLogo}
+                      src={activeReview.company_logo_url}
                       alt="Company logo"
                       className="w-full h-full object-contain object-right"
                     />
