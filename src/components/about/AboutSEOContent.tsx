@@ -10,7 +10,7 @@ export default function AboutSEOContent() {
       {/* This content is hidden visually but accessible to search engines */}
       
       <article>
-        <h1>About Digiwave Technologies — Powering Digital Transformation and Innovation</h1>
+        <h2>About Digiwave Technologies — Powering Digital Transformation and Innovation</h2>
         
         <section>
           <p>
