@@ -10,7 +10,7 @@ export default function SEOContent() {
       {/* This content is hidden visually but accessible to search engines */}
       
       <section>
-        <h1>Transforming Ideas into Scalable Digital Solutions</h1>
+        <h2>Transforming Ideas into Scalable Digital Solutions</h2>
         <p>
           Digiwave Technologies is a leading custom software development company delivering 
           web development, mobile app development, and AI-powered digital solutions that help 

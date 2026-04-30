@@ -66,9 +66,9 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
           <h3 className="text-[#62F4F3] font-poppins font-medium text-xl mb-4 text-center">
             Blog Post
           </h3>
-          <h1 className="text-white font-poppins font-bold text-[40px] leading-tight text-center max-w-[727px]">
+          <h2 className="text-white font-poppins font-bold text-[40px] leading-tight text-center max-w-[727px]">
             Blog Details
-          </h1>
+          </h2>
         </Container>
       </section>
 

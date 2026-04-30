@@ -17,12 +17,12 @@ import AboutSEOContent from "@/components/about/AboutSEOContent";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "Best Software Development Company in India",
-    description: "Digiwave Technologies is the best software development company in India delivering AI solutions, web and mobile app development, cloud services, and solutions.",
-    keywords: "Digital Transformation Company, Ai Solutions, Machine Learning Services, Web Development Company, Mobile App Development, Cloud Services, Devops, Custom Software Development, Technology Partner, Digital Innovation, It Services, Enterprise Software, Startup Technology Solutions, Ai Development Company in India, Website Development Company in India, Web Development Services India, Mobile App Development Company in India, App Development Company in India, Iot Solution Providers",
+    title: "About Us | Digiwave Technologies — IT Company Ahmedabad",
+    description: "Digiwave Technologies is a trusted IT company in Ahmedabad with 3+ years of experience delivering AI, web, mobile & cloud solutions across India.",
+    keywords: "Digital Transformation Company, Ai Solutions, Machine Learning Services, Web Development Company, Mobile App Development, Cloud Services, Devops, Custom Software Development, Technology Partner, Digital Innovation, It Services, Enterprise Software, Startup Technology Solutions, Ai Development Company in India, Website Development Company in India, Web Development Services India, Mobile App Development Company in India, App Development Company in India, Iot Solution Providers, IT Company Ahmedabad",
     openGraph: {
-        title: "Best Software Development Company in India",
-        description: "Digiwave Technologies is the best software development company in India delivering AI solutions, web and mobile app development, cloud services, and solutions.",
+        title: "About Us | Digiwave Technologies — IT Company Ahmedabad",
+        description: "Digiwave Technologies is a trusted IT company in Ahmedabad with 3+ years of experience delivering AI, web, mobile & cloud solutions across India.",
         type: "website",
         url: "/aboutus",
     },

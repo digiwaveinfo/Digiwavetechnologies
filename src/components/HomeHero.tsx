@@ -37,8 +37,7 @@ export default function HomeHero() {
 
             {/* Main Heading */}
             <h1 className="self-stretch justify-center flex flex-col space-y-1 text-white text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-[42px] font-bold font-['Inter'] leading-tight">
-              <span>Digiwave Technologies Empowering Businesses</span>
-              <span>with Intelligent <span className="text-cyan-300">Tech Solutions</span></span>
+              <span>AI-Powered Software Development Company</span>
             </h1>
 
             {/* Description */}

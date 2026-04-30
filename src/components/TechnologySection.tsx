@@ -79,9 +79,9 @@ export default function TechnologySection() {
                     <h2 className="font-['Poppins'] text-xl font-medium text-[#00BFD2]">
                         Technologies we used
                     </h2>
-                    <h1 className="max-w-[727px] text-center font-['Poppins'] text-3xl md:text-4xl font-bold text-[#00114C]">
+                    <h3 className="max-w-[727px] text-center font-['Poppins'] text-3xl md:text-4xl font-bold text-[#00114C]">
                         Built Using Future-Ready Technologies
-                    </h1>
+                    </h3>
                 </div>
 
                 <div className="w-full">

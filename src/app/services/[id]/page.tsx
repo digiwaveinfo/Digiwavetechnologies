@@ -30,7 +30,7 @@ const serviceData: Record<string, {
   };
 }> = {
   "ai-machine-learning": {
-    title: "Al & Machine Learning Solutions Provider",
+    title: "AI Development Services for Business Automation",
     description: "Intelligent systems that automate, analyze, and optimize business processes.",
     fullDescription: "Transform your business with a leading AI Development Company With advanced AI and machine learning solutions. Our expert team develops intelligent, scalable systems that automate complex processes, analyze large volumes of data, and generate actionable insights to drive your business forward.",
     heroImage: "/servicies/AI%20ML.png",
@@ -60,14 +60,14 @@ const serviceData: Record<string, {
     ctaDescription: "Work with a trusted AI Development Company in India delivering smart and scalable AI and Machine Learning Solutions. As an expert AI Software Development Company, we build result-driven AI Solutions for Business that accelerate growth and innovation. Let's explore how our customized AI Solutions for Business can transform your ideas into powerful digital systems.",
     whyChooseSlogan: "AI Solutions Designed to Drive Business Growth",
     metadata: {
-      title: "Best AI Development Company In India | Digiwave Technologies",
-      description: "AI development company in India with industry experience, specializing in custom artificial intelligence solutions for startups, enterprises, and businesses.",
-      keywords: "AI development company in india, artificial intelligence solutions, machine learning services, custom AI solutions, AI software development, enterprise AI services, AI ML development company",
+      title: "AI & ML Development Company in Ahmedabad | Digiwave Tech",
+      description: "Digiwave Technologies is a trusted AI development company in Ahmedabad. We build custom ML models, NLP, predictive analytics & AI automation solutions.",
+      keywords: "AI development company in india, artificial intelligence solutions, machine learning services, custom AI solutions, AI software development, enterprise AI services, AI ML development company, AI development company Ahmedabad",
       url: "https://digiwavetechnologies.in/services/ai-machine-learning"
     }
   },
   "web-application-development": {
-    title: "Web Application Development",
+    title: "Custom Web Application Development Services",
     description: "Custom high-performance web solutions tailored for scale and performance.",
     fullDescription: "Build powerful, scalable web applications that drive your business growth. Our development team creates custom web solutions using modern frameworks and technologies, ensuring optimal performance, security, and user experience.",
     heroImage: "/servicies/Website.png",
@@ -97,14 +97,14 @@ const serviceData: Record<string, {
     ctaDescription: "Partner with a leading Web Application Development Company delivering high-performance, scalable web solutions. Our expert developers create custom web applications using modern technologies like React, Next.js, and Node.js. Let's discuss how our web development expertise can bring your vision to life and drive your business growth.",
     whyChooseSlogan: "Modern Web Solutions Built for Performance and Scale",
     metadata: {
-      title: "Website Development Company in India | Digiwave Technologies",
-      description: "Digiwave Technologies is a leading website development company in India delivering responsive, SEO-friendly, and scalable web solutions for businesses.",
-      keywords: "Website Development Company in India, Web Application Development India, Custom Website Development Company, Web Development Services India, Professional Web Developers India, Business Website Development",
+      title: "Web App Development Company in Ahmedabad | Digiwave Tech",
+      description: "Digiwave Technologies builds scalable custom web applications in Ahmedabad using React, Next.js & Node.js. Trusted by startups & enterprises locally.",
+      keywords: "Website Development Company in India, Web Application Development India, Custom Website Development Company, Web Development Services India, Professional Web Developers India, Business Website Development, Web App Development Ahmedabad",
       url: "https://digiwavetechnologies.in/services/web-application-development"
     }
   },
   "mobile-app-development": {
-    title: "Mobile App Development",
+    title: "Mobile App Development Company for Android & iOS",
     description: "Android, iOS, and cross-platform apps built for engagement and user experience.",
     fullDescription: "Create engaging mobile experiences that connect with your users. Our mobile development team specializes in building native and cross-platform applications that deliver exceptional performance and user experience.",
     heroImage: "/servicies/Mobile.png",
@@ -134,14 +134,14 @@ const serviceData: Record<string, {
     ctaDescription: "Work with a trusted Mobile App Development Company specializing in iOS, Android, and cross-platform solutions. Our experienced team builds engaging mobile applications using React Native, Flutter, and native technologies. Let's create a mobile experience that delights your users and drives business results.",
     whyChooseSlogan: "Mobile Apps That Users Love and Businesses Trust",
     metadata: {
-      title: "Mobile App Development Company in India",
-      description: "Leading mobile app development company in India delivering scalable Android and iOS apps tailored to business goals and user-centric experiences globally now.",
-      keywords: "mobile app development company in india, top app development companies, mobile app developers, mobile application development, mobile app development companies, AI development company in india, artificial intelligence solutions, machine learning services, custom AI solutions, AI software development, enterprise AI services, AI ML development company",
+      title: "Mobile App Development Company in Ahmedabad | Digiwave",
+      description: "Digiwave Technologies builds Android, iOS & cross-platform mobile apps in Ahmedabad using React Native & Flutter. Trusted by local businesses.",
+      keywords: "mobile app development company in india, top app development companies, mobile app developers, mobile application development, mobile app development companies, AI development company in india, artificial intelligence solutions, machine learning services, custom AI solutions, AI software development, enterprise AI services, AI ML development company, mobile app development Ahmedabad",
       url: "https://digiwavetechnologies.in/services/mobile-app-development"
     }
   },
   "cloud-devops-services": {
-    title: "Cloud & DevOps Consulting Services",
+    title: "Cloud Infrastructure & DevOps Automation for Enterprises",
     description: "Scalable cloud infrastructure and automated deployment solutions.",
     fullDescription: "Accelerate your development and deployment processes with our comprehensive Cloud & DevOps services in India. We help organizations migrate to the cloud, implement CI/CD pipelines, and establish robust infrastructure that scales with your business needs.",
     heroImage: "/servicies/Cloud.png",
@@ -170,14 +170,14 @@ const serviceData: Record<string, {
     ctaDescription: "Partner with Digiwave Technologies, a trusted Cloud & DevOps services provider, delivering secure, scalable, and efficient cloud solutions. We focus on simplifying infrastructure, automating deployments, and improving system reliability to support long-term business growth. Let's discuss how our Cloud & DevOps services can help you build a stable, high-performing cloud environment with confidence.",
     whyChooseSlogan: "Cloud and DevOps solutions supporting long-term growth",
     metadata: {
-      title: "Cloud & DevOps Consulting Services in India",
-      description: "Digiwave Technologies provides Cloud DevOps consulting services India, helping businesses improve scalability, automation, security, and deployment efficiency.",
-      keywords: "cloud devops consulting services in india, Devops Development Company in India, Devops Solution Providers in India",
+      title: "Cloud & DevOps Services in Ahmedabad | Digiwave Technologies",
+      description: "Digiwave Technologies provides cloud & DevOps services in Ahmedabad including AWS migration, CI/CD pipelines, Kubernetes & Docker solutions.",
+      keywords: "cloud devops consulting services in india, Devops Development Company in India, Devops Solution Providers in India, Cloud DevOps Ahmedabad",
       url: "https://digiwavetechnologies.in/services/cloud-devops-services"
     }
   },
   "automation-data-intelligence": {
-    title: "Data Intelligence & Automation Services",
+    title: "Smart Data Solutions to Automate & Optimize Your Business",
     description: "Unlock the power of your data and automate your business processes with our comprehensive automation and data intelligence solutions in India. We help organizations streamline operations, gain valuable insights from their data, and make informed decisions.",
     fullDescription: "Unlock the power of your data and automate your business processes with our comprehensive automation and data intelligence solutions. We help organizations streamline operations, gain valuable insights from their data, and make informed decisions.",
     heroImage: "/servicies/Data%20Intelligence.png",
@@ -206,14 +206,14 @@ const serviceData: Record<string, {
     ctaDescription: "Digiwave Technologies delivers advanced Data Intelligence & Automation Services that turn data into clarity and processes into performance. From workflow automation to actionable insights, we help businesses operate faster, smarter, and with greater confidence. Let's explore how data-driven automation can accelerate your growth and strengthen operational excellence.",
     whyChooseSlogan: "Scalable data intelligence and automation solutions",
     metadata: {
-      title: "Data Intelligence & Automation Services in India",
+      title: "Data Intelligence & Automation Services in Ahmedabad",
       description: "Technologies offers Data Intelligence & Automation Services in India to streamline operations, reduce manual work, and enable smarter, data-driven business decisions.",
-      keywords: "Data Intelligence & Automation Services, data intelligence services india, automation services india, data automation solutions, intelligent automation services, business automation services india",
+      keywords: "Data Intelligence & Automation Services, data intelligence services india, automation services india, data automation solutions, intelligent automation services, business automation services india, Data Intelligence Ahmedabad",
       url: "https://digiwavetechnologies.in/services/automation-data-intelligence"
     }
   },
   "iot-solutions": {
-    title: "IoT Solution Providers",
+    title: "IoT Solutions for Business Automation",
     description: "Connected device ecosystems enabling smart monitoring, control, and data collection.",
     fullDescription: "As a Trusted IoT Solution Company, Build connected ecosystems with our comprehensive IoT solutions. We design and develop smart device networks that enable real-time monitoring, automated control, and intelligent data collection for industrial and consumer applications. .",
     heroImage: "/servicies/Iot.png",
@@ -243,9 +243,9 @@ const serviceData: Record<string, {
     ctaDescription: "Build smart, connected ecosystems with a trusted IoT Solution Company. We design and develop Industrial IoT (IIoT) solutions, sensor networks, and real-time monitoring systems using AWS IoT, Azure IoT Hub, and edge computing. Let's discuss how our IoT expertise can reduce your operational costs by 50% and enable predictive maintenance.",
     whyChooseSlogan: "Connected IoT Solutions for Smart Operations",
     metadata: {
-      title: "IoT Solution Providers | Custom IoT Services",
-      description: "As leading IoT solution providers, Digiwave Technologies offers smart device ecosystems, industrial monitoring, and automated data collection for global growth.",
-      keywords: "IoT Solution Company, IoT Solution Providers, Custom IoT Solutions, Custom IoT Development Services, Industrial IoT Solutions, Enterprise IoT Development, IoT Connectivity Services, IoT Smart Device Development, IoT Cloud Integration, IoT Data Analytics, IoT Security Solutions, IoT Platform Development, IIoT Solutions, Smart Monitoring Systems, IoT Software Development",
+      title: "IoT Solutions Company in Ahmedabad | Digiwave Technologies",
+      description: "Digiwave Technologies builds custom IoT solutions in Ahmedabad including smart device integration, IIoT systems, real-time monitoring & edge computing.",
+      keywords: "IoT Solution Company, IoT Solution Providers, Custom IoT Solutions, Custom IoT Development Services, Industrial IoT Solutions, Enterprise IoT Development, IoT Connectivity Services, IoT Smart Device Development, IoT Cloud Integration, IoT Data Analytics, IoT Security Solutions, IoT Platform Development, IIoT Solutions, Smart Monitoring Systems, IoT Software Development, IoT Solutions Ahmedabad",
       url: "https://digiwavetechnologies.in/services/iot-solutions"
     }
   }

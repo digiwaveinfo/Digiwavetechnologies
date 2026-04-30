@@ -12,8 +12,8 @@ import Footer from "@/components/Footer";
 import SEOContent from "@/components/SEOContent";
 
 export const metadata: Metadata = {
-  title: "AI Development Company in India | Mobile App Development",
-  description: "Leading AI Development Company in India offering smart AI solutions and mobile app development services to help businesses grow, scale, and innovate digitally.",
+  title: "IT Solutions Company in Ahmedabad | Digiwave Technologies",
+  description: "Digiwave Technologies is a top IT solutions company in Ahmedabad. We deliver AI, web, mobile app, cloud & IoT development services. Get a free consultation.",
   keywords: [
     "AI Development Company In India",
     "Website Development Company in India",
@@ -27,11 +27,12 @@ export const metadata: Metadata = {
     "Ai Software Development Company",
     "Devops Solution Providers in India",
     "Data Intelligence Solutions",
-    "Intelligent Automation Consulting"
+    "Intelligent Automation Consulting",
+    "IT Solutions Company Ahmedabad"
   ],
   openGraph: {
-    title: "AI Development Company in India | Mobile App Development",
-    description: "Leading AI Development Company in India offering smart AI solutions and mobile app development services to help businesses grow, scale, and innovate digitally.",
+    title: "IT Solutions Company in Ahmedabad | Digiwave Technologies",
+    description: "Digiwave Technologies is a top IT solutions company in Ahmedabad. We deliver AI, web, mobile app, cloud & IoT development services. Get a free consultation.",
     type: "website",
   },
 };
