@@ -1,46 +1,58 @@
+import PortfolioSectionHeading from "@/components/portfolio/PortfolioSectionHeading";
+
 interface DesignSectionProps {
   galleryImages?: string[];
   showcaseImageUrl?: string;
 }
 
 export default function DesignSection({ galleryImages, showcaseImageUrl }: DesignSectionProps) {
-  // Use showcase image first, then first gallery image, then default
-  const mainImage = showcaseImageUrl || galleryImages?.[0] || "/design-portfolio-image.webp";
+  const hasGallery = (galleryImages?.length ?? 0) > 0;
+  if (!showcaseImageUrl && !hasGallery) {
+    return null;
+  }
+
+  const mainImage = showcaseImageUrl || galleryImages?.[0];
+  const extraImages = showcaseImageUrl
+    ? (galleryImages ?? [])
+    : (galleryImages?.slice(1) ?? []);
 
   return (
-    <section className="bg-white">
+    <section className="py-16 sm:py-20 bg-[#fafbfc]">
       <div className="mx-auto w-[94%] xl:w-[90%] 2xl:w-[85%]">
-        {/* Title - aligned with other sections */}
-        <h2 className="text-sky-950 font-bold text-2xl sm:text-3xl md:text-4xl leading-tight mb-6 sm:mb-8">
-          Design
-        </h2>
-      </div>
-
-      {/* Full Width Design Image - No padding, no rounded corners */}
-      <div className="w-full">
-        <img
-          src={mainImage}
-          alt="Design Mockups - Mobile App Interface Screens"
-          className="w-full h-auto object-fill"
+        <PortfolioSectionHeading
+          eyebrow="Visual showcase"
+          title="Design Gallery"
+          description="Screens, flows, and interface highlights from the product."
         />
-      </div>
 
-      {/* Additional Gallery Images */}
-      {galleryImages && galleryImages.length > 1 && (
-        <div className="mx-auto w-[94%] xl:w-[90%] 2xl:w-[85%] mt-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {galleryImages.slice(1).map((image, index) => (
-              <div key={index} className="rounded-lg overflow-hidden shadow-md">
+        {mainImage && (
+          <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border border-[#E8E8EA] mb-8 group">
+            <img
+              src={mainImage}
+              alt="Design showcase"
+              className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-[1.02]"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#00114C]/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
+          </div>
+        )}
+
+        {extraImages.length > 0 && (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+            {extraImages.map((image, index) => (
+              <div
+                key={`${image}-${index}`}
+                className="group relative rounded-xl sm:rounded-2xl overflow-hidden border border-[#E8E8EA] shadow-md hover:shadow-xl transition-all"
+              >
                 <img
                   src={image}
-                  alt={`Design Screenshot ${index + 2}`}
-                  className="w-full h-auto object-fill"
+                  alt={`Gallery ${index + 1}`}
+                  className="w-full h-56 sm:h-64 object-cover group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
             ))}
           </div>
-        </div>
-      )}
+        )}
+      </div>
     </section>
   );
 }

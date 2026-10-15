@@ -1,3 +1,5 @@
+import PortfolioSectionHeading from "@/components/portfolio/PortfolioSectionHeading";
+
 interface Feature {
   title: string;
   description: string;
@@ -8,50 +10,44 @@ interface FeaturesProps {
   features?: Feature[];
 }
 
-export default function Features({
+export default function PortfolioFeatures({
   title = "Features",
   features,
 }: FeaturesProps) {
-  // Don't render if no features
   if (!features || features.length === 0) {
     return null;
   }
 
-  // Split features into two columns
-  const midpoint = Math.ceil(features.length / 2);
-  const leftFeatures = features.slice(0, midpoint);
-  const rightFeatures = features.slice(midpoint);
-
   return (
-    <section className="w-full">
-      <div className="mx-auto w-[94%] xl:w-[90%] 2xl:w-[85%] flex flex-col gap-4">
-        {/* Title */}
-        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold leading-tight lg:leading-[60px] text-[#0A2540]">
-          {title}
-        </h2>
+    <section className="py-16 sm:py-20 relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-b from-[#f0f9ff]/80 via-white to-white pointer-events-none" />
+      <div className="relative mx-auto w-[94%] xl:w-[90%] 2xl:w-[85%]">
+        <PortfolioSectionHeading
+          eyebrow="What we built"
+          title={title}
+          description="Core capabilities and highlights from the delivery."
+        />
 
-        {/* Two Column Layout */}
-        <div className="flex flex-col lg:flex-row items-start gap-6 lg:gap-16">
-          {/* Left Column */}
-          <ul className="flex-1 space-y-4 list-disc list-outside pl-5">
-            {leftFeatures.map((feature, index) => (
-              <li key={index} className="text-sm sm:text-base font-normal leading-relaxed lg:leading-[30px] text-[#1a1a1a] marker:text-[#00BFD2]">
-                <span className="font-semibold">{feature.title}:</span> {feature.description}
-              </li>
-            ))}
-          </ul>
-
-          {/* Right Column */}
-          <ul className="flex-1 space-y-4 list-disc list-outside pl-5">
-            {rightFeatures.map((feature, index) => (
-              <li key={index} className="text-sm sm:text-base font-normal leading-relaxed lg:leading-[30px] text-[#1a1a1a] marker:text-[#00BFD2]">
-                <span className="font-semibold">{feature.title}:</span> {feature.description}
-              </li>
-            ))}
-          </ul>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
+          {features.map((feature, index) => (
+            <article
+              key={`${feature.title}-${index}`}
+              className="relative p-6 sm:p-8 rounded-2xl bg-white border border-[#E8E8EA] shadow-sm hover:shadow-xl hover:border-[#00BFD2]/30 transition-all duration-300 group overflow-hidden"
+            >
+              <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-[#00BFD2]/10 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity" />
+              <div className="flex items-start gap-4">
+                <span className="flex-shrink-0 flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-[#00BFD2] to-[#0891b2] text-white text-sm font-bold shadow-md">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <div>
+                  <h3 className="text-lg sm:text-xl font-bold text-[#00114C] mb-2">{feature.title}</h3>
+                  <p className="text-gray-600 text-sm sm:text-base leading-relaxed">{feature.description}</p>
+                </div>
+              </div>
+            </article>
+          ))}
         </div>
       </div>
     </section>
   );
 }
-

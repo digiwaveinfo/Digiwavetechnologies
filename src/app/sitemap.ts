@@ -4,9 +4,10 @@ const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://digiwavetechnologi
 
 async function getPortfolioSlugs() {
   try {
-    const apiUrl = process.env.NEXT_PUBLIC_API_URL
-    const response = await fetch(`${apiUrl}/portfolio/portfolios/?is_active=true`, {
-      next: { revalidate: 3600 } // Revalidate every hour
+    const apiBase =
+      process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000/api/v1'
+    const response = await fetch(`${apiBase}/portfolio/public/`, {
+      next: { revalidate: 3600 }, // Revalidate every hour
     })
 
     if (!response.ok) {
@@ -15,8 +16,8 @@ async function getPortfolioSlugs() {
     }
 
     const data = await response.json()
-    const portfolios = data.results || data || []
-    return portfolios.map((p: any) => p.slug).filter(Boolean)
+    const portfolios = Array.isArray(data) ? data : data.results || []
+    return portfolios.map((p: { slug?: string }) => p.slug).filter(Boolean)
   } catch (error) {
     console.error('Error fetching portfolios for sitemap:', error)
     return []

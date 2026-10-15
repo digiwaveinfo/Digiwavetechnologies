@@ -58,6 +58,93 @@ const benefits = [
     },
 ];
 
+function ContactArrowIcon() {
+    return (
+        <svg width="15" height="18" viewBox="0 0 13 16" fill="none" aria-hidden>
+            <path
+                d="M11.5 4C11.5 3.70833 11.4062 3.46875 11.2188 3.28125C11.0312 3.09375 10.7917 3 10.5 3H3.5C3.20833 3 2.96875 3.09375 2.78125 3.28125C2.59375 3.46875 2.5 3.70833 2.5 4C2.5 4.29167 2.59375 4.53125 2.78125 4.71875C2.96875 4.90625 3.20833 5 3.5 5H8.09375L1.78125 11.2812C1.59375 11.4896 1.5 11.7292 1.5 12C1.5 12.2708 1.59375 12.5104 1.78125 12.7188C1.98958 12.9062 2.22917 13 2.5 13C2.77083 13 3.01042 12.9062 3.21875 12.7188L9.5 6.40625V11C9.5 11.2917 9.59375 11.5312 9.78125 11.7188C9.96875 11.9062 10.2083 12 10.5 12C10.7917 12 11.0312 11.9062 11.2188 11.7188C11.4062 11.5312 11.5 11.2917 11.5 11V4Z"
+                fill="white"
+            />
+        </svg>
+    );
+}
+
+function JobOpeningCard({
+    position,
+    onApply,
+}: {
+    position: JobOpening;
+    onApply: (job: JobOpening) => void;
+}) {
+    const [expanded, setExpanded] = useState(false);
+    const description = position.description?.trim() || "";
+    const canExpand = description.length > 160;
+
+    return (
+        <article
+            className="bg-white rounded-2xl p-6 md:p-8 shadow-[0px_2px_16px_rgba(0,0,0,0.06)] hover:shadow-[0px_8px_30px_rgba(0,0,0,0.1)] transition-all duration-300 flex flex-col md:flex-row md:items-stretch gap-6 md:gap-8"
+        >
+            <div className="flex-1 min-w-0 flex flex-col">
+                <h3 className="text-xl md:text-2xl font-bold font-['Inter'] text-[#00114C] leading-snug">
+                    {position.title}
+                </h3>
+                <div className="flex flex-wrap gap-2 mt-3">
+                    <span className="inline-flex items-center gap-1 text-xs font-medium text-[#00BFD2] bg-[#00BFD2]/10 px-2.5 py-1 rounded-full">
+                        <Briefcase size={12} />
+                        {position.job_type_display}
+                    </span>
+                    <span className="inline-flex items-center gap-1 text-xs font-medium text-gray-600 bg-gray-100 px-2.5 py-1 rounded-full">
+                        <MapPin size={12} />
+                        {position.location}
+                    </span>
+                </div>
+                <div className="mt-4">
+                    <p
+                        className={`text-gray-600 text-sm md:text-base font-['Inter'] leading-relaxed ${
+                            expanded ? "" : "line-clamp-4"
+                        }`}
+                    >
+                        {description}
+                    </p>
+                    {canExpand && (
+                        <button
+                            type="button"
+                            onClick={() => setExpanded((prev) => !prev)}
+                            className="mt-2 text-sm font-semibold text-[#00BFD2] hover:text-[#00114C] transition-colors cursor-pointer"
+                        >
+                            {expanded ? "Read less" : "Read more"}
+                        </button>
+                    )}
+                </div>
+                {position.tags?.length > 0 && (
+                    <div className="flex flex-wrap gap-1.5 mt-4">
+                        {position.tags.map((tag, i) => (
+                            <span
+                                key={i}
+                                className="text-xs font-medium text-[#00114C]/70 bg-[#00114C]/5 px-2.5 py-1 rounded-md"
+                            >
+                                {tag}
+                            </span>
+                        ))}
+                    </div>
+                )}
+            </div>
+            <div className="flex md:items-center md:justify-center shrink-0">
+                <button
+                    type="button"
+                    onClick={() => onApply(position)}
+                    className="w-full md:w-auto min-w-[11rem] px-7 py-3.5 bg-[#00BFD2] rounded-[247px] inline-flex justify-center items-center gap-2 hover:opacity-90 transition-opacity cursor-pointer"
+                >
+                    <span className="text-white text-sm md:text-base font-bold font-['Inter'] uppercase leading-4 tracking-wide whitespace-nowrap">
+                        Apply Now
+                    </span>
+                    <ContactArrowIcon />
+                </button>
+            </div>
+        </article>
+    );
+}
+
 const hiringSteps = [
     {
         step: "01",
@@ -131,7 +218,9 @@ export default function CareersPage() {
         data.append("email", formData.email);
         data.append("phone", formData.phone);
         if (formData.cover_letter) data.append("cover_letter", formData.cover_letter);
-        if (selectedJob) data.append("job_opening", String(selectedJob.id));
+        if (selectedJob) {
+            data.append("job_opening", String(selectedJob.id));
+        }
         if (resumeFile) data.append("resume", resumeFile);
 
         const result = await submitCareerApplication(data);
@@ -229,53 +318,17 @@ export default function CareersPage() {
                                 <span className="ml-3 text-gray-500 text-lg">Loading openings...</span>
                             </div>
                         ) : positions.length === 0 ? (
-                            <div className="text-center py-20">
-                                <p className="text-gray-500 text-lg mb-4">No open positions at the moment.</p>
-                                <p className="text-gray-400">But we&apos;re always looking for talented people! Send us a general application below.</p>
-                            </div>
+                            <p className="text-center text-gray-600 text-lg font-['Inter'] py-12">
+                                No open positions at the moment. Check back soon or send a general application below.
+                            </p>
                         ) : (
-                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+                            <div className="flex flex-col gap-5 md:gap-6 max-w-5xl mx-auto">
                                 {positions.map((position) => (
-                                    <div
+                                    <JobOpeningCard
                                         key={position.id}
-                                        className="bg-white rounded-2xl p-7 shadow-[0px_2px_16px_rgba(0,0,0,0.06)] hover:shadow-[0px_8px_30px_rgba(0,0,0,0.1)] transition-all duration-300 flex flex-col group"
-                                    >
-                                        <div className="flex items-start justify-between mb-4">
-                                            <h3 className="text-xl font-bold font-['Inter'] text-[#00114C] group-hover:text-[#00BFD2] transition-colors">
-                                                {position.title}
-                                            </h3>
-                                        </div>
-                                        <div className="flex flex-wrap gap-2 mb-4">
-                                            <span className="inline-flex items-center gap-1 text-xs font-medium text-[#00BFD2] bg-[#00BFD2]/10 px-2.5 py-1 rounded-full">
-                                                <Briefcase size={12} />
-                                                {position.job_type_display}
-                                            </span>
-                                            <span className="inline-flex items-center gap-1 text-xs font-medium text-gray-600 bg-gray-100 px-2.5 py-1 rounded-full">
-                                                <MapPin size={12} />
-                                                {position.location}
-                                            </span>
-                                        </div>
-                                        <p className="text-gray-600 text-sm font-['Inter'] leading-relaxed mb-5 flex-grow">
-                                            {position.description}
-                                        </p>
-                                        <div className="flex flex-wrap gap-1.5 mb-6">
-                                            {position.tags.map((tag, i) => (
-                                                <span
-                                                    key={i}
-                                                    className="text-xs font-medium text-[#00114C]/70 bg-[#00114C]/5 px-2.5 py-1 rounded-md"
-                                                >
-                                                    {tag}
-                                                </span>
-                                            ))}
-                                        </div>
-                                        <button
-                                            onClick={() => openApplyModal(position)}
-                                            className="inline-flex items-center justify-center gap-2 w-full py-3 bg-[#00114C] text-white font-semibold text-sm rounded-xl hover:bg-[#00BFD2] transition-all duration-300 cursor-pointer"
-                                        >
-                                            Apply Now
-                                            <Send size={14} />
-                                        </button>
-                                    </div>
+                                        position={position}
+                                        onApply={openApplyModal}
+                                    />
                                 ))}
                             </div>
                         )}
