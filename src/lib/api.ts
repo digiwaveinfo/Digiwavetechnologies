@@ -51,10 +51,14 @@ export interface PortfolioItem {
   hero_image_url?: string;
   home_featured_image_url?: string;
   showcase_image_url?: string;
+  showcase_image_urls?: string[];
   technologies: Technology[];
   problem_statement: string;
   solution_description: string;
   impact_description?: string;
+  target_audience?: string;
+  industry?: string;
+  delivery_timeline?: string;
   features: { title: string; description: string }[];
   gallery_images: string[];
   live_url?: string;

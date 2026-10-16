@@ -1,5 +1,6 @@
 import PortfolioCard from "@/components/PortfolioCard";
 import { getPortfolios } from "@/lib/api";
+import { cardImagesFromListItem, normalizeTags } from "@/lib/portfolio/presenters";
 
 // Fallback data when API is unavailable
 const fallbackPortfolios = [
@@ -33,10 +34,10 @@ export default async function PortfolioGrid() {
               id={item.slug}
               title={item.title}
               description={item.short_description}
-              images={item.card_images || []}
+              images={cardImagesFromListItem(item)}
               technologies={item.technologies || []}
               tag={item.tag}
-              tags={item.tags || (item.tag ? item.tag.split(',').map((t) => t.trim()).filter(Boolean) : [])}
+              tags={normalizeTags(item)}
               subtitle={item.subtitle}
             />
           ))}

@@ -5,6 +5,7 @@ import Container from "./Container";
 import { useState } from "react";
 
 export default function Footer() {
+  const currentYear = new Date().getFullYear();
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
   const [subscribed, setSubscribed] = useState(false);
@@ -239,7 +240,7 @@ export default function Footer() {
       <div className="w-full py-6 bg-[#00114C]">
         <Container className="text-center">
           <p className="text-white text-sm font-semibold font-['Inter'] leading-4">
-            Copyright © 2025 Digiwave technology
+            Copyright © {currentYear} Digiwave technology
           </p>
         </Container>
       </div>

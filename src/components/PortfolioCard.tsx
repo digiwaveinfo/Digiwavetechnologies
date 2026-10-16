@@ -11,6 +11,7 @@ interface Technology {
 }
 
 interface PortfolioCardProps {
+  /** Portfolio slug used in `/portfolio/{slug}` */
   id: string;
   title: string;
   description: string;
@@ -48,7 +49,7 @@ export default function PortfolioCard({ id, title, description, images = [], tec
   const displayTechnologies = technologies;
 
   return (
-    <Link href="#contact" className="block cursor-pointer">
+    <Link href={`/portfolio/${id}`} className="block cursor-pointer">
     <div className="group bg-white rounded-xl border border-[#E8E8EA] overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2 flex flex-col">
       {/* Image Carousel */}
       <div
